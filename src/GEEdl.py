@@ -45,7 +45,7 @@ class polyEE(dsetEE):
         return image.addBands(ee.Image(img_date).rename('date').toInt())
     
     def fixMultipoly(self,geo):
-        if 'MultiPolygon' in str(type(geo.geometry.iloc[0])):
+        if 'MultiPolygon' in geo.geometry.iloc[0].geom_type:
             geo2=geo.explode()
             geo3=gpd.GeoDataFrame([],geometry=geo2.geometry,crs='4326')
             geo3['area']=''
@@ -124,7 +124,7 @@ class polyEE(dsetEE):
                                             column_df).values().get(0)
         data = nested_list.getInfo()
         df = pd.DataFrame(data, columns=column_df)
-        df.index=pd.to_datetime(df['date'],format="%Y-%m-%d")
+        df.index=pd.to_datetime(df['date'])
         df=df[[x for x in df.columns if x!='date']]
         return df
     
@@ -189,7 +189,7 @@ ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
         if 'NDSI_Snow_Cover' in self.band:
             dfDateCount=pd.concat(lista3, axis=1, ignore_index=False)
             dfRetC.loc[dfDateCount.index,:]=dfDateCount.values
-            dfRet=self.filterCount(dfRet,dfRetC.astype(float))
+        dfRet=self.filterCount(dfRet,dfRetC.astype(float))
         return dfRet
     
     def fixColumns(self,lista):
@@ -218,7 +218,7 @@ ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
         mask=df2>df2.astype(float).describe().loc['mean']
         return df1[mask]
 
-def main():
+def main(name='Hurtado_San_Agustin'):
     def getLastDate(name):
         path=os.path.join('..',name,'Master.csv')
         master=pd.read_csv(path,index_col=0,parse_dates=True)
@@ -230,7 +230,7 @@ def main():
         'temperature_2m'],'MODIS/006/MOD10A1':['NDSI_Snow_Cover'],
         'MODIS/006/MYD10A1':['NDSI_Snow_Cover']
         }
-        mindate=datetime.date.today()
+        mindate=pd.to_datetime(datetime.date.today())
 
         for data in list(dsets.keys()):
             dataset=dsetEE(data)
@@ -319,7 +319,7 @@ def main():
                         'glacierCover.csv' ))                    
         return None
 
-    getDatesDatasets('Hurtado_San_Agustin')
+    getDatesDatasets(name)
     
 def terraClimate():
     path=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\SIG\Cuencas\subcNClimari.shp'
