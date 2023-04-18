@@ -96,7 +96,6 @@
 import pandas as pd
 import numpy as np
 # import matplotlib.pyplot as plt
-from hydroeval import evaluator, nse
 import datetime
 import os
 # --------------------------------------------------------------------------
@@ -104,30 +103,6 @@ import os
 #========================================================================== 
 #                           funciones
 #==========================================================================
-
-def NSE(nse, sim_flow, obs_flow, axis=1):
-        
-    # Parameters
-    # ----------
-    # nse : TYPE
-    #     DESCRIPTION.
-    # sim_flow : TYPE
-    #     DESCRIPTION.
-    # obs_flow : TYPE
-    #     DESCRIPTION.
-    # axis : TYPE, optional
-    #     DESCRIPTION. The default is 1.
-    
-    # Returns
-    # -------
-    # my_nse : TYPE
-    #     DESCRIPTION.
-    
-    
-    serie_sim = sim_flow.ravel()
-    serie_obs = obs_flow.ravel()
-    my_nse = evaluator(nse, serie_sim, serie_obs, axis=1)
-    return my_nse
 
 def DEVELOP_SRM(root, Basin, plots=False):
     #%%
@@ -361,12 +336,10 @@ def DEVELOP_SRM(root, Basin, plots=False):
     ####################################
     ##        Estadigrafos            ##
     ####################################
-    n_se=NSE(nse,Qsim,Qobs)
     r2=np.corrcoef(Qsim,Qobs)[0,1]**2.
     print('==============================================')
     print('',Basin,years,'C')
     print('  Coeficiente R2 = ',r2)
-    print('  N-SE = ',n_se)
     print('==============================================')
     
     ####################################
@@ -378,12 +351,10 @@ def DEVELOP_SRM(root, Basin, plots=False):
     ####################################
     ##        Estadigrafos            ##
     ####################################
-    n_se=NSE(nse,Qsim,Qobs)
     r2=np.corrcoef(Qsim,Qobs)[0,1]**2.
     print('==============================================')
     print('',Basin,years,'V')
     print('  Coeficiente R2 = ',r2)
-    print('  N-SE = ',n_se)
     print('==============================================')
     
     # fechas para plots
