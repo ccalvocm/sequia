@@ -1,0 +1,1708 @@
+
+PANTHER master listening on socket:0.0.0.0:4004 (IPv4)
+running model 47 times
+04/17/23 12:42:23->waiting for agents to appear
+
+04/17/23 12:42:38->new connection from:CCALVO.local.ciren:52852
+04/17/23 12:42:38->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 socket:CCALVO.local.ciren:52852 number of agents:1
+04/17/23 12:42:38->new connection from:CCALVO.local.ciren:52853
+04/17/23 12:42:38->new connection from:CCALVO.local.ciren:52854
+04/17/23 12:42:38->new connection from:CCALVO.local.ciren:52855
+04/17/23 12:42:38->new connection from:CCALVO.local.ciren:52856
+04/17/23 12:42:38->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 socket:CCALVO.local.ciren:52855 number of agents:5
+04/17/23 12:42:38->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 socket:CCALVO.local.ciren:52854 number of agents:5
+04/17/23 12:42:38->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 socket:CCALVO.local.ciren:52853 number of agents:5
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 socket:CCALVO.local.ciren:52856 number of agents:5
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52857
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52858
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 socket:CCALVO.local.ciren:52857 number of agents:7
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52859
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 socket:CCALVO.local.ciren:52858 number of agents:8
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 socket:CCALVO.local.ciren:52859 number of agents:8
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52860
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 socket:CCALVO.local.ciren:52860 number of agents:9
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52861
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 socket:CCALVO.local.ciren:52861 number of agents:10
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52862
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52863
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 socket:CCALVO.local.ciren:52862 number of agents:12
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 socket:CCALVO.local.ciren:52863 number of agents:12
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52866
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 socket:CCALVO.local.ciren:52866 number of agents:13
+04/17/23 12:42:39->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 socket:CCALVO.local.ciren:52852
+04/17/23 12:42:39->Sending run_id:0 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:2 par_name:__base__ concurrent:1)
+04/17/23 12:42:39->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 socket:CCALVO.local.ciren:52854
+04/17/23 12:42:39->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:2 par_name:RCR6D concurrent:1)
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52867
+04/17/23 12:42:39->new connection from:CCALVO.local.ciren:52868
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 socket:CCALVO.local.ciren:52867 number of agents:15
+04/17/23 12:42:39->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 socket:CCALVO.local.ciren:52868 number of agents:15
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 socket:CCALVO.local.ciren:52858
+04/17/23 12:42:40->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:2 par_name:RCS8W concurrent:1)
+04/17/23 12:42:40->new connection from:CCALVO.local.ciren:52869
+04/17/23 12:42:40->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 socket:CCALVO.local.ciren:52869 number of agents:16
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 socket:CCALVO.local.ciren:52853
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 socket:CCALVO.local.ciren:52855
+04/17/23 12:42:40->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:2 par_name:DDSD concurrent:1)
+04/17/23 12:42:40->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:2 par_name:RCR6W concurrent:1)
+04/17/23 12:42:40->new connection from:CCALVO.local.ciren:52870
+04/17/23 12:42:40->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 socket:CCALVO.local.ciren:52870 number of agents:17
+04/17/23 12:42:40->new connection from:CCALVO.local.ciren:52871
+04/17/23 12:42:40->new connection from:CCALVO.local.ciren:52872
+04/17/23 12:42:40->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 socket:CCALVO.local.ciren:52871 number of agents:19
+04/17/23 12:42:40->new connection from:CCALVO.local.ciren:52873
+04/17/23 12:42:40->new connection from:CCALVO.local.ciren:52874
+04/17/23 12:42:40->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 socket:CCALVO.local.ciren:52872 number of agents:21
+04/17/23 12:42:40->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 socket:CCALVO.local.ciren:52873 number of agents:21
+04/17/23 12:42:40->new connection from:CCALVO.local.ciren:52875
+04/17/23 12:42:40->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 socket:CCALVO.local.ciren:52874 number of agents:22
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 socket:CCALVO.local.ciren:52856
+04/17/23 12:42:40->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_24 socket:CCALVO.local.ciren:52875 number of agents:22
+04/17/23 12:42:40->Sending run_id:5 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:2 par_name:RCS8D concurrent:1)
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 socket:CCALVO.local.ciren:52857
+04/17/23 12:42:40->Sending run_id:6 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:2 par_name:DDSW concurrent:1)
+04/17/23 12:42:40->new connection from:CCALVO.local.ciren:52876
+04/17/23 12:42:40->new connection from:CCALVO.local.ciren:52877
+04/17/23 12:42:40->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 socket:CCALVO.local.ciren:52876 number of agents:24
+04/17/23 12:42:40->initializing new agent connection from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 socket:CCALVO.local.ciren:52877 number of agents:24
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 socket:CCALVO.local.ciren:52859
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 socket:CCALVO.local.ciren:52863
+04/17/23 12:42:40->Sending run_id:7 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:2 par_name:DDGD concurrent:1)
+04/17/23 12:42:40->Sending run_id:8 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:2 par_name:RCS1D concurrent:1)
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 socket:CCALVO.local.ciren:52862
+04/17/23 12:42:40->Sending run_id:9 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:2 par_name:DDGW concurrent:1)
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 socket:CCALVO.local.ciren:52861
+04/17/23 12:42:40->Sending run_id:10 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:2 par_name:RCS1W concurrent:1)
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 socket:CCALVO.local.ciren:52860
+04/17/23 12:42:40->Sending run_id:11 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:2 par_name:RCS3W concurrent:1)
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 socket:CCALVO.local.ciren:52867
+04/17/23 12:42:40->Sending run_id:12 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:2 par_name:RCS2D concurrent:1)
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 socket:CCALVO.local.ciren:52866
+04/17/23 12:42:40->Sending run_id:13 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:2 par_name:RCS3D concurrent:1)
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 socket:CCALVO.local.ciren:52868
+04/17/23 12:42:40->Sending run_id:14 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:2 par_name:RCS2W concurrent:1)
+04/17/23 12:42:40->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 socket:CCALVO.local.ciren:52869
+04/17/23 12:42:40->Sending run_id:15 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:2 par_name:RCS4D concurrent:1)
+04/17/23 12:42:41->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 socket:CCALVO.local.ciren:52872
+04/17/23 12:42:41->Sending run_id:16 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:2 par_name:RCS4W concurrent:1)
+04/17/23 12:42:41->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 socket:CCALVO.local.ciren:52871
+04/17/23 12:42:41->Sending run_id:17 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:2 par_name:RCS5D concurrent:1)
+04/17/23 12:42:41->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 socket:CCALVO.local.ciren:52874
+04/17/23 12:42:41->Sending run_id:18 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:2 par_name:RCS5W concurrent:1)
+04/17/23 12:42:41->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 socket:CCALVO.local.ciren:52873
+04/17/23 12:42:41->Sending run_id:19 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:2 par_name:RCS7W concurrent:1)
+04/17/23 12:42:41->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 socket:CCALVO.local.ciren:52870
+04/17/23 12:42:41->Sending run_id:20 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:2 par_name:RCS6D concurrent:1)
+04/17/23 12:42:41->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_24 socket:CCALVO.local.ciren:52875
+04/17/23 12:42:41->Sending run_id:21 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_24 group_id:2 par_name:RCS7D concurrent:1)
+04/17/23 12:42:41->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 socket:CCALVO.local.ciren:52876
+04/17/23 12:42:41->Sending run_id:22 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:2 par_name:RCS6W concurrent:1)
+04/17/23 12:42:41->new agent ready:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 socket:CCALVO.local.ciren:52877
+04/17/23 12:42:41->Sending run_id:23 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:2 par_name:RCR1D concurrent:1)
+04/17/23 12:43:07-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.45705  avg_run_time:0.45705 group_id:2 par_name:rcr6d  worker_time:0.4551 concurrent:1
+04/17/23 12:43:07->run 1 processed
+04/17/23 12:43:07->Sending run_id:24 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:2 par_name:RCR1W concurrent:1)
+04/17/23 12:43:07-> run_id:11 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.448017  avg_run_time:0.452533 group_id:2 par_name:rcs3w  worker_time:0.445833 concurrent:1
+04/17/23 12:43:07->run 11 processed
+04/17/23 12:43:07->Sending run_id:25 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:2 par_name:RCR2D concurrent:1)
+04/17/23 12:43:08-> run_id:10 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.464717  avg_run_time:0.456594 group_id:2 par_name:rcs1w  worker_time:0.462517 concurrent:1
+04/17/23 12:43:08->run 10 processed
+04/17/23 12:43:08->Sending run_id:26 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:2 par_name:RCR2W concurrent:1)
+04/17/23 12:43:08-> run_id:6 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.47  avg_run_time:0.459946 group_id:2 par_name:ddsw  worker_time:0.467933 concurrent:1
+04/17/23 12:43:08->run 6 processed
+04/17/23 12:43:08->Sending run_id:27 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:2 par_name:RCR3D concurrent:1)
+04/17/23 12:43:08-> run_id:14 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.460717  avg_run_time:0.4601 group_id:2 par_name:rcs2w  worker_time:0.458817 concurrent:1
+04/17/23 12:43:08->run 14 processed
+04/17/23 12:43:08->Sending run_id:28 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:2 par_name:RCR3W concurrent:1)
+04/17/23 12:43:09-> run_id:12 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.471433  avg_run_time:0.461989 group_id:2 par_name:rcs2d  worker_time:0.469567 concurrent:1
+04/17/23 12:43:09->run 12 processed
+04/17/23 12:43:09->Sending run_id:29 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:2 par_name:RCR4D concurrent:1)
+04/17/23 12:43:09-> run_id:20 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.467817  avg_run_time:0.462821 group_id:2 par_name:rcs6d  worker_time:0.46595 concurrent:1
+04/17/23 12:43:09->run 20 processed
+04/17/23 12:43:09->Sending run_id:30 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:2 par_name:RCR4W concurrent:1)
+04/17/23 12:43:09-> run_id:15 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.471317  avg_run_time:0.463883 group_id:2 par_name:rcs4d  worker_time:0.469517 concurrent:1
+04/17/23 12:43:09->run 15 processed
+04/17/23 12:43:09->Sending run_id:31 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:2 par_name:RCGD concurrent:1)
+04/17/23 12:43:09-> run_id:9 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.4809  avg_run_time:0.465774 group_id:2 par_name:ddgw  worker_time:0.478683 concurrent:1
+04/17/23 12:43:09->run 9 processed
+04/17/23 12:43:09->Sending run_id:32 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:2 par_name:RCR5D concurrent:1)
+04/17/23 12:43:09-> run_id:8 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.48255  avg_run_time:0.467452 group_id:2 par_name:rcs1d  worker_time:0.48055 concurrent:1
+04/17/23 12:43:09->run 8 processed
+04/17/23 12:43:09-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.4881  avg_run_time:0.469329 group_id:2 par_name:ddsd  worker_time:0.486033 concurrent:1
+04/17/23 12:43:09->run 3 processed
+04/17/23 12:43:09->Sending run_id:33 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:2 par_name:RCGW concurrent:1)
+04/17/23 12:43:09-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.488217  avg_run_time:0.470903 group_id:2 par_name:rcr6w  worker_time:0.486283 concurrent:1
+04/17/23 12:43:09->run 4 processed
+04/17/23 12:43:09->Sending run_id:34 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:2 par_name:RCR5W concurrent:1)
+04/17/23 12:43:09->Sending run_id:35 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:2 par_name:RCR7D concurrent:1)
+04/17/23 12:43:09-> run_id:5 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.485717  avg_run_time:0.472042 group_id:2 par_name:rcs8d  worker_time:0.484133 concurrent:1
+04/17/23 12:43:09->run 5 processed
+04/17/23 12:43:09-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.489817  avg_run_time:0.473312 group_id:2 par_name:rcs8w  worker_time:0.487967 concurrent:1
+04/17/23 12:43:09->run 2 processed
+04/17/23 12:43:09->Sending run_id:36 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:2 par_name:RCR7W concurrent:1)
+04/17/23 12:43:09->Sending run_id:37 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:2 par_name:RCR8D concurrent:1)
+04/17/23 12:43:09-> run_id:16 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.477067  avg_run_time:0.473562 group_id:2 par_name:rcs4w  worker_time:0.47505 concurrent:1
+04/17/23 12:43:09->run 16 processed
+04/17/23 12:43:09->Sending run_id:38 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:2 par_name:TL concurrent:1)
+04/17/23 12:43:09-> run_id:19 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.478033  avg_run_time:0.473842 group_id:2 par_name:rcs7w  worker_time:0.476067 concurrent:1
+04/17/23 12:43:09->run 19 processed
+04/17/23 12:43:09->Sending run_id:39 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:2 par_name:RCR8W concurrent:1)
+04/17/23 12:43:09-> run_id:21 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_24  run_time:0.479  avg_run_time:0.474145 group_id:2 par_name:rcs7d  worker_time:0.477017 concurrent:1
+04/17/23 12:43:09->run 21 processed
+04/17/23 12:43:09->Sending run_id:40 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_24 group_id:2 par_name:XW concurrent:1)
+04/17/23 12:43:09-> run_id:0 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.501967  avg_run_time:0.475691 group_id:2 par_name:__base__  worker_time:0.5 concurrent:1
+04/17/23 12:43:09->run 0 processed
+04/17/23 12:43:09->Sending run_id:41 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:2 par_name:YW concurrent:1)
+04/17/23 12:43:10-> run_id:13 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.489833  avg_run_time:0.476435 group_id:2 par_name:rcs3d  worker_time:0.4878 concurrent:1
+04/17/23 12:43:10->run 13 processed
+04/17/23 12:43:10->Sending run_id:42 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:2 par_name:X concurrent:1)
+04/17/23 12:43:10-> run_id:7 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.498967  avg_run_time:0.477562 group_id:2 par_name:ddgd  worker_time:0.496967 concurrent:1
+04/17/23 12:43:10->run 7 processed
+04/17/23 12:43:10->Sending run_id:43 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:2 par_name:Y concurrent:1)
+04/17/23 12:43:10-> run_id:23 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.485933  avg_run_time:0.47796 group_id:2 par_name:rcr1d  worker_time:0.4839 concurrent:1
+04/17/23 12:43:10->run 23 processed
+04/17/23 12:43:10->Sending run_id:44 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:2 par_name:TLR concurrent:1)
+04/17/23 12:43:10-> run_id:17 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.4916  avg_run_time:0.47858 group_id:2 par_name:rcs5d  worker_time:0.489667 concurrent:1
+04/17/23 12:43:10->run 17 processed
+04/17/23 12:43:10->Sending run_id:45 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:2 par_name:TLS concurrent:1)
+04/17/23 12:43:10-> run_id:18 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.495583  avg_run_time:0.47932 group_id:2 par_name:rcs5w  worker_time:0.493533 concurrent:1
+04/17/23 12:43:10->run 18 processed
+04/17/23 12:43:10->Sending run_id:46 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:2 par_name:TCRIT concurrent:1)
+04/17/23 12:43:11-> run_id:22 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.5059  avg_run_time:0.480427 group_id:2 par_name:rcs6w  worker_time:0.504067 concurrent:1
+04/17/23 12:43:11->run 22 processed
+04/17/23 12:43:23-> run_id:24 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.360917  avg_run_time:0.476422 group_id:2 par_name:rcr1w  worker_time:0.26305 concurrent:1
+04/17/23 12:43:23->run 24 processed
+04/17/23 12:43:23-> run_id:25 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.356283  avg_run_time:0.472599 group_id:2 par_name:rcr2d  worker_time:0.262833 concurrent:1
+04/17/23 12:43:23->run 25 processed
+04/17/23 12:43:24-> run_id:30 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.359083  avg_run_time:0.468069 group_id:2 par_name:rcr4w  worker_time:0.248383 concurrent:1
+04/17/23 12:43:24->run 30 processed
+04/17/23 12:43:24-> run_id:26 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.3666  avg_run_time:0.463981 group_id:2 par_name:rcr2w  worker_time:0.2667 concurrent:1
+04/17/23 12:43:24->run 26 processed
+04/17/23 12:43:24-> run_id:28 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.364667  avg_run_time:0.459978 group_id:2 par_name:rcr3w  worker_time:0.266683 concurrent:1
+04/17/23 12:43:24->run 28 processed
+04/17/23 12:43:25-> run_id:43 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.373  avg_run_time:0.45473 group_id:2 par_name:y  worker_time:0.244983 concurrent:1
+04/17/23 12:43:25->run 43 processed
+04/17/23 12:43:25-> run_id:29 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.370033  avg_run_time:0.450505 group_id:2 par_name:rcr4d  worker_time:0.266717 concurrent:1
+04/17/23 12:43:25->run 29 processed
+04/17/23 12:43:25-> run_id:27 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.375783  avg_run_time:0.446579 group_id:2 par_name:rcr3d  worker_time:0.279517 concurrent:1
+04/17/23 12:43:25->run 27 processed
+04/17/23 12:43:25-> run_id:37 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.378283  avg_run_time:0.441932 group_id:2 par_name:rcr8d  worker_time:0.264867 concurrent:1
+04/17/23 12:43:25->run 37 processed
+04/17/23 12:43:25-> run_id:36 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.376383  avg_run_time:0.437376 group_id:2 par_name:rcr7w  worker_time:0.265117 concurrent:1
+04/17/23 12:43:25->run 36 processed
+04/17/23 12:43:25-> run_id:40 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_24  run_time:0.370167  avg_run_time:0.432842 group_id:2 par_name:xw  worker_time:0.259383 concurrent:1
+04/17/23 12:43:25->run 40 processed
+04/17/23 12:43:25-> run_id:35 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.3804  avg_run_time:0.428349 group_id:2 par_name:rcr7d  worker_time:0.270533 concurrent:1
+04/17/23 12:43:25->run 35 processed
+04/17/23 12:43:25-> run_id:38 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.373667  avg_run_time:0.424041 group_id:2 par_name:tl  worker_time:0.268383 concurrent:1
+04/17/23 12:43:25->run 38 processed
+04/17/23 12:43:26-> run_id:39 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.376283  avg_run_time:0.419801 group_id:2 par_name:rcr8w  worker_time:0.272567 concurrent:1
+04/17/23 12:43:26->run 39 processed
+04/17/23 12:43:26-> run_id:31 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.378267  avg_run_time:0.415924 group_id:2 par_name:rcgd  worker_time:0.283383 concurrent:1
+04/17/23 12:43:26->run 31 processed
+04/17/23 12:43:26-> run_id:32 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.3838  avg_run_time:0.411878 group_id:2 par_name:rcr5d  worker_time:0.28495 concurrent:1
+04/17/23 12:43:26->run 32 processed
+04/17/23 12:43:26-> run_id:34 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.38755  avg_run_time:0.407689 group_id:2 par_name:rcr5w  worker_time:0.285183 concurrent:1
+04/17/23 12:43:26->run 34 processed
+04/17/23 12:43:26-> run_id:33 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.386683  avg_run_time:0.403694 group_id:2 par_name:rcgw  worker_time:0.28885 concurrent:1
+04/17/23 12:43:26->run 33 processed
+04/17/23 12:43:27-> run_id:41 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.3945  avg_run_time:0.399217 group_id:2 par_name:yw  worker_time:0.285017 concurrent:1
+04/17/23 12:43:27->run 41 processed
+04/17/23 12:43:27-> run_id:44 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.382733  avg_run_time:0.394917 group_id:2 par_name:tlr  worker_time:0.277717 concurrent:1
+04/17/23 12:43:27->run 44 processed
+04/17/23 12:43:27-> run_id:45 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.38565  avg_run_time:0.390502 group_id:2 par_name:tls  worker_time:0.277767 concurrent:1
+04/17/23 12:43:27->run 45 processed
+04/17/23 12:43:27-> run_id:42 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.389383  avg_run_time:0.386317 group_id:2 par_name:x  worker_time:0.28695 concurrent:1
+04/17/23 12:43:27->run 42 processed
+04/17/23 12:43:27-> run_id:46 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.387583  avg_run_time:0.381817 group_id:2 par_name:tcrit  worker_time:0.2778 concurrent:1
+04/17/23 12:43:27->run 46 processed
+
+---------------------
+   47 runs complete :  0 runs failed
+   0.382 avg run time (min) : 1.12 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:43:30->Started idle ping thread.
+04/17/23 12:43:30->Panther idle ping thread resumed.
+04/17/23 12:43:40->Panther idle ping thread paused prior to scheduling runs.
+running model 6 times
+04/17/23 12:43:40->    24 agents ready
+
+04/17/23 12:43:40->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:3 normal concurrent:1)
+04/17/23 12:43:40->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:3 scale(0.75) concurrent:1)
+04/17/23 12:43:40->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:3 normal concurrent:1)
+04/17/23 12:43:40->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:3 scale(0.75) concurrent:1)
+04/17/23 12:43:40->Sending run_id:5 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:3 normal concurrent:1)
+04/17/23 12:43:40->Sending run_id:6 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:3 scale(0.75) concurrent:1)
+04/17/23 12:43:53-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.216767  avg_run_time:0.216767 group_id:3 normal  worker_time:0.216267 concurrent:1
+04/17/23 12:43:53->run 1 processed
+04/17/23 12:43:53-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.217033  avg_run_time:0.2169 group_id:3 scale(0.75)  worker_time:0.21625 concurrent:1
+04/17/23 12:43:53->run 2 processed
+04/17/23 12:43:53-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.21895  avg_run_time:0.217583 group_id:3 normal  worker_time:0.21835 concurrent:1
+04/17/23 12:43:53->run 3 processed
+04/17/23 12:43:53-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.21925  avg_run_time:0.218 group_id:3 scale(0.75)  worker_time:0.218333 concurrent:1
+04/17/23 12:43:53->run 4 processed
+04/17/23 12:43:53-> run_id:5 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.219317  avg_run_time:0.218263 group_id:3 normal  worker_time:0.21835 concurrent:1
+04/17/23 12:43:53->run 5 processed
+04/17/23 12:43:53-> run_id:6 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.219383  avg_run_time:0.21845 group_id:3 scale(0.75)  worker_time:0.218333 concurrent:1
+04/17/23 12:43:53->run 6 processed
+
+---------------------
+   6 runs complete :  0 runs failed
+   0.218 avg run time (min) : 0.27 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:43:56->Panther idle ping thread resumed.
+04/17/23 12:43:57->Panther idle ping thread paused prior to scheduling runs.
+running model 46 times
+04/17/23 12:43:57->    24 agents ready
+
+04/17/23 12:43:57->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:4 par_name:DDSD concurrent:1)
+04/17/23 12:43:57->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:4 par_name:RCS8W concurrent:1)
+04/17/23 12:43:57->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:4 par_name:RCR6D concurrent:1)
+04/17/23 12:43:57->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:4 par_name:DDSW concurrent:1)
+04/17/23 12:43:57->Sending run_id:5 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:4 par_name:RCS8D concurrent:1)
+04/17/23 12:43:57->Sending run_id:6 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:4 par_name:RCR6W concurrent:1)
+04/17/23 12:43:57->Sending run_id:7 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:4 par_name:RCS1D concurrent:1)
+04/17/23 12:43:57->Sending run_id:8 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:4 par_name:DDGD concurrent:1)
+04/17/23 12:43:57->Sending run_id:9 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:4 par_name:RCS1W concurrent:1)
+04/17/23 12:43:57->Sending run_id:10 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:4 par_name:DDGW concurrent:1)
+04/17/23 12:43:57->Sending run_id:11 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:4 par_name:RCS2D concurrent:1)
+04/17/23 12:43:57->Sending run_id:12 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:4 par_name:RCS3W concurrent:1)
+04/17/23 12:43:57->Sending run_id:13 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:4 par_name:RCS2W concurrent:1)
+04/17/23 12:43:57->Sending run_id:14 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:4 par_name:RCS3D concurrent:1)
+04/17/23 12:43:57->Sending run_id:15 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:4 par_name:RCS4D concurrent:1)
+04/17/23 12:43:57->Sending run_id:16 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:4 par_name:RCS4W concurrent:1)
+04/17/23 12:43:57->Sending run_id:17 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:4 par_name:RCS5D concurrent:1)
+04/17/23 12:43:57->Sending run_id:18 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:4 par_name:RCS5W concurrent:1)
+04/17/23 12:43:57->Sending run_id:19 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:4 par_name:RCS6D concurrent:1)
+04/17/23 12:43:57->Sending run_id:20 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:4 par_name:RCS7W concurrent:1)
+04/17/23 12:43:57->Sending run_id:21 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:4 par_name:RCS6W concurrent:1)
+04/17/23 12:43:57->Sending run_id:22 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_24 group_id:4 par_name:RCS7D concurrent:1)
+04/17/23 12:43:57->Sending run_id:23 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:4 par_name:RCR1D concurrent:1)
+04/17/23 12:43:57->Sending run_id:24 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:4 par_name:RCR1W concurrent:1)
+04/17/23 12:44:12-> run_id:12 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.250667  avg_run_time:0.250667 group_id:4 par_name:rcs3w  worker_time:0.250067 concurrent:1
+04/17/23 12:44:12->run 12 processed
+04/17/23 12:44:12->Sending run_id:25 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:4 par_name:RCR2D concurrent:1)
+04/17/23 12:44:12-> run_id:5 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.252533  avg_run_time:0.2516 group_id:4 par_name:rcs8d  worker_time:0.25195 concurrent:1
+04/17/23 12:44:12->run 5 processed
+04/17/23 12:44:12-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.2527  avg_run_time:0.251967 group_id:4 par_name:ddsd  worker_time:0.25215 concurrent:1
+04/17/23 12:44:12->run 1 processed
+04/17/23 12:44:12->Sending run_id:26 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:4 par_name:RCR2W concurrent:1)
+04/17/23 12:44:12->Sending run_id:27 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:4 par_name:RCR3D concurrent:1)
+04/17/23 12:44:12-> run_id:11 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.254317  avg_run_time:0.252554 group_id:4 par_name:rcs2d  worker_time:0.253733 concurrent:1
+04/17/23 12:44:12->run 11 processed
+04/17/23 12:44:13->Sending run_id:28 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:4 par_name:RCR3W concurrent:1)
+04/17/23 12:44:13-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.255917  avg_run_time:0.253227 group_id:4 par_name:rcr6d  worker_time:0.25535 concurrent:1
+04/17/23 12:44:13->run 3 processed
+04/17/23 12:44:13->Sending run_id:29 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:4 par_name:RCR4D concurrent:1)
+04/17/23 12:44:13-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.2577  avg_run_time:0.253972 group_id:4 par_name:ddsw  worker_time:0.257167 concurrent:1
+04/17/23 12:44:13->run 4 processed
+04/17/23 12:44:13->Sending run_id:30 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:4 par_name:RCR4W concurrent:1)
+04/17/23 12:44:13-> run_id:8 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.258017  avg_run_time:0.25455 group_id:4 par_name:ddgd  worker_time:0.2574 concurrent:1
+04/17/23 12:44:13->run 8 processed
+04/17/23 12:44:13->Sending run_id:31 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:4 par_name:RCR5D concurrent:1)
+04/17/23 12:44:13-> run_id:21 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.259183  avg_run_time:0.255129 group_id:4 par_name:rcs6w  worker_time:0.258617 concurrent:1
+04/17/23 12:44:13->run 21 processed
+04/17/23 12:44:13->Sending run_id:32 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:4 par_name:RCGD concurrent:1)
+04/17/23 12:44:13-> run_id:10 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.259733  avg_run_time:0.255641 group_id:4 par_name:ddgw  worker_time:0.259167 concurrent:1
+04/17/23 12:44:13->run 10 processed
+04/17/23 12:44:13->Sending run_id:33 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:4 par_name:RCR5W concurrent:1)
+04/17/23 12:44:13-> run_id:7 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.270767  avg_run_time:0.257153 group_id:4 par_name:rcs1d  worker_time:0.270217 concurrent:1
+04/17/23 12:44:13->run 7 processed
+04/17/23 12:44:13->Sending run_id:34 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:4 par_name:RCGW concurrent:1)
+04/17/23 12:44:14-> run_id:19 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.272033  avg_run_time:0.258506 group_id:4 par_name:rcs6d  worker_time:0.27145 concurrent:1
+04/17/23 12:44:14->run 19 processed
+04/17/23 12:44:14->Sending run_id:35 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:4 par_name:RCR7D concurrent:1)
+04/17/23 12:44:14-> run_id:15 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.2726  avg_run_time:0.259681 group_id:4 par_name:rcs4d  worker_time:0.271983 concurrent:1
+04/17/23 12:44:14->run 15 processed
+04/17/23 12:44:14-> run_id:16 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.272767  avg_run_time:0.260687 group_id:4 par_name:rcs4w  worker_time:0.271983 concurrent:1
+04/17/23 12:44:14->run 16 processed
+04/17/23 12:44:14->Sending run_id:36 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:4 par_name:RCR7W concurrent:1)
+04/17/23 12:44:14->Sending run_id:37 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:4 par_name:RCR8D concurrent:1)
+04/17/23 12:44:14-> run_id:23 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.274167  avg_run_time:0.26165 group_id:4 par_name:rcr1d  worker_time:0.27355 concurrent:1
+04/17/23 12:44:14->run 23 processed
+04/17/23 12:44:14->Sending run_id:38 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:4 par_name:RCR8W concurrent:1)
+04/17/23 12:44:14-> run_id:9 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.27445  avg_run_time:0.262503 group_id:4 par_name:rcs1w  worker_time:0.273833 concurrent:1
+04/17/23 12:44:14->run 9 processed
+04/17/23 12:44:14-> run_id:13 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.27455  avg_run_time:0.263256 group_id:4 par_name:rcs2w  worker_time:0.273833 concurrent:1
+04/17/23 12:44:14->run 13 processed
+04/17/23 12:44:14->Sending run_id:39 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:4 par_name:TL concurrent:1)
+04/17/23 12:44:14->Sending run_id:40 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:4 par_name:XW concurrent:1)
+04/17/23 12:44:14-> run_id:18 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.27655  avg_run_time:0.264038 group_id:4 par_name:rcs5w  worker_time:0.275917 concurrent:1
+04/17/23 12:44:14->run 18 processed
+04/17/23 12:44:14->Sending run_id:41 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:4 par_name:YW concurrent:1)
+04/17/23 12:44:14-> run_id:20 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.277567  avg_run_time:0.26479 group_id:4 par_name:rcs7w  worker_time:0.276933 concurrent:1
+04/17/23 12:44:14->run 20 processed
+04/17/23 12:44:14->Sending run_id:42 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:4 par_name:X concurrent:1)
+04/17/23 12:44:14-> run_id:24 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.2852  avg_run_time:0.265864 group_id:4 par_name:rcr1w  worker_time:0.28455 concurrent:1
+04/17/23 12:44:14->run 24 processed
+04/17/23 12:44:14->Sending run_id:43 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:4 par_name:Y concurrent:1)
+04/17/23 12:44:15-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.294367  avg_run_time:0.267289 group_id:4 par_name:rcs8w  worker_time:0.293833 concurrent:1
+04/17/23 12:44:15->run 2 processed
+04/17/23 12:44:15->Sending run_id:44 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:4 par_name:TLR concurrent:1)
+04/17/23 12:44:15-> run_id:17 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.29465  avg_run_time:0.268592 group_id:4 par_name:rcs5d  worker_time:0.293983 concurrent:1
+04/17/23 12:44:15->run 17 processed
+04/17/23 12:44:15-> run_id:14 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.294867  avg_run_time:0.269786 group_id:4 par_name:rcs3d  worker_time:0.294 concurrent:1
+04/17/23 12:44:15->run 14 processed
+04/17/23 12:44:15->Sending run_id:45 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:4 par_name:TLS concurrent:1)
+04/17/23 12:44:15->Sending run_id:46 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:4 par_name:TCRIT concurrent:1)
+04/17/23 12:44:16-> run_id:6 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.307617  avg_run_time:0.271431 group_id:4 par_name:rcr6w  worker_time:0.307 concurrent:1
+04/17/23 12:44:16->run 6 processed
+04/17/23 12:44:17->rescheduling overdue run 22 (0.32465|0.271431 minutes) on: CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_24
+04/17/23 12:44:17->Sending run_id:22 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:4 par_name:RCS7D concurrent:2)
+04/17/23 12:44:17-> run_id:22 concurrent:2
+04/17/23 12:44:27-> run_id:27 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.2504  avg_run_time:0.271331 group_id:4 par_name:rcr3d  worker_time:0.246217 concurrent:1
+04/17/23 12:44:27->run 27 processed
+04/17/23 12:44:28-> run_id:29 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.25295  avg_run_time:0.271202 group_id:4 par_name:rcr4d  worker_time:0.247967 concurrent:1
+04/17/23 12:44:28->run 29 processed
+04/17/23 12:44:28-> run_id:28 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.253967  avg_run_time:0.271187 group_id:4 par_name:rcr3w  worker_time:0.25165 concurrent:1
+04/17/23 12:44:28->run 28 processed
+04/17/23 12:44:28-> run_id:33 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.255717  avg_run_time:0.271012 group_id:4 par_name:rcr5w  worker_time:0.249833 concurrent:1
+04/17/23 12:44:28->run 33 processed
+04/17/23 12:44:28-> run_id:26 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.258617  avg_run_time:0.271277 group_id:4 par_name:rcr2w  worker_time:0.262817 concurrent:1
+04/17/23 12:44:28->run 26 processed
+04/17/23 12:44:29-> run_id:30 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.261933  avg_run_time:0.271461 group_id:4 par_name:rcr4w  worker_time:0.26445 concurrent:1
+04/17/23 12:44:29->run 30 processed
+04/17/23 12:44:29-> run_id:39 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.263067  avg_run_time:0.270966 group_id:4 par_name:tl  worker_time:0.249983 concurrent:1
+04/17/23 12:44:29->run 39 processed
+04/17/23 12:44:29-> run_id:40 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.2662  avg_run_time:0.270603 group_id:4 par_name:xw  worker_time:0.255983 concurrent:1
+04/17/23 12:44:29->run 40 processed
+04/17/23 12:44:29-> run_id:25 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.266983  avg_run_time:0.271312 group_id:4 par_name:rcr2d  worker_time:0.281317 concurrent:1
+04/17/23 12:44:29->run 25 processed
+04/17/23 12:44:30-> run_id:32 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.271867  avg_run_time:0.271864 group_id:4 par_name:rcgd  worker_time:0.282733 concurrent:1
+04/17/23 12:44:30->run 32 processed
+04/17/23 12:44:30-> run_id:31 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.2723  avg_run_time:0.272485 group_id:4 par_name:rcr5d  worker_time:0.284617 concurrent:1
+04/17/23 12:44:30->run 31 processed
+04/17/23 12:44:30-> run_id:37 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.273217  avg_run_time:0.272504 group_id:4 par_name:rcr8d  worker_time:0.271717 concurrent:1
+04/17/23 12:44:30->run 37 processed
+04/17/23 12:44:30-> run_id:38 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.275767  avg_run_time:0.272574 group_id:4 par_name:rcr8w  worker_time:0.27535 concurrent:1
+04/17/23 12:44:30->run 38 processed
+04/17/23 12:44:30-> run_id:41 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.276917  avg_run_time:0.27259 group_id:4 par_name:yw  worker_time:0.275383 concurrent:1
+04/17/23 12:44:30->run 41 processed
+04/17/23 12:44:31-> run_id:34 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.277667  avg_run_time:0.27289 group_id:4 par_name:rcgw  worker_time:0.28265 concurrent:1
+04/17/23 12:44:31->run 34 processed
+04/17/23 12:44:31-> run_id:42 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.27775  avg_run_time:0.272898 group_id:4 par_name:x  worker_time:0.275617 concurrent:1
+04/17/23 12:44:31->run 42 processed
+04/17/23 12:44:31-> run_id:35 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.279233  avg_run_time:0.273211 group_id:4 par_name:rcr7d  worker_time:0.284533 concurrent:1
+04/17/23 12:44:31->run 35 processed
+04/17/23 12:44:31-> run_id:45 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.2823  avg_run_time:0.272674 group_id:4 par_name:tls  worker_time:0.268033 concurrent:1
+04/17/23 12:44:31->run 45 processed
+04/17/23 12:44:31-> run_id:46 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.284083  avg_run_time:0.272205 group_id:4 par_name:tcrit  worker_time:0.271467 concurrent:1
+04/17/23 12:44:31->run 46 processed
+04/17/23 12:44:32-> run_id:43 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.286617  avg_run_time:0.272267 group_id:4 par_name:y  worker_time:0.28615 concurrent:1
+04/17/23 12:44:32->run 43 processed
+04/17/23 12:44:32-> run_id:36 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.286833  avg_run_time:0.272886 group_id:4 par_name:rcr7w  worker_time:0.299033 concurrent:1
+04/17/23 12:44:32->run 36 processed
+04/17/23 12:44:32-> run_id:22 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.282683  avg_run_time:0.271801 group_id:4 par_name:rcs7d  worker_time:0.2575 concurrent:2
+04/17/23 12:44:32->sending kill request. reason:completed on alternative node run_id:22,  num_previous_fails:0 agent:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_24
+04/17/23 12:44:32->run 22 processed
+04/17/23 12:44:32-> run_id:44 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.2922  avg_run_time:0.271707 group_id:4 par_name:tlr  worker_time:0.288033 concurrent:1
+04/17/23 12:44:32->run 44 processed
+
+---------------------
+   46 runs complete :  0 runs failed
+   0.272 avg run time (min) : 0.635 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:44:35->Panther idle ping thread resumed.
+04/17/23 12:44:47->Panther idle ping thread paused prior to scheduling runs.
+running model 6 times
+04/17/23 12:44:47->    24 agents ready
+
+04/17/23 12:44:47->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:5 normal concurrent:1)
+04/17/23 12:44:47->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:5 scale(0.75) concurrent:1)
+04/17/23 12:44:47->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:5 normal concurrent:1)
+04/17/23 12:44:47->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:5 scale(0.75) concurrent:1)
+04/17/23 12:44:47->Sending run_id:5 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:5 normal concurrent:1)
+04/17/23 12:44:47->Sending run_id:6 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:5 scale(0.75) concurrent:1)
+04/17/23 12:45:00-> run_id:6 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.217367  avg_run_time:0.217367 group_id:5 scale(0.75)  worker_time:0.217 concurrent:1
+04/17/23 12:45:00->run 6 processed
+04/17/23 12:45:00-> run_id:5 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.21935  avg_run_time:0.218358 group_id:5 normal  worker_time:0.218867 concurrent:1
+04/17/23 12:45:00->run 5 processed
+04/17/23 12:45:00-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.2196  avg_run_time:0.218772 group_id:5 normal  worker_time:0.218833 concurrent:1
+04/17/23 12:45:00->run 1 processed
+04/17/23 12:45:00-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.219633  avg_run_time:0.218988 group_id:5 scale(0.75)  worker_time:0.218833 concurrent:1
+04/17/23 12:45:00->run 4 processed
+04/17/23 12:45:00-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.219683  avg_run_time:0.219127 group_id:5 normal  worker_time:0.218833 concurrent:1
+04/17/23 12:45:00->run 3 processed
+04/17/23 12:45:00-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.219817  avg_run_time:0.219242 group_id:5 scale(0.75)  worker_time:0.2189 concurrent:1
+04/17/23 12:45:00->run 2 processed
+
+---------------------
+   6 runs complete :  0 runs failed
+   0.219 avg run time (min) : 0.27 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:45:03->Panther idle ping thread resumed.
+04/17/23 12:45:05->Panther idle ping thread paused prior to scheduling runs.
+running model 92 times
+04/17/23 12:45:05->    24 agents ready
+
+04/17/23 12:45:05->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:6 par_name:DDSD concurrent:1)
+04/17/23 12:45:05->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:6 par_name:DDSD concurrent:1)
+04/17/23 12:45:05->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:6 par_name:RCS8W concurrent:1)
+04/17/23 12:45:05->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:6 par_name:RCS8W concurrent:1)
+04/17/23 12:45:05->Sending run_id:5 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:6 par_name:RCR6D concurrent:1)
+04/17/23 12:45:05->Sending run_id:6 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:6 par_name:RCR6D concurrent:1)
+04/17/23 12:45:05->Sending run_id:7 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:6 par_name:DDSW concurrent:1)
+04/17/23 12:45:05->Sending run_id:8 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:6 par_name:DDSW concurrent:1)
+04/17/23 12:45:05->Sending run_id:9 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:6 par_name:RCS8D concurrent:1)
+04/17/23 12:45:05->Sending run_id:10 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:6 par_name:RCS8D concurrent:1)
+04/17/23 12:45:05->Sending run_id:11 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:6 par_name:RCR6W concurrent:1)
+04/17/23 12:45:05->Sending run_id:12 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:6 par_name:RCR6W concurrent:1)
+04/17/23 12:45:05->Sending run_id:13 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:6 par_name:RCS1D concurrent:1)
+04/17/23 12:45:05->Sending run_id:14 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:6 par_name:RCS1D concurrent:1)
+04/17/23 12:45:05->Sending run_id:15 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:6 par_name:DDGD concurrent:1)
+04/17/23 12:45:05->Sending run_id:16 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:6 par_name:DDGD concurrent:1)
+04/17/23 12:45:05->Sending run_id:17 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:6 par_name:RCS1W concurrent:1)
+04/17/23 12:45:05->Sending run_id:18 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:6 par_name:RCS1W concurrent:1)
+04/17/23 12:45:05->Sending run_id:19 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:6 par_name:DDGW concurrent:1)
+04/17/23 12:45:05->Sending run_id:20 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:6 par_name:DDGW concurrent:1)
+04/17/23 12:45:05->Sending run_id:21 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:6 par_name:RCS2D concurrent:1)
+04/17/23 12:45:05->Sending run_id:22 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:6 par_name:RCS2D concurrent:1)
+04/17/23 12:45:05->Sending run_id:23 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:6 par_name:RCS3W concurrent:1)
+04/17/23 12:45:20-> run_id:9 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.250133  avg_run_time:0.250133 group_id:6 par_name:rcs8d  worker_time:0.249333 concurrent:1
+04/17/23 12:45:20->run 9 processed
+04/17/23 12:45:20->Sending run_id:24 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:6 par_name:RCS3W concurrent:1)
+04/17/23 12:45:20-> run_id:16 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.252233  avg_run_time:0.251183 group_id:6 par_name:ddgd  worker_time:0.251367 concurrent:1
+04/17/23 12:45:20->run 16 processed
+04/17/23 12:45:20->Sending run_id:25 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:6 par_name:RCS2W concurrent:1)
+04/17/23 12:45:20-> run_id:11 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.259333  avg_run_time:0.2539 group_id:6 par_name:rcr6w  worker_time:0.258533 concurrent:1
+04/17/23 12:45:20->run 11 processed
+04/17/23 12:45:20->Sending run_id:26 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:6 par_name:RCS2W concurrent:1)
+04/17/23 12:45:21-> run_id:23 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.2615  avg_run_time:0.2558 group_id:6 par_name:rcs3w  worker_time:0.260617 concurrent:1
+04/17/23 12:45:21->run 23 processed
+04/17/23 12:45:21->Sending run_id:27 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:6 par_name:RCS3D concurrent:1)
+04/17/23 12:45:21-> run_id:22 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.2707  avg_run_time:0.25878 group_id:6 par_name:rcs2d  worker_time:0.26985 concurrent:1
+04/17/23 12:45:21->run 22 processed
+04/17/23 12:45:21->Sending run_id:28 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:6 par_name:RCS3D concurrent:1)
+04/17/23 12:45:21-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.2718  avg_run_time:0.26095 group_id:6 par_name:ddsd  worker_time:0.271167 concurrent:1
+04/17/23 12:45:21->run 1 processed
+04/17/23 12:45:21->Sending run_id:29 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:6 par_name:RCS4D concurrent:1)
+04/17/23 12:45:21-> run_id:15 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.274183  avg_run_time:0.26284 group_id:6 par_name:ddgd  worker_time:0.273333 concurrent:1
+04/17/23 12:45:21->run 15 processed
+04/17/23 12:45:21-> run_id:18 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.274283  avg_run_time:0.264271 group_id:6 par_name:rcs1w  worker_time:0.2733 concurrent:1
+04/17/23 12:45:21->run 18 processed
+04/17/23 12:45:21->Sending run_id:30 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:6 par_name:RCS4D concurrent:1)
+04/17/23 12:45:21->Sending run_id:31 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:6 par_name:RCS4W concurrent:1)
+04/17/23 12:45:21-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.275933  avg_run_time:0.265567 group_id:6 par_name:rcs8w  worker_time:0.275183 concurrent:1
+04/17/23 12:45:21->run 3 processed
+04/17/23 12:45:21->Sending run_id:32 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:6 par_name:RCS4W concurrent:1)
+04/17/23 12:45:21-> run_id:17 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.276183  avg_run_time:0.266628 group_id:6 par_name:rcs1w  worker_time:0.27535 concurrent:1
+04/17/23 12:45:21->run 17 processed
+04/17/23 12:45:21->Sending run_id:33 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:6 par_name:RCS5D concurrent:1)
+04/17/23 12:45:22-> run_id:10 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.285017  avg_run_time:0.2683 group_id:6 par_name:rcs8d  worker_time:0.284233 concurrent:1
+04/17/23 12:45:22->run 10 processed
+04/17/23 12:45:22->Sending run_id:34 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:6 par_name:RCS5D concurrent:1)
+04/17/23 12:45:22-> run_id:21 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.285283  avg_run_time:0.269715 group_id:6 par_name:rcs2d  worker_time:0.284417 concurrent:1
+04/17/23 12:45:22->run 21 processed
+04/17/23 12:45:22->Sending run_id:35 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:6 par_name:RCS5W concurrent:1)
+04/17/23 12:45:22-> run_id:7 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.286633  avg_run_time:0.271017 group_id:6 par_name:ddsw  worker_time:0.285867 concurrent:1
+04/17/23 12:45:22->run 7 processed
+04/17/23 12:45:22->Sending run_id:36 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:6 par_name:RCS5W concurrent:1)
+04/17/23 12:45:22-> run_id:5 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.2885  avg_run_time:0.272265 group_id:6 par_name:rcr6d  worker_time:0.287717 concurrent:1
+04/17/23 12:45:22->run 5 processed
+04/17/23 12:45:22-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.288667  avg_run_time:0.273359 group_id:6 par_name:rcs8w  worker_time:0.287733 concurrent:1
+04/17/23 12:45:22->run 4 processed
+04/17/23 12:45:22->Sending run_id:37 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:6 par_name:RCS6D concurrent:1)
+04/17/23 12:45:22->Sending run_id:38 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:6 par_name:RCS6D concurrent:1)
+04/17/23 12:45:22-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.292133  avg_run_time:0.274532 group_id:6 par_name:ddsd  worker_time:0.291417 concurrent:1
+04/17/23 12:45:22->run 2 processed
+04/17/23 12:45:22->Sending run_id:39 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:6 par_name:RCS7W concurrent:1)
+04/17/23 12:45:22-> run_id:19 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.292383  avg_run_time:0.275582 group_id:6 par_name:ddgw  worker_time:0.2915 concurrent:1
+04/17/23 12:45:22->run 19 processed
+04/17/23 12:45:22-> run_id:6 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.292633  avg_run_time:0.27653 group_id:6 par_name:rcr6d  worker_time:0.2916 concurrent:1
+04/17/23 12:45:22->run 6 processed
+04/17/23 12:45:22-> run_id:14 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.292683  avg_run_time:0.27738 group_id:6 par_name:rcs1d  worker_time:0.291533 concurrent:1
+04/17/23 12:45:22->run 14 processed
+04/17/23 12:45:22->Sending run_id:40 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:6 par_name:RCS7W concurrent:1)
+04/17/23 12:45:22->Sending run_id:41 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:6 par_name:RCS6W concurrent:1)
+04/17/23 12:45:22->Sending run_id:42 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:6 par_name:RCS6W concurrent:1)
+04/17/23 12:45:23-> run_id:8 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.293967  avg_run_time:0.278209 group_id:6 par_name:ddsw  worker_time:0.293133 concurrent:1
+04/17/23 12:45:23->run 8 processed
+04/17/23 12:45:23-> run_id:13 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.294117  avg_run_time:0.278967 group_id:6 par_name:rcs1d  worker_time:0.293133 concurrent:1
+04/17/23 12:45:23->run 13 processed
+04/17/23 12:45:23->Sending run_id:43 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:6 par_name:RCS7D concurrent:1)
+04/17/23 12:45:23->Sending run_id:44 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:6 par_name:RCS7D concurrent:1)
+04/17/23 12:45:23-> run_id:20 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.29605  avg_run_time:0.279743 group_id:6 par_name:ddgw  worker_time:0.295133 concurrent:1
+04/17/23 12:45:23->run 20 processed
+04/17/23 12:45:23->Sending run_id:45 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:6 par_name:RCR1D concurrent:1)
+04/17/23 12:45:23-> run_id:12 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.303067  avg_run_time:0.280757 group_id:6 par_name:rcr6w  worker_time:0.302267 concurrent:1
+04/17/23 12:45:23->run 12 processed
+04/17/23 12:45:23->Sending run_id:46 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:6 par_name:RCR1D concurrent:1)
+04/17/23 12:45:35-> run_id:25 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.248633  avg_run_time:0.280601 group_id:6 par_name:rcs2w  worker_time:0.243067 concurrent:1
+04/17/23 12:45:35->run 25 processed
+04/17/23 12:45:35->Sending run_id:47 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:6 par_name:RCR1W concurrent:1)
+04/17/23 12:45:35-> run_id:24 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.25025  avg_run_time:0.280606 group_id:6 par_name:rcs3w  worker_time:0.248567 concurrent:1
+04/17/23 12:45:35->run 24 processed
+04/17/23 12:45:35->Sending run_id:48 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:6 par_name:RCR1W concurrent:1)
+04/17/23 12:45:36-> run_id:26 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.26155  avg_run_time:0.280702 group_id:6 par_name:rcs2w  worker_time:0.261467 concurrent:1
+04/17/23 12:45:36->run 26 processed
+04/17/23 12:45:36->Sending run_id:49 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:6 par_name:RCR2D concurrent:1)
+04/17/23 12:45:36-> run_id:30 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.261667  avg_run_time:0.280158 group_id:6 par_name:rcs4d  worker_time:0.247217 concurrent:1
+04/17/23 12:45:36->run 30 processed
+04/17/23 12:45:36-> run_id:27 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.2617  avg_run_time:0.280167 group_id:6 par_name:rcs3d  worker_time:0.259633 concurrent:1
+04/17/23 12:45:36->run 27 processed
+04/17/23 12:45:36->Sending run_id:50 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:6 par_name:RCR2D concurrent:1)
+04/17/23 12:45:36->Sending run_id:51 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:6 par_name:RCR2W concurrent:1)
+04/17/23 12:45:37-> run_id:29 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.2668  avg_run_time:0.279949 group_id:6 par_name:rcs4d  worker_time:0.259917 concurrent:1
+04/17/23 12:45:37->run 29 processed
+04/17/23 12:45:37->Sending run_id:52 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:6 par_name:RCR2W concurrent:1)
+04/17/23 12:45:37-> run_id:28 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.26795  avg_run_time:0.27983 group_id:6 par_name:rcs3d  worker_time:0.2634 concurrent:1
+04/17/23 12:45:37->run 28 processed
+04/17/23 12:45:37->Sending run_id:53 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:6 par_name:RCR3D concurrent:1)
+04/17/23 12:45:37-> run_id:31 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.270833  avg_run_time:0.27968 group_id:6 par_name:rcs4w  worker_time:0.26555 concurrent:1
+04/17/23 12:45:37->run 31 processed
+04/17/23 12:45:37->Sending run_id:54 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:6 par_name:RCR3D concurrent:1)
+04/17/23 12:45:37-> run_id:33 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.27175  avg_run_time:0.279487 group_id:6 par_name:rcs5d  worker_time:0.26535 concurrent:1
+04/17/23 12:45:37->run 33 processed
+04/17/23 12:45:38->Sending run_id:55 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:6 par_name:RCR3W concurrent:1)
+04/17/23 12:45:38-> run_id:36 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.273367  avg_run_time:0.27891 group_id:6 par_name:rcs5w  worker_time:0.258217 concurrent:1
+04/17/23 12:45:38->run 36 processed
+04/17/23 12:45:38->Sending run_id:56 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:6 par_name:RCR3W concurrent:1)
+04/17/23 12:45:38-> run_id:32 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.273483  avg_run_time:0.278804 group_id:6 par_name:rcs4w  worker_time:0.269067 concurrent:1
+04/17/23 12:45:38->run 32 processed
+04/17/23 12:45:38->Sending run_id:57 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:6 par_name:RCR4D concurrent:1)
+04/17/23 12:45:38-> run_id:43 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.275217  avg_run_time:0.277988 group_id:6 par_name:rcs7d  worker_time:0.25455 concurrent:1
+04/17/23 12:45:38->run 43 processed
+04/17/23 12:45:38->Sending run_id:58 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:6 par_name:RCR4D concurrent:1)
+04/17/23 12:45:38-> run_id:35 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.2798  avg_run_time:0.27775 group_id:6 par_name:rcs5w  worker_time:0.272583 concurrent:1
+04/17/23 12:45:38->run 35 processed
+04/17/23 12:45:38->Sending run_id:59 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:6 par_name:RCR4W concurrent:1)
+04/17/23 12:45:39-> run_id:34 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.280733  avg_run_time:0.277564 group_id:6 par_name:rcs5d  worker_time:0.274667 concurrent:1
+04/17/23 12:45:39->run 34 processed
+04/17/23 12:45:39->Sending run_id:60 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:6 par_name:RCR4W concurrent:1)
+04/17/23 12:45:39-> run_id:38 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.2835  avg_run_time:0.277339 group_id:6 par_name:rcs6d  worker_time:0.276467 concurrent:1
+04/17/23 12:45:39->run 38 processed
+04/17/23 12:45:39->Sending run_id:61 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:6 par_name:RCR5D concurrent:1)
+04/17/23 12:45:39-> run_id:42 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.283717  avg_run_time:0.276949 group_id:6 par_name:rcs6w  worker_time:0.272983 concurrent:1
+04/17/23 12:45:39->run 42 processed
+04/17/23 12:45:39->Sending run_id:62 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:6 par_name:RCR5D concurrent:1)
+04/17/23 12:45:39-> run_id:39 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.28425  avg_run_time:0.276607 group_id:6 par_name:rcs7w  worker_time:0.2746 concurrent:1
+04/17/23 12:45:39->run 39 processed
+04/17/23 12:45:39->Sending run_id:63 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:6 par_name:RCGD concurrent:1)
+04/17/23 12:45:39-> run_id:37 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.284333  avg_run_time:0.276425 group_id:6 par_name:rcs6d  worker_time:0.278283 concurrent:1
+04/17/23 12:45:39->run 37 processed
+04/17/23 12:45:39->Sending run_id:64 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:6 par_name:RCGD concurrent:1)
+04/17/23 12:45:39-> run_id:41 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.284733  avg_run_time:0.276082 group_id:6 par_name:rcs6w  worker_time:0.27505 concurrent:1
+04/17/23 12:45:39->run 41 processed
+04/17/23 12:45:39->Sending run_id:65 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:6 par_name:RCR5W concurrent:1)
+04/17/23 12:45:39-> run_id:44 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.2853  avg_run_time:0.275699 group_id:6 par_name:rcs7d  worker_time:0.274583 concurrent:1
+04/17/23 12:45:39->run 44 processed
+04/17/23 12:45:39->Sending run_id:66 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:6 par_name:RCR5W concurrent:1)
+04/17/23 12:45:39-> run_id:45 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.285533  avg_run_time:0.275241 group_id:6 par_name:rcr1d  worker_time:0.273033 concurrent:1
+04/17/23 12:45:39->run 45 processed
+04/17/23 12:45:39->Sending run_id:67 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:6 par_name:RCGW concurrent:1)
+04/17/23 12:45:39-> run_id:40 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.287233  avg_run_time:0.275017 group_id:6 par_name:rcs7w  worker_time:0.280317 concurrent:1
+04/17/23 12:45:39->run 40 processed
+04/17/23 12:45:39->Sending run_id:68 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:6 par_name:RCGW concurrent:1)
+04/17/23 12:45:40-> run_id:46 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.289833  avg_run_time:0.274442 group_id:6 par_name:rcr1d  worker_time:0.274583 concurrent:1
+04/17/23 12:45:40->run 46 processed
+04/17/23 12:45:40->Sending run_id:69 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:6 par_name:RCR7D concurrent:1)
+04/17/23 12:45:49-> run_id:47 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.245833  avg_run_time:0.27432 group_id:6 par_name:rcr1w  worker_time:0.241233 concurrent:1
+04/17/23 12:45:49->run 47 processed
+04/17/23 12:45:49->Sending run_id:70 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:6 par_name:RCR7D concurrent:1)
+04/17/23 12:45:50-> run_id:48 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.25335  avg_run_time:0.274455 group_id:6 par_name:rcr1w  worker_time:0.25445 concurrent:1
+04/17/23 12:45:50->run 48 processed
+04/17/23 12:45:50->Sending run_id:71 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:6 par_name:RCR7W concurrent:1)
+04/17/23 12:45:51-> run_id:50 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.256267  avg_run_time:0.27422 group_id:6 par_name:rcr2d  worker_time:0.248883 concurrent:1
+04/17/23 12:45:51->run 50 processed
+04/17/23 12:45:51->Sending run_id:72 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:6 par_name:RCR7W concurrent:1)
+04/17/23 12:45:52-> run_id:52 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.256717  avg_run_time:0.273782 group_id:6 par_name:rcr2w  worker_time:0.244617 concurrent:1
+04/17/23 12:45:52->run 52 processed
+04/17/23 12:45:52->Sending run_id:73 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:6 par_name:RCR8D concurrent:1)
+04/17/23 12:45:52-> run_id:49 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.264133  avg_run_time:0.273894 group_id:6 par_name:rcr2d  worker_time:0.26475 concurrent:1
+04/17/23 12:45:52->run 49 processed
+04/17/23 12:45:52->Sending run_id:74 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:6 par_name:RCR8D concurrent:1)
+04/17/23 12:45:52-> run_id:51 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.264367  avg_run_time:0.27401 group_id:6 par_name:rcr2w  worker_time:0.265167 concurrent:1
+04/17/23 12:45:52->run 51 processed
+04/17/23 12:45:52->Sending run_id:75 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:6 par_name:RCR8W concurrent:1)
+04/17/23 12:45:53-> run_id:53 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.265417  avg_run_time:0.2739 group_id:6 par_name:rcr3d  worker_time:0.26115 concurrent:1
+04/17/23 12:45:53->run 53 processed
+04/17/23 12:45:53->Sending run_id:76 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:6 par_name:RCR8W concurrent:1)
+04/17/23 12:45:54-> run_id:56 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.26925  avg_run_time:0.273721 group_id:6 par_name:rcr3w  worker_time:0.263083 concurrent:1
+04/17/23 12:45:54->run 56 processed
+04/17/23 12:45:54->Sending run_id:77 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:6 par_name:TL concurrent:1)
+04/17/23 12:45:54-> run_id:54 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.2769  avg_run_time:0.273985 group_id:6 par_name:rcr3d  worker_time:0.2812 concurrent:1
+04/17/23 12:45:54->run 54 processed
+04/17/23 12:45:54->Sending run_id:78 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:6 par_name:TL concurrent:1)
+04/17/23 12:45:55-> run_id:58 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.2784  avg_run_time:0.274123 group_id:6 par_name:rcr4d  worker_time:0.2796 concurrent:1
+04/17/23 12:45:55->run 58 processed
+04/17/23 12:45:55-> run_id:55 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.28025  avg_run_time:0.274493 group_id:6 par_name:rcr3w  worker_time:0.286833 concurrent:1
+04/17/23 12:45:55->run 55 processed
+04/17/23 12:45:55->Sending run_id:79 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:6 par_name:XW concurrent:1)
+04/17/23 12:45:55->Sending run_id:80 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:6 par_name:XW concurrent:1)
+04/17/23 12:45:55-> run_id:57 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.2802  avg_run_time:0.274785 group_id:6 par_name:rcr4d  worker_time:0.2849 concurrent:1
+04/17/23 12:45:55->run 57 processed
+04/17/23 12:45:55->Sending run_id:81 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:6 par_name:YW concurrent:1)
+04/17/23 12:45:56-> run_id:64 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.280183  avg_run_time:0.274604 group_id:6 par_name:rcgd  worker_time:0.273967 concurrent:1
+04/17/23 12:45:56->run 64 processed
+04/17/23 12:45:56->Sending run_id:82 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:6 par_name:YW concurrent:1)
+04/17/23 12:45:56-> run_id:67 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.281517  avg_run_time:0.27443 group_id:6 par_name:rcgw  worker_time:0.2756 concurrent:1
+04/17/23 12:45:56->run 67 processed
+04/17/23 12:45:56->Sending run_id:83 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:6 par_name:X concurrent:1)
+04/17/23 12:45:56-> run_id:59 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.285067  avg_run_time:0.274659 group_id:6 par_name:rcr4w  worker_time:0.288533 concurrent:1
+04/17/23 12:45:56->run 59 processed
+04/17/23 12:45:56->Sending run_id:84 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:6 par_name:X concurrent:1)
+04/17/23 12:45:56-> run_id:60 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.285517  avg_run_time:0.274867 group_id:6 par_name:rcr4w  worker_time:0.288583 concurrent:1
+04/17/23 12:45:56->run 60 processed
+04/17/23 12:45:56->Sending run_id:85 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:6 par_name:Y concurrent:1)
+04/17/23 12:45:56-> run_id:63 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.28755  avg_run_time:0.27501 group_id:6 par_name:rcgd  worker_time:0.28875 concurrent:1
+04/17/23 12:45:56->run 63 processed
+04/17/23 12:45:56-> run_id:61 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.288017  avg_run_time:0.275207 group_id:6 par_name:rcr5d  worker_time:0.290367 concurrent:1
+04/17/23 12:45:56->run 61 processed
+04/17/23 12:45:56->Sending run_id:86 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:6 par_name:Y concurrent:1)
+04/17/23 12:45:56-> run_id:62 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.287933  avg_run_time:0.27539 group_id:6 par_name:rcr5d  worker_time:0.290117 concurrent:1
+04/17/23 12:45:56->run 62 processed
+04/17/23 12:45:56->Sending run_id:87 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:6 par_name:TLR concurrent:1)
+04/17/23 12:45:56->Sending run_id:88 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:6 par_name:TLR concurrent:1)
+04/17/23 12:45:57-> run_id:65 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.288417  avg_run_time:0.27555 group_id:6 par_name:rcr5w  worker_time:0.2901 concurrent:1
+04/17/23 12:45:57->run 65 processed
+04/17/23 12:45:57->Sending run_id:89 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:6 par_name:TLS concurrent:1)
+04/17/23 12:45:57-> run_id:66 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.291467  avg_run_time:0.275818 group_id:6 par_name:rcr5w  worker_time:0.295733 concurrent:1
+04/17/23 12:45:57->run 66 processed
+04/17/23 12:45:57->Sending run_id:90 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:6 par_name:TLS concurrent:1)
+04/17/23 12:45:57-> run_id:68 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.290533  avg_run_time:0.275962 group_id:6 par_name:rcgw  worker_time:0.29185 concurrent:1
+04/17/23 12:45:57->run 68 processed
+04/17/23 12:45:57->Sending run_id:91 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:6 par_name:TCRIT concurrent:1)
+04/17/23 12:45:57-> run_id:69 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.290283  avg_run_time:0.275981 group_id:6 par_name:rcr7d  worker_time:0.288717 concurrent:1
+04/17/23 12:45:57->run 69 processed
+04/17/23 12:45:57->Sending run_id:92 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:6 par_name:TCRIT concurrent:1)
+04/17/23 12:46:06-> run_id:70 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.258817  avg_run_time:0.276546 group_id:6 par_name:rcr7d  worker_time:0.2699 concurrent:1
+04/17/23 12:46:06->run 70 processed
+04/17/23 12:46:07-> run_id:73 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.256167  avg_run_time:0.276522 group_id:6 par_name:rcr8d  worker_time:0.253583 concurrent:1
+04/17/23 12:46:07->run 73 processed
+04/17/23 12:46:08-> run_id:71 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.270983  avg_run_time:0.277288 group_id:6 par_name:rcr7w  worker_time:0.286633 concurrent:1
+04/17/23 12:46:08->run 71 processed
+04/17/23 12:46:08-> run_id:75 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.260983  avg_run_time:0.277141 group_id:6 par_name:rcr8w  worker_time:0.255783 concurrent:1
+04/17/23 12:46:08->run 75 processed
+04/17/23 12:46:09-> run_id:72 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.2743  avg_run_time:0.277925 group_id:6 par_name:rcr7w  worker_time:0.2903 concurrent:1
+04/17/23 12:46:09->run 72 processed
+04/17/23 12:46:09-> run_id:76 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.270467  avg_run_time:0.278145 group_id:6 par_name:rcr8w  worker_time:0.2735 concurrent:1
+04/17/23 12:46:09->run 76 processed
+04/17/23 12:46:10-> run_id:74 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.276367  avg_run_time:0.278677 group_id:6 par_name:rcr8d  worker_time:0.28655 concurrent:1
+04/17/23 12:46:10->run 74 processed
+04/17/23 12:46:10-> run_id:77 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.26975  avg_run_time:0.278699 group_id:6 par_name:tl  worker_time:0.26825 concurrent:1
+04/17/23 12:46:10->run 77 processed
+04/17/23 12:46:11-> run_id:78 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.27425  avg_run_time:0.278583 group_id:6 par_name:tl  worker_time:0.269817 concurrent:1
+04/17/23 12:46:11->run 78 processed
+04/17/23 12:46:11-> run_id:80 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.275433  avg_run_time:0.278374 group_id:6 par_name:xw  worker_time:0.268917 concurrent:1
+04/17/23 12:46:11->run 80 processed
+04/17/23 12:46:12-> run_id:83 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.2741  avg_run_time:0.278051 group_id:6 par_name:x  worker_time:0.26475 concurrent:1
+04/17/23 12:46:12->run 83 processed
+04/17/23 12:46:12-> run_id:79 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.28105  avg_run_time:0.278167 group_id:6 par_name:xw  worker_time:0.281833 concurrent:1
+04/17/23 12:46:12->run 79 processed
+04/17/23 12:46:12-> run_id:82 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.278167  avg_run_time:0.278079 group_id:6 par_name:yw  worker_time:0.274417 concurrent:1
+04/17/23 12:46:12->run 82 processed
+04/17/23 12:46:12-> run_id:84 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.278417  avg_run_time:0.27779 group_id:6 par_name:x  worker_time:0.27 concurrent:1
+04/17/23 12:46:12->run 84 processed
+04/17/23 12:46:12-> run_id:81 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.284267  avg_run_time:0.277967 group_id:6 par_name:yw  worker_time:0.286383 concurrent:1
+04/17/23 12:46:12->run 81 processed
+04/17/23 12:46:13-> run_id:91 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.275133  avg_run_time:0.277297 group_id:6 par_name:tcrit  worker_time:0.25775 concurrent:1
+04/17/23 12:46:13->run 91 processed
+04/17/23 12:46:13-> run_id:85 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.2814  avg_run_time:0.277118 group_id:6 par_name:y  worker_time:0.2756 concurrent:1
+04/17/23 12:46:13->run 85 processed
+04/17/23 12:46:13-> run_id:87 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.281017  avg_run_time:0.276814 group_id:6 par_name:tlr  worker_time:0.272217 concurrent:1
+04/17/23 12:46:13->run 87 processed
+04/17/23 12:46:13-> run_id:86 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.281783  avg_run_time:0.276563 group_id:6 par_name:y  worker_time:0.274033 concurrent:1
+04/17/23 12:46:13->run 86 processed
+04/17/23 12:46:13-> run_id:88 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.282883  avg_run_time:0.276343 group_id:6 par_name:tlr  worker_time:0.275883 concurrent:1
+04/17/23 12:46:13->run 88 processed
+04/17/23 12:46:13-> run_id:89 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.283017  avg_run_time:0.276109 group_id:6 par_name:tls  worker_time:0.27565 concurrent:1
+04/17/23 12:46:13->run 89 processed
+04/17/23 12:46:13-> run_id:92 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.281217  avg_run_time:0.275714 group_id:6 par_name:tcrit  worker_time:0.270283 concurrent:1
+04/17/23 12:46:13->run 92 processed
+04/17/23 12:46:14-> run_id:90 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.286467  avg_run_time:0.275497 group_id:6 par_name:tls  worker_time:0.279683 concurrent:1
+04/17/23 12:46:14->run 90 processed
+
+---------------------
+   92 runs complete :  0 runs failed
+   0.275 avg run time (min) : 1.2 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:46:17->Panther idle ping thread resumed.
+04/17/23 12:46:31->Panther idle ping thread paused prior to scheduling runs.
+running model 6 times
+04/17/23 12:46:31->    24 agents ready
+
+04/17/23 12:46:31->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:7 normal concurrent:1)
+04/17/23 12:46:31->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:7 scale(0.75) concurrent:1)
+04/17/23 12:46:31->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:7 normal concurrent:1)
+04/17/23 12:46:31->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:7 scale(0.75) concurrent:1)
+04/17/23 12:46:31->Sending run_id:5 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:7 normal concurrent:1)
+04/17/23 12:46:31->Sending run_id:6 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:7 scale(0.75) concurrent:1)
+04/17/23 12:46:43-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.202167  avg_run_time:0.202167 group_id:7 scale(0.75)  worker_time:0.201617 concurrent:1
+04/17/23 12:46:43->run 2 processed
+04/17/23 12:46:44-> run_id:6 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.2168  avg_run_time:0.209483 group_id:7 scale(0.75)  worker_time:0.216267 concurrent:1
+04/17/23 12:46:44->run 6 processed
+04/17/23 12:46:44-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.218783  avg_run_time:0.212583 group_id:7 normal  worker_time:0.218083 concurrent:1
+04/17/23 12:46:44->run 3 processed
+04/17/23 12:46:44-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.219083  avg_run_time:0.214208 group_id:7 normal  worker_time:0.218117 concurrent:1
+04/17/23 12:46:44->run 1 processed
+04/17/23 12:46:44-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.219183  avg_run_time:0.215203 group_id:7 scale(0.75)  worker_time:0.2181 concurrent:1
+04/17/23 12:46:44->run 4 processed
+04/17/23 12:46:44-> run_id:5 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.2194  avg_run_time:0.215903 group_id:7 normal  worker_time:0.218567 concurrent:1
+04/17/23 12:46:44->run 5 processed
+
+---------------------
+   6 runs complete :  0 runs failed
+   0.216 avg run time (min) : 0.27 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:46:47->Panther idle ping thread resumed.
+04/17/23 12:46:47->Panther idle ping thread paused prior to scheduling runs.
+running model 92 times
+04/17/23 12:46:47->    24 agents ready
+
+04/17/23 12:46:47->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:8 par_name:DDSD concurrent:1)
+04/17/23 12:46:47->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:8 par_name:DDSD concurrent:1)
+04/17/23 12:46:47->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:8 par_name:RCS8W concurrent:1)
+04/17/23 12:46:47->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:8 par_name:RCS8W concurrent:1)
+04/17/23 12:46:47->Sending run_id:5 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:8 par_name:RCR6D concurrent:1)
+04/17/23 12:46:47->Sending run_id:6 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:8 par_name:RCR6D concurrent:1)
+04/17/23 12:46:47->Sending run_id:7 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:8 par_name:DDSW concurrent:1)
+04/17/23 12:46:47->Sending run_id:8 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:8 par_name:DDSW concurrent:1)
+04/17/23 12:46:47->Sending run_id:9 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:8 par_name:RCS8D concurrent:1)
+04/17/23 12:46:47->Sending run_id:10 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:8 par_name:RCS8D concurrent:1)
+04/17/23 12:46:47->Sending run_id:11 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:8 par_name:RCR6W concurrent:1)
+04/17/23 12:46:47->Sending run_id:12 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:8 par_name:RCR6W concurrent:1)
+04/17/23 12:46:47->Sending run_id:13 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:8 par_name:RCS1D concurrent:1)
+04/17/23 12:46:47->Sending run_id:14 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:8 par_name:RCS1D concurrent:1)
+04/17/23 12:46:47->Sending run_id:15 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:8 par_name:DDGD concurrent:1)
+04/17/23 12:46:47->Sending run_id:16 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:8 par_name:DDGD concurrent:1)
+04/17/23 12:46:47->Sending run_id:17 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:8 par_name:RCS1W concurrent:1)
+04/17/23 12:46:47->Sending run_id:18 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:8 par_name:RCS1W concurrent:1)
+04/17/23 12:46:47->Sending run_id:19 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:8 par_name:DDGW concurrent:1)
+04/17/23 12:46:47->Sending run_id:20 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:8 par_name:DDGW concurrent:1)
+04/17/23 12:46:47->Sending run_id:21 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:8 par_name:RCS2D concurrent:1)
+04/17/23 12:46:47->Sending run_id:22 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:8 par_name:RCS2D concurrent:1)
+04/17/23 12:46:47->Sending run_id:23 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:8 par_name:RCS3W concurrent:1)
+04/17/23 12:47:03-> run_id:12 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.255867  avg_run_time:0.255867 group_id:8 par_name:rcr6w  worker_time:0.2548 concurrent:1
+04/17/23 12:47:03->run 12 processed
+04/17/23 12:47:03->Sending run_id:24 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:8 par_name:RCS3W concurrent:1)
+04/17/23 12:47:03-> run_id:21 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.257117  avg_run_time:0.256492 group_id:8 par_name:rcs2d  worker_time:0.256083 concurrent:1
+04/17/23 12:47:03->run 21 processed
+04/17/23 12:47:03->Sending run_id:25 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:8 par_name:RCS2W concurrent:1)
+04/17/23 12:47:03-> run_id:5 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.259317  avg_run_time:0.257433 group_id:8 par_name:rcr6d  worker_time:0.25825 concurrent:1
+04/17/23 12:47:03->run 5 processed
+04/17/23 12:47:03->Sending run_id:26 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:8 par_name:RCS2W concurrent:1)
+04/17/23 12:47:03-> run_id:15 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.259483  avg_run_time:0.257946 group_id:8 par_name:ddgd  worker_time:0.258467 concurrent:1
+04/17/23 12:47:03->run 15 processed
+04/17/23 12:47:03->Sending run_id:27 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:8 par_name:RCS3D concurrent:1)
+04/17/23 12:47:03-> run_id:11 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.26135  avg_run_time:0.258627 group_id:8 par_name:rcr6w  worker_time:0.260283 concurrent:1
+04/17/23 12:47:03->run 11 processed
+04/17/23 12:47:03->Sending run_id:28 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:8 par_name:RCS3D concurrent:1)
+04/17/23 12:47:03-> run_id:14 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.264967  avg_run_time:0.259683 group_id:8 par_name:rcs1d  worker_time:0.263967 concurrent:1
+04/17/23 12:47:03->run 14 processed
+04/17/23 12:47:03->Sending run_id:29 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:8 par_name:RCS4D concurrent:1)
+04/17/23 12:47:03-> run_id:23 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.268117  avg_run_time:0.260888 group_id:8 par_name:rcs3w  worker_time:0.2671 concurrent:1
+04/17/23 12:47:03->run 23 processed
+04/17/23 12:47:03-> run_id:18 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.268233  avg_run_time:0.261806 group_id:8 par_name:rcs1w  worker_time:0.2671 concurrent:1
+04/17/23 12:47:03->run 18 processed
+04/17/23 12:47:03->Sending run_id:30 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:8 par_name:RCS4D concurrent:1)
+04/17/23 12:47:03->Sending run_id:31 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:8 par_name:RCS4W concurrent:1)
+04/17/23 12:47:04-> run_id:20 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.270733  avg_run_time:0.262798 group_id:8 par_name:ddgw  worker_time:0.2697 concurrent:1
+04/17/23 12:47:04->run 20 processed
+04/17/23 12:47:04->Sending run_id:32 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:8 par_name:RCS4W concurrent:1)
+04/17/23 12:47:04-> run_id:7 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.272067  avg_run_time:0.263725 group_id:8 par_name:ddsw  worker_time:0.271067 concurrent:1
+04/17/23 12:47:04->run 7 processed
+04/17/23 12:47:04-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.272183  avg_run_time:0.264494 group_id:8 par_name:rcs8w  worker_time:0.271083 concurrent:1
+04/17/23 12:47:04->run 4 processed
+04/17/23 12:47:04->Sending run_id:33 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:8 par_name:RCS5D concurrent:1)
+04/17/23 12:47:04->Sending run_id:34 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:8 par_name:RCS5D concurrent:1)
+04/17/23 12:47:04-> run_id:22 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.27355  avg_run_time:0.265249 group_id:8 par_name:rcs2d  worker_time:0.27255 concurrent:1
+04/17/23 12:47:04->run 22 processed
+04/17/23 12:47:04->Sending run_id:35 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:8 par_name:RCS5W concurrent:1)
+04/17/23 12:47:04-> run_id:6 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.273883  avg_run_time:0.265913 group_id:8 par_name:rcr6d  worker_time:0.272867 concurrent:1
+04/17/23 12:47:04->run 6 processed
+04/17/23 12:47:04->Sending run_id:36 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:8 par_name:RCS5W concurrent:1)
+04/17/23 12:47:04-> run_id:19 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.27435  avg_run_time:0.266515 group_id:8 par_name:ddgw  worker_time:0.273317 concurrent:1
+04/17/23 12:47:04->run 19 processed
+04/17/23 12:47:04->Sending run_id:37 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:8 par_name:RCS6D concurrent:1)
+04/17/23 12:47:04-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.27545  avg_run_time:0.267111 group_id:8 par_name:ddsd  worker_time:0.274683 concurrent:1
+04/17/23 12:47:04->run 1 processed
+04/17/23 12:47:04->Sending run_id:38 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:8 par_name:RCS6D concurrent:1)
+04/17/23 12:47:04-> run_id:8 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.27595  avg_run_time:0.267664 group_id:8 par_name:ddsw  worker_time:0.274867 concurrent:1
+04/17/23 12:47:04->run 8 processed
+04/17/23 12:47:04->Sending run_id:39 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:8 par_name:RCS7W concurrent:1)
+04/17/23 12:47:04-> run_id:10 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.277683  avg_run_time:0.268253 group_id:8 par_name:rcs8d  worker_time:0.276817 concurrent:1
+04/17/23 12:47:04->run 10 processed
+04/17/23 12:47:04-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.277867  avg_run_time:0.268787 group_id:8 par_name:rcs8w  worker_time:0.276717 concurrent:1
+04/17/23 12:47:04->run 3 processed
+04/17/23 12:47:04->Sending run_id:40 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:8 par_name:RCS7W concurrent:1)
+04/17/23 12:47:04-> run_id:13 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.278  avg_run_time:0.269272 group_id:8 par_name:rcs1d  worker_time:0.276933 concurrent:1
+04/17/23 12:47:04->run 13 processed
+04/17/23 12:47:04->Sending run_id:41 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:8 par_name:RCS6W concurrent:1)
+04/17/23 12:47:04->Sending run_id:42 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:8 par_name:RCS6W concurrent:1)
+04/17/23 12:47:04-> run_id:17 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.2792  avg_run_time:0.269768 group_id:8 par_name:rcs1w  worker_time:0.278167 concurrent:1
+04/17/23 12:47:04->run 17 processed
+04/17/23 12:47:04->Sending run_id:43 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:8 par_name:RCS7D concurrent:1)
+04/17/23 12:47:04-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.279533  avg_run_time:0.270233 group_id:8 par_name:ddsd  worker_time:0.278567 concurrent:1
+04/17/23 12:47:04->run 2 processed
+04/17/23 12:47:04->Sending run_id:44 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:8 par_name:RCS7D concurrent:1)
+04/17/23 12:47:04-> run_id:16 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.279783  avg_run_time:0.270667 group_id:8 par_name:ddgd  worker_time:0.2787 concurrent:1
+04/17/23 12:47:04->run 16 processed
+04/17/23 12:47:04->Sending run_id:45 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:8 par_name:RCR1D concurrent:1)
+04/17/23 12:47:05-> run_id:9 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.288883  avg_run_time:0.271459 group_id:8 par_name:rcs8d  worker_time:0.287817 concurrent:1
+04/17/23 12:47:05->run 9 processed
+04/17/23 12:47:05->Sending run_id:46 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:8 par_name:RCR1D concurrent:1)
+04/17/23 12:47:18-> run_id:25 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.252217  avg_run_time:0.271246 group_id:8 par_name:rcs2w  worker_time:0.2455 concurrent:1
+04/17/23 12:47:18->run 25 processed
+04/17/23 12:47:18->Sending run_id:47 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:8 par_name:RCR1W concurrent:1)
+04/17/23 12:47:18-> run_id:27 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.2542  avg_run_time:0.271017 group_id:8 par_name:rcs3d  worker_time:0.247017 concurrent:1
+04/17/23 12:47:18->run 27 processed
+04/17/23 12:47:18-> run_id:26 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.254267  avg_run_time:0.270797 group_id:8 par_name:rcs2w  worker_time:0.247033 concurrent:1
+04/17/23 12:47:18->run 26 processed
+04/17/23 12:47:18->Sending run_id:48 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:8 par_name:RCR1W concurrent:1)
+04/17/23 12:47:18->Sending run_id:49 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:8 par_name:RCR2D concurrent:1)
+04/17/23 12:47:18-> run_id:24 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.259717  avg_run_time:0.270964 group_id:8 par_name:rcs3w  worker_time:0.261583 concurrent:1
+04/17/23 12:47:18->run 24 processed
+04/17/23 12:47:18->Sending run_id:50 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:8 par_name:RCR2D concurrent:1)
+04/17/23 12:47:19-> run_id:31 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.265883  avg_run_time:0.270862 group_id:8 par_name:rcs4w  worker_time:0.261483 concurrent:1
+04/17/23 12:47:19->run 31 processed
+04/17/23 12:47:19->Sending run_id:51 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:8 par_name:RCR2W concurrent:1)
+04/17/23 12:47:19-> run_id:42 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.26625  avg_run_time:0.270351 group_id:8 par_name:rcs6w  worker_time:0.252583 concurrent:1
+04/17/23 12:47:19->run 42 processed
+04/17/23 12:47:19->Sending run_id:52 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:8 par_name:RCR2W concurrent:1)
+04/17/23 12:47:19-> run_id:30 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.26755  avg_run_time:0.270327 group_id:8 par_name:rcs4d  worker_time:0.264983 concurrent:1
+04/17/23 12:47:19->run 30 processed
+04/17/23 12:47:19->Sending run_id:53 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:8 par_name:RCR3D concurrent:1)
+04/17/23 12:47:19-> run_id:35 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.268467  avg_run_time:0.270106 group_id:8 par_name:rcs5w  worker_time:0.2614 concurrent:1
+04/17/23 12:47:19->run 35 processed
+04/17/23 12:47:20->Sending run_id:54 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:8 par_name:RCR3D concurrent:1)
+04/17/23 12:47:20-> run_id:34 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.271483  avg_run_time:0.270075 group_id:8 par_name:rcs5d  worker_time:0.26885 concurrent:1
+04/17/23 12:47:20->run 34 processed
+04/17/23 12:47:20-> run_id:33 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.271533  avg_run_time:0.270052 group_id:8 par_name:rcs5d  worker_time:0.26885 concurrent:1
+04/17/23 12:47:20->run 33 processed
+04/17/23 12:47:20->Sending run_id:55 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:8 par_name:RCR3W concurrent:1)
+04/17/23 12:47:20->Sending run_id:56 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:8 par_name:RCR3W concurrent:1)
+04/17/23 12:47:20-> run_id:29 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.272317  avg_run_time:0.270372 group_id:8 par_name:rcs4d  worker_time:0.277967 concurrent:1
+04/17/23 12:47:20->run 29 processed
+04/17/23 12:47:20->Sending run_id:57 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:8 par_name:RCR4D concurrent:1)
+04/17/23 12:47:20-> run_id:36 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.2733  avg_run_time:0.270346 group_id:8 par_name:rcs5w  worker_time:0.2707 concurrent:1
+04/17/23 12:47:20->run 36 processed
+04/17/23 12:47:20->Sending run_id:58 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:8 par_name:RCR4D concurrent:1)
+04/17/23 12:47:20-> run_id:28 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.2734  avg_run_time:0.27087 group_id:8 par_name:rcs3d  worker_time:0.283483 concurrent:1
+04/17/23 12:47:20->run 28 processed
+04/17/23 12:47:20->Sending run_id:59 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:8 par_name:RCR4W concurrent:1)
+04/17/23 12:47:20-> run_id:40 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.274233  avg_run_time:0.27072 group_id:8 par_name:rcs7w  worker_time:0.268917 concurrent:1
+04/17/23 12:47:20->run 40 processed
+04/17/23 12:47:20->Sending run_id:60 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:8 par_name:RCR4W concurrent:1)
+04/17/23 12:47:20-> run_id:41 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.275317  avg_run_time:0.270609 group_id:8 par_name:rcs6w  worker_time:0.271 concurrent:1
+04/17/23 12:47:20->run 41 processed
+04/17/23 12:47:20->Sending run_id:61 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:8 par_name:RCR5D concurrent:1)
+04/17/23 12:47:21-> run_id:43 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.2769  avg_run_time:0.270509 group_id:8 par_name:rcs7d  worker_time:0.2726 concurrent:1
+04/17/23 12:47:21->run 43 processed
+04/17/23 12:47:21->Sending run_id:62 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:8 par_name:RCR5D concurrent:1)
+04/17/23 12:47:21-> run_id:32 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.280817  avg_run_time:0.270948 group_id:8 par_name:rcs4w  worker_time:0.28895 concurrent:1
+04/17/23 12:47:21->run 32 processed
+04/17/23 12:47:21->Sending run_id:63 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:8 par_name:RCGD concurrent:1)
+04/17/23 12:47:21-> run_id:38 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.281233  avg_run_time:0.271199 group_id:8 par_name:rcs6d  worker_time:0.28515 concurrent:1
+04/17/23 12:47:21->run 38 processed
+04/17/23 12:47:21->Sending run_id:64 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:8 par_name:RCGD concurrent:1)
+04/17/23 12:47:21-> run_id:37 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.28255  avg_run_time:0.271556 group_id:8 par_name:rcs6d  worker_time:0.288833 concurrent:1
+04/17/23 12:47:21->run 37 processed
+04/17/23 12:47:21->Sending run_id:65 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:8 par_name:RCR5W concurrent:1)
+04/17/23 12:47:21-> run_id:39 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.2835  avg_run_time:0.271884 group_id:8 par_name:rcs7w  worker_time:0.289017 concurrent:1
+04/17/23 12:47:21->run 39 processed
+04/17/23 12:47:21->Sending run_id:66 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:8 par_name:RCR5W concurrent:1)
+04/17/23 12:47:21-> run_id:45 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.28365  avg_run_time:0.272052 group_id:8 par_name:rcr1d  worker_time:0.285383 concurrent:1
+04/17/23 12:47:21->run 45 processed
+04/17/23 12:47:21->Sending run_id:67 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:8 par_name:RCGW concurrent:1)
+04/17/23 12:47:22-> run_id:44 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.28625  avg_run_time:0.272344 group_id:8 par_name:rcs7d  worker_time:0.290967 concurrent:1
+04/17/23 12:47:22->run 44 processed
+04/17/23 12:47:22->Sending run_id:68 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:8 par_name:RCGW concurrent:1)
+04/17/23 12:47:22-> run_id:46 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.288967  avg_run_time:0.272348 group_id:8 par_name:rcr1d  worker_time:0.28715 concurrent:1
+04/17/23 12:47:22->run 46 processed
+04/17/23 12:47:22->Sending run_id:69 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:8 par_name:RCR7D concurrent:1)
+04/17/23 12:47:33-> run_id:48 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.252483  avg_run_time:0.272273 group_id:8 par_name:rcr1w  worker_time:0.248933 concurrent:1
+04/17/23 12:47:33->run 48 processed
+04/17/23 12:47:33->Sending run_id:70 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:8 par_name:RCR7D concurrent:1)
+04/17/23 12:47:34-> run_id:49 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.259933  avg_run_time:0.27252 group_id:8 par_name:rcr2d  worker_time:0.26375 concurrent:1
+04/17/23 12:47:34->run 49 processed
+04/17/23 12:47:34->Sending run_id:71 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:8 par_name:RCR7W concurrent:1)
+04/17/23 12:47:34-> run_id:47 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.261517  avg_run_time:0.272924 group_id:8 par_name:rcr1w  worker_time:0.2689 concurrent:1
+04/17/23 12:47:34->run 47 processed
+04/17/23 12:47:34->Sending run_id:72 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:8 par_name:RCR7W concurrent:1)
+04/17/23 12:47:35-> run_id:53 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.260117  avg_run_time:0.272601 group_id:8 par_name:rcr3d  worker_time:0.25065 concurrent:1
+04/17/23 12:47:35->run 53 processed
+04/17/23 12:47:35->Sending run_id:73 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:8 par_name:RCR8D concurrent:1)
+04/17/23 12:47:35-> run_id:50 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.26445  avg_run_time:0.272807 group_id:8 par_name:rcr2d  worker_time:0.267283 concurrent:1
+04/17/23 12:47:35->run 50 processed
+04/17/23 12:47:35->Sending run_id:74 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:8 par_name:RCR8D concurrent:1)
+04/17/23 12:47:35-> run_id:56 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.262033  avg_run_time:0.272393 group_id:8 par_name:rcr3w  worker_time:0.250633 concurrent:1
+04/17/23 12:47:35->run 56 processed
+04/17/23 12:47:35->Sending run_id:75 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:8 par_name:RCR8W concurrent:1)
+04/17/23 12:47:35-> run_id:51 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.2665  avg_run_time:0.27242 group_id:8 par_name:rcr2w  worker_time:0.265167 concurrent:1
+04/17/23 12:47:35->run 51 processed
+04/17/23 12:47:35->Sending run_id:76 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:8 par_name:RCR8W concurrent:1)
+04/17/23 12:47:35-> run_id:52 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.268483  avg_run_time:0.272517 group_id:8 par_name:rcr2w  worker_time:0.268833 concurrent:1
+04/17/23 12:47:35->run 52 processed
+04/17/23 12:47:35->Sending run_id:77 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:8 par_name:TL concurrent:1)
+04/17/23 12:47:36-> run_id:54 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.26875  avg_run_time:0.27253 group_id:8 par_name:rcr3d  worker_time:0.26705 concurrent:1
+04/17/23 12:47:36->run 54 processed
+04/17/23 12:47:36->Sending run_id:78 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:8 par_name:TL concurrent:1)
+04/17/23 12:47:36-> run_id:59 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.2721  avg_run_time:0.272473 group_id:8 par_name:rcr4w  worker_time:0.268867 concurrent:1
+04/17/23 12:47:36->run 59 processed
+04/17/23 12:47:36->Sending run_id:79 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:8 par_name:XW concurrent:1)
+04/17/23 12:47:37-> run_id:57 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.27435  avg_run_time:0.272562 group_id:8 par_name:rcr4d  worker_time:0.274533 concurrent:1
+04/17/23 12:47:37->run 57 processed
+04/17/23 12:47:37-> run_id:55 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.274833  avg_run_time:0.272707 group_id:8 par_name:rcr3w  worker_time:0.276117 concurrent:1
+04/17/23 12:47:37->run 55 processed
+04/17/23 12:47:37->Sending run_id:80 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:8 par_name:XW concurrent:1)
+04/17/23 12:47:37->Sending run_id:81 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:8 par_name:YW concurrent:1)
+04/17/23 12:47:37-> run_id:60 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.2762  avg_run_time:0.272793 group_id:8 par_name:rcr4w  worker_time:0.276167 concurrent:1
+04/17/23 12:47:37->run 60 processed
+04/17/23 12:47:37->Sending run_id:82 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:8 par_name:YW concurrent:1)
+04/17/23 12:47:37-> run_id:62 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.2756  avg_run_time:0.272736 group_id:8 par_name:rcr5d  worker_time:0.272483 concurrent:1
+04/17/23 12:47:37->run 62 processed
+04/17/23 12:47:37->Sending run_id:83 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:8 par_name:X concurrent:1)
+04/17/23 12:47:37-> run_id:61 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.276667  avg_run_time:0.272795 group_id:8 par_name:rcr5d  worker_time:0.276167 concurrent:1
+04/17/23 12:47:37->run 61 processed
+04/17/23 12:47:37->Sending run_id:84 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:8 par_name:X concurrent:1)
+04/17/23 12:47:37-> run_id:58 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.281133  avg_run_time:0.273136 group_id:8 par_name:rcr4d  worker_time:0.287017 concurrent:1
+04/17/23 12:47:37->run 58 processed
+04/17/23 12:47:37->Sending run_id:85 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:8 par_name:Y concurrent:1)
+04/17/23 12:47:37-> run_id:63 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.2775  avg_run_time:0.272991 group_id:8 par_name:rcgd  worker_time:0.272367 concurrent:1
+04/17/23 12:47:37->run 63 processed
+04/17/23 12:47:37->Sending run_id:86 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:8 par_name:Y concurrent:1)
+04/17/23 12:47:38-> run_id:64 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.278667  avg_run_time:0.27288 group_id:8 par_name:rcgd  worker_time:0.274217 concurrent:1
+04/17/23 12:47:38->run 64 processed
+04/17/23 12:47:38->Sending run_id:87 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:8 par_name:TLR concurrent:1)
+04/17/23 12:47:38-> run_id:69 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.28  avg_run_time:0.27249 group_id:8 par_name:rcr7d  worker_time:0.269033 concurrent:1
+04/17/23 12:47:38->run 69 processed
+04/17/23 12:47:38->Sending run_id:88 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:8 par_name:TLR concurrent:1)
+04/17/23 12:47:39-> run_id:68 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.283817  avg_run_time:0.272384 group_id:8 par_name:rcgw  worker_time:0.27955 concurrent:1
+04/17/23 12:47:39->run 68 processed
+04/17/23 12:47:39->Sending run_id:89 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:8 par_name:TLS concurrent:1)
+04/17/23 12:47:39-> run_id:66 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.2863  avg_run_time:0.272506 group_id:8 par_name:rcr5w  worker_time:0.28685 concurrent:1
+04/17/23 12:47:39->run 66 processed
+04/17/23 12:47:39->Sending run_id:90 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:8 par_name:TLS concurrent:1)
+04/17/23 12:47:39-> run_id:65 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.28845  avg_run_time:0.272762 group_id:8 par_name:rcr5w  worker_time:0.29235 concurrent:1
+04/17/23 12:47:39->run 65 processed
+04/17/23 12:47:39-> run_id:67 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.288017  avg_run_time:0.272952 group_id:8 par_name:rcgw  worker_time:0.290267 concurrent:1
+04/17/23 12:47:39->run 67 processed
+04/17/23 12:47:39->Sending run_id:91 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:8 par_name:TCRIT concurrent:1)
+04/17/23 12:47:39->Sending run_id:92 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:8 par_name:TCRIT concurrent:1)
+04/17/23 12:47:48-> run_id:70 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.253883  avg_run_time:0.273013 group_id:8 par_name:rcr7d  worker_time:0.253233 concurrent:1
+04/17/23 12:47:48->run 70 processed
+04/17/23 12:47:49-> run_id:72 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.2601  avg_run_time:0.272951 group_id:8 par_name:rcr7w  worker_time:0.2569 concurrent:1
+04/17/23 12:47:49->run 72 processed
+04/17/23 12:47:49-> run_id:71 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.261083  avg_run_time:0.273001 group_id:8 par_name:rcr7w  worker_time:0.260317 concurrent:1
+04/17/23 12:47:49->run 71 processed
+04/17/23 12:47:50-> run_id:75 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.258733  avg_run_time:0.272858 group_id:8 par_name:rcr8w  worker_time:0.25345 concurrent:1
+04/17/23 12:47:50->run 75 processed
+04/17/23 12:47:51-> run_id:76 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.266317  avg_run_time:0.27285 group_id:8 par_name:rcr8w  worker_time:0.264167 concurrent:1
+04/17/23 12:47:51->run 76 processed
+04/17/23 12:47:52-> run_id:78 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.271067  avg_run_time:0.272951 group_id:8 par_name:tl  worker_time:0.271417 concurrent:1
+04/17/23 12:47:52->run 78 processed
+04/17/23 12:47:52-> run_id:73 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.275933  avg_run_time:0.273638 group_id:8 par_name:rcr8d  worker_time:0.289567 concurrent:1
+04/17/23 12:47:52->run 73 processed
+04/17/23 12:47:52-> run_id:74 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.278067  avg_run_time:0.27423 group_id:8 par_name:rcr8d  worker_time:0.2896 concurrent:1
+04/17/23 12:47:52->run 74 processed
+04/17/23 12:47:53-> run_id:79 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.271667  avg_run_time:0.274212 group_id:8 par_name:xw  worker_time:0.26945 concurrent:1
+04/17/23 12:47:53->run 79 processed
+04/17/23 12:47:53-> run_id:77 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.27905  avg_run_time:0.274671 group_id:8 par_name:tl  worker_time:0.287817 concurrent:1
+04/17/23 12:47:53->run 77 processed
+04/17/23 12:47:53-> run_id:81 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.274117  avg_run_time:0.27464 group_id:8 par_name:yw  worker_time:0.27155 concurrent:1
+04/17/23 12:47:53->run 81 processed
+04/17/23 12:47:53-> run_id:80 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.273967  avg_run_time:0.274623 group_id:8 par_name:xw  worker_time:0.271533 concurrent:1
+04/17/23 12:47:53->run 80 processed
+04/17/23 12:47:53-> run_id:84 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.27325  avg_run_time:0.274475 group_id:8 par_name:x  worker_time:0.267917 concurrent:1
+04/17/23 12:47:53->run 84 processed
+04/17/23 12:47:53-> run_id:83 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.273567  avg_run_time:0.274386 group_id:8 par_name:x  worker_time:0.269683 concurrent:1
+04/17/23 12:47:53->run 83 processed
+04/17/23 12:47:53-> run_id:82 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.274817  avg_run_time:0.274326 group_id:8 par_name:yw  worker_time:0.271533 concurrent:1
+04/17/23 12:47:53->run 82 processed
+04/17/23 12:47:54-> run_id:86 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.274567  avg_run_time:0.274199 group_id:8 par_name:y  worker_time:0.2697 concurrent:1
+04/17/23 12:47:54->run 86 processed
+04/17/23 12:47:54-> run_id:85 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.278167  avg_run_time:0.27407 group_id:8 par_name:y  worker_time:0.273133 concurrent:1
+04/17/23 12:47:54->run 85 processed
+04/17/23 12:47:55-> run_id:88 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.278683  avg_run_time:0.274012 group_id:8 par_name:tlr  worker_time:0.2753 concurrent:1
+04/17/23 12:47:55->run 88 processed
+04/17/23 12:47:55-> run_id:87 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.283483  avg_run_time:0.274222 group_id:8 par_name:tlr  worker_time:0.286233 concurrent:1
+04/17/23 12:47:55->run 87 processed
+04/17/23 12:47:55-> run_id:91 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.2801  avg_run_time:0.273859 group_id:8 par_name:tcrit  worker_time:0.2698 concurrent:1
+04/17/23 12:47:55->run 91 processed
+04/17/23 12:47:55-> run_id:89 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.2822  avg_run_time:0.273788 group_id:8 par_name:tls  worker_time:0.27875 concurrent:1
+04/17/23 12:47:55->run 89 processed
+04/17/23 12:47:55-> run_id:92 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.281667  avg_run_time:0.273512 group_id:8 par_name:tcrit  worker_time:0.2735 concurrent:1
+04/17/23 12:47:55->run 92 processed
+04/17/23 12:47:55-> run_id:90 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.282917  avg_run_time:0.273365 group_id:8 par_name:tls  worker_time:0.27765 concurrent:1
+04/17/23 12:47:55->run 90 processed
+
+---------------------
+   92 runs complete :  0 runs failed
+   0.273 avg run time (min) : 1.19 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:47:58->Panther idle ping thread resumed.
+04/17/23 12:48:11->Panther idle ping thread paused prior to scheduling runs.
+running model 4 times
+04/17/23 12:48:11->    24 agents ready
+
+04/17/23 12:48:11->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:9 normal concurrent:1)
+04/17/23 12:48:11->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:9 scale(0.75) concurrent:1)
+04/17/23 12:48:11->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:9 normal concurrent:1)
+04/17/23 12:48:11->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:9 scale(0.75) concurrent:1)
+04/17/23 12:48:24-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.216933  avg_run_time:0.216933 group_id:9 scale(0.75)  worker_time:0.216517 concurrent:1
+04/17/23 12:48:24->run 2 processed
+04/17/23 12:48:24-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.217367  avg_run_time:0.21715 group_id:9 normal  worker_time:0.216683 concurrent:1
+04/17/23 12:48:24->run 1 processed
+04/17/23 12:48:24-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.2174  avg_run_time:0.217233 group_id:9 scale(0.75)  worker_time:0.216617 concurrent:1
+04/17/23 12:48:24->run 4 processed
+04/17/23 12:48:24-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.21745  avg_run_time:0.217288 group_id:9 normal  worker_time:0.216633 concurrent:1
+04/17/23 12:48:24->run 3 processed
+
+---------------------
+   4 runs complete :  0 runs failed
+   0.217 avg run time (min) : 0.268 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:48:27->Panther idle ping thread resumed.
+04/17/23 12:48:28->Panther idle ping thread paused prior to scheduling runs.
+running model 92 times
+04/17/23 12:48:28->    24 agents ready
+
+04/17/23 12:48:28->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:10 par_name:DDSD concurrent:1)
+04/17/23 12:48:28->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:10 par_name:DDSD concurrent:1)
+04/17/23 12:48:28->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:10 par_name:RCS8W concurrent:1)
+04/17/23 12:48:28->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:10 par_name:RCS8W concurrent:1)
+04/17/23 12:48:28->Sending run_id:5 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:10 par_name:RCR6D concurrent:1)
+04/17/23 12:48:28->Sending run_id:6 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:10 par_name:RCR6D concurrent:1)
+04/17/23 12:48:28->Sending run_id:7 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:10 par_name:DDSW concurrent:1)
+04/17/23 12:48:28->Sending run_id:8 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:10 par_name:DDSW concurrent:1)
+04/17/23 12:48:28->Sending run_id:9 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:10 par_name:RCS8D concurrent:1)
+04/17/23 12:48:28->Sending run_id:10 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:10 par_name:RCS8D concurrent:1)
+04/17/23 12:48:28->Sending run_id:11 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:10 par_name:RCR6W concurrent:1)
+04/17/23 12:48:28->Sending run_id:12 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:10 par_name:RCR6W concurrent:1)
+04/17/23 12:48:28->Sending run_id:13 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:10 par_name:RCS1D concurrent:1)
+04/17/23 12:48:28->Sending run_id:14 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:10 par_name:RCS1D concurrent:1)
+04/17/23 12:48:28->Sending run_id:15 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:10 par_name:DDGD concurrent:1)
+04/17/23 12:48:28->Sending run_id:16 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:10 par_name:DDGD concurrent:1)
+04/17/23 12:48:28->Sending run_id:17 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:10 par_name:RCS1W concurrent:1)
+04/17/23 12:48:28->Sending run_id:18 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:10 par_name:RCS1W concurrent:1)
+04/17/23 12:48:28->Sending run_id:19 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:10 par_name:DDGW concurrent:1)
+04/17/23 12:48:28->Sending run_id:20 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:10 par_name:DDGW concurrent:1)
+04/17/23 12:48:28->Sending run_id:21 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:10 par_name:RCS2D concurrent:1)
+04/17/23 12:48:28->Sending run_id:22 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:10 par_name:RCS2D concurrent:1)
+04/17/23 12:48:28->Sending run_id:23 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:10 par_name:RCS3W concurrent:1)
+04/17/23 12:48:43-> run_id:17 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.2432  avg_run_time:0.2432 group_id:10 par_name:rcs1w  worker_time:0.24255 concurrent:1
+04/17/23 12:48:43->run 17 processed
+04/17/23 12:48:43->Sending run_id:24 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:10 par_name:RCS3W concurrent:1)
+04/17/23 12:48:43-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.252083  avg_run_time:0.247642 group_id:10 par_name:rcs8w  worker_time:0.25145 concurrent:1
+04/17/23 12:48:43->run 3 processed
+04/17/23 12:48:43->Sending run_id:25 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:10 par_name:RCS2W concurrent:1)
+04/17/23 12:48:44-> run_id:19 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.268533  avg_run_time:0.254606 group_id:10 par_name:ddgw  worker_time:0.267917 concurrent:1
+04/17/23 12:48:44->run 19 processed
+04/17/23 12:48:44->Sending run_id:26 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:10 par_name:RCS2W concurrent:1)
+04/17/23 12:48:44-> run_id:12 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.270433  avg_run_time:0.258563 group_id:10 par_name:rcr6w  worker_time:0.2698 concurrent:1
+04/17/23 12:48:44->run 12 processed
+04/17/23 12:48:44->Sending run_id:27 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:10 par_name:RCS3D concurrent:1)
+04/17/23 12:48:44-> run_id:23 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.272283  avg_run_time:0.261307 group_id:10 par_name:rcs3w  worker_time:0.271583 concurrent:1
+04/17/23 12:48:44->run 23 processed
+04/17/23 12:48:44-> run_id:16 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.272483  avg_run_time:0.263169 group_id:10 par_name:ddgd  worker_time:0.2716 concurrent:1
+04/17/23 12:48:44->run 16 processed
+04/17/23 12:48:44->Sending run_id:28 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:10 par_name:RCS3D concurrent:1)
+04/17/23 12:48:44->Sending run_id:29 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:10 par_name:RCS4D concurrent:1)
+04/17/23 12:48:44-> run_id:22 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.273983  avg_run_time:0.264714 group_id:10 par_name:rcs2d  worker_time:0.2734 concurrent:1
+04/17/23 12:48:44->run 22 processed
+04/17/23 12:48:44->Sending run_id:30 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:10 par_name:RCS4D concurrent:1)
+04/17/23 12:48:44-> run_id:21 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.274333  avg_run_time:0.265917 group_id:10 par_name:rcs2d  worker_time:0.273667 concurrent:1
+04/17/23 12:48:44->run 21 processed
+04/17/23 12:48:44->Sending run_id:31 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:10 par_name:RCS4W concurrent:1)
+04/17/23 12:48:44-> run_id:5 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.275933  avg_run_time:0.26703 group_id:10 par_name:rcr6d  worker_time:0.27525 concurrent:1
+04/17/23 12:48:44->run 5 processed
+04/17/23 12:48:44-> run_id:18 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.276  avg_run_time:0.267927 group_id:10 par_name:rcs1w  worker_time:0.2752 concurrent:1
+04/17/23 12:48:44->run 18 processed
+04/17/23 12:48:44-> run_id:7 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.276083  avg_run_time:0.268668 group_id:10 par_name:ddsw  worker_time:0.275233 concurrent:1
+04/17/23 12:48:44->run 7 processed
+04/17/23 12:48:45->Sending run_id:32 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:10 par_name:RCS4W concurrent:1)
+04/17/23 12:48:45->Sending run_id:33 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:10 par_name:RCS5D concurrent:1)
+04/17/23 12:48:45->Sending run_id:34 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:10 par_name:RCS5D concurrent:1)
+04/17/23 12:48:45-> run_id:14 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.28135  avg_run_time:0.269725 group_id:10 par_name:rcs1d  worker_time:0.2807 concurrent:1
+04/17/23 12:48:45->run 14 processed
+04/17/23 12:48:45->Sending run_id:35 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:10 par_name:RCS5W concurrent:1)
+04/17/23 12:48:45-> run_id:20 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.284933  avg_run_time:0.270895 group_id:10 par_name:ddgw  worker_time:0.284317 concurrent:1
+04/17/23 12:48:45->run 20 processed
+04/17/23 12:48:45->Sending run_id:36 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:10 par_name:RCS5W concurrent:1)
+04/17/23 12:48:45-> run_id:8 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.285267  avg_run_time:0.271921 group_id:10 par_name:ddsw  worker_time:0.2846 concurrent:1
+04/17/23 12:48:45->run 8 processed
+04/17/23 12:48:45->Sending run_id:37 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:10 par_name:RCS6D concurrent:1)
+04/17/23 12:48:45-> run_id:13 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.286783  avg_run_time:0.272912 group_id:10 par_name:rcs1d  worker_time:0.286133 concurrent:1
+04/17/23 12:48:45->run 13 processed
+04/17/23 12:48:45-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.286967  avg_run_time:0.273791 group_id:10 par_name:rcs8w  worker_time:0.286183 concurrent:1
+04/17/23 12:48:45->run 4 processed
+04/17/23 12:48:45->Sending run_id:38 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:10 par_name:RCS6D concurrent:1)
+04/17/23 12:48:45->Sending run_id:39 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:10 par_name:RCS7W concurrent:1)
+04/17/23 12:48:45-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.288417  avg_run_time:0.274651 group_id:10 par_name:ddsd  worker_time:0.287767 concurrent:1
+04/17/23 12:48:45->run 1 processed
+04/17/23 12:48:45-> run_id:10 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.288617  avg_run_time:0.275427 group_id:10 par_name:rcs8d  worker_time:0.287783 concurrent:1
+04/17/23 12:48:45->run 10 processed
+04/17/23 12:48:45-> run_id:9 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.288767  avg_run_time:0.276129 group_id:10 par_name:rcs8d  worker_time:0.287967 concurrent:1
+04/17/23 12:48:45->run 9 processed
+04/17/23 12:48:45-> run_id:15 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.288833  avg_run_time:0.276764 group_id:10 par_name:ddgd  worker_time:0.28795 concurrent:1
+04/17/23 12:48:45->run 15 processed
+04/17/23 12:48:45->Sending run_id:40 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:10 par_name:RCS7W concurrent:1)
+04/17/23 12:48:45->Sending run_id:41 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:10 par_name:RCS6W concurrent:1)
+04/17/23 12:48:45->Sending run_id:42 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:10 par_name:RCS6W concurrent:1)
+04/17/23 12:48:45->Sending run_id:43 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:10 par_name:RCS7D concurrent:1)
+04/17/23 12:48:45-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.29205  avg_run_time:0.277492 group_id:10 par_name:ddsd  worker_time:0.291417 concurrent:1
+04/17/23 12:48:45->run 2 processed
+04/17/23 12:48:45->Sending run_id:44 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:10 par_name:RCS7D concurrent:1)
+04/17/23 12:48:45-> run_id:6 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.292317  avg_run_time:0.278166 group_id:10 par_name:rcr6d  worker_time:0.291633 concurrent:1
+04/17/23 12:48:45->run 6 processed
+04/17/23 12:48:45->Sending run_id:45 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:10 par_name:RCR1D concurrent:1)
+04/17/23 12:48:46-> run_id:11 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.29385  avg_run_time:0.278848 group_id:10 par_name:rcr6w  worker_time:0.293183 concurrent:1
+04/17/23 12:48:46->run 11 processed
+04/17/23 12:48:46->Sending run_id:46 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:10 par_name:RCR1D concurrent:1)
+04/17/23 12:48:58-> run_id:25 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.249183  avg_run_time:0.278722 group_id:10 par_name:rcs2w  worker_time:0.244367 concurrent:1
+04/17/23 12:48:58->run 25 processed
+04/17/23 12:48:58->Sending run_id:47 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:10 par_name:RCR1W concurrent:1)
+04/17/23 12:48:59-> run_id:26 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.25835  avg_run_time:0.278279 group_id:10 par_name:rcs2w  worker_time:0.24625 concurrent:1
+04/17/23 12:48:59->run 26 processed
+04/17/23 12:48:59->Sending run_id:48 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:10 par_name:RCR1W concurrent:1)
+04/17/23 12:48:59-> run_id:24 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.26025  avg_run_time:0.27902 group_id:10 par_name:rcs3w  worker_time:0.275367 concurrent:1
+04/17/23 12:48:59->run 24 processed
+04/17/23 12:48:59->Sending run_id:49 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:10 par_name:RCR2D concurrent:1)
+04/17/23 12:48:59-> run_id:33 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.262967  avg_run_time:0.27845 group_id:10 par_name:rcs5d  worker_time:0.248017 concurrent:1
+04/17/23 12:48:59->run 33 processed
+04/17/23 12:49:00->Sending run_id:50 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:10 par_name:RCR2D concurrent:1)
+04/17/23 12:49:00-> run_id:29 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.267517  avg_run_time:0.278234 group_id:10 par_name:rcs4d  worker_time:0.2608 concurrent:1
+04/17/23 12:49:00->run 29 processed
+04/17/23 12:49:00->Sending run_id:51 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:10 par_name:RCR2W concurrent:1)
+04/17/23 12:49:00-> run_id:27 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.270317  avg_run_time:0.278229 group_id:10 par_name:rcs3d  worker_time:0.268133 concurrent:1
+04/17/23 12:49:00->run 27 processed
+04/17/23 12:49:00->Sending run_id:52 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:10 par_name:RCR2W concurrent:1)
+04/17/23 12:49:01-> run_id:40 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.271917  avg_run_time:0.277512 group_id:10 par_name:rcs7w  worker_time:0.253783 concurrent:1
+04/17/23 12:49:01->run 40 processed
+04/17/23 12:49:01->Sending run_id:53 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:10 par_name:RCR3D concurrent:1)
+04/17/23 12:49:01-> run_id:32 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.27385  avg_run_time:0.277421 group_id:10 par_name:rcs4w  worker_time:0.2699 concurrent:1
+04/17/23 12:49:01->run 32 processed
+04/17/23 12:49:01-> run_id:35 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.273983  avg_run_time:0.277101 group_id:10 par_name:rcs5w  worker_time:0.2644 concurrent:1
+04/17/23 12:49:01->run 35 processed
+04/17/23 12:49:01->Sending run_id:54 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:10 par_name:RCR3D concurrent:1)
+04/17/23 12:49:01-> run_id:39 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.274067  avg_run_time:0.27654 group_id:10 par_name:rcs7w  worker_time:0.259033 concurrent:1
+04/17/23 12:49:01->run 39 processed
+04/17/23 12:49:01->Sending run_id:55 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:10 par_name:RCR3W concurrent:1)
+04/17/23 12:49:01->Sending run_id:56 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:10 par_name:RCR3W concurrent:1)
+04/17/23 12:49:01-> run_id:44 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.274617  avg_run_time:0.275782 group_id:10 par_name:rcs7d  worker_time:0.25525 concurrent:1
+04/17/23 12:49:01->run 44 processed
+04/17/23 12:49:01->Sending run_id:57 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:10 par_name:RCR4D concurrent:1)
+04/17/23 12:49:01-> run_id:28 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.2774  avg_run_time:0.276004 group_id:10 par_name:rcs3d  worker_time:0.280683 concurrent:1
+04/17/23 12:49:01->run 28 processed
+04/17/23 12:49:01->Sending run_id:58 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:10 par_name:RCR4D concurrent:1)
+04/17/23 12:49:01-> run_id:31 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.277617  avg_run_time:0.276147 group_id:10 par_name:rcs4w  worker_time:0.27895 concurrent:1
+04/17/23 12:49:01->run 31 processed
+04/17/23 12:49:01->Sending run_id:59 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:10 par_name:RCR4W concurrent:1)
+04/17/23 12:49:01-> run_id:41 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.278133  avg_run_time:0.275691 group_id:10 par_name:rcs6w  worker_time:0.2661 concurrent:1
+04/17/23 12:49:01->run 41 processed
+04/17/23 12:49:01->Sending run_id:60 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:10 par_name:RCR4W concurrent:1)
+04/17/23 12:49:01-> run_id:37 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.27955  avg_run_time:0.275443 group_id:10 par_name:rcs6d  worker_time:0.271867 concurrent:1
+04/17/23 12:49:01->run 37 processed
+04/17/23 12:49:01->Sending run_id:61 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:10 par_name:RCR5D concurrent:1)
+04/17/23 12:49:02-> run_id:34 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.280167  avg_run_time:0.275624 group_id:10 par_name:rcs5d  worker_time:0.28255 concurrent:1
+04/17/23 12:49:02->run 34 processed
+04/17/23 12:49:02->Sending run_id:62 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:10 par_name:RCR5D concurrent:1)
+04/17/23 12:49:02-> run_id:45 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.284717  avg_run_time:0.275293 group_id:10 par_name:rcr1d  worker_time:0.275117 concurrent:1
+04/17/23 12:49:02->run 45 processed
+04/17/23 12:49:02->Sending run_id:63 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:10 par_name:RCGD concurrent:1)
+04/17/23 12:49:02-> run_id:38 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.284833  avg_run_time:0.275209 group_id:10 par_name:rcs6d  worker_time:0.280783 concurrent:1
+04/17/23 12:49:02->run 38 processed
+04/17/23 12:49:02->Sending run_id:64 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:10 par_name:RCGD concurrent:1)
+04/17/23 12:49:02-> run_id:43 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.28485  avg_run_time:0.275036 group_id:10 par_name:rcs7d  worker_time:0.278967 concurrent:1
+04/17/23 12:49:02->run 43 processed
+04/17/23 12:49:02->Sending run_id:65 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:10 par_name:RCR5W concurrent:1)
+04/17/23 12:49:02-> run_id:42 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.285633  avg_run_time:0.274899 group_id:10 par_name:rcs6w  worker_time:0.28055 concurrent:1
+04/17/23 12:49:02->run 42 processed
+04/17/23 12:49:02-> run_id:36 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.285817  avg_run_time:0.274938 group_id:10 par_name:rcs5w  worker_time:0.284517 concurrent:1
+04/17/23 12:49:02->run 36 processed
+04/17/23 12:49:02->Sending run_id:66 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:10 par_name:RCR5W concurrent:1)
+04/17/23 12:49:02->Sending run_id:67 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:10 par_name:RCGW concurrent:1)
+04/17/23 12:49:02-> run_id:46 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.286367  avg_run_time:0.274612 group_id:10 par_name:rcr1d  worker_time:0.2769 concurrent:1
+04/17/23 12:49:02->run 46 processed
+04/17/23 12:49:02->Sending run_id:68 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:10 par_name:RCGW concurrent:1)
+04/17/23 12:49:03-> run_id:30 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.289217  avg_run_time:0.275275 group_id:10 par_name:rcs4d  worker_time:0.302567 concurrent:1
+04/17/23 12:49:03->run 30 processed
+04/17/23 12:49:03->Sending run_id:69 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:10 par_name:RCR7D concurrent:1)
+04/17/23 12:49:13-> run_id:47 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.251917  avg_run_time:0.275393 group_id:10 par_name:rcr1w  worker_time:0.252917 concurrent:1
+04/17/23 12:49:13->run 47 processed
+04/17/23 12:49:13->Sending run_id:70 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:10 par_name:RCR7D concurrent:1)
+04/17/23 12:49:14-> run_id:48 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.258317  avg_run_time:0.275392 group_id:10 par_name:rcr1w  worker_time:0.2564 concurrent:1
+04/17/23 12:49:14->run 48 processed
+04/17/23 12:49:14->Sending run_id:71 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:10 par_name:RCR7W concurrent:1)
+04/17/23 12:49:14-> run_id:49 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.257633  avg_run_time:0.275278 group_id:10 par_name:rcr2d  worker_time:0.25305 concurrent:1
+04/17/23 12:49:14->run 49 processed
+04/17/23 12:49:14->Sending run_id:72 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:10 par_name:RCR7W concurrent:1)
+04/17/23 12:49:15-> run_id:50 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.258  avg_run_time:0.275062 group_id:10 par_name:rcr2d  worker_time:0.251017 concurrent:1
+04/17/23 12:49:15->run 50 processed
+04/17/23 12:49:15->Sending run_id:73 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:10 par_name:RCR8D concurrent:1)
+04/17/23 12:49:15-> run_id:52 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.258883  avg_run_time:0.274565 group_id:10 par_name:rcr2w  worker_time:0.24545 concurrent:1
+04/17/23 12:49:15->run 52 processed
+04/17/23 12:49:15->Sending run_id:74 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:10 par_name:RCR8D concurrent:1)
+04/17/23 12:49:16-> run_id:51 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.270217  avg_run_time:0.274683 group_id:10 par_name:rcr2w  worker_time:0.27095 concurrent:1
+04/17/23 12:49:16->run 51 processed
+04/17/23 12:49:16->Sending run_id:75 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:10 par_name:RCR8W concurrent:1)
+04/17/23 12:49:17-> run_id:57 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.267317  avg_run_time:0.274365 group_id:10 par_name:rcr4d  worker_time:0.258233 concurrent:1
+04/17/23 12:49:17->run 57 processed
+04/17/23 12:49:17->Sending run_id:76 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:10 par_name:RCR8W concurrent:1)
+04/17/23 12:49:18-> run_id:53 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.281467  avg_run_time:0.27478 group_id:10 par_name:rcr3d  worker_time:0.289067 concurrent:1
+04/17/23 12:49:18->run 53 processed
+04/17/23 12:49:18->Sending run_id:77 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:10 par_name:TL concurrent:1)
+04/17/23 12:49:18-> run_id:55 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.283417  avg_run_time:0.275191 group_id:10 par_name:rcr3w  worker_time:0.291133 concurrent:1
+04/17/23 12:49:18->run 55 processed
+04/17/23 12:49:18->Sending run_id:78 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:10 par_name:TL concurrent:1)
+04/17/23 12:49:19-> run_id:59 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.284417  avg_run_time:0.275486 group_id:10 par_name:rcr4w  worker_time:0.289167 concurrent:1
+04/17/23 12:49:19->run 59 processed
+04/17/23 12:49:19->Sending run_id:79 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:10 par_name:XW concurrent:1)
+04/17/23 12:49:19-> run_id:58 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.285183  avg_run_time:0.275825 group_id:10 par_name:rcr4d  worker_time:0.291 concurrent:1
+04/17/23 12:49:19->run 58 processed
+04/17/23 12:49:19->Sending run_id:80 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:10 par_name:XW concurrent:1)
+04/17/23 12:49:19-> run_id:54 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.290633  avg_run_time:0.276554 group_id:10 par_name:rcr3d  worker_time:0.305567 concurrent:1
+04/17/23 12:49:19->run 54 processed
+04/17/23 12:49:19->Sending run_id:81 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:10 par_name:YW concurrent:1)
+04/17/23 12:49:19-> run_id:61 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.288933  avg_run_time:0.276962 group_id:10 par_name:rcr5d  worker_time:0.296283 concurrent:1
+04/17/23 12:49:19->run 61 processed
+04/17/23 12:49:19->Sending run_id:82 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:10 par_name:YW concurrent:1)
+04/17/23 12:49:20-> run_id:65 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.288933  avg_run_time:0.27714 group_id:10 par_name:rcr5w  worker_time:0.291017 concurrent:1
+04/17/23 12:49:20->run 65 processed
+04/17/23 12:49:20->Sending run_id:83 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:10 par_name:X concurrent:1)
+04/17/23 12:49:20-> run_id:68 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.288717  avg_run_time:0.277242 group_id:10 par_name:rcgw  worker_time:0.2891 concurrent:1
+04/17/23 12:49:20->run 68 processed
+04/17/23 12:49:20->Sending run_id:84 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:10 par_name:X concurrent:1)
+04/17/23 12:49:20-> run_id:66 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.289467  avg_run_time:0.277409 group_id:10 par_name:rcr5w  worker_time:0.29135 concurrent:1
+04/17/23 12:49:20->run 66 processed
+04/17/23 12:49:20->Sending run_id:85 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:10 par_name:Y concurrent:1)
+04/17/23 12:49:20-> run_id:62 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.29555  avg_run_time:0.278078 group_id:10 par_name:rcr5d  worker_time:0.3091 concurrent:1
+04/17/23 12:49:20->run 62 processed
+04/17/23 12:49:20->Sending run_id:86 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:10 par_name:Y concurrent:1)
+04/17/23 12:49:20-> run_id:56 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.298967  avg_run_time:0.27916 group_id:10 par_name:rcr3w  worker_time:0.322 concurrent:1
+04/17/23 12:49:20->run 56 processed
+04/17/23 12:49:20->Sending run_id:87 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:10 par_name:TLR concurrent:1)
+04/17/23 12:49:21-> run_id:67 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.29755  avg_run_time:0.27967 group_id:10 par_name:rcgw  worker_time:0.307267 concurrent:1
+04/17/23 12:49:21->run 67 processed
+04/17/23 12:49:21->Sending run_id:88 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:10 par_name:TLR concurrent:1)
+04/17/23 12:49:21-> run_id:63 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.298833  avg_run_time:0.280284 group_id:10 par_name:rcgd  worker_time:0.310967 concurrent:1
+04/17/23 12:49:21->run 63 processed
+04/17/23 12:49:21-> run_id:64 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.298883  avg_run_time:0.280895 group_id:10 par_name:rcgd  worker_time:0.31095 concurrent:1
+04/17/23 12:49:21->run 64 processed
+04/17/23 12:49:21->Sending run_id:89 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:10 par_name:TLS concurrent:1)
+04/17/23 12:49:21->Sending run_id:90 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:10 par_name:TLS concurrent:1)
+04/17/23 12:49:21-> run_id:60 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.302533  avg_run_time:0.281956 group_id:10 par_name:rcr4w  worker_time:0.3252 concurrent:1
+04/17/23 12:49:21->run 60 processed
+04/17/23 12:49:21->Sending run_id:91 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:10 par_name:TCRIT concurrent:1)
+04/17/23 12:49:21-> run_id:69 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.29915  avg_run_time:0.282388 group_id:10 par_name:rcr7d  worker_time:0.30715 concurrent:1
+04/17/23 12:49:21->run 69 processed
+04/17/23 12:49:21->Sending run_id:92 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:10 par_name:TCRIT concurrent:1)
+04/17/23 12:49:30-> run_id:73 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.257783  avg_run_time:0.282378 group_id:10 par_name:rcr8d  worker_time:0.255617 concurrent:1
+04/17/23 12:49:30->run 73 processed
+04/17/23 12:49:30-> run_id:70 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.268467  avg_run_time:0.283098 group_id:10 par_name:rcr7d  worker_time:0.283083 concurrent:1
+04/17/23 12:49:30->run 70 processed
+04/17/23 12:49:31-> run_id:72 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.26495  avg_run_time:0.283416 group_id:10 par_name:rcr7w  worker_time:0.270317 concurrent:1
+04/17/23 12:49:31->run 72 processed
+04/17/23 12:49:31-> run_id:71 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.266217  avg_run_time:0.283759 group_id:10 par_name:rcr7w  worker_time:0.272117 concurrent:1
+04/17/23 12:49:31->run 71 processed
+04/17/23 12:49:32-> run_id:74 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.266383  avg_run_time:0.284086 group_id:10 par_name:rcr8d  worker_time:0.272033 concurrent:1
+04/17/23 12:49:32->run 74 processed
+04/17/23 12:49:33-> run_id:75 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.271233  avg_run_time:0.28413 group_id:10 par_name:rcr8w  worker_time:0.270167 concurrent:1
+04/17/23 12:49:33->run 75 processed
+04/17/23 12:49:34-> run_id:76 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.279167  avg_run_time:0.284645 group_id:10 par_name:rcr8w  worker_time:0.28825 concurrent:1
+04/17/23 12:49:34->run 76 processed
+04/17/23 12:49:35-> run_id:78 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.277617  avg_run_time:0.284393 group_id:10 par_name:tl  worker_time:0.270217 concurrent:1
+04/17/23 12:49:35->run 78 processed
+04/17/23 12:49:35-> run_id:79 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.276317  avg_run_time:0.284041 group_id:10 par_name:xw  worker_time:0.26635 concurrent:1
+04/17/23 12:49:35->run 79 processed
+04/17/23 12:49:35-> run_id:80 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.276583  avg_run_time:0.283667 group_id:10 par_name:xw  worker_time:0.2664 concurrent:1
+04/17/23 12:49:35->run 80 processed
+04/17/23 12:49:35-> run_id:77 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.282233  avg_run_time:0.2837 group_id:10 par_name:tl  worker_time:0.2811 concurrent:1
+04/17/23 12:49:35->run 77 processed
+04/17/23 12:49:36-> run_id:82 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.279517  avg_run_time:0.283291 group_id:10 par_name:yw  worker_time:0.268233 concurrent:1
+04/17/23 12:49:36->run 82 processed
+04/17/23 12:49:36-> run_id:81 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.28155  avg_run_time:0.282896 group_id:10 par_name:yw  worker_time:0.270267 concurrent:1
+04/17/23 12:49:36->run 81 processed
+04/17/23 12:49:36-> run_id:83 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.279717  avg_run_time:0.282495 group_id:10 par_name:x  worker_time:0.268567 concurrent:1
+04/17/23 12:49:36->run 83 processed
+04/17/23 12:49:36-> run_id:84 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.2796  avg_run_time:0.282099 group_id:10 par_name:x  worker_time:0.26855 concurrent:1
+04/17/23 12:49:36->run 84 processed
+04/17/23 12:49:36-> run_id:85 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.28095  avg_run_time:0.281728 group_id:10 par_name:y  worker_time:0.270467 concurrent:1
+04/17/23 12:49:36->run 85 processed
+04/17/23 12:49:37-> run_id:87 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.2856  avg_run_time:0.281147 group_id:10 par_name:tlr  worker_time:0.270283 concurrent:1
+04/17/23 12:49:37->run 87 processed
+04/17/23 12:49:37-> run_id:86 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.284917  avg_run_time:0.280685 group_id:10 par_name:y  worker_time:0.27235 concurrent:1
+04/17/23 12:49:37->run 86 processed
+04/17/23 12:49:37-> run_id:89 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.281883  avg_run_time:0.279948 group_id:10 par_name:tls  worker_time:0.263217 concurrent:1
+04/17/23 12:49:37->run 89 processed
+04/17/23 12:49:37-> run_id:90 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.28385  avg_run_time:0.279294 group_id:10 par_name:tls  worker_time:0.266883 concurrent:1
+04/17/23 12:49:37->run 90 processed
+04/17/23 12:49:37-> run_id:88 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.284833  avg_run_time:0.278741 group_id:10 par_name:tlr  worker_time:0.270033 concurrent:1
+04/17/23 12:49:37->run 88 processed
+04/17/23 12:49:37-> run_id:91 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.286717  avg_run_time:0.278054 group_id:10 par_name:tcrit  worker_time:0.269017 concurrent:1
+04/17/23 12:49:37->run 91 processed
+04/17/23 12:49:37-> run_id:92 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.2848  avg_run_time:0.27743 group_id:10 par_name:tcrit  worker_time:0.268517 concurrent:1
+04/17/23 12:49:37->run 92 processed
+
+---------------------
+   92 runs complete :  0 runs failed
+   0.277 avg run time (min) : 1.21 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:49:40->Panther idle ping thread resumed.
+04/17/23 12:49:53->Panther idle ping thread paused prior to scheduling runs.
+running model 4 times
+04/17/23 12:49:53->    24 agents ready
+
+04/17/23 12:49:53->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:11 normal concurrent:1)
+04/17/23 12:49:53->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:11 scale(0.75) concurrent:1)
+04/17/23 12:49:53->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:11 normal concurrent:1)
+04/17/23 12:49:53->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:11 scale(0.75) concurrent:1)
+04/17/23 12:50:06-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.217883  avg_run_time:0.217883 group_id:11 scale(0.75)  worker_time:0.21745 concurrent:1
+04/17/23 12:50:06->run 4 processed
+04/17/23 12:50:06-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.219783  avg_run_time:0.218833 group_id:11 normal  worker_time:0.219317 concurrent:1
+04/17/23 12:50:06->run 1 processed
+04/17/23 12:50:06-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.22005  avg_run_time:0.219239 group_id:11 scale(0.75)  worker_time:0.219567 concurrent:1
+04/17/23 12:50:06->run 2 processed
+04/17/23 12:50:06-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.220133  avg_run_time:0.219462 group_id:11 normal  worker_time:0.2192 concurrent:1
+04/17/23 12:50:06->run 3 processed
+
+---------------------
+   4 runs complete :  0 runs failed
+   0.219 avg run time (min) : 0.271 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:50:10->Panther idle ping thread resumed.
+04/17/23 12:50:10->Panther idle ping thread paused prior to scheduling runs.
+running model 92 times
+04/17/23 12:50:10->    24 agents ready
+
+04/17/23 12:50:10->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:12 par_name:DDSD concurrent:1)
+04/17/23 12:50:10->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:12 par_name:DDSD concurrent:1)
+04/17/23 12:50:10->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:12 par_name:RCS8W concurrent:1)
+04/17/23 12:50:10->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:12 par_name:RCS8W concurrent:1)
+04/17/23 12:50:10->Sending run_id:5 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:12 par_name:RCR6D concurrent:1)
+04/17/23 12:50:10->Sending run_id:6 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:12 par_name:RCR6D concurrent:1)
+04/17/23 12:50:10->Sending run_id:7 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:12 par_name:DDSW concurrent:1)
+04/17/23 12:50:10->Sending run_id:8 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:12 par_name:DDSW concurrent:1)
+04/17/23 12:50:10->Sending run_id:9 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:12 par_name:RCS8D concurrent:1)
+04/17/23 12:50:10->Sending run_id:10 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:12 par_name:RCS8D concurrent:1)
+04/17/23 12:50:10->Sending run_id:11 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:12 par_name:RCR6W concurrent:1)
+04/17/23 12:50:10->Sending run_id:12 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:12 par_name:RCR6W concurrent:1)
+04/17/23 12:50:10->Sending run_id:13 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:12 par_name:RCS1D concurrent:1)
+04/17/23 12:50:10->Sending run_id:14 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:12 par_name:RCS1D concurrent:1)
+04/17/23 12:50:10->Sending run_id:15 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:12 par_name:DDGD concurrent:1)
+04/17/23 12:50:10->Sending run_id:16 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:12 par_name:DDGD concurrent:1)
+04/17/23 12:50:10->Sending run_id:17 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:12 par_name:RCS1W concurrent:1)
+04/17/23 12:50:10->Sending run_id:18 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:12 par_name:RCS1W concurrent:1)
+04/17/23 12:50:10->Sending run_id:19 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:12 par_name:DDGW concurrent:1)
+04/17/23 12:50:10->Sending run_id:20 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:12 par_name:DDGW concurrent:1)
+04/17/23 12:50:10->Sending run_id:21 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:12 par_name:RCS2D concurrent:1)
+04/17/23 12:50:10->Sending run_id:22 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:12 par_name:RCS2D concurrent:1)
+04/17/23 12:50:10->Sending run_id:23 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:12 par_name:RCS3W concurrent:1)
+04/17/23 12:50:26-> run_id:8 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.2528  avg_run_time:0.2528 group_id:12 par_name:ddsw  worker_time:0.25215 concurrent:1
+04/17/23 12:50:26->run 8 processed
+04/17/23 12:50:26->Sending run_id:24 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:12 par_name:RCS3W concurrent:1)
+04/17/23 12:50:26-> run_id:5 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.2562  avg_run_time:0.2545 group_id:12 par_name:rcr6d  worker_time:0.255617 concurrent:1
+04/17/23 12:50:26->run 5 processed
+04/17/23 12:50:26->Sending run_id:25 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:12 par_name:RCS2W concurrent:1)
+04/17/23 12:50:26-> run_id:9 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.26755  avg_run_time:0.25885 group_id:12 par_name:rcs8d  worker_time:0.266917 concurrent:1
+04/17/23 12:50:26->run 9 processed
+04/17/23 12:50:26->Sending run_id:26 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:12 par_name:RCS2W concurrent:1)
+04/17/23 12:50:27-> run_id:17 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.2694  avg_run_time:0.261487 group_id:12 par_name:rcs1w  worker_time:0.268717 concurrent:1
+04/17/23 12:50:27->run 17 processed
+04/17/23 12:50:27->Sending run_id:27 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:12 par_name:RCS3D concurrent:1)
+04/17/23 12:50:27-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.270933  avg_run_time:0.263377 group_id:12 par_name:rcs8w  worker_time:0.270333 concurrent:1
+04/17/23 12:50:27->run 3 processed
+04/17/23 12:50:27->Sending run_id:28 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:12 par_name:RCS3D concurrent:1)
+04/17/23 12:50:27-> run_id:12 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.271183  avg_run_time:0.264678 group_id:12 par_name:rcr6w  worker_time:0.27055 concurrent:1
+04/17/23 12:50:27->run 12 processed
+04/17/23 12:50:27->Sending run_id:29 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:12 par_name:RCS4D concurrent:1)
+04/17/23 12:50:27-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.2746  avg_run_time:0.266095 group_id:12 par_name:ddsd  worker_time:0.274 concurrent:1
+04/17/23 12:50:27->run 2 processed
+04/17/23 12:50:27->Sending run_id:30 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:12 par_name:RCS4D concurrent:1)
+04/17/23 12:50:27-> run_id:22 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.2784  avg_run_time:0.267633 group_id:12 par_name:rcs2d  worker_time:0.277733 concurrent:1
+04/17/23 12:50:27->run 22 processed
+04/17/23 12:50:27->Sending run_id:31 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:12 par_name:RCS4W concurrent:1)
+04/17/23 12:50:27-> run_id:6 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.278733  avg_run_time:0.268867 group_id:12 par_name:rcr6d  worker_time:0.278067 concurrent:1
+04/17/23 12:50:27->run 6 processed
+04/17/23 12:50:27-> run_id:15 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.278833  avg_run_time:0.269863 group_id:12 par_name:ddgd  worker_time:0.278017 concurrent:1
+04/17/23 12:50:27->run 15 processed
+04/17/23 12:50:27->Sending run_id:32 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:12 par_name:RCS4W concurrent:1)
+04/17/23 12:50:27->Sending run_id:33 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:12 par_name:RCS5D concurrent:1)
+04/17/23 12:50:27-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.283567  avg_run_time:0.271109 group_id:12 par_name:ddsd  worker_time:0.282933 concurrent:1
+04/17/23 12:50:27->run 1 processed
+04/17/23 12:50:27->Sending run_id:34 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:12 par_name:RCS5D concurrent:1)
+04/17/23 12:50:27-> run_id:20 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.2838  avg_run_time:0.272167 group_id:12 par_name:ddgw  worker_time:0.283067 concurrent:1
+04/17/23 12:50:27->run 20 processed
+04/17/23 12:50:27-> run_id:18 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.28395  avg_run_time:0.273073 group_id:12 par_name:rcs1w  worker_time:0.283067 concurrent:1
+04/17/23 12:50:27->run 18 processed
+04/17/23 12:50:27-> run_id:16 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.284033  avg_run_time:0.273856 group_id:12 par_name:ddgd  worker_time:0.283083 concurrent:1
+04/17/23 12:50:27->run 16 processed
+04/17/23 12:50:27->Sending run_id:35 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:12 par_name:RCS5W concurrent:1)
+04/17/23 12:50:27->Sending run_id:36 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:12 par_name:RCS5W concurrent:1)
+04/17/23 12:50:27->Sending run_id:37 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:12 par_name:RCS6D concurrent:1)
+04/17/23 12:50:28-> run_id:23 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.285767  avg_run_time:0.27465 group_id:12 par_name:rcs3w  worker_time:0.285067 concurrent:1
+04/17/23 12:50:28->run 23 processed
+04/17/23 12:50:28->Sending run_id:38 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:12 par_name:RCS6D concurrent:1)
+04/17/23 12:50:28-> run_id:7 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.287617  avg_run_time:0.27546 group_id:12 par_name:ddsw  worker_time:0.286917 concurrent:1
+04/17/23 12:50:28->run 7 processed
+04/17/23 12:50:28-> run_id:11 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.28775  avg_run_time:0.276183 group_id:12 par_name:rcr6w  worker_time:0.286917 concurrent:1
+04/17/23 12:50:28->run 11 processed
+04/17/23 12:50:28-> run_id:19 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.2878  avg_run_time:0.276829 group_id:12 par_name:ddgw  worker_time:0.286883 concurrent:1
+04/17/23 12:50:28->run 19 processed
+04/17/23 12:50:28->Sending run_id:39 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:12 par_name:RCS7W concurrent:1)
+04/17/23 12:50:28->Sending run_id:40 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:12 par_name:RCS7W concurrent:1)
+04/17/23 12:50:28->Sending run_id:41 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:12 par_name:RCS6W concurrent:1)
+04/17/23 12:50:28-> run_id:14 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.289367  avg_run_time:0.277489 group_id:12 par_name:rcs1d  worker_time:0.288717 concurrent:1
+04/17/23 12:50:28->run 14 processed
+04/17/23 12:50:28->Sending run_id:42 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:12 par_name:RCS6W concurrent:1)
+04/17/23 12:50:28-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.290917  avg_run_time:0.27816 group_id:12 par_name:rcs8w  worker_time:0.2903 concurrent:1
+04/17/23 12:50:28->run 4 processed
+04/17/23 12:50:28->Sending run_id:43 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:12 par_name:RCS7D concurrent:1)
+04/17/23 12:50:28-> run_id:13 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.29115  avg_run_time:0.278779 group_id:12 par_name:rcs1d  worker_time:0.290483 concurrent:1
+04/17/23 12:50:28->run 13 processed
+04/17/23 12:50:28->Sending run_id:44 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:12 par_name:RCS7D concurrent:1)
+04/17/23 12:50:28-> run_id:10 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.29275  avg_run_time:0.279414 group_id:12 par_name:rcs8d  worker_time:0.292183 concurrent:1
+04/17/23 12:50:28->run 10 processed
+04/17/23 12:50:28->Sending run_id:45 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:12 par_name:RCR1D concurrent:1)
+04/17/23 12:50:28-> run_id:21 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.294783  avg_run_time:0.280082 group_id:12 par_name:rcs2d  worker_time:0.294083 concurrent:1
+04/17/23 12:50:28->run 21 processed
+04/17/23 12:50:28->Sending run_id:46 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:12 par_name:RCR1D concurrent:1)
+04/17/23 12:50:40-> run_id:24 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.2494  avg_run_time:0.279934 group_id:12 par_name:rcs3w  worker_time:0.24405 concurrent:1
+04/17/23 12:50:40->run 24 processed
+04/17/23 12:50:40->Sending run_id:47 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:12 par_name:RCR1W concurrent:1)
+04/17/23 12:50:40-> run_id:25 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.2502  avg_run_time:0.279673 group_id:12 par_name:rcs2w  worker_time:0.242217 concurrent:1
+04/17/23 12:50:40->run 25 processed
+04/17/23 12:50:40->Sending run_id:48 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:12 par_name:RCR1W concurrent:1)
+04/17/23 12:50:42-> run_id:27 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.259517  avg_run_time:0.279243 group_id:12 par_name:rcs3d  worker_time:0.247733 concurrent:1
+04/17/23 12:50:42->run 27 processed
+04/17/23 12:50:42->Sending run_id:49 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:12 par_name:RCR2D concurrent:1)
+04/17/23 12:50:42-> run_id:30 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.2641  avg_run_time:0.278787 group_id:12 par_name:rcs4d  worker_time:0.251617 concurrent:1
+04/17/23 12:50:42->run 30 processed
+04/17/23 12:50:42->Sending run_id:50 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:12 par_name:RCR2D concurrent:1)
+04/17/23 12:50:43-> run_id:35 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.26805  avg_run_time:0.278096 group_id:12 par_name:rcs5w  worker_time:0.250217 concurrent:1
+04/17/23 12:50:43->run 35 processed
+04/17/23 12:50:43->Sending run_id:51 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:12 par_name:RCR2W concurrent:1)
+04/17/23 12:50:43-> run_id:29 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.268667  avg_run_time:0.277986 group_id:12 par_name:rcs4d  worker_time:0.264383 concurrent:1
+04/17/23 12:50:43->run 29 processed
+04/17/23 12:50:43->Sending run_id:52 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:12 par_name:RCR2W concurrent:1)
+04/17/23 12:50:43-> run_id:26 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.274217  avg_run_time:0.278276 group_id:12 par_name:rcs2w  worker_time:0.279133 concurrent:1
+04/17/23 12:50:43->run 26 processed
+04/17/23 12:50:43->Sending run_id:53 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:12 par_name:RCR3D concurrent:1)
+04/17/23 12:50:43-> run_id:32 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.2745  avg_run_time:0.278092 group_id:12 par_name:rcs4w  worker_time:0.268333 concurrent:1
+04/17/23 12:50:43->run 32 processed
+04/17/23 12:50:43->Sending run_id:54 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:12 par_name:RCR3D concurrent:1)
+04/17/23 12:50:43-> run_id:37 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.274567  avg_run_time:0.27768 group_id:12 par_name:rcs6d  worker_time:0.262983 concurrent:1
+04/17/23 12:50:43->run 37 processed
+04/17/23 12:50:43->Sending run_id:55 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:12 par_name:RCR3W concurrent:1)
+04/17/23 12:50:43-> run_id:42 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.275267  avg_run_time:0.277067 group_id:12 par_name:rcs6w  worker_time:0.259217 concurrent:1
+04/17/23 12:50:43->run 42 processed
+04/17/23 12:50:43-> run_id:36 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.275217  avg_run_time:0.276694 group_id:12 par_name:rcs5w  worker_time:0.264567 concurrent:1
+04/17/23 12:50:43->run 36 processed
+04/17/23 12:50:43->Sending run_id:56 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:12 par_name:RCR3W concurrent:1)
+04/17/23 12:50:43-> run_id:38 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.275433  avg_run_time:0.276245 group_id:12 par_name:rcs6d  worker_time:0.262967 concurrent:1
+04/17/23 12:50:43->run 38 processed
+04/17/23 12:50:43->Sending run_id:57 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:12 par_name:RCR4D concurrent:1)
+04/17/23 12:50:43->Sending run_id:58 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:12 par_name:RCR4D concurrent:1)
+04/17/23 12:50:44-> run_id:40 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.27905  avg_run_time:0.275864 group_id:12 par_name:rcs7w  worker_time:0.2684 concurrent:1
+04/17/23 12:50:44->run 40 processed
+04/17/23 12:50:44->Sending run_id:59 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:12 par_name:RCR4W concurrent:1)
+04/17/23 12:50:44-> run_id:39 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.280817  avg_run_time:0.275569 group_id:12 par_name:rcs7w  worker_time:0.272 concurrent:1
+04/17/23 12:50:44->run 39 processed
+04/17/23 12:50:44->Sending run_id:60 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:12 par_name:RCR4W concurrent:1)
+04/17/23 12:50:44-> run_id:31 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.284167  avg_run_time:0.27582 group_id:12 par_name:rcs4w  worker_time:0.287983 concurrent:1
+04/17/23 12:50:44->run 31 processed
+04/17/23 12:50:44->Sending run_id:61 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:12 par_name:RCR5D concurrent:1)
+04/17/23 12:50:45-> run_id:45 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.2851  avg_run_time:0.275487 group_id:12 par_name:rcr1d  worker_time:0.275517 concurrent:1
+04/17/23 12:50:45->run 45 processed
+04/17/23 12:50:45->Sending run_id:62 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:12 par_name:RCR5D concurrent:1)
+04/17/23 12:50:45-> run_id:46 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.285333  avg_run_time:0.275076 group_id:12 par_name:rcr1d  worker_time:0.273967 concurrent:1
+04/17/23 12:50:45->run 46 processed
+04/17/23 12:50:45->Sending run_id:63 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:12 par_name:RCGD concurrent:1)
+04/17/23 12:50:45-> run_id:28 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.289317  avg_run_time:0.275875 group_id:12 par_name:rcs3d  worker_time:0.305867 concurrent:1
+04/17/23 12:50:45->run 28 processed
+04/17/23 12:50:45->Sending run_id:64 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:12 par_name:RCGD concurrent:1)
+04/17/23 12:50:45-> run_id:33 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.29085  avg_run_time:0.276398 group_id:12 par_name:rcs5d  worker_time:0.301 concurrent:1
+04/17/23 12:50:45->run 33 processed
+04/17/23 12:50:45->Sending run_id:65 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:12 par_name:RCR5W concurrent:1)
+04/17/23 12:50:45-> run_id:43 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.291467  avg_run_time:0.276422 group_id:12 par_name:rcs7d  worker_time:0.290283 concurrent:1
+04/17/23 12:50:45->run 43 processed
+04/17/23 12:50:45->Sending run_id:66 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:12 par_name:RCR5W concurrent:1)
+04/17/23 12:50:46-> run_id:44 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.2933  avg_run_time:0.276515 group_id:12 par_name:rcs7d  worker_time:0.2935 concurrent:1
+04/17/23 12:50:46->run 44 processed
+04/17/23 12:50:46->Sending run_id:67 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:12 par_name:RCGW concurrent:1)
+04/17/23 12:50:46-> run_id:41 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.294383  avg_run_time:0.276804 group_id:12 par_name:rcs6w  worker_time:0.299183 concurrent:1
+04/17/23 12:50:46->run 41 processed
+04/17/23 12:50:46->Sending run_id:68 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:12 par_name:RCGW concurrent:1)
+04/17/23 12:50:46-> run_id:34 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.294883  avg_run_time:0.277296 group_id:12 par_name:rcs5d  worker_time:0.304367 concurrent:1
+04/17/23 12:50:46->run 34 processed
+04/17/23 12:50:46->Sending run_id:69 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:12 par_name:RCR7D concurrent:1)
+04/17/23 12:50:54-> run_id:47 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.242417  avg_run_time:0.276992 group_id:12 par_name:rcr1w  worker_time:0.2337 concurrent:1
+04/17/23 12:50:54->run 47 processed
+04/17/23 12:50:54->Sending run_id:70 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8 group_id:12 par_name:RCR7D concurrent:1)
+04/17/23 12:50:56-> run_id:48 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.251067  avg_run_time:0.27703 group_id:12 par_name:rcr1w  worker_time:0.24995 concurrent:1
+04/17/23 12:50:56->run 48 processed
+04/17/23 12:50:56->Sending run_id:71 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4 group_id:12 par_name:RCR7W concurrent:1)
+04/17/23 12:50:57-> run_id:49 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.261283  avg_run_time:0.277107 group_id:12 par_name:rcr2d  worker_time:0.261067 concurrent:1
+04/17/23 12:50:57->run 49 processed
+04/17/23 12:50:57->Sending run_id:72 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19 group_id:12 par_name:RCR7W concurrent:1)
+04/17/23 12:50:58-> run_id:51 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.26635  avg_run_time:0.277033 group_id:12 par_name:rcr2w  worker_time:0.262667 concurrent:1
+04/17/23 12:50:58->run 51 processed
+04/17/23 12:50:58->Sending run_id:73 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15 group_id:12 par_name:RCR8D concurrent:1)
+04/17/23 12:50:59-> run_id:57 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.265633  avg_run_time:0.276614 group_id:12 par_name:rcr4d  worker_time:0.253983 concurrent:1
+04/17/23 12:50:59->run 57 processed
+04/17/23 12:50:59->Sending run_id:74 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17 group_id:12 par_name:RCR8D concurrent:1)
+04/17/23 12:50:59-> run_id:50 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.275267  avg_run_time:0.277099 group_id:12 par_name:rcr2d  worker_time:0.284717 concurrent:1
+04/17/23 12:50:59->run 50 processed
+04/17/23 12:50:59->Sending run_id:75 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:12 par_name:RCR8W concurrent:1)
+04/17/23 12:50:59-> run_id:55 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.270733  avg_run_time:0.276933 group_id:12 par_name:rcr3w  worker_time:0.265017 concurrent:1
+04/17/23 12:50:59->run 55 processed
+04/17/23 12:50:59->Sending run_id:76 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13 group_id:12 par_name:RCR8W concurrent:1)
+04/17/23 12:51:00-> run_id:53 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.27245  avg_run_time:0.276856 group_id:12 par_name:rcr3d  worker_time:0.268617 concurrent:1
+04/17/23 12:51:00->run 53 processed
+04/17/23 12:51:00->Sending run_id:77 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9 group_id:12 par_name:TL concurrent:1)
+04/17/23 12:51:00-> run_id:52 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.275867  avg_run_time:0.277169 group_id:12 par_name:rcr2w  worker_time:0.281133 concurrent:1
+04/17/23 12:51:00->run 52 processed
+04/17/23 12:51:00->Sending run_id:78 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11 group_id:12 par_name:TL concurrent:1)
+04/17/23 12:51:00-> run_id:59 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.27475  avg_run_time:0.276982 group_id:12 par_name:rcr4w  worker_time:0.2685 concurrent:1
+04/17/23 12:51:00->run 59 processed
+04/17/23 12:51:00->Sending run_id:79 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14 group_id:12 par_name:XW concurrent:1)
+04/17/23 12:51:00-> run_id:58 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.27835  avg_run_time:0.277109 group_id:12 par_name:rcr4d  worker_time:0.27925 concurrent:1
+04/17/23 12:51:00->run 58 processed
+04/17/23 12:51:00->Sending run_id:80 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22 group_id:12 par_name:XW concurrent:1)
+04/17/23 12:51:00-> run_id:54 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.27985  avg_run_time:0.277341 group_id:12 par_name:rcr3d  worker_time:0.2832 concurrent:1
+04/17/23 12:51:00->run 54 processed
+04/17/23 12:51:00-> run_id:56 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.27945  avg_run_time:0.277525 group_id:12 par_name:rcr3w  worker_time:0.281333 concurrent:1
+04/17/23 12:51:00->run 56 processed
+04/17/23 12:51:00-> run_id:60 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.276717  avg_run_time:0.277347 group_id:12 par_name:rcr4w  worker_time:0.270317 concurrent:1
+04/17/23 12:51:00->run 60 processed
+04/17/23 12:51:00->Sending run_id:81 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6 group_id:12 par_name:YW concurrent:1)
+04/17/23 12:51:00->Sending run_id:82 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7 group_id:12 par_name:YW concurrent:1)
+04/17/23 12:51:00->Sending run_id:83 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20 group_id:12 par_name:X concurrent:1)
+04/17/23 12:51:01-> run_id:61 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.278183  avg_run_time:0.277087 group_id:12 par_name:rcr5d  worker_time:0.270233 concurrent:1
+04/17/23 12:51:01->run 61 processed
+04/17/23 12:51:01->Sending run_id:84 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23 group_id:12 par_name:X concurrent:1)
+04/17/23 12:51:01-> run_id:64 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.280783  avg_run_time:0.276716 group_id:12 par_name:rcgd  worker_time:0.270283 concurrent:1
+04/17/23 12:51:01->run 64 processed
+04/17/23 12:51:01->Sending run_id:85 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:12 par_name:Y concurrent:1)
+04/17/23 12:51:02-> run_id:62 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.286733  avg_run_time:0.276787 group_id:12 par_name:rcr5d  worker_time:0.286617 concurrent:1
+04/17/23 12:51:02->run 62 processed
+04/17/23 12:51:02->Sending run_id:86 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10 group_id:12 par_name:Y concurrent:1)
+04/17/23 12:51:02-> run_id:66 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.285433  avg_run_time:0.276525 group_id:12 par_name:rcr5w  worker_time:0.27755 concurrent:1
+04/17/23 12:51:02->run 66 processed
+04/17/23 12:51:02->Sending run_id:87 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:12 par_name:TLR concurrent:1)
+04/17/23 12:51:02-> run_id:63 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.288633  avg_run_time:0.276668 group_id:12 par_name:rcgd  worker_time:0.290233 concurrent:1
+04/17/23 12:51:02->run 63 processed
+04/17/23 12:51:02->Sending run_id:88 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21 group_id:12 par_name:TLR concurrent:1)
+04/17/23 12:51:03-> run_id:65 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.292333  avg_run_time:0.276733 group_id:12 par_name:rcr5w  worker_time:0.291883 concurrent:1
+04/17/23 12:51:03->run 65 processed
+04/17/23 12:51:03->Sending run_id:89 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16 group_id:12 par_name:TLS concurrent:1)
+04/17/23 12:51:03-> run_id:67 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.29345  avg_run_time:0.276739 group_id:12 par_name:rcgw  worker_time:0.291833 concurrent:1
+04/17/23 12:51:03->run 67 processed
+04/17/23 12:51:03->Sending run_id:90 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18 group_id:12 par_name:TLS concurrent:1)
+04/17/23 12:51:03-> run_id:68 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.29305  avg_run_time:0.276681 group_id:12 par_name:rcgw  worker_time:0.28995 concurrent:1
+04/17/23 12:51:03->run 68 processed
+04/17/23 12:51:03->Sending run_id:91 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12 group_id:12 par_name:TCRIT concurrent:1)
+04/17/23 12:51:03-> run_id:69 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.2943  avg_run_time:0.276656 group_id:12 par_name:rcr7d  worker_time:0.29195 concurrent:1
+04/17/23 12:51:03->run 69 processed
+04/17/23 12:51:03->Sending run_id:92 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:12 par_name:TCRIT concurrent:1)
+04/17/23 12:51:10-> run_id:70 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_8  run_time:0.248  avg_run_time:0.276899 group_id:12 par_name:rcr7d  worker_time:0.251833 concurrent:1
+04/17/23 12:51:10->run 70 processed
+04/17/23 12:51:13-> run_id:72 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_19  run_time:0.264717  avg_run_time:0.277048 group_id:12 par_name:rcr7w  worker_time:0.266267 concurrent:1
+04/17/23 12:51:13->run 72 processed
+04/17/23 12:51:14-> run_id:71 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_4  run_time:0.27975  avg_run_time:0.278295 group_id:12 par_name:rcr7w  worker_time:0.3065 concurrent:1
+04/17/23 12:51:14->run 71 processed
+04/17/23 12:51:15-> run_id:76 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_13  run_time:0.269433  avg_run_time:0.278238 group_id:12 par_name:rcr8w  worker_time:0.2664 concurrent:1
+04/17/23 12:51:15->run 76 processed
+04/17/23 12:51:16-> run_id:74 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_17  run_time:0.276133  avg_run_time:0.278695 group_id:12 par_name:rcr8d  worker_time:0.2847 concurrent:1
+04/17/23 12:51:16->run 74 processed
+04/17/23 12:51:16-> run_id:80 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_22  run_time:0.270667  avg_run_time:0.278361 group_id:12 par_name:xw  worker_time:0.261133 concurrent:1
+04/17/23 12:51:16->run 80 processed
+04/17/23 12:51:16-> run_id:75 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.280833  avg_run_time:0.278603 group_id:12 par_name:rcr8w  worker_time:0.284583 concurrent:1
+04/17/23 12:51:16->run 75 processed
+04/17/23 12:51:17-> run_id:73 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_15  run_time:0.284567  avg_run_time:0.279395 group_id:12 par_name:rcr8d  worker_time:0.300767 concurrent:1
+04/17/23 12:51:17->run 73 processed
+04/17/23 12:51:17-> run_id:77 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_9  run_time:0.278583  avg_run_time:0.279662 group_id:12 par_name:tl  worker_time:0.282833 concurrent:1
+04/17/23 12:51:17->run 77 processed
+04/17/23 12:51:17-> run_id:78 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_11  run_time:0.281117  avg_run_time:0.27989 group_id:12 par_name:tl  worker_time:0.284417 concurrent:1
+04/17/23 12:51:17->run 78 processed
+04/17/23 12:51:17-> run_id:84 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_23  run_time:0.27225  avg_run_time:0.279632 group_id:12 par_name:x  worker_time:0.264467 concurrent:1
+04/17/23 12:51:17->run 84 processed
+04/17/23 12:51:17-> run_id:83 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_20  run_time:0.281133  avg_run_time:0.279705 group_id:12 par_name:x  worker_time:0.28105 concurrent:1
+04/17/23 12:51:17->run 83 processed
+04/17/23 12:51:18-> run_id:81 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_6  run_time:0.28485  avg_run_time:0.279922 group_id:12 par_name:yw  worker_time:0.288133 concurrent:1
+04/17/23 12:51:18->run 81 processed
+04/17/23 12:51:18-> run_id:85 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.27725  avg_run_time:0.279769 group_id:12 par_name:y  worker_time:0.2718 concurrent:1
+04/17/23 12:51:18->run 85 processed
+04/17/23 12:51:18-> run_id:79 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_14  run_time:0.2889  avg_run_time:0.280384 group_id:12 par_name:xw  worker_time:0.301033 concurrent:1
+04/17/23 12:51:18->run 79 processed
+04/17/23 12:51:19-> run_id:88 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_21  run_time:0.281233  avg_run_time:0.280062 group_id:12 par_name:tlr  worker_time:0.271983 concurrent:1
+04/17/23 12:51:19->run 88 processed
+04/17/23 12:51:19-> run_id:82 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_7  run_time:0.290017  avg_run_time:0.280641 group_id:12 par_name:yw  worker_time:0.3013 concurrent:1
+04/17/23 12:51:19->run 82 processed
+04/17/23 12:51:19-> run_id:87 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.282417  avg_run_time:0.280509 group_id:12 par_name:tlr  worker_time:0.277483 concurrent:1
+04/17/23 12:51:19->run 87 processed
+04/17/23 12:51:19-> run_id:86 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_10  run_time:0.289483  avg_run_time:0.280629 group_id:12 par_name:y  worker_time:0.290317 concurrent:1
+04/17/23 12:51:19->run 86 processed
+04/17/23 12:51:19-> run_id:89 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_16  run_time:0.284017  avg_run_time:0.280267 group_id:12 par_name:tls  worker_time:0.2738 concurrent:1
+04/17/23 12:51:19->run 89 processed
+04/17/23 12:51:20-> run_id:91 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_12  run_time:0.283783  avg_run_time:0.279864 group_id:12 par_name:tcrit  worker_time:0.2726 concurrent:1
+04/17/23 12:51:20->run 91 processed
+04/17/23 12:51:20-> run_id:90 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_18  run_time:0.2849  avg_run_time:0.279493 group_id:12 par_name:tls  worker_time:0.274383 concurrent:1
+04/17/23 12:51:20->run 90 processed
+04/17/23 12:51:20-> run_id:92 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.285117  avg_run_time:0.279093 group_id:12 par_name:tcrit  worker_time:0.2742 concurrent:1
+04/17/23 12:51:20->run 92 processed
+
+---------------------
+   92 runs complete :  0 runs failed
+   0.279 avg run time (min) : 1.21 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:51:23->Panther idle ping thread resumed.
+04/17/23 12:51:36->Panther idle ping thread paused prior to scheduling runs.
+running model 4 times
+04/17/23 12:51:36->    24 agents ready
+
+04/17/23 12:51:36->Sending run_id:1 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1 group_id:13 normal concurrent:1)
+04/17/23 12:51:36->Sending run_id:2 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2 group_id:13 scale(0.75) concurrent:1)
+04/17/23 12:51:36->Sending run_id:3 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3 group_id:13 normal concurrent:1)
+04/17/23 12:51:36->Sending run_id:4 to:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5 group_id:13 scale(0.75) concurrent:1)
+04/17/23 12:51:49-> run_id:4 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_5  run_time:0.215117  avg_run_time:0.215117 group_id:13 scale(0.75)  worker_time:0.2147 concurrent:1
+04/17/23 12:51:49->run 4 processed
+04/17/23 12:51:49-> run_id:2 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_2  run_time:0.217317  avg_run_time:0.216217 group_id:13 scale(0.75)  worker_time:0.21685 concurrent:1
+04/17/23 12:51:49->run 2 processed
+04/17/23 12:51:49-> run_id:1 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_1  run_time:0.217617  avg_run_time:0.216683 group_id:13 normal  worker_time:0.216733 concurrent:1
+04/17/23 12:51:49->run 1 processed
+04/17/23 12:51:49-> run_id:3 received from:CCALVO.local.ciren$G:\pySRM\Hurtado_San_Agustin_3  run_time:0.2177  avg_run_time:0.216938 group_id:13 normal  worker_time:0.216717 concurrent:1
+04/17/23 12:51:49->run 3 processed
+
+---------------------
+   4 runs complete :  0 runs failed
+   0.217 avg run time (min) : 0.269 run mgr time (min)
+   24 agents connected
+
+
+
+04/17/23 12:51:52->Panther idle ping thread resumed.
+04/17/23 12:52:01->Stopped idle ping thread, as Panther manager is shutting down.
