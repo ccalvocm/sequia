@@ -2,7 +2,6 @@ import ee
 import os
 import pandas as pd
 import datetime
-import geemap
 import geopandas as gpd
 import json
 import numpy as np
