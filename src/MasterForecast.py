@@ -6,11 +6,11 @@ import forecast_arima
 import os
 
 def run_pySRM(name, tipo = 'P'):
-    path=os.path.join('..',name)
+    path=os.path.join('..','data',name)
     folder = os.path.abspath(path)
 
     # bajar la pp, t y nieve
-    GEEdl.main(name)
+    GEEdl.main(folder)
 
     # agregar la pp, t y nieve al master
     # hacer el pronóstico de pp y t
@@ -22,7 +22,7 @@ def run_pySRM(name, tipo = 'P'):
     create_master_SRM.SRM_master(folder)
 
     # correr el modelo
-    pyCSRM.DEVELOP_SRM('..',name)
+    pyCSRM.DEVELOP_SRM('..','data',name)
 
     print('Simulacion finalizada exitosamente')
 

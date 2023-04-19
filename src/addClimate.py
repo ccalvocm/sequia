@@ -36,10 +36,10 @@ class dataset(object):
         return None
 
     def fillPp(self):
-        df2023=pd.read_csv(os.path.join('..',self.path,'Precipitacion',
+        df2023=pd.read_csv(os.path.join('..','data',self.path,'Precipitacion',
                                     'PrecipitacionActualizada.csv'),
                                     index_col=0,parse_dates=True)
-        dfActual=pd.read_csv(os.path.join('..',self.path,'Precipitacion',
+        dfActual=pd.read_csv(os.path.join('..','data',self.path,'Precipitacion',
                                     'precipitacion_actual.csv'),
                                     index_col=0,parse_dates=True)
         firstD=df2023.index[0]
@@ -49,7 +49,7 @@ class dataset(object):
         df.loc[dfActual.index,:]=dfActual.values
         df.loc[df2023.index,:]=df2023.values
         df=self.autocompleteCol(df)
-        path_dataset=os.path.join('..',self.path,'Precipitacion',
+        path_dataset=os.path.join('..','data',self.path,'Precipitacion',
                                     'precipitacion_actual.csv')
         df.to_csv(path_dataset)
         forecast_arima.forecast_dataframe_file(path_dataset)
@@ -65,11 +65,11 @@ class dataset(object):
         return df
 
     def fillTemp(self):
-        df2023=pd.read_csv(os.path.join('..',self.path,'Temperatura',
+        df2023=pd.read_csv(os.path.join('..','data',self.path,'Temperatura',
                                     'TemperaturaActualizada.csv'),
                                     index_col=0,parse_dates=True)
         df2023=self.resampleT(df2023)
-        dfActual=pd.read_csv(os.path.join('..',self.path,'Temperatura',
+        dfActual=pd.read_csv(os.path.join('..','data',self.path,'Temperatura',
                                     'temperatura_actual.csv'),
                                     index_col=0,parse_dates=True)
         firstD=df2023.index[0]
@@ -79,7 +79,7 @@ class dataset(object):
         df.loc[dfActual.index,:]=dfActual.values
         df.loc[df2023.index,:]=df2023.values
         df=self.autocompleteCol(df)
-        path_dataset=os.path.join('..',self.path,'Temperatura',
+        path_dataset=os.path.join('..','data',self.path,'Temperatura',
                                     'temperatura_actual.csv')
         df.to_csv(path_dataset)
         forecast_arima.forecast_dataframe_file(path_dataset)
