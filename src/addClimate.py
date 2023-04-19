@@ -84,12 +84,50 @@ class dataset(object):
         df.to_csv(path_dataset)
         forecast_arima.forecast_dataframe_file(path_dataset)
         return None
+    
+    def completeDf(self,df2023,dfActual):
+        firstD=df2023.index[0]
+        lastD=df2023.index[-1]
+        df=pd.DataFrame(index=pd.date_range(dfActual.index[0],lastD,freq='D'),
+    	columns=dfActual.columns)
+        df.loc[dfActual.index,:]=dfActual.values
+        df.loc[df2023.index,:]=df2023.values
+        return df
+
+    def fillSnow(self):
+        df2023=pd.read_csv(os.path.join('..','data',self.path,'Nieve',
+                                    'snowCoverActualizada.csv'),
+                                    index_col=0,parse_dates=True)
+        dfActual=pd.read_csv(os.path.join('..','data',self.path,'Nieve',
+                                    'snowCover.csv'),
+                                    index_col=0,parse_dates=True)
+
+        df=self.completeDf(df2023,dfActual)
+        df=self.autocompleteCol(df)
+        path_dataset=os.path.join('..','data',self.path,'Nieve',
+                                    'snowCover.csv')
+        df.to_csv(path_dataset)
+
+        df2023=pd.read_csv(os.path.join('..','data',self.path,'Nieve',
+                                    'glacierCoverActualizada.csv'),
+                                    index_col=0,parse_dates=True)
+        dfActual=pd.read_csv(os.path.join('..','data',self.path,'Nieve',
+                                    'glacierCover.csv'),
+                                    index_col=0,parse_dates=True)
+
+        df=self.completeDf(df2023,dfActual)
+        df=self.autocompleteCol(df)
+        path_dataset=os.path.join('..','data',self.path,'Nieve',
+                                    'glacierCover.csv')
+        df.to_csv(path_dataset)
+        return None
 
 def main():
     name='Hurtado_San_Agustin'
     dataSet=dataset(name)
     dataSet.fillPp()
     dataSet.fillTemp()
+    dataser.fillSnow()
     
 if __name__=='__main__':
     main()

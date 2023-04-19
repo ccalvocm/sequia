@@ -17,6 +17,7 @@ def run_pySRM(name, tipo = 'P'):
     dataSet=addClimate.dataset(name)
     dataSet.fillPp()
     dataSet.fillTemp()
+    dataSet.fillSnow()
 
     # forecast de nieve
     create_master_SRM.SRM_master(folder)

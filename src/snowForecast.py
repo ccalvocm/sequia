@@ -149,16 +149,18 @@ def pronostico_ARMA(df, dias, orden):
     # predictions : Pandas DataFrame
     #     cubierta nival pronosticada.
     
-    model = ARIMA(df, 
-                order = orden, 
-                seasonal_order = (0,0,0,365))
+    model = ARIMA(df.astype(float),order=orden,seasonal_order=(0,0,0,365))
     # fit model
-    result = model.fit(method='innovations_mle', low_memory=True, cov_type='none')
+    try:
+        result = model.fit(method='statespace',low_memory=True,cov_type='none')
 
-    # make prediction
-    predictions = result.predict(1, dias,
+        # make prediction
+        predictions = result.predict(1, dias,
                                  typ = 'levels')
     
+    except ZeroDivisionError:
+        predictions=df.iloc[1:]
+
     return predictions
 
 def snow_forecast(root):
@@ -226,7 +228,8 @@ def snow_forecast(root):
         if (SCA.loc[idx_s,col] > 0).any():
             
             # realizar el pronóstico
-            pronostico_nieve = pronostico_ARMA(SCA.loc[idx_s,col], last_date, (2,1,0))
+            pronostico_nieve=pronostico_ARMA(SCA.loc[idx_s,col],last_date,
+                                             (2,1,0))
             pronostico_nieve[pronostico_nieve < 0] = 0
             pronostico_nieve[pronostico_nieve > 1] = 1
             
@@ -239,7 +242,8 @@ def snow_forecast(root):
         if (GCA.loc[idx_g,col+'.1'] > 0).any():
             
             # realizar el pronóstico
-            pronostico_glaciares = pronostico_ARMA(GCA.loc[idx_g,col+'.1'], last_date, (2,1,0))
+            pronostico_glaciares = pronostico_ARMA(GCA.loc[idx_g,col+'.1'],
+                                                   last_date,(2,1,0))
             pronostico_glaciares[pronostico_glaciares < 0] = 0
             pronostico_glaciares[pronostico_glaciares > 1] = 1
             
