@@ -10,7 +10,7 @@ def run_pySRM(name, tipo = 'P'):
     folder = os.path.abspath(path)
 
     # bajar la pp, t y nieve
-    GEEdl.getDatesDatasets(path)
+    GEEdl.main(name)
 
     # agregar la pp, t y nieve al master
     # hacer el pronóstico de pp y t
