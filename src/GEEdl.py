@@ -186,10 +186,14 @@ ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
             dfDate=pd.concat(lista2, axis=1, ignore_index=False)
             dfRet.loc[dfDate.index,:]=dfDate.values
 
+            if len(lista3):
+                dfDateCount=pd.concat(lista3, axis=1, ignore_index=False)
+                dfRetC.loc[dfDateCount.index,:]=dfDateCount.values
+                
+            # filtrar los datos sin nieve
         if 'NDSI_Snow_Cover' in self.band:
-            dfDateCount=pd.concat(lista3, axis=1, ignore_index=False)
-            dfRetC.loc[dfDateCount.index,:]=dfDateCount.values
-        dfRet=self.filterCount(dfRet,dfRetC.astype(float))
+            dfRet=self.filterCount(dfRet,dfRetC.astype(float))
+
         return dfRet
     
     def fixColumns(self,lista):

@@ -12,7 +12,6 @@ import pmdarima as pm
 from pmdarima import model_selection
 import matplotlib.pyplot as plt
 import numpy as np
-from hydroeval import evaluator, nse
 from pmdarima.arima import ndiffs
 
 def compute_NSE_series(ts_sim,ts_obs):

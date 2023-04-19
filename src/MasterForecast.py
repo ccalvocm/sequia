@@ -3,6 +3,7 @@ import GEEdl
 import addClimate
 import create_master_SRM
 import forecast_arima
+import os
 
 def run_pySRM(name, tipo = 'P'):
     path=os.path.join('..',name)
