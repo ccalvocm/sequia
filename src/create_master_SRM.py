@@ -11,32 +11,28 @@ import datetime
 import snowForecast
 import numpy as np
 
+def matchGlacier(df1,df2):
+    dfRet=pd.DataFrame(columns=df1.columns,index=df1.index)
+    dfRet.loc[dfRet.index,dfRet.columns]=1
+    dfRet.loc[df2.index,df2.columns]=df2.values
+    return dfRet
 
 def readSnow(ruta_n):
     # cargar las coberturas nivales
     global last_day
 
-    df_n = pd.DataFrame([])
-    for filename in os.listdir(ruta_n):
-        if 'DailySnowCover' in filename:
-            df_n = pd.concat([df_n, pd.read_csv(os.path.join(
-                ruta_n, filename), index_col=0, parse_dates=True)])
-    df_n.sort_index(axis=0, inplace=True)
-    df_n = df_n.loc[df_n.index.year >= 2020]
+    df_n=pd.read_csv(os.path.join(ruta_n,'snowCover.csv'),index_col=0,
+                     parse_dates=True)
     last_day = df_n.index[-1]
 
     # cargar sobre coberturas glaciales
-    df_g = pd.DataFrame([])
-    for filename in os.listdir(ruta_n):
-        if 'DailyGlacialCover' in filename:
-            df_g = pd.concat([df_g, pd.read_csv(os.path.join(
-                ruta_n, filename), index_col=0, parse_dates=True)])
-    df_g.sort_index(axis=0, inplace=True)
-    df_g = df_g.loc[df_g.index.year >= 2020]
+    df_g=pd.read_csv(os.path.join(ruta_n,'glacierCover.csv'),index_col=0,
+                     parse_dates=True)
+    dfG=matchGlacier(df_n,df_g)
 
     df_n.dropna(inplace=True)
 
-    return df_n, df_g.loc[df_n.index]
+    return df_n, dfG.loc[df_n.index]
 
 
 def summerDays(last_day, master):
@@ -215,17 +211,16 @@ def SRM_master(folder):
  # ----------------------------------------------------------------------------
     # rutas
     ruta_n = os.path.join(folder, 'Nieve')
-    root = os.path.join(folder, 'SRM')
     ruta_pp = os.path.join(folder, 'Precipitacion',
-                           r'precipitacion_forecast.csv')
-    ruta_t = os.path.join(folder, 'Temperatura', r'temperatura_forecast.csv')
+                           r'precipitacion_actual_forecast.csv')
+    ruta_t = os.path.join(folder, 'Temperatura', r'temperatura_actual_forecast.csv')
 
     # leer archivo master predictivo
-    if os.path.isfile(os.path.join(root, 'Inputs', r'Master.csv')):
+    if os.path.isfile(os.path.join(folder, r'Master.csv')):
 
         # último archivo predictivo
-        master_val = pd.read_csv(os.path.join(root, 
-'Inputs', r'Master.csv'), index_col=0, parse_dates=True)
+        master_val = pd.read_csv(os.path.join(folder, 
+                r'Master.csv'), index_col=0, parse_dates=True)
         master_val=master_val.loc[master_val.index<=pd.to_datetime(datetime.date.today())]
 
     else:
@@ -273,22 +268,22 @@ def SRM_master(folder):
 
     # leer curva hipsométrica de la cuenca
     df_hypso = pd.read_csv(os.path.join(
-        root, 'Inputs', r'bands_mean_area.csv'), index_col=0)
+        folder, r'bands_mean_area.csv'), index_col=0)
 
     # completar los parametros que faltan del periodo de validacion
     master_val = completarMaster(master_val, last_day, df_hypso)
 
     # guardar el master del periodo de validacion
-    master_val.to_csv(os.path.join(root, 'Inputs', r'Master.csv'))
+    master_val.to_csv(os.path.join(folder,  r'Master.csv'))
     pd.DataFrame(df_n.index).to_csv(os.path.join(
-        root, 'Inputs', r'LastDateVal.csv'), index=None)
+        folder, r'LastDateVal.csv'), index=None)
 
  # ============================================================================
  #                          archivo master predictivo
  # ----------------------------------------------------------------------------
 
     # crear el archivo master del predictivo
-    master_pred = snowForecast.snow_forecast(root)
+    master_pred = snowForecast.snow_forecast(folder)
 
     # completar los parámetros del año a  pronosticar
     master_pred = completarMaster(master_pred, master_pred.index[-1], df_hypso)
@@ -320,4 +315,4 @@ def SRM_master(folder):
     master_pred = master_pred.loc[master_pred.index <= day_forecast]
 
     # guardar el archivo master predictivo
-    master_pred.to_csv(os.path.join(root, 'Inputs', r'Master.csv'))
+    master_pred.to_csv(os.path.join(folder, r'Master.csv'))

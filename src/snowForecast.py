@@ -86,14 +86,18 @@ def matchSnow(master_, last_date, df_h, cols):
         start =  pd.to_datetime(str(yr)+'-04-01')    
         end = start + datetime.timedelta(days = len_last_cover-1)   
         historical_CDC =  wSCAhi.loc[pd.date_range(start,end)]
-        rmse = hydroeval.rmse(historical_CDC.values, last_CDC.values)
+        rmse = funcRMSE(historical_CDC, last_CDC)
         if best_rmse > rmse:
             best_rmse = rmse
             best_year = yr
     
     # devolver el mejor año
     return best_year
-    
+
+def funcRMSE(df1,df2):
+    #return root mean square error between df1 and df2
+    return np.sqrt(np.mean((df1.values-df2.values)**2))
+        
 # def pronostico_ARMA(df, orden, lastdate, end_date):
 
 #     # Parameters
@@ -174,21 +178,19 @@ def snow_forecast(root):
     
     # leer el arhcivo master del periodo de pronostico
     
-    if os.path.isfile(root+r'\\Master.csv'):
-    
+    try:
         #caudal pronosticado en m3/s
-        master = pd.read_csv(root+r'\\Master.csv', index_col = 0, parse_dates = True)
-
-    else:
-        
-        # si es la primera simulacion predictiva, comenzar desde los datos del modelo validado
-        master = pd.read_csv(root+r'\\Master20002020.csv', index_col = 0, parse_dates = True)
-        
+        master = pd.read_csv(os.path.join(root,'Master.csv'), 
+                             index_col = 0, parse_dates = True)
+    except FileNotFoundError:
+        print("Wrong file or file path")
+     
     # cargar la curva hipsométrica
-    df_hypso = pd.read_csv(root+r'\\Hypso.csv', index_col = 0)
+    df_hypso = pd.read_csv(os.path.join(root,'Hypso.csv'), index_col = 0)
     
     # leer última fecha de las imágenes modis
-    last_date = pd.read_csv(root+r'\\LastDateVal.csv', index_col = 0, parse_dates = True).index[-1]
+    last_date = pd.read_csv(os.path.join(root,'LastDateVal.csv'),
+                            index_col = 0, parse_dates = True).index[-1]
         
     # asignar las fechas
     master = master.loc[master.index <= last_date]

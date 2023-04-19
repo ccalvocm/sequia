@@ -140,11 +140,9 @@ def DEVELOP_SRM(root, Basin, plots=False):
     # -------------------------------------------------------------------------
 
     #leer curva hipsometrica de topografia
-    os.chdir(root)
     import loopCython
     import loopQtotalCython
     import baseflow_eckhardt
-
 
     ruta_hipso=os.path.join(root,'bands_mean_area.csv')
     hipso=pd.read_csv(ruta_hipso, index_col = 0)
@@ -492,8 +490,8 @@ def DEVELOP_SRM(root, Basin, plots=False):
     # guardar el SWE y caudales
     SWE_out = pd.DataFrame(snowAcc, index = dates) # SWE en m
     Q_out = pd.DataFrame(Qtot*1000, index = dates) # en l/s
-    SWE_out.to_csv(os.path.join('.','SWEsim_'+Basin+'.csv'), header = None) 
-    Q_out.to_csv(os.path.join('.','Qsim_'+Basin+'.csv'), header = None) 
+    SWE_out.to_csv(os.path.join(root,'SWEsim_'+Basin+'.csv'), header = None) 
+    Q_out.to_csv(os.path.join(root,'Qsim_'+Basin+'.csv'), header = None) 
 
     return None
     

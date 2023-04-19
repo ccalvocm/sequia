@@ -22,7 +22,7 @@ def run_pySRM(name, tipo = 'P'):
     create_master_SRM.SRM_master(folder)
 
     # correr el modelo
-    pyCSRM.DEVELOP_SRM('..','data',name)
+    pyCSRM.DEVELOP_SRM(os.path.join('..','data'),name)
 
     print('Simulacion finalizada exitosamente')
 

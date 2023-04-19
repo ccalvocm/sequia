@@ -244,6 +244,7 @@ def main(name='Hurtado_San_Agustin'):
 
     def loadGdf(name,shpStr):
         gdfRet=gpd.read_file(os.path.join('..','data',name,shpStr+'.shp'))
+        gdfRet.set_index(gdfRet.columns[0],drop=True,inplace=True)
         return gdfRet
 
     def postProcess(polygon,df):
