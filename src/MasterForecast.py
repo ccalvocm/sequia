@@ -28,8 +28,8 @@ def run_pySRM(name, tipo = 'P'):
 
     print('Simulacion finalizada exitosamente')
     import pandas as pd
-    df=pd.read_csv(os.path.join('..','data',name,'Qsim_'+name+'.csv'))
-    print(df.head())
+    df=pd.read_csv(os.path.join('..','data',name,'Qsim.csv'))
+    print(df.tail())
 
 def main():
     pth=os.path.join('.','sequia','src')
