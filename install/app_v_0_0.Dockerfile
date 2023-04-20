@@ -6,18 +6,17 @@ WORKDIR .
  
 # Create Conda environment from the YAML file
 COPY environment.yaml .
-RUN conda env create -f environment.yaml
+RUN conda env create -f environment.yaml || echo "entorno ya creado"
  
 # Override default shell and use bash
 SHELL ["conda", "run", "-n", "sequia", "/bin/bash", "-c"]
  
 # Activate Conda environment and check if it is working properly
 RUN echo "Making sure flask is installed correctly..."
-RUN python -c "print('EL MEMOS')"
 
 #git clone
+RUN if [ -d "sequia" ]; then rm -Rf sequia; fi
 RUN git clone https://github.com/ccalvocm/sequia.git
  
 # Python program to run in the container
-RUN pwd
 ENTRYPOINT ["conda", "run", "-n", "sequia", "python", "./sequia/src/MasterForecast.py"]
