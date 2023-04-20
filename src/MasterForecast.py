@@ -27,6 +27,9 @@ def run_pySRM(name, tipo = 'P'):
     pyCSRM.DEVELOP_SRM(os.path.join('..','data',name),name)
 
     print('Simulacion finalizada exitosamente')
+    import pandas as pd
+    df=pd.read_csv(os.path.join('..','data',name,'Qsim_'+name+'.csv'))
+    print(df.head())
 
 def main():
     pth=os.path.join('.','sequia','src')
