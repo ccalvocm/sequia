@@ -243,12 +243,8 @@ def main(name='Hurtado_San_Agustin'):
         return mindate,dsets
 
     def loadGdf(name,shpStr):
-<<<<<<< Updated upstream
         gdfRet=gpd.read_file(os.path.join('..','data',name,shpStr+'.shp'))
         gdfRet.set_index(gdfRet.columns[0],drop=False,inplace=True)
-=======
-        gdfRet=gpd.read_file(os.path.join('..',name,shpStr+'.shp'))
->>>>>>> Stashed changes
         return gdfRet
 
     def postProcess(polygon,df):

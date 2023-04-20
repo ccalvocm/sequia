@@ -1,11 +1,12 @@
-import pyCSRM
-import GEEdl
-import addClimate
-import create_master_SRM
-import forecast_arima
 import os
 
 def run_pySRM(name, tipo = 'P'):
+    import pyCSRM
+    import GEEdl
+    import addClimate
+    import create_master_SRM
+    import forecast_arima
+
     path=os.path.join('..','data',name)
     folder = os.path.abspath(path)
 
@@ -28,6 +29,9 @@ def run_pySRM(name, tipo = 'P'):
     print('Simulacion finalizada exitosamente')
 
 def main():
+    pth=os.path.join('.','src')
+    os.chdir(pth)
+
     name='Hurtado_San_Agustin'
     run_pySRM(name)
 
