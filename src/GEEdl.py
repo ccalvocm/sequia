@@ -224,7 +224,7 @@ ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
 
 def main(name='Hurtado_San_Agustin'):
     def getLastDate(name):
-        path=os.path.join('..','data',name,'Master.csv')
+        path=os.path.join('..',name,'Master.csv')
         master=pd.read_csv(path,index_col=0,parse_dates=True)
         lastDate=master[[x for x in master.columns if 'Pp_z']].dropna(how='all').index[-1]
         return lastDate
@@ -243,8 +243,12 @@ def main(name='Hurtado_San_Agustin'):
         return mindate,dsets
 
     def loadGdf(name,shpStr):
+<<<<<<< Updated upstream
         gdfRet=gpd.read_file(os.path.join('..','data',name,shpStr+'.shp'))
         gdfRet.set_index(gdfRet.columns[0],drop=False,inplace=True)
+=======
+        gdfRet=gpd.read_file(os.path.join('..',name,shpStr+'.shp'))
+>>>>>>> Stashed changes
         return gdfRet
 
     def postProcess(polygon,df):
@@ -271,13 +275,13 @@ def main(name='Hurtado_San_Agustin'):
             for data in list(dsets.keys()):
                 for band in dsets[data]:
                     if 'precipitation' in band:
-                        pathOut=os.path.join('..','data',name,'Precipitacion',
+                        pathOut=os.path.join('..',name,'Precipitacion',
                         'PrecipitacionActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
                         df=polygon.dl().iloc[:-1,:]
                     elif 'temperature' in band:
-                        pathOut=os.path.join('..','data',name,'Temperatura',
+                        pathOut=os.path.join('..',name,'Temperatura',
                         'TemperaturaActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
@@ -296,7 +300,8 @@ def main(name='Hurtado_San_Agustin'):
                         dfOut=dfTerra.combine_first(dfAqua)
                         # postprocesar
                         dfOut=postProcess(polygon,dfOut)
-                        dfOut.to_csv(os.path.join('..','data',name,'Nieve','snowCover.csv' ))
+                        dfOut.to_csv(os.path.join('..',name,'Nieve',
+                                                  'snowCoverActualizada.csv' ))
                         continue
                     else:
                         pathOut=os.path.join('..',name,data.replace('/',
@@ -320,8 +325,8 @@ def main(name='Hurtado_San_Agustin'):
                         dfOut=dfTerra.combine_first(dfAqua)
                         # postprocesar
                         dfOut=postProcess(polygon,dfOut)
-                        dfOut.to_csv(os.path.join('..','data',name,'Nieve',
-                        'glacierCover.csv' ))                    
+                        dfOut.to_csv(os.path.join('..',name,'Nieve',
+                        'glacierCoverActualizada.csv' ))                    
         return None
 
     getDatesDatasets(name)
