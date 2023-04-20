@@ -29,7 +29,7 @@ def run_pySRM(name, tipo = 'P'):
     print('Simulacion finalizada exitosamente')
 
 def main():
-    pth=os.path.join('.','src')
+    pth=os.path.join('.','sequia','src')
     os.chdir(pth)
 
     name='Hurtado_San_Agustin'
