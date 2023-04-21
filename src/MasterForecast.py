@@ -2,7 +2,7 @@ import os
 
 def run_pySRM(name, tipo = 'P'):
     import pyCSRM
-    import GEEdl
+    import snowCover61
     import addClimate
     import create_master_SRM
     import forecast_arima
@@ -11,7 +11,7 @@ def run_pySRM(name, tipo = 'P'):
     folder = os.path.abspath(path)
 
     # bajar la pp, t y nieve
-    GEEdl.main(folder)
+    snowCover61.main(folder)
 
     # agregar la pp, t y nieve al master
     # hacer el pronóstico de pp y t
