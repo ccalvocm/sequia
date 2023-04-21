@@ -194,6 +194,8 @@ ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
         if 'NDSI_Snow_Cover' in self.band:
             dfRet=self.filterCount(dfRet,dfRetC.astype(float))
 
+        dfRet=self.autocompleteCol(dfRet)
+
         return dfRet
     
     def fixColumns(self,lista):
@@ -204,13 +206,17 @@ ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
             lista2.append(df)
         return lista2
 
-    # def getDate(self):
-    #     collection = ee.ImageCollection(self.product)
-    #     date_range = collection.reduceColumns(ee.Reducer.minMax(),
-    #                                       ['system:time_start'])
-    #     jsondate1 = ee.Date(date_range.get('min'))
-    #     jsondate2 = ee.Date(date_range.get('max'))
-    #     return (jsondate1,jsondate2)
+    def autocompleteCol(self,df):
+        colsNotna=df.dropna(how='all',axis=1).columns
+        colsNa=[x for x in df.columns if x not in colsNotna]
+        dfOut=df[:]
+        if len(colsNa)>0:
+            for col in colsNa:
+                if col<colsNotna.min():
+                    dfOut[col]=df[colsNotna[colsNotna>col].min()]
+                else:
+                    dfOut[col]=df[colsNotna[colsNotna<col].max()]
+        return dfOut
     
     def fillColumns(self,df):
         df=df.fillna(method='bfill').fillna(method='ffill')
@@ -326,26 +332,6 @@ def main(name='Hurtado_San_Agustin'):
         return None
 
     getDatesDatasets(name)
-    
-def terraClimate():
-    path=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\SIG\Cuencas\subcNClimari.shp'
-    path=r'G:\OneDrive - ciren.cl\Ficha_16_Coquimbo\02_SIG\02_Aguas sup\04_Regional\cuencas_cabecera\Rio Hurtado En San Agustin\bands4calhypso_fix.shp'
-    gdfCuenca=gpd.read_file(path)
-    # gdfCuenca=gpd.GeoDataFrame(pd.DataFrame(gdf.iloc[0]).T)
-    cuenca=polyEE(gdfCuenca,'MODIS/006/MOD10A1','NDSI_Snow_Cover',500)
-    df=cuenca.dl()
-
-    product='IDAHO_EPSCOR/TERRACLIMATE'
-    band='ro'
-    scale=11132
-    cuenca=polyEE(gdfCuenca,product,band,scale)
-    df=cuenca.dl()
-    df.plot()
-    dfOut=df.pivot_table(index='date',columns='name',
-                values='ro').mul(gdfCuenca.to_crs(epsg='32719').area.values,
-                                 1)/(86400000)
-    dfOut=dfOut.divide(dfOut.index.days_in_month,axis=0)
-    dfOut.to_csv(r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Modelos\insumosWEAP\qPunitaquiIngenioPonio.csv')
 
 if __name__=='__main__':
     main()
