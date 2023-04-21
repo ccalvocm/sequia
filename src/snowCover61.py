@@ -178,7 +178,7 @@ class polyEE(dsetEE):
                     # NDSI to snow cover
                     res=dset.filterBounds(self.ee_fc.geometry())
                     resDates=res.filterDate(ee.Date(date),
-ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(calcSnow).select('NDSI')\
+ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI')\
     .map(self.rasterExtracion2)
                     df=self.ImagesToDataFrame(resDates,'NDSI')
                     lista.append(df)
