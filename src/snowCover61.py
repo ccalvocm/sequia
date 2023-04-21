@@ -115,7 +115,7 @@ class polyEE(dsetEE):
     def partitionDates(self):
         datei=self.idate
         datef=self.fdate
-        months=round((datef-datei).days/30)+1
+        months=round((datef-datei).days/27)+1
         return list(pd.date_range(start=datei,end=datef,periods=months))
 
     def ImagesToDataFrame(self,images,band):
@@ -157,29 +157,39 @@ class polyEE(dsetEE):
         dfRetC=pd.DataFrame(index=idx,columns=list(self.gdf.index))
         dset=ee.ImageCollection(self.product)
         # set scale
-        self.scale=dset.first().projection().nominalScale().getInfo()
+        self.scale=dset.select(self.band).first().projection().nominalScale().getInfo()
         for ind,date in enumerate(listPeriods[:-1]):
             lista=[]
             listaCount=[]
             for index in self.gdf.index:
-                print(index)
+                # preprocesar los FeatureCollection
                 gdfTemp=self.geoSeries2GeoDataFrame(self.gdf.loc[index])
                 gdfTemp=self.num2str(gdfTemp).set_crs(epsg='4326')
                 self.ee_fc=self.gdf2FeatureCollection(gdfTemp)
-                if 'NDSI_Snow_Cover' in self.band:
+                
+                if '061' in self.product:
+                    # minimo de imagenes
                     resCount=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
                     resDatesC=resCount.filterDate(ee.Date(date),
                     ee.Date(listPeriods[ind+1])).map(self.countImage)
                     dfCount=self.ImagesToDataFrame(resDatesC,self.band)
                     listaCount.append(dfCount)
-                res=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
-#                 resDates=res.filterDate(ee.Date(date),
-# ee.Date(listPeriods[ind+1])).map(self.spatialFill).map(self.rasterExtracion2)\
-                resDates=res.filterDate(ee.Date(date),
-ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
-                df=self.ImagesToDataFrame(resDates,self.band)
 
-                lista.append(df)
+                    # NDSI to snow cover
+                    res=dset.filterBounds(self.ee_fc.geometry())
+                    resDates=res.filterDate(ee.Date(date),
+ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(calcSnow).select('NDSI')\
+    .map(self.rasterExtracion2)
+                    df=self.ImagesToDataFrame(resDates,'NDSI')
+                    lista.append(df)
+
+                else:
+                    res=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
+                    resDates=res.filterDate(ee.Date(date),
+                    ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
+                    df=self.ImagesToDataFrame(resDates,self.band)
+                    lista.append(df)
+
             lista2=self.fixColumns(lista)
             lista3=self.fixColumns(listaCount)
 
@@ -190,10 +200,11 @@ ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
                 dfDateCount=pd.concat(lista3, axis=1, ignore_index=False)
                 dfRetC.loc[dfDateCount.index,:]=dfDateCount.values
                 
-            # filtrar los datos sin nieve
-        if 'NDSI_Snow_Cover' in self.band:
+        # filtrar las imagenes sin datos
+        if '061' in self.product:
             dfRet=self.filterCount(dfRet,dfRetC.astype(float))
 
+        # completar las columnas que no extrajo GEE
         dfRet=self.autocompleteCol(dfRet)
 
         return dfRet
@@ -220,15 +231,24 @@ ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
     
     def fillColumns(self,df):
         df=df.fillna(method='bfill').fillna(method='ffill')
-        # df=df[df.columns].fillna(df[df.columns].rolling(7,center=True,
-        #                                              min_periods=1).mean())
         return df
 
     def filterCount(self,df1,df2):
-        mask=df2>df2.astype(float).describe().loc['mean']
+        mask=df2>df2.astype(float).describe().loc['mean']-1
         return df1[mask]
 
+    def calcNDSI(self,img):
+        ndsi = img.normalizedDifference(['sur_refl_b04',
+                            'sur_refl_b06']).rename('NDSI')
+        return img.addBands(ndsi)
+    
+    def calcSnow(self,img):
+        maskNDSI =img.select('NDSI').gte(0.4)
+        mask=img.updateMask(maskNDSI).unmask(0)
+        return mask
+
 def main(name='Hurtado_San_Agustin'):
+
     def getLastDate(name):
         path=os.path.join('..',name,'Master.csv')
         master=pd.read_csv(path,index_col=0,parse_dates=True)
@@ -237,8 +257,8 @@ def main(name='Hurtado_San_Agustin'):
 
     def getMinDate():
         dsets={'ECMWF/ERA5_LAND/DAILY_RAW':['total_precipitation_sum',
-        'temperature_2m'],'MODIS/006/MOD10A1':['NDSI_Snow_Cover'],
-        'MODIS/006/MYD10A1':['NDSI_Snow_Cover']
+        'temperature_2m'],'MODIS/061/MOD09GA':['sur_refl_b04'],
+        'MODIS/061/MYD09GA':['sur_refl_b04']
         }
         mindate=pd.to_datetime(datetime.date.today())
 
@@ -253,7 +273,7 @@ def main(name='Hurtado_San_Agustin'):
         gdfRet.set_index(gdfRet.columns[0],drop=False,inplace=True)
         return gdfRet
 
-    def postProcess(polygon,df):
+    def postProcess(polygon,df,fillValue=0):
         # poblar el df
         dfAll=pd.DataFrame(np.nan,index=pd.date_range(df.index.min(),
                                 df.index.max(),freq='D'),
@@ -261,14 +281,15 @@ def main(name='Hurtado_San_Agustin'):
         dfAll.loc[df.index,df.columns]=df.values
 
         dfAll=polygon.fillColumns(df)
-        dfOut=dfAll.fillna(0)
-        dfOut=dfOut/100.
+        dfOut=dfAll.fillna(fillValue)
         dfOut=dfOut*1.21
         dfOut=dfOut.applymap(lambda x: min(x,1))
+        dfOut=dfOut.applymap(lambda x: max(x,0))
         return dfOut
 
     def getDatesDatasets(name='Hurtado_San_Agustin'):
         lastDate=getLastDate(name)
+        print(lastDate)
 
         mindate,dsets=getMinDate()
 
@@ -288,13 +309,15 @@ def main(name='Hurtado_San_Agustin'):
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
                         df=polygon.dl().iloc[:-1,:]
-                    elif 'MOD10A1' in data:
+
+                    elif data.find('MOD09GA')>0:
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate)
                         df=polygon.dl()
                         dfTerra=df[:]
                         continue
-                    elif 'MYD10A1' in data:
+                        
+                    elif data.find('MYD09GA')>0:
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate)
                         dfAqua=polygon.dl()
@@ -303,8 +326,7 @@ def main(name='Hurtado_San_Agustin'):
                         # postprocesar
                         dfOut=postProcess(polygon,dfOut)
                         dfOut.to_csv(os.path.join('..',name,'Nieve',
-                                                  'snowCoverActualizada.csv' ))
-                        continue
+                                                    'snowCoverActualizada.csv'))
                     else:
                         pathOut=os.path.join('..',name,data.replace('/',
                         '_')+'_'+band+'.csv')
@@ -316,19 +338,20 @@ def main(name='Hurtado_San_Agustin'):
             # ahora bajar cobertura de glaciares
             gdfCuenca=loadGdf(name,'glacierBands')
             for data in list(dsets.keys()):
-                if 'MOD10A1' in data:
-                        polygon=polyEE(name,gdfCuenca,data,dsets[data][0],idate=lastDate,
-                    fdate=mindate)
-                        dfTerra=polygon.dl()
-                elif 'MYD10A1' in data:
-                        polygon=polyEE(name,gdfCuenca,data,dsets[data][0],idate=lastDate,
-                    fdate=mindate)
-                        dfAqua=polygon.dl()
-                        dfOut=dfTerra.combine_first(dfAqua)
-                        # postprocesar
-                        dfOut=postProcess(polygon,dfOut)
-                        dfOut.to_csv(os.path.join('..',name,'Nieve',
-                        'glacierCoverActualizada.csv' ))                    
+                if data.find('MOD09GA')>0:
+                    polygon=polyEE(name,gdfCuenca,data,dsets[data][0],
+                                       idate=lastDate,fdate=mindate)
+                    dfTerra=polygon.dl()
+                elif data.find('MYD09GA')>0:
+                    polygon=polyEE(name,gdfCuenca,data,dsets[data][0],
+                                       idate=lastDate,fdate=mindate)
+                    dfAqua=polygon.dl()
+                    dfOut=dfTerra.combine_first(dfAqua)
+                    # postprocesar
+                    dfOut=postProcess(polygon,dfOut,fillValue=1.)
+                    dfOut.to_csv(os.path.join('..',name,'Nieve',
+                    'glacierCoverActualizada.csv' ))
+            print('actualizacion de datasets finalizada')                    
         return None
 
     getDatesDatasets(name)
