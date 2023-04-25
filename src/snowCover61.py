@@ -178,7 +178,7 @@ class polyEE(dsetEE):
                     # NDSI to snow cover
                     res=dset.filterBounds(self.ee_fc.geometry())
                     resDates=res.filterDate(ee.Date(date),
-ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(calcSnow).select('NDSI')\
+ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI')\
     .map(self.rasterExtracion2)
                     df=self.ImagesToDataFrame(resDates,'NDSI')
                     lista.append(df)
@@ -260,6 +260,7 @@ def main(name='Hurtado_San_Agustin'):
         'temperature_2m'],'MODIS/061/MOD09GA':['sur_refl_b04'],
         'MODIS/061/MYD09GA':['sur_refl_b04']
         }
+        dsets={'ECMWF/ERA5_LAND/DAILY_RAW':['total_precipitation_sum']}
         mindate=pd.to_datetime(datetime.date.today())
 
         for data in list(dsets.keys()):
@@ -289,6 +290,7 @@ def main(name='Hurtado_San_Agustin'):
 
     def getDatesDatasets(name='Hurtado_San_Agustin'):
         lastDate=getLastDate(name)
+        lastDate=pd.to_datetime('2000-01-01')
         print(lastDate)
 
         mindate,dsets=getMinDate()
@@ -357,4 +359,4 @@ def main(name='Hurtado_San_Agustin'):
     getDatesDatasets(name)
 
 if __name__=='__main__':
-    main()
+     main()
