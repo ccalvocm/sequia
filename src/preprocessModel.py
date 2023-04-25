@@ -221,7 +221,7 @@ def addCaudales(root,cuenca,master,dictCuenca):
                         index = False, sep = ' ', header = None)
         ins = pd.DataFrame(df_q['ins']).applymap(lambda x: str(x).replace(' ',
                                                                 u"\u00A0"))
-        # ins.to_csv(os.path.join(root,cuenca,'q.ins'),index=False,header=None)
+        ins.to_csv(os.path.join(root,cuenca,'q.ins'),index=False,header=None)
         
     insCaudales(df_q,root)
     return master
