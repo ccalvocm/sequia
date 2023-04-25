@@ -1,2 +1,2 @@
-beopest64 Master /h 192.168.1.196:4004
+agent_hp Master /h 10.10.20.61:4004
 pause

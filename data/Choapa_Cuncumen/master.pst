@@ -1,12 +1,12 @@
 pcf
 * control data
 restart estimation
-50    12758      18       0       2
+52    12758      20       0       2
 2    2 single point   1   0   0
 10.0  -3  0.3  0.03  10  lamforgive derforgive
 10.0  10.0  0.001
 0.1  noaui
-   50  0.005  4  4  0.005  4
+   55  0.005  4  4  0.005  4
 1  1  1  PARSAVEITN
 * singular value decomposition
 1
@@ -31,6 +31,8 @@ y            relative 0.025  0.0  switch  2.0 parabolic 1.0e-4 0.5 smaller
 tlr			 relative 0.5  0.0  switch  2.0 parabolic 1.0e-4 0.5 smaller
 tls			 relative 0.5  0.0  switch  2.0 parabolic 1.0e-4 0.5 smaller
 beta			 relative 0.025  0.0  switch  2.0 parabolic 1.0e-4 0.5 smaller
+alpha			 relative 0.025  0.0  switch  2.0 parabolic 1.0e-4 0.5 smaller
+tcrit			 relative 0.025  0.0  switch  2.0 parabolic 1.0e-4 0.5 smaller
 * parameter data
 ddsd	log	factor   0.2871300      1.00e-01	2.1	ddsd	1	0	1
 ddsw	log	factor   0.2301400      1.00e-01	2.1	ddsw	1	0	1
@@ -81,7 +83,9 @@ x	log	factor    1.156447      1.00e-08	2.3	x	1	0	1
 y	log	factor   2.8469426E-01  1.00e-08	1	y	1	0	1
 tlr	log	factor   6.8200000E-02  1.00e-08	10	tlr	1	0	1
 tls	log	factor   0.2220000      1.00e-08	30	tls	1	0	1
-beta	log	factor   0.2100000      2.00e-01	3e-01	beta	1	0	1
+beta	fixed	factor   0.3000000      1.00e-01	3e-01	beta	1	0	1
+alpha	fixed	factor   0.9900000      6.00e-01	9.9e-01	alpha	1	0	1
+tcrit	log	factor   7.4800000E-04  1.00e-05	2	tcrit	1	0	1
 * observation groups
 q
 swe
@@ -12849,5 +12853,5 @@ runMSRM.bat
 * model input/output
 Master.tpl  Master.csv
 timeLagDDsb.tpl  timeLagDDsb.csv
-q.ins  Qsim_Choapa_Cuncumen.csv
-swe.ins  SWEsim_Choapa_Cuncumen.csv
+q.ins  Qsim.csv
+swe.ins  SWEsim.csv

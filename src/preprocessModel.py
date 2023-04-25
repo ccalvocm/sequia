@@ -346,9 +346,9 @@ def addSnow(root,cuenca,master):
 def exportMaster(master,root,cuenca):
     import shutil
     master=master[:]
-    rutaMasterout=os.path.join(root,cuenca,'Master.csv')
-    shutil.copyfile(rutaMasterout, rutaMasterout.replace('.csv',
-                                '.csv.back'), follow_symlinks=True)
+    rutaMasterout=os.path.join(root,cuenca,'Master.tpl')
+    shutil.copyfile(rutaMasterout, rutaMasterout.replace('.tpl',
+                                '.tpl.back'), follow_symlinks=True)
     
     master.to_csv(rutaMasterout)
     return None    
@@ -706,11 +706,11 @@ def main():
     # compeltar el master
     masterExtQPTSvf=completarMaster(root,cuenca,masterExtQPTS,dfArea)
 
-    # guardar el master
-    exportMaster(masterExtQPTSvf,root,cuenca)
-
     # crear el .tpl
     dfTpl=createTPL(root,cuenca,masterExtQPTSvf)
+
+    # guardar el master
+    exportMaster(dfTpl,root,cuenca)
 
     def writeTPL(root,cuenca):
         path=os.path.join(root,cuenca,'Master.tpl')
