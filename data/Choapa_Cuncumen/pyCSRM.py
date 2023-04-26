@@ -484,7 +484,8 @@ def DEVELOP_SRM(root, Basin, plots=False):
         plt.figure()
         bf=pd.read_csv(os.path.join(root,'bf.csv'),index_col=0,
                        parse_dates=True)
-        idx=pd.date_range('2000-01-01','2023-02-01',freq='MS')
+        idx=pd.date_range('2000-01-01',
+str(pd.to_datetime(dates[-1]).year)+'-'+str(pd.to_datetime(dates[-1]).month+1)+'-01',freq='MS')
         bf=bf.reindex(idx).resample('D').interpolate('time').loc[dates].values
         plt.plot(bf)
         plt.plot(baseflow_)
@@ -502,6 +503,7 @@ def DEVELOP_SRM(root, Basin, plots=False):
         swe_obs = pd.read_csv(os.path.join(root,'SWE_bands_ERA5.csv'),
                               index_col = 0, parse_dates = True)
         swe_obs = swe_obs.loc[dates]
+        swe_obs[swe_obs.columns[-1]]=swe_obs[swe_obs.columns[-2]]
         swe_obs = np.sum(swe_obs.values*A, axis = 1) / Atot
         swe_obs = pd.DataFrame(swe_obs, index = dates,
                                 columns = ['SWE observado']) # SWE en m
@@ -509,7 +511,7 @@ def DEVELOP_SRM(root, Basin, plots=False):
         # plots
         fig, ax = plt.subplots(1)
         swe_sim.plot(ax = ax)   
-        swe_obs.plot(ax = ax)        
+        swe_obs.dropna().plot(ax = ax)        
         plt.ylabel('Equivalente en agua de nieve (m)')
         plt.grid()
        
@@ -529,5 +531,5 @@ def DEVELOP_SRM(root, Basin, plots=False):
 if __name__ == '__main__':
     root = '.'
     Basin = 'Choapa_Cuncumen'
-    DEVELOP_SRM(root, Basin, False)
+    DEVELOP_SRM(root, Basin, True)
     

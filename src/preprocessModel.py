@@ -188,9 +188,9 @@ def addCaudales(root,cuenca,master,dictCuenca):
     df_qaux=pd.DataFrame(df_qaux.loc[(df_qaux.index.year>=2000) & (df_qaux.index<=fecha)])
     df_q=pd.DataFrame([],index=pd.date_range('2000-01-01',fecha,
                                              freq='1d'))
-    df_qaux['wgt'] = 1e-2
+    df_qaux['wgt'] = 1e-1
     col=df_qaux.columns[0]
-    df_qaux['wgt'][df_qaux[col]<=df_qaux[col].quantile(0.5)]=1e1
+    df_qaux['wgt'][df_qaux[col]<=df_qaux[col].quantile(0.5)]=1
     est=df_qaux.columns[0]
     df_q.loc[df_qaux.index, [est, 'wgt']] = df_qaux.values
                    
