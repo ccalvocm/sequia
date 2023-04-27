@@ -531,5 +531,5 @@ str(pd.to_datetime(dates[-1]).year)+'-'+str(pd.to_datetime(dates[-1]).month+1)+'
 if __name__ == '__main__':
     root = '.'
     Basin = 'Choapa_Cuncumen'
-    DEVELOP_SRM(root, Basin, True)
+    DEVELOP_SRM(root, Basin, False)
     
