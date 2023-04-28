@@ -131,8 +131,7 @@ def createSweObsIns(df_swe_mon,est,swe_wgt,root,cuenca):
                           header=None,mode='a',sep=' ')
         borrar_comillas(os.path.join(folderOut,'swe.ins'))
 
-    # return createSweIns(swe_stack,df_swe_mon,folderOut)
-        return None
+    return createSweIns(swe_stack,df_swe_mon,folderOut)
 
 def swe(cuenca,root,dictCuenca):
     
@@ -666,7 +665,7 @@ def main():
 'Chalinga_Palmilla':['Rio Chalinga En La Palmilla','04712001-2']}
     
     # seleccionar la subcuenca
-    cuenca=list(dictCuenca.keys())[6]
+    cuenca=list(dictCuenca.keys())[1]
 
     # processGlaciers
     pathBands=os.path.join(root,cuenca,'bands.shp')
