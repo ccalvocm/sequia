@@ -16,6 +16,17 @@ import geopandas as gpd
 fiscalyear.START_MONTH = 4    
 
 # funciones
+
+def fixMaster(path):
+    pathMaster=os.path.join(path,'Master.csv')
+    pathBands=os.path.join(path,'bands_mean_area.csv')
+    master=pd.read_csv(pathMaster,index_col=0,parse_dates=True)
+    master.iloc[1:,:]=np.nan
+    nBands=len(pd.read_csv(pathBands))
+    masterOut=master[[x for x in master.columns if str(nBands+1) not in x]]
+    masterOut.to_csv(os.path.join(path,'Master.csv'))
+    return None
+
 def agnohidrologico(date):
     year_ = date.year
     month_ = date.month
@@ -218,8 +229,7 @@ def addCaudales(root,cuenca,master,dictCuenca):
         df_qpst = df_qpst[['ins', est, 'wgt', 'obsgroup']]
         df_qpst.to_csv(os.path.join(root,cuenca,'Master_obervation_data.pst'),
                         index = False, sep = ' ', header = None)
-        ins = pd.DataFrame(df_q['ins']).applymap(lambda x: str(x).replace(' ',
-                                                                u"\u00A0"))
+        ins = pd.DataFrame(df_q['ins'])
         ins.to_csv(os.path.join(root,cuenca,'q.ins'),index=False,header=None)
         
     insCaudales(df_q,root)
@@ -662,10 +672,16 @@ def main():
 'Illapel_Las_Burras':['Rio Illapel En Las Burras','04721001-1'],
 'Mostazal_Cuestecita':['Rio Mostazal En Cuestecita','04514001-6'],
 'Choapa_Cuncumen':['Rio Choapa en Cuncumen','04703002-1'],
-'Chalinga_Palmilla':['Rio Chalinga En La Palmilla','04712001-2']}
+'Chalinga_Palmilla':['Rio Chalinga En La Palmilla','04712001-2'],
+'Grande_Las_Ramadas':['Rio Grande En Las Ramadas','04511002-8'],
+'Tascadero_Desembocadura': ['Rio Tascadero en Desembocadura','4512001-5'],
+'Ponio': ['NA','NA'],
+'Los_Molles': ['NA','NA'],
+'La_Higuera': ['NA','NA'],
+'Pama_Valle_Hermoso': ['Río Pama en Valle Hermoso','04533002-8']}
     
     # seleccionar la subcuenca
-    cuenca=list(dictCuenca.keys())[1]
+    cuenca=list(dictCuenca.keys())[7]
 
     # processGlaciers
     pathBands=os.path.join(root,cuenca,'bands.shp')

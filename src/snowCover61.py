@@ -260,7 +260,6 @@ def main(name='Hurtado_San_Agustin'):
         'temperature_2m'],'MODIS/061/MOD09GA':['sur_refl_b04'],
         'MODIS/061/MYD09GA':['sur_refl_b04']
         }
-        dsets={'ECMWF/ERA5_LAND/DAILY_RAW':['total_precipitation_sum']}
         mindate=pd.to_datetime(datetime.date.today())
 
         for data in list(dsets.keys()):
@@ -289,7 +288,7 @@ def main(name='Hurtado_San_Agustin'):
         return dfOut
 
     def getDatesDatasets(name='Hurtado_San_Agustin'):
-        lastDate=getLastDate(name)
+        # lastDate=getLastDate(name)
         lastDate=pd.to_datetime('2000-01-01')
         print(lastDate)
 
