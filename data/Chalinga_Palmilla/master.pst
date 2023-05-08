@@ -75,7 +75,7 @@ x	log	factor    1.156447      1.00e-08	2.3	x	1	0	1
 y	log	factor   2.8469426E-01  1.00e-08	1	y	1	0	1
 tlr	log	factor   6.8200000E-02  1.00e-08	10	tlr	1	0	1
 tls	log	factor   0.2220000      1.00e-08	30	tls	1	0	1
-beta	log	factor   0.1000000      1.00e-01	2e-01	beta	1	0	1
+beta	log	factor   0.05000000      0.050e-01	1e-01	beta	1	0	1
 alpha	log	factor   0.8900000      6.00e-01	9.9e-01	alpha	1	0	1
 tcrit	log	factor   7.4800000E-04  1.00e-05	2	tcrit	1	0	1
 * observation groups
