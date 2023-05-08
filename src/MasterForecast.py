@@ -32,7 +32,7 @@ def main():
     pth=os.path.join('.','sequia','src')
     os.chdir(pth)
 
-    name='Grande_Las_Ramadas'
+    name='Hurtado_San_Agustin'
     run_pySRM(name)
 
 if __name__=='__main__':
