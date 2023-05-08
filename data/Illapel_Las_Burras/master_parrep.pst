@@ -1,7 +1,7 @@
 pcf
 * control data
 restart estimation
-44    10958      20       0       2
+44    10946      20       0       2
 2    2 single point   1   0   0
 10.0  -3  0.3  0.03  10  lamforgive derforgive
 10.0  10.0  0.001
@@ -34,41 +34,41 @@ beta			 relative 0.025  0.0  switch  2.0 parabolic 1.0e-4 0.5 smaller
 alpha			 relative 0.025  0.0  switch  2.0 parabolic 1.0e-4 0.5 smaller
 tcrit			 relative 0.025  0.0  switch  2.0 parabolic 1.0e-4 0.5 smaller
 * parameter data
-ddsd	log	factor   0.2608500      1.00e-01	2.1	ddsd	1	0	1
-ddsw	log	factor   0.5161800      1.00e-01	2.1	ddsw	1	0	1
-ddgd	log	factor    1.947546      1.00e-08	2.1	ddgd	1	0	1
-ddgw	log	factor   0.1820478      1.00e-08	2.1	ddgw	1	0	1
-rcs1d	log	factor   0.6549927      1.00e-08	2	rcsd	1	0	1
-rcs1w	log	factor   0.3542365      1.00e-08	2	rcsw	1	0	1
-rcs2d	log	factor   9.9310373E-02  1.00e-08	2	rcsd	1	0	1
-rcs2w	log	factor   6.2398018E-02  1.00e-08	2	rcsw	1	0	1
-rcs3d	log	factor   1.6243129E-02  1.00e-08	2	rcsd	1	0	1
+ddsd	log	factor   0.2866700      1.00e-01	2.1	ddsd	1	0	1
+ddsw	log	factor   0.5291200      1.00e-01	2.1	ddsw	1	0	1
+ddgd	log	factor    2.076916      1.00e-08	2.1	ddgd	1	0	1
+ddgw	log	factor   0.1875233      1.00e-08	2.1	ddgw	1	0	1
+rcs1d	log	factor   0.3229056      1.00e-08	2	rcsd	1	0	1
+rcs1w	log	factor   0.2015009      1.00e-08	2	rcsw	1	0	1
+rcs2d	log	factor   4.7049307E-02  1.00e-08	2	rcsd	1	0	1
+rcs2w	log	factor   8.0422387E-02  1.00e-08	2	rcsw	1	0	1
+rcs3d	log	factor   8.2255821E-03  1.00e-08	2	rcsd	1	0	1
 rcs3w	log	factor    2.000000      1.00e-08	2	rcsw	1	0	1
-rcs4d	log	factor   1.9625851E-03  1.00e-08	2	rcsd	1	0	1
-rcs4w	log	factor   2.0648975E-03  1.00e-08	2	rcsw	1	0	1
-rcs5d	log	factor   0.3728961      1.00e-08	2	rcsd	1	0	1
-rcs5w	log	factor   0.5168652      1.00e-08	2	rcsw	1	0	1
-rcs6d	log	factor   0.1986623      1.00e-08	2	rcsd	1	0	1
-rcs6w	log	factor   0.5198128      1.00e-08	2	rcsw	1	0	1
-rcs7d	log	factor   4.9861022E-03  1.00e-08	2	rcsd	1	0	1
+rcs4d	log	factor   1.4047652E-03  1.00e-08	2	rcsd	1	0	1
+rcs4w	log	factor   1.9939866E-03  1.00e-08	2	rcsw	1	0	1
+rcs5d	log	factor   4.3800888E-03  1.00e-08	2	rcsd	1	0	1
+rcs5w	log	factor   0.6143955      1.00e-08	2	rcsw	1	0	1
+rcs6d	log	factor   0.3604507      1.00e-08	2	rcsd	1	0	1
+rcs6w	log	factor   0.4593579      1.00e-08	2	rcsw	1	0	1
+rcs7d	log	factor   5.0305329E-03  1.00e-08	2	rcsd	1	0	1
 rcs7w	log	factor    2.000000      1.00e-08	2	rcsw	1	0	1
-rcr1d	log	factor    1.905480      1.00e-08	2	rcrd	1	0	1
-rcr1w	log	factor    1.596808      1.00e-08	2	rcrw	1	0	1
-rcr2d	log	factor   2.9748442E-03  1.00e-08	2	rcrd	1	0	1
-rcr2w	log	factor   9.4593155E-03  1.00e-08	2	rcrw	1	0	1
-rcr3d	log	factor   1.9304813E-03  1.00e-08	2	rcrd	1	0	1
-rcr3w	log	factor   1.7281326E-03  1.00e-08	2	rcrw	1	0	1
-rcr4d	log	factor   1.1328579E-03  1.00e-08	2	rcrd	1	0	1
-rcr4w	log	factor   6.6153807E-04  1.00e-08	2	rcrw	1	0	1
-rcr5d	log	factor   1.1758722E-03  1.00e-08	2	rcrd	1	0	1
-rcr5w	log	factor   2.7194120E-04  1.00e-08	2	rcrw	1	0	1
-rcr6d	log	factor   6.2755784E-03  1.00e-08	2	rcrd	1	0	1
-rcr6w	log	factor   3.4858557E-04  1.00e-08	2	rcrw	1	0	1
-rcr7d	log	factor   1.3968006E-02  1.00e-08	2	rcrd	1	0	1
-rcr7w	log	factor   8.1427234E-03  1.00e-08	2	rcrw	1	0	1
-rcgd	log	factor   5.7312005E-02  1.00e-08	2	rcgd	1	0	1
-rcgw	log	factor   0.8648716      1.00e-08	2	rcgw	1	0	1
-tl	log	factor    1.917506      1.00e-08	5	tl	1	0	1
+rcr1d	log	factor   4.1527731E-03  1.00e-08	2	rcrd	1	0	1
+rcr1w	log	factor    1.489637      1.00e-08	2	rcrw	1	0	1
+rcr2d	log	factor   0.7242242      1.00e-08	2	rcrd	1	0	1
+rcr2w	log	factor   1.2941744E-02  1.00e-08	2	rcrw	1	0	1
+rcr3d	log	factor   2.5232964E-03  1.00e-08	2	rcrd	1	0	1
+rcr3w	log	factor   3.5802426E-03  1.00e-08	2	rcrw	1	0	1
+rcr4d	log	factor   1.4149371E-03  1.00e-08	2	rcrd	1	0	1
+rcr4w	log	factor   9.8216487E-04  1.00e-08	2	rcrw	1	0	1
+rcr5d	log	factor   6.3036800E-04  1.00e-08	2	rcrd	1	0	1
+rcr5w	log	factor   7.7309921E-04  1.00e-08	2	rcrw	1	0	1
+rcr6d	log	factor   7.9060655E-04  1.00e-08	2	rcrd	1	0	1
+rcr6w	log	factor   9.3152315E-04  1.00e-08	2	rcrw	1	0	1
+rcr7d	log	factor   8.4522795E-03  1.00e-08	2	rcrd	1	0	1
+rcr7w	log	factor   1.0530268E-02  1.00e-08	2	rcrw	1	0	1
+rcgd	log	factor   4.2983477E-02  1.00e-08	2	rcgd	1	0	1
+rcgw	log	factor   0.8908848      1.00e-08	2	rcgw	1	0	1
+tl	log	factor    1.821180      1.00e-08	5	tl	1	0	1
 xw	log	factor   0.9523951      1.00e-08	2.1	xw	1	0	1
 yw	log	factor   2.5432844E-04  1.00e-08	1	yw	1	0	1
 x	log	factor    1.156447      1.00e-08	2.3	x	1	0	1
@@ -1906,7 +1906,7 @@ q1822 1060.0 0.1 q
 q1823 1040.0 0.1 q
 q1824 993.0 0.1 q
 q1825 985.0 0.1 q
-q1826 963.0 0.1 q
+q1826 963.0 1.0 q
 q1827 966.0 0.1 q
 q1828 1010.0 0.1 q
 q1829 986.0 0.1 q
@@ -2031,7 +2031,7 @@ q1947 945.0 1.0 q
 q1948 988.0 0.1 q
 q1949 946.0 1.0 q
 q1950 864.0 1.0 q
-q1951 963.0 0.1 q
+q1951 963.0 1.0 q
 q1952 1490.0 0.1 q
 q1953 1450.0 0.1 q
 q1954 1490.0 0.1 q
@@ -2987,7 +2987,7 @@ q2906 1060.0 0.1 q
 q2907 1070.0 0.1 q
 q2908 1060.0 0.1 q
 q2909 976.0 0.1 q
-q2910 963.0 0.1 q
+q2910 963.0 1.0 q
 q2911 955.0 1.0 q
 q2912 953.0 1.0 q
 q2913 1070.0 0.1 q
@@ -3226,7 +3226,7 @@ q3145 1170.0 0.1 q
 q3146 1150.0 0.1 q
 q3147 1110.0 0.1 q
 q3148 1060.0 0.1 q
-q3149 963.0 0.1 q
+q3149 963.0 1.0 q
 q3150 927.0 1.0 q
 q3151 1260.0 0.1 q
 q3152 1100.0 0.1 q
@@ -3682,13 +3682,13 @@ q3639 1070.0 0.1 q
 q3640 1100.0 0.1 q
 q3641 1060.0 0.1 q
 q3642 1020.0 0.1 q
-q3643 963.0 0.1 q
+q3643 963.0 1.0 q
 q3644 955.0 1.0 q
 q3645 1000.0 0.1 q
 q3646 980.0 0.1 q
 q3647 934.0 1.0 q
 q3648 939.0 1.0 q
-q3649 963.0 0.1 q
+q3649 963.0 1.0 q
 q3650 886.0 1.0 q
 q3651 858.0 1.0 q
 q3652 927.0 1.0 q
@@ -6243,7 +6243,7 @@ q6618 1060.0 0.1 q
 q6619 1030.0 0.1 q
 q6620 1030.0 0.1 q
 q6621 1030.0 0.1 q
-q6622 963.0 0.1 q
+q6622 963.0 1.0 q
 q6623 931.0 1.0 q
 q6624 931.0 1.0 q
 q6625 931.0 1.0 q
@@ -6450,7 +6450,7 @@ q6825 938.0 1.0 q
 q6826 918.0 1.0 q
 q6827 941.0 1.0 q
 q6828 931.0 1.0 q
-q6829 963.0 0.1 q
+q6829 963.0 1.0 q
 q6830 924.0 1.0 q
 q6831 837.0 1.0 q
 q6832 879.0 1.0 q
@@ -7111,8 +7111,6 @@ q7486 445.0 1.0 q
 q7487 341.0 1.0 q
 q7488 469.0 1.0 q
 q7489 484.0 1.0 q
-q7490 0.0 1.0 q
-q7491 0.0 1.0 q
 q7510 545.0 1.0 q
 q7511 355.0 1.0 q
 q7512 371.0 1.0 q
@@ -7291,7 +7289,6 @@ q8228 300.0 1.0 q
 q8229 336.0 1.0 q
 q8230 353.0 1.0 q
 q8231 335.0 1.0 q
-q8232 21.0 1.0 q
 q8244 480.0 1.0 q
 q8245 462.0 1.0 q
 q8246 463.0 1.0 q
@@ -7304,18 +7301,9 @@ q8252 246.0 1.0 q
 q8253 243.0 1.0 q
 q8254 229.0 1.0 q
 q8255 49.0 1.0 q
-q8256 37.0 1.0 q
-q8257 38.0 1.0 q
 q8258 42.0 1.0 q
-q8259 40.0 1.0 q
-q8260 41.0 1.0 q
-q8261 39.0 1.0 q
 q8262 42.0 1.0 q
 q8263 42.0 1.0 q
-q8264 38.0 1.0 q
-q8265 39.0 1.0 q
-q8266 33.0 1.0 q
-q8267 34.0 1.0 q
 q8268 45.0 1.0 q
 q8269 51.0 1.0 q
 q8270 75.0 1.0 q
@@ -7439,7 +7427,7 @@ q8387 1160.0 0.1 q
 q8388 1159.0 0.1 q
 q8389 1066.0 0.1 q
 q8390 993.0 0.1 q
-q8391 963.0 0.1 q
+q8391 963.0 1.0 q
 q8392 880.0 1.0 q
 q8393 872.0 1.0 q
 q8394 925.0 1.0 q

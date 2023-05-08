@@ -1,9 +1,12 @@
-# Define base image
-FROM continuumio/miniconda3
- 
+# Define base image                                  
+FROM continuumio/miniconda3                          
+                                                     
 # Set working directory for the project
 WORKDIR .
- 
+
+RUN apt-get update && apt-get install cron -y && apt-get install vim -y && apt-get install ssh -y
+RUN echo "root:anid-sequia2023"
+
 # Create Conda environment from the YAML file
 COPY environment.yaml .
 RUN conda env create -f environment.yaml || echo "entorno ya creado"
