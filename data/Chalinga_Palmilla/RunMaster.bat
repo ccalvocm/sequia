@@ -1,2 +1,2 @@
-beopest64 Master /h :4004
+pest_hp master.pst /H :4004
 pause

@@ -4,7 +4,8 @@ Created on Thu Jul 22 09:24:41 2021
 
 @author: Carlos
 """
-def loopQtotal(FirstDay, Days, nZones, apPluv, k, X, Qtot, Y, BaseFlow_, tls, tlr, Qsnow, Qnewsnow, Qglacial, Qrain):
+def loopQtotal(FirstDay,Days,nZones,apPluv,k,X,Qtot,Y,BaseFlow_,tls,tlr,
+                Qsnow, Qnewsnow, Qglacial, Qrain):
     def sign(x):
         if x > 0:
             return 1.
@@ -12,8 +13,7 @@ def loopQtotal(FirstDay, Days, nZones, apPluv, k, X, Qtot, Y, BaseFlow_, tls, tl
             return -1.
         elif x == 0:
             return 0.
-        else:
-            return x
+        return x
     
     for i in range(FirstDay,(len(Days) - 1)):
     #calculating the recession coefficient 
