@@ -22,7 +22,7 @@ def loop(FirstDay, Days, nZones, PCR2MET, Pbands, Tbands, Tcrit, snowAcc, A, sum
                # Tratar la precipitacion nueva como nieve o lluvia
                if Tbands[i,j] < Tcrit:
                    #Acumula nieve y corrige la precipitacion liquida calculada anteriormente
-                   snowAcc[i+1,j] = snowAcc[i+1,j] + 1.5*Pbands[i,j] #SWE en m
+                   snowAcc[i+1,j] = snowAcc[i+1,j] + 1.2*Pbands[i,j] #SWE en m
                    PCR2MET[i,j]=0
                    if summerdays[i] == 1:
                        Qnewsnow[i + 1,j]=max(RCsnow[i,j]*DegDaySnow[i]*Tbands[i,j]*(1 - SCA[i,j])*A[j]/86400,0) #en m3/s

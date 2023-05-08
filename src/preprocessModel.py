@@ -21,7 +21,7 @@ def fixMaster(path):
     pathMaster=os.path.join(path,'Master.csv')
     pathBands=os.path.join(path,'bands_mean_area.csv')
     master=pd.read_csv(pathMaster,index_col=0,parse_dates=True)
-    master.iloc[1:,:]=np.nan
+    # master.iloc[1:,:]=np.nan
     nBands=len(pd.read_csv(pathBands))
     masterOut=master[[x for x in master.columns if str(nBands+1) not in x]]
     masterOut.to_csv(os.path.join(path,'Master.csv'))
@@ -545,7 +545,7 @@ def createTPL(root,cuenca,master):
       df_k.loc[ind, 'hidroyear'] = agnohidrologico(ind)
       
     df_RCS = df_k.copy()
-    
+  
     # RCS
     df_RCS['id'] = ''
     df_RCS.loc[df_RCS[df_RCS['hidroyear'].isin(dry_years)].index,'id'] = '#RCSd          #'

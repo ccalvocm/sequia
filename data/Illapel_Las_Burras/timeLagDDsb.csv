@@ -1,2 +1,2 @@
-tlRain,tlSnow,DDs_factord, DDs_factorw, beta
-.0682,.2220,.10295,.27345, .41000
+tlRain,tlSnow,DDs_factord, DDs_factorw, beta, alpha, Tcrit
+.0682,.2220,.26085,.51618, .30000, .990000, 7.48E-4
