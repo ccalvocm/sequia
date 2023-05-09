@@ -453,8 +453,8 @@ def DEVELOP_SRM(root, Basin, plots=False):
         plt.figure()
         bf=pd.read_csv(os.path.join(root,'bf.csv'),index_col=0,
                        parse_dates=True)
-        idx=pd.date_range('2000-01-01','2023-03-01',freq='MS')
-        bf=bf.reindex(idx).resample('D').mean().interpolate('time').loc[dates].values
+        idx=pd.date_range('2000-01-01','2023-02-01',freq='MS')
+        bf=bf.reindex(idx).resample('D').interpolate('time').loc[dates].values
         plt.plot(bf)
         plt.plot(baseflow_)
         plt.plot(Qtot)
@@ -473,7 +473,7 @@ def DEVELOP_SRM(root, Basin, plots=False):
         swe_obs = swe_obs.loc[dates]
         swe_obs = np.sum(swe_obs.values*A, axis = 1) / Atot
         swe_obs = pd.DataFrame(swe_obs, index = dates,
-                        columns = ['SWE observado']).dropna() # SWE en m
+                                columns = ['SWE observado']) # SWE en m
         
         # plots
         fig, ax = plt.subplots(1)
@@ -497,6 +497,6 @@ def DEVELOP_SRM(root, Basin, plots=False):
     
 if __name__ == '__main__':
     root = '.'
-    Basin = 'Hurtado_San_Agustin'
+    Basin = 'Basin'
     DEVELOP_SRM(root, Basin, False)
     

@@ -17,7 +17,7 @@ Qnewsnow,RCsnow,DegDaySnow,SCA,Qsnow,Qrain,RCp,Qglacial,hipso_glaciar,RCg,
                # Tratar la precipitacion nueva como nieve o lluvia
                if Tbands[i,j]<Tcrit:
                    #Acumula nieve y corrige la precipitacion liquida calculada anteriormente
-                   snowAcc[i+1,j]=snowAcc[i+1,j]+1.0*Pbands[i,j] #SWE en m
+                   snowAcc[i+1,j]=snowAcc[i+1,j]+1.5*Pbands[i,j] #SWE en m
                    PCR2MET[i,j]=0.
                    if summerdays[i] == 1:
                        Qnewsnow[i + 1,j]=max(RCsnow[i,
