@@ -232,7 +232,8 @@ def addCaudales(root,cuenca,master,dictCuenca):
         df_qpst.to_csv(os.path.join(root,cuenca,'Master_obervation_data.pst'),
                         index = False, sep = ' ', header = None)
         ins = pd.DataFrame(df_q['ins'])
-        ins.to_csv(os.path.join(root,cuenca,'q.ins'),index=False,header=None)
+        ins.to_csv(os.path.join(root,cuenca,'q.ins'),index=False,header=None,
+                   quoting=csv.QUOTE_NONE,quotechar='',escapechar='\\')
         
     insCaudales(df_q,root)
     return master
@@ -683,7 +684,7 @@ def main():
 'Pama_Valle_Hermoso': ['Río Pama en Valle Hermoso','04533002-8']}
     
     # seleccionar la subcuenca
-    cuenca=list(dictCuenca.keys())[8]
+    cuenca=list(dictCuenca.keys())[7]
 
     # processGlaciers
     pathBands=os.path.join(root,cuenca,'bands.shp')
