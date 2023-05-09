@@ -1,2 +1,2 @@
-for /l %%A in (1,1,24) do @xcopy "Hurtado_San_Agustin" "Hurtado_San_Agustin_%%A" /i
-for /l %%A in (1,1,24) do cd %~dp0Hurtado_San_Agustin_%%A & start cmd /k RunSlave.bat
+for /l %%A in (1,1,24) do @xcopy "Illapel_Las_Burras" "Illapel_Las_Burras_%%A" /i
+for /l %%A in (1,1,24) do cd %~dp0Illapel_Las_Burras_%%A & start cmd /k RunSlave.bat
