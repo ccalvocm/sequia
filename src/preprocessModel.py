@@ -200,7 +200,9 @@ def addCaudales(root,cuenca,master,dictCuenca):
                                              freq='1d'))
     df_qaux['wgt'] = 1e-1
     col=df_qaux.columns[0]
-    df_qaux['wgt'][df_qaux[col]<=df_qaux[col].quantile(0.5)]=1
+    df_qaux['wgt'][df_qaux[col]<=df_qaux[col].quantile(0.5)]=.1
+    idx2122=pd.date_range('2021-04-01','2022-03-31',freq='1d')
+    df_qaux.loc[idx2122,'wgt']=1
     est=df_qaux.columns[0]
     df_q.loc[df_qaux.index, [est, 'wgt']] = df_qaux.values
                    
@@ -681,7 +683,7 @@ def main():
 'Pama_Valle_Hermoso': ['Río Pama en Valle Hermoso','04533002-8']}
     
     # seleccionar la subcuenca
-    cuenca=list(dictCuenca.keys())[9]
+    cuenca=list(dictCuenca.keys())[8]
 
     # processGlaciers
     pathBands=os.path.join(root,cuenca,'bands.shp')
