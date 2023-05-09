@@ -96,7 +96,6 @@
 import pandas as pd
 import numpy as np
 # import matplotlib.pyplot as plt
-from hydroeval import evaluator, nse
 import datetime
 import os
 # --------------------------------------------------------------------------
@@ -104,30 +103,6 @@ import os
 #========================================================================== 
 #                           funciones
 #==========================================================================
-
-def NSE(nse, sim_flow, obs_flow, axis=1):
-        
-    # Parameters
-    # ----------
-    # nse : TYPE
-    #     DESCRIPTION.
-    # sim_flow : TYPE
-    #     DESCRIPTION.
-    # obs_flow : TYPE
-    #     DESCRIPTION.
-    # axis : TYPE, optional
-    #     DESCRIPTION. The default is 1.
-    
-    # Returns
-    # -------
-    # my_nse : TYPE
-    #     DESCRIPTION.
-    
-    
-    serie_sim = sim_flow.ravel()
-    serie_obs = obs_flow.ravel()
-    my_nse = evaluator(nse, serie_sim, serie_obs, axis=1)
-    return my_nse
 
 def DEVELOP_SRM(root, Basin, plots=False):
     #%%
@@ -165,11 +140,9 @@ def DEVELOP_SRM(root, Basin, plots=False):
     # -------------------------------------------------------------------------
 
     #leer curva hipsometrica de topografia
-    os.chdir(root)
     import loopCython
     import loopQtotalCython
     import baseflow_eckhardt
-
 
     ruta_hipso=os.path.join(root,'bands_mean_area.csv')
     hipso=pd.read_csv(ruta_hipso, index_col = 0)
@@ -361,12 +334,10 @@ def DEVELOP_SRM(root, Basin, plots=False):
     ####################################
     ##        Estadigrafos            ##
     ####################################
-    n_se=NSE(nse,Qsim,Qobs)
     r2=np.corrcoef(Qsim,Qobs)[0,1]**2.
     print('==============================================')
     print('',Basin,years,'C')
     print('  Coeficiente R2 = ',r2)
-    print('  N-SE = ',n_se)
     print('==============================================')
     
     ####################################
@@ -378,12 +349,10 @@ def DEVELOP_SRM(root, Basin, plots=False):
     ####################################
     ##        Estadigrafos            ##
     ####################################
-    n_se=NSE(nse,Qsim,Qobs)
     r2=np.corrcoef(Qsim,Qobs)[0,1]**2.
     print('==============================================')
     print('',Basin,years,'V')
     print('  Coeficiente R2 = ',r2)
-    print('  N-SE = ',n_se)
     print('==============================================')
     
     # fechas para plots
@@ -484,8 +453,7 @@ def DEVELOP_SRM(root, Basin, plots=False):
         plt.figure()
         bf=pd.read_csv(os.path.join(root,'bf.csv'),index_col=0,
                        parse_dates=True)
-        idx=pd.date_range('2000-01-01',
-str(pd.to_datetime(dates[-1]).year)+'-'+str(pd.to_datetime(dates[-1]).month+1)+'-01',freq='MS')
+        idx=pd.date_range('2000-01-01','2023-02-01',freq='MS')
         bf=bf.reindex(idx).resample('D').interpolate('time').loc[dates].values
         plt.plot(bf)
         plt.plot(baseflow_)
@@ -503,7 +471,6 @@ str(pd.to_datetime(dates[-1]).year)+'-'+str(pd.to_datetime(dates[-1]).month+1)+'
         swe_obs = pd.read_csv(os.path.join(root,'SWE_bands_ERA5.csv'),
                               index_col = 0, parse_dates = True)
         swe_obs = swe_obs.loc[dates]
-        swe_obs[swe_obs.columns[-1]]=swe_obs[swe_obs.columns[-2]]
         swe_obs = np.sum(swe_obs.values*A, axis = 1) / Atot
         swe_obs = pd.DataFrame(swe_obs, index = dates,
                                 columns = ['SWE observado']) # SWE en m
@@ -511,7 +478,7 @@ str(pd.to_datetime(dates[-1]).year)+'-'+str(pd.to_datetime(dates[-1]).month+1)+'
         # plots
         fig, ax = plt.subplots(1)
         swe_sim.plot(ax = ax)   
-        swe_obs.dropna().plot(ax = ax)        
+        swe_obs.plot(ax = ax)        
         plt.ylabel('Equivalente en agua de nieve (m)')
         plt.grid()
        
@@ -523,13 +490,13 @@ str(pd.to_datetime(dates[-1]).year)+'-'+str(pd.to_datetime(dates[-1]).month+1)+'
     # guardar el SWE y caudales
     SWE_out = pd.DataFrame(snowAcc, index = dates) # SWE en m
     Q_out = pd.DataFrame(Qtot*1000, index = dates) # en l/s
-    SWE_out.to_csv(os.path.join('.','SWEsim.csv'), header = None) 
-    Q_out.to_csv(os.path.join('.','Qsim.csv'), header = None) 
+    SWE_out.to_csv(os.path.join(root,'SWEsim.csv'), header = None) 
+    Q_out.to_csv(os.path.join(root,'Qsim.csv'), header = None) 
 
     return None
     
 if __name__ == '__main__':
     root = '.'
-    Basin = 'Choapa_Cuncumen'
+    Basin = 'Basin'
     DEVELOP_SRM(root, Basin, False)
     
