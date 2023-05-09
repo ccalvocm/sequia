@@ -497,6 +497,6 @@ def DEVELOP_SRM(root, Basin, plots=False):
     
 if __name__ == '__main__':
     root = '.'
-    Basin = 'Hurtado_San_Agustin'
-    DEVELOP_SRM(root, Basin, True)
+    Basin = 'Basin'
+    DEVELOP_SRM(root, Basin, False)
     

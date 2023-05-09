@@ -674,14 +674,14 @@ def main():
 'Choapa_Cuncumen':['Rio Choapa en Cuncumen','04703002-1'],
 'Chalinga_Palmilla':['Rio Chalinga En La Palmilla','04712001-2'],
 'Grande_Las_Ramadas':['Rio Grande En Las Ramadas','04511002-8'],
-'Tascadero_Desembocadura': ['Rio Tascadero en Desembocadura','4512001-5'],
+'Tascadero_Desembocadura': ['Rio Tascadero en Desembocadura','04512001-5'],
 'Ponio': ['NA','NA'],
 'Los_Molles': ['NA','NA'],
 'La_Higuera': ['NA','NA'],
 'Pama_Valle_Hermoso': ['Río Pama en Valle Hermoso','04533002-8']}
     
     # seleccionar la subcuenca
-    cuenca=list(dictCuenca.keys())[7]
+    cuenca=list(dictCuenca.keys())[9]
 
     # processGlaciers
     pathBands=os.path.join(root,cuenca,'bands.shp')

@@ -29,6 +29,24 @@ def loadBasin(root,sb):
     basin.to_crs(epsg='32719',inplace=True)
     return basin.area.values[0]
 
+def DaytoMonth(df):
+    subCuencas=['ChalingaPalmilla','CombarbalaEnRamadillas',
+                'CogotiEntradaEmbalseCogoti','IllapelEnLasBurras',
+                'ChoapaCuncumen','HurtadoSanAgustin']
+    subCuencas=subCuencas+['Ponio','Pama_Valle_Hermoso','Los_Molles','La_Higuera',
+                'El_Ingenio']
+    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Modelos\insumosWEAP'
+    for sb in subCuencas:
+        files=os.listdir(os.path.join(root,sb))
+        file=[x for x in files if 'mon' in x][0]
+        # df=pd.read_csv(os.path.join(root,sb,file),index_col=0,parse_dates=True)
+        dfMon=pd.read_csv(os.path.join(root,sb,file),index_col=0,parse_dates=True)
+
+        # dfMon=df.loc[(df.index>='2000-01-01') & (df.index<='2022-03-31')].resample('MS').mean()
+        # dfMon.to_csv(os.path.join(root,sb,'Qmon_'+sb+'.csv'))
+        # df.plot()
+        dfMon.plot()
+
 def main():
     root=r'G:\sequia\data'
     subBasin=['Ponio','La_Higuera','Los_Molles','Pama_Valle_Hermoso',
