@@ -293,7 +293,7 @@ def main(name='Hurtado_San_Agustin'):
         mindate,dsets=getMinDate()
 
         if mindate>lastDate:
-            gdfCuenca=loadGdf(name,'basin4Callypso')
+            gdfCuenca=loadGdf(name,'basin4callypso')
             for data in list(dsets.keys()):
                 for band in dsets[data]:
                     if 'precipitation' in band:
