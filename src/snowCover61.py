@@ -250,10 +250,14 @@ ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI'
 def main(name='Hurtado_San_Agustin'):
 
     def getLastDate(name):
-        path=os.path.join('..',name,'Master.csv')
-        master=pd.read_csv(path,index_col=0,parse_dates=True)
+        pathMaster=os.path.join('..',name,'Master.csv')
+        pathPp=os.path.join('..',name,'Precipitacion','precipitacion_actual.csv')
+        pathT=os.path.join('..',name,'Temperatura','temperatura_actual.csv')
+        master=pd.read_csv(pathMaster,index_col=0,parse_dates=True)
+        pp=pd.read_csv(pathPp,index_col=0,parse_dates=True)
+        t=pd.read_csv(pathT,index_col=0,parse_dates=True)
         lastDate=master[[x for x in master.columns if 'Pp_z']].dropna(how='all').index[-1]
-        return lastDate
+        return min(lastDate,pp.dropna().index[-1],t.dropna().index[-1])
 
     def getMinDate():
         dsets={'ECMWF/ERA5_LAND/DAILY_RAW':['total_precipitation_sum',
