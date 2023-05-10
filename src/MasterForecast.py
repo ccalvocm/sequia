@@ -37,7 +37,7 @@ def main():
     pth=os.path.join('.','sequia','src')
     os.chdir(pth)
 
-    names=['Hurtado_San_Agustin']
+    names=['Hurtado_San_Agustin','Illapel_Las_Burras']
 #     names=['Hurtado_San_Agustin','Illapel_Las_Burras','Mostazal_Cuestecita',
 # 'Tascadero_Desembocadura','Chalinga_Palmilla','Choapa_Cuncumen',
 # 'Cogoti_Embalse_Cogoti','Combarbala_Ramadillas','Grande_Las_Ramadas']
