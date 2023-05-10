@@ -35,7 +35,7 @@ def main():
     pth=os.path.join('.','sequia','src')
     os.chdir(pth)
 
-    name='Hurtado_San_Agustin'
+    name='Illapel_Las_Burras'
     run_pySRM(name)
 
 if __name__=='__main__':

@@ -221,7 +221,7 @@ ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI'
         colsNotna=df.dropna(how='all',axis=1).columns
         colsNa=[x for x in df.columns if x not in colsNotna]
         dfOut=df[:]
-        if len(colsNa)>0:
+        if (len(colsNa)>0) & (len(colsNa)<len(df.columns)):
             for col in colsNa:
                 if col<colsNotna.min():
                     dfOut[col]=df[colsNotna[colsNotna>col].min()]

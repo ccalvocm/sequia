@@ -9,21 +9,21 @@ class dataset(object):
     
     def autocompleteCol(self,df):
         colsNotna=df.dropna(how='all',axis=1).columns
-        colsNa=[x for x in df.columns if x not in colsNotna]
+        colsNa=[str(x) for x in df.columns if x not in colsNotna]
         dfOut=df[:]
-        if len(colsNa)>0:
+        if (len(colsNa)>0) & (len(colsNa)<len(df.columns)):
             for col in colsNa:
-                if col<colsNotna.min():
+                if str(col)<str(colsNotna.min()):
                     dfOut[col]=df[colsNotna[colsNotna>col].min()]
                 else:
                     dfOut[col]=df[colsNotna[colsNotna<col].max()]
         
-        colsNotna=df.dropna(axis=1).columns
+        colsNotna=df.dropna(axis=0).columns
         colsNa=[x for x in df.columns if x not in colsNotna]
         dfOut=df[:]
-        if len(colsNa)>0:
+        if (len(colsNa)>0) & (len(colsNa)<len(df.columns)):
             for col in colsNa:
-                if col<colsNotna.min():
+                if str(col)<str(colsNotna.min()):
                     dfOut[col]=df[colsNotna[colsNotna>col].min()]
                 else:
                     dfOut[col]=df[colsNotna[colsNotna<col].max()]
@@ -43,7 +43,7 @@ class dataset(object):
                                     'precipitacion_actual.csv'),
                                     index_col=0,parse_dates=True)
         firstD=df2023.index[0]
-        lastD=df2023.index[-1]
+        lastD=max(df2023.index[-1],dfActual.index[-1])
         df=pd.DataFrame(index=pd.date_range(dfActual.index[0],lastD,freq='D'),
     	columns=dfActual.columns)
         df.loc[dfActual.index,:]=dfActual.values
@@ -73,7 +73,7 @@ class dataset(object):
                                     'temperatura_actual.csv'),
                                     index_col=0,parse_dates=True)
         firstD=df2023.index[0]
-        lastD=df2023.index[-1]
+        lastD=max(df2023.index[-1],dfActual.index[-1])
         df=pd.DataFrame(index=pd.date_range(dfActual.index[0],lastD,freq='D'),
     	columns=dfActual.columns)
         df.loc[dfActual.index,:]=dfActual.values
@@ -87,7 +87,7 @@ class dataset(object):
     
     def completeDf(self,df2023,dfActual):
         firstD=df2023.index[0]
-        lastD=df2023.index[-1]
+        lastD=max(df2023.index[-1],dfActual.index[-1])
         df=pd.DataFrame(index=pd.date_range(dfActual.index[0],lastD,freq='D'),
     	columns=dfActual.columns)
         df.loc[dfActual.index,:]=dfActual.values
