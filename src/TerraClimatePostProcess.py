@@ -49,11 +49,12 @@ def DaytoMonth(df):
 
 def main():
     root=r'G:\sequia\data'
-    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Modelos\insumosWEAP'
     subBasin=['Ponio','La_Higuera','Los_Molles','Pama_Valle_Hermoso',
               'El_Ingenio']
     subBasin=['CL24','CL23','CL15','CL14','CL13','CL12','CL08','CL07','CL06',
-              'CL052','CL051','CL050','CL04','CL03','CL02']
+              'CL052','CL051','CL050','CL04','CL03','CL02']+['Rio_Tencadan',
+            'Estero_Camisas','Estero_Canela','Rio_Cuncumen','Rio_Tencadan']
+    subBasin=['CL05','AN10']
     dataset='IDAHO_EPSCOR_TERRACLIMATE_ro.csv'
     for sb in subBasin:
         # leer Q en m3/mes
@@ -78,12 +79,43 @@ def main():
                                                         min_periods=1).mean())
         qm3sF.index.name='fecha'
         qm3sF.columns=['q (m3/s)']
-        qm3sF.to_csv(os.path.join(root,sb,'Qmon_'+sb+'.csv'))
+        qm3sF.resample('MS').mean().to_csv(os.path.join(root,sb,
+                                                        'Qmon_'+sb+'.csv'))
         fig,ax=plt.subplots()
         qm3s.resample('MS').mean().plot(ax=ax,label='original')
         qm3sF.resample('MS').mean().plot(ax=ax,label='filtrado')
         plt.legend([sb])
         plt.show()
+
+def parseDates():
+    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Modelos\insumosWEAP'
+    folders=[ f.path for f in os.scandir(root) if f.is_dir() ]
+    folders=['CL24','CL23','CL15','CL14','CL13','CL12','CL08','CL07','CL06',
+              'CL052','CL051','CL050','CL04','CL03','CL02']+['Rio_Tencadan',
+            'Estero_Camisas','Estero_Canela','Rio_Cuncumen','Rio_Tencadan']
+    folders=['CL05','AN10']
+    for folder in folders:
+        files=os.listdir(os.path.join(root,folder))
+        csvs=[x for x in files if ('.csv' in x) & ('20212022' not in x)]
+        for csv in csvs:
+            df=pd.read_csv(os.path.join(root,folder,csv),index_col=0,
+                           parse_dates=True)
+            df_2021_2022=df.loc[df.index<='2022-03-31']
+            df_2021_2022.plot()
+            df_2021_2022.to_csv(os.path.join(root,folder,csv.replace('.csv',
+                                                           '20212022.csv')))
+            
+def dfUnion():
+    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Modelos\insumosWEAP'
+    folders=[ f.path for f in os.scandir(root) if f.is_dir() ]
+    idx=pd.date_range('2000-01-01','2022-03-01',freq='MS')
+    dfAll=pd.DataFrame(index=idx)
+    for folder in folders:
+        files=os.listdir(folder)
+        csvs=[x for x in files if ('Qmon' in x) & ('20212022' in x)]
+        print(csvs)
+        colName=subBasin=folder.split('\\')[-1]+' (m3/s)'
+        
 
 if __name__ == '__main__':
     main()
