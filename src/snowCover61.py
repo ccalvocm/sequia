@@ -115,7 +115,7 @@ class polyEE(dsetEE):
     def partitionDates(self):
         datei=self.idate
         datef=self.fdate
-        months=round((datef-datei).days/27)+1
+        months=round((datef-datei).days/32)+1
         return list(pd.date_range(start=datei,end=datef,periods=months))
 
     def ImagesToDataFrame(self,images,band):

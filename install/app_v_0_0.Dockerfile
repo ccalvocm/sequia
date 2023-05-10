@@ -1,5 +1,5 @@
 # Define base image                                  
-FROM continuumio/miniconda3                          
+FROM --platform=linux/amd64 continuumio/miniconda3                          
                                                      
 # Set working directory for the project
 WORKDIR .
