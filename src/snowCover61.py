@@ -230,7 +230,7 @@ ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI'
         return dfOut
     
     def fillColumns(self,df):
-        df=df.fillna(method='bfill').fillna(method='ffill')
+        df=df.fillna(method='ffill').fillna(method='bfill')
         return df
 
     def filterCount(self,df1,df2):
@@ -303,12 +303,17 @@ def main(name='Hurtado_San_Agustin'):
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
                         df=polygon.dl().iloc[:-1,:]
+                        df=polygon.fillColumns(df)
+                        df.to_csv(pathOut)
+
                     elif 'temperature' in band:
                         pathOut=os.path.join('..',name,'Temperatura',
                         'TemperaturaActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
                         df=polygon.dl().iloc[:-1,:]
+                        df=polygon.fillColumns(df)
+                        df.to_csv(pathOut)
 
                     elif data.find('MOD09GA')>0:
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
@@ -326,14 +331,14 @@ def main(name='Hurtado_San_Agustin'):
                         # postprocesar
                         dfOut=postProcess(polygon,dfOut)
                         dfOut.to_csv(os.path.join('..',name,'Nieve',
-                                                    'snowCoverActualizada.csv'))
+                                                'snowCoverActualizada.csv'))
                     else:
                         pathOut=os.path.join('..',name,data.replace('/',
                         '_')+'_'+band+'.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate)
                         df=polygon.dl().iloc[:-1,:]
-                    df.to_csv(pathOut)
+                        df.to_csv(pathOut)
             
             # ahora bajar cobertura de glaciares
             gdfCuenca=loadGdf(name,'glacierBands')

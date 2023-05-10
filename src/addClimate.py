@@ -127,7 +127,7 @@ def main():
     dataSet=dataset(name)
     dataSet.fillPp()
     dataSet.fillTemp()
-    dataser.fillSnow()
+    dataSet.fillSnow()
     
 if __name__=='__main__':
     main()
