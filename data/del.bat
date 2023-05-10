@@ -1,1 +1,1 @@
-for /l %%A in (1,1,24) do @RD /S /Q "Illapel_Las_Burras_%%A"
+for /l %%A in (1,1,24) do @RD /S /Q "Tascadero_Desembocadura_%%A"

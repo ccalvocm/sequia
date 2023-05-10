@@ -49,13 +49,16 @@ def DaytoMonth(df):
 
 def main():
     root=r'G:\sequia\data'
+    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Modelos\insumosWEAP'
     subBasin=['Ponio','La_Higuera','Los_Molles','Pama_Valle_Hermoso',
               'El_Ingenio']
+    subBasin=['CL24','CL23','CL15','CL14','CL13','CL12','CL08','CL07','CL06',
+              'CL052','CL051','CL050','CL04','CL03','CL02']
     dataset='IDAHO_EPSCOR_TERRACLIMATE_ro.csv'
     for sb in subBasin:
         # leer Q en m3/mes
         Vmon=pd.read_csv(os.path.join(root,sb,dataset),index_col=0,
-                         parse_dates=True).dropna().astype(float)*loadBasin(root,sb)/1e3
+            parse_dates=True).dropna().astype(float)*loadBasin(root,sb)/1e3
 
         # Qmon=Qmon.divide(list(Qmon.index.daysinmonth),axis=0)
 
@@ -75,7 +78,7 @@ def main():
                                                         min_periods=1).mean())
         qm3sF.index.name='fecha'
         qm3sF.columns=['q (m3/s)']
-        qm3sF.to_csv(os.path.join(root,sb,'Q_'+sb+'.csv'))
+        qm3sF.to_csv(os.path.join(root,sb,'Qmon_'+sb+'.csv'))
         fig,ax=plt.subplots()
         qm3s.resample('MS').mean().plot(ax=ax,label='original')
         qm3sF.resample('MS').mean().plot(ax=ax,label='filtrado')
