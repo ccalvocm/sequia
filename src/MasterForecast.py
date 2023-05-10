@@ -21,8 +21,10 @@ def run_pySRM(name, tipo = 'P'):
     dataSet.fillSnow()
 
     # forecast de nieve
+    print('Realizando forecast hidrometeorologico')
     create_master_SRM.SRM_master(folder)
 
+    print('Iniciando simulacion')
     # correr el modelo
     pyCSRM.DEVELOP_SRM(os.path.join('..','data',name),name)
 
