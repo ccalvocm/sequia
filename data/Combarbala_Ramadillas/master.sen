@@ -1,0 +1,610 @@
+                       PARAMETER SENSITIVITIES: CASE master
+
+
+ OPTIMISATION ITERATION NO.  1 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.124190          1.05493    
+   ddsw            ddsw            0.238910          5.62155    
+   ddgd            ddgd            0.394632         6.110874E-03
+   ddgw            ddgw            2.548615E-02     1.341837E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824          0.00000    
+   rcs2w           rcsw             2.00000         4.143952E-02
+   rcs3d           rcsd            1.186346E-02     1.418194E-03
+   rcs3w           rcsw             1.00000         0.141398    
+   rcs4d           rcsd            1.781897E-03     7.777978E-04
+   rcs4w           rcsw            2.439587E-03     4.656835E-03
+   rcs5d           rcsd            0.472433         0.919097    
+   rcs5w           rcsw            0.324981          1.55826    
+   rcs6d           rcsd            0.210295         0.407736    
+   rcs6w           rcsw            0.581960          2.91146    
+   rcs7d           rcsd            1.352483E-02     5.110392E-05
+   rcs7w           rcsw            2.904660E-04     3.121859E-06
+   rcr1d           rcrd            1.805231E-02     6.938357E-03
+   rcr1w           rcrw            0.982364         0.637730    
+   rcr2d           rcrd            1.630204E-03     7.649250E-03
+   rcr2w           rcrw             1.00000          7.85168    
+   rcr3d           rcrd            0.198058          1.12484    
+   rcr3w           rcrw            1.127431E-02     0.112020    
+   rcr4d           rcrd            1.211582E-03     9.119369E-03
+   rcr4w           rcrw            5.202327E-03     6.516284E-02
+   rcr5d           rcrd            2.589757E-04     2.910316E-03
+   rcr5w           rcrw            6.609262E-04     1.268933E-02
+   rcr6d           rcrd            1.082731E-04     9.484608E-04
+   rcr6w           rcrw            4.593801E-04     6.850303E-03
+   rcr7d           rcrd            5.341314E-05     1.143861E-06
+   rcr7w           rcrw            1.049829E-03     3.827209E-05
+   rcgd            rcgd            4.615448E-02     6.110874E-03
+   rcgw            rcgw            0.121080         1.341837E-03
+   tl              tl               4.93422          19.7511    
+   xw              xw               2.10000          0.00000    
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586          0.00000    
+   tlr             tlr             6.820000E-02      0.00000    
+   tls             tls             0.222000          0.00000    
+   beta            beta            0.600000          15.7578    
+
+
+ OPTIMISATION ITERATION NO.  2 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.125600         0.931347    
+   ddsw            ddsw            0.241490          5.28477    
+   ddgd            ddgd            0.393079         6.061337E-03
+   ddgw            ddgw            2.536673E-02     1.328969E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.667876E-14
+   rcs2w           rcsw            0.200000         1.463843E-02
+   rcs3d           rcsd            1.186869E-02     1.425432E-03
+   rcs3w           rcsw             1.00000         0.140092    
+   rcs4d           rcsd            1.782266E-03     7.844992E-04
+   rcs4w           rcsw            2.469847E-03     4.761540E-03
+   rcs5d           rcsd            0.442867         0.866704    
+   rcs5w           rcsw            0.273173          1.32296    
+   rcs6d           rcsd            0.198782         0.389043    
+   rcs6w           rcsw            0.634570          3.19308    
+   rcs7d           rcsd            1.352470E-02     5.144278E-05
+   rcs7w           rcsw            2.904648E-04     3.127219E-06
+   rcr1d           rcrd            1.805602E-02     6.939784E-03
+   rcr1w           rcrw             1.00000         0.649178    
+   rcr2d           rcrd            1.630260E-03     7.649515E-03
+   rcr2w           rcrw            0.960451          7.54106    
+   rcr3d           rcrd            0.191749          1.08893    
+   rcr3w           rcrw            1.084696E-02     0.107774    
+   rcr4d           rcrd            1.211226E-03     9.116690E-03
+   rcr4w           rcrw            4.817976E-03     6.034857E-02
+   rcr5d           rcrd            2.589678E-04     2.910227E-03
+   rcr5w           rcrw            6.492482E-04     1.246512E-02
+   rcr6d           rcrd            1.082723E-04     9.484533E-04
+   rcr6w           rcrw            4.548393E-04     6.782590E-03
+   rcr7d           rcrd            5.341314E-05     1.143860E-06
+   rcr7w           rcrw            1.049770E-03     3.826996E-05
+   rcgd            rcgd            4.597284E-02     6.061337E-03
+   rcgw            rcgw            0.120512         1.328969E-03
+   tl              tl               4.93094          18.3742    
+   xw              xw               2.10000         2.853130E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.712540E-14
+   tlr             tlr             6.820000E-02     5.938697E-15
+   tls             tls             0.222000         4.458695E-15
+   beta            beta            0.600000          15.7487    
+
+
+ OPTIMISATION ITERATION NO.  3 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.128080         0.749204    
+   ddsw            ddsw            0.259230          5.34052    
+   ddgd            ddgd            0.393865         6.068762E-03
+   ddgw            ddgw            2.549592E-02     1.338979E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.619669E-14
+   rcs2w           rcsw            0.156065         1.220269E-02
+   rcs3d           rcsd            1.187092E-02     1.440877E-03
+   rcs3w           rcsw            0.100000         1.583963E-02
+   rcs4d           rcsd            1.782453E-03     7.920167E-04
+   rcs4w           rcsw            2.466137E-03     4.896702E-03
+   rcs5d           rcsd            0.352576         0.696228    
+   rcs5w           rcsw            0.116525         0.579657    
+   rcs6d           rcsd            0.149185         0.294959    
+   rcs6w           rcsw            0.869803          4.47366    
+   rcs7d           rcsd            1.352418E-02     5.187999E-05
+   rcs7w           rcsw            2.904646E-04     3.255071E-06
+   rcr1d           rcrd            1.804274E-02     6.934682E-03
+   rcr1w           rcrw            0.278283         0.180656    
+   rcr2d           rcrd            1.628965E-03     7.643437E-03
+   rcr2w           rcrw            0.920046          7.22390    
+   rcr3d           rcrd            0.165700         0.941075    
+   rcr3w           rcrw            1.127230E-02     0.112000    
+   rcr4d           rcrd            1.209386E-03     9.098707E-03
+   rcr4w           rcrw            4.904952E-03     6.139516E-02
+   rcr5d           rcrd            2.588286E-04     2.906157E-03
+   rcr5w           rcrw            6.520942E-04     1.249188E-02
+   rcr6d           rcrd            1.082527E-04     9.482555E-04
+   rcr6w           rcrw            4.553076E-04     6.739421E-03
+   rcr7d           rcrd            5.341313E-05     1.143829E-06
+   rcr7w           rcrw            1.049776E-03     3.798750E-05
+   rcgd            rcgd            4.606476E-02     6.068762E-03
+   rcgw            rcgw            0.121126         1.338979E-03
+   tl              tl               4.89501          17.8765    
+   xw              xw               2.10000         2.786937E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.599721E-14
+   tlr             tlr             6.820000E-02     5.636686E-15
+   tls             tls             0.222000         4.207069E-15
+   beta            beta            0.600000          15.2690    
+
+
+ OPTIMISATION ITERATION NO.  4 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.131820         0.710618    
+   ddsw            ddsw            0.260450          5.40854    
+   ddgd            ddgd            0.401785         6.317948E-03
+   ddgw            ddgw            2.578493E-02     1.370057E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.585143E-14
+   rcs2w           rcsw            2.143980E-02     1.685498E-03
+   rcs3d           rcsd            1.187576E-02     1.484931E-03
+   rcs3w           rcsw            1.000000E-02     1.592958E-03
+   rcs4d           rcsd            1.782598E-03     8.143724E-04
+   rcs4w           rcsw            2.477897E-03     4.950107E-03
+   rcs5d           rcsd            0.315624         0.635027    
+   rcs5w           rcsw            7.897728E-02     0.396961    
+   rcs6d           rcsd            0.147746         0.299693    
+   rcs6w           rcsw            0.902727          4.57724    
+   rcs7d           rcsd            1.352416E-02     5.325304E-05
+   rcs7w           rcsw            2.904613E-04     3.177665E-06
+   rcr1d           rcrd            1.804714E-02     6.936372E-03
+   rcr1w           rcrw            9.262382E-02     6.012938E-02
+   rcr2d           rcrd            1.629020E-03     7.643698E-03
+   rcr2w           rcrw            0.913059          7.16905    
+   rcr3d           rcrd            0.160602         0.912119    
+   rcr3w           rcrw            1.234442E-02     0.122652    
+   rcr4d           rcrd            1.209302E-03     9.098072E-03
+   rcr4w           rcrw            4.908007E-03     6.143340E-02
+   rcr5d           rcrd            2.588688E-04     2.906608E-03
+   rcr5w           rcrw            6.478163E-04     1.241121E-02
+   rcr6d           rcrd            1.082673E-04     9.484098E-04
+   rcr6w           rcrw            4.485340E-04     6.675818E-03
+   rcr7d           rcrd            5.341314E-05     1.143860E-06
+   rcr7w           rcrw            1.049688E-03     3.819403E-05
+   rcgd            rcgd            4.699113E-02     6.317948E-03
+   rcgw            rcgw            0.122499         1.370057E-03
+   tl              tl               4.90044          19.6544    
+   xw              xw               2.10000         2.740014E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.558981E-14
+   tlr             tlr             6.820000E-02     5.796542E-15
+   tls             tls             0.222000         4.166909E-15
+   beta            beta            0.600000          14.9373    
+
+
+ OPTIMISATION ITERATION NO.  5 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.144800         0.599822    
+   ddsw            ddsw            0.270650          5.56190    
+   ddgd            ddgd            0.401538         6.297131E-03
+   ddgw            ddgw            2.582320E-02     1.371403E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.513558E-14
+   rcs2w           rcsw            2.137587E-02     1.739977E-03
+   rcs3d           rcsd            1.187296E-02     1.587557E-03
+   rcs3w           rcsw            9.945766E-03     1.638499E-03
+   rcs4d           rcsd            1.782375E-03     8.696131E-04
+   rcs4w           rcsw            2.396317E-03     4.817016E-03
+   rcs5d           rcsd            0.224470         0.504457    
+   rcs5w           rcsw            7.897728E-03     3.969065E-02
+   rcs6d           rcsd            0.127105         0.277441    
+   rcs6w           rcsw             1.00000          5.13038    
+   rcs7d           rcsd            1.352380E-02     5.719246E-05
+   rcs7w           rcsw            2.904617E-04     3.270149E-06
+   rcr1d           rcrd            1.802999E-02     6.929781E-03
+   rcr1w           rcrw            9.166402E-02     5.950630E-02
+   rcr2d           rcrd            1.627546E-03     7.636779E-03
+   rcr2w           rcrw            0.811412          6.37094    
+   rcr3d           rcrd            0.144023         0.817959    
+   rcr3w           rcrw            1.249641E-02     0.124162    
+   rcr4d           rcrd            1.207744E-03     9.086352E-03
+   rcr4w           rcrw            5.182211E-03     6.486560E-02
+   rcr5d           rcrd            2.587594E-04     2.885146E-03
+   rcr5w           rcrw            6.571277E-04     1.258830E-02
+   rcr6d           rcrd            1.082539E-04     9.476850E-04
+   rcr6w           rcrw            4.516767E-04     6.685676E-03
+   rcr7d           rcrd            5.341313E-05     1.143127E-06
+   rcr7w           rcrw            1.049730E-03     3.798580E-05
+   rcgd            rcgd            4.696222E-02     6.297131E-03
+   rcgw            rcgw            0.122681         1.371403E-03
+   tl              tl               4.87364          17.4661    
+   xw              xw               2.10000         2.624058E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.593054E-14
+   tlr             tlr             6.820000E-02     5.473046E-15
+   tls             tls             0.222000         4.031503E-15
+   beta            beta            0.600000          14.1935    
+
+
+ OPTIMISATION ITERATION NO.  6 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.152910         0.538758    
+   ddsw            ddsw            0.270820          5.56066    
+   ddgd            ddgd            0.402731         6.337569E-03
+   ddgw            ddgw            2.584525E-02     1.374361E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.505126E-14
+   rcs2w           rcsw            2.086963E-02     1.701225E-03
+   rcs3d           rcsd            1.186959E-02     1.644062E-03
+   rcs3w           rcsw            9.552620E-03     1.576420E-03
+   rcs4d           rcsd            1.782189E-03     9.064368E-04
+   rcs4w           rcsw            1.883149E-03     3.793799E-03
+   rcs5d           rcsd            0.192784         0.449817    
+   rcs5w           rcsw            7.897728E-04     3.971558E-03
+   rcs6d           rcsd            0.129953         0.295934    
+   rcs6w           rcsw             1.00000          5.11419    
+   rcs7d           rcsd            1.352383E-02     5.984159E-05
+   rcs7w           rcsw            2.904164E-04     3.266936E-06
+   rcr1d           rcrd            1.802235E-02     6.926842E-03
+   rcr1w           rcrw            8.642281E-02     5.610382E-02
+   rcr2d           rcrd            1.627009E-03     7.634260E-03
+   rcr2w           rcrw            0.788782          6.19326    
+   rcr3d           rcrd            0.141379         0.802945    
+   rcr3w           rcrw            1.388211E-02     0.137931    
+   rcr4d           rcrd            1.207533E-03     9.084768E-03
+   rcr4w           rcrw            7.714476E-03     9.656189E-02
+   rcr5d           rcrd            2.588054E-04     2.885659E-03
+   rcr5w           rcrw            7.261752E-04     1.391102E-02
+   rcr6d           rcrd            1.082638E-04     9.477721E-04
+   rcr6w           rcrw            4.749004E-04     7.029431E-03
+   rcr7d           rcrd            5.341313E-05     1.143128E-06
+   rcr7w           rcrw            1.050029E-03     3.799663E-05
+   rcgd            rcgd            4.710177E-02     6.337569E-03
+   rcgw            rcgw            0.122785         1.374361E-03
+   tl              tl               4.87968          17.4487    
+   xw              xw               2.10000         2.621390E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.509280E-14
+   tlr             tlr             6.820000E-02     5.417704E-15
+   tls             tls             0.222000         3.905406E-15
+   beta            beta            0.600000          13.9822    
+
+
+ OPTIMISATION ITERATION NO.  7 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.328130         0.306541    
+   ddsw            ddsw            0.257240          5.22795    
+   ddgd            ddgd            0.411949         6.692712E-03
+   ddgw            ddgw            2.586498E-02     1.388736E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.195147E-14
+   rcs2w           rcsw            2.086752E-02     1.588033E-04
+   rcs3d           rcsd            1.183620E-02     2.333413E-03
+   rcs3w           rcsw            9.551680E-03     1.530999E-03
+   rcs4d           rcsd            1.776937E-03     1.468259E-03
+   rcs4w           rcsw            1.882721E-03     3.753320E-03
+   rcs5d           rcsd            1.927843E-02     6.032658E-02
+   rcs5w           rcsw            7.896341E-04     3.941776E-03
+   rcs6d           rcsd            0.117912         0.398081    
+   rcs6w           rcsw            0.874235          4.33848    
+   rcs7d           rcsd            1.352327E-02     9.169702E-05
+   rcs7w           rcsw            2.904164E-04     3.144364E-06
+   rcr1d           rcrd            1.792917E-02     6.891029E-03
+   rcr1w           rcrw            8.601881E-02     5.584155E-02
+   rcr2d           rcrd            1.620828E-03     7.605260E-03
+   rcr2w           rcrw            0.485314          3.82076    
+   rcr3d           rcrd            0.106233         0.604849    
+   rcr3w           rcrw            1.374146E-02     0.136533    
+   rcr4d           rcrd            1.204891E-03     9.099028E-03
+   rcr4w           rcrw            7.663057E-03     9.603297E-02
+   rcr5d           rcrd            2.592534E-04     2.918300E-03
+   rcr5w           rcrw            7.254153E-04     1.393854E-02
+   rcr6d           rcrd            1.083657E-04     9.492718E-04
+   rcr6w           rcrw            4.746600E-04     7.083860E-03
+   rcr7d           rcrd            5.341319E-05     1.143862E-06
+   rcr7w           rcrw            1.050026E-03     3.831012E-05
+   rcgd            rcgd            4.817987E-02     6.692712E-03
+   rcgw            rcgw            0.122879         1.388736E-03
+   tl              tl               5.00000          11.8807    
+   xw              xw               2.10000         2.070662E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.151744E-14
+   tlr             tlr             6.820000E-02     4.295293E-15
+   tls             tls             0.222000         3.193744E-15
+   beta            beta            0.600000          10.1206    
+
+
+ OPTIMISATION ITERATION NO.  8 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.324370         0.302657    
+   ddsw            ddsw            0.258300          5.22943    
+   ddgd            ddgd            0.414620         6.776483E-03
+   ddgw            ddgw            2.662653E-02     1.471032E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.246424E-14
+   rcs2w           rcsw            2.090785E-02     1.650600E-03
+   rcs3d           rcsd            1.197904E-02     2.335253E-03
+   rcs3w           rcsw            8.955849E-03     1.439632E-03
+   rcs4d           rcsd            1.791565E-03     1.460936E-03
+   rcs4w           rcsw            1.402533E-03     2.803035E-03
+   rcs5d           rcsd            2.254459E-02     6.975467E-02
+   rcs5w           rcsw            6.705516E-04     3.355801E-03
+   rcs6d           rcsd            0.113059         0.386277    
+   rcs6w           rcsw            0.876394          4.35357    
+   rcs7d           rcsd            1.352297E-02     9.271804E-05
+   rcs7w           rcsw            2.904209E-04     3.152673E-06
+   rcr1d           rcrd            1.801487E-02     6.923970E-03
+   rcr1w           rcrw            7.500368E-02     4.869077E-02
+   rcr2d           rcrd            1.627401E-03     7.636100E-03
+   rcr2w           rcrw            0.445866          3.50080    
+   rcr3d           rcrd            0.105244         0.599217    
+   rcr3w           rcrw            2.369755E-02     0.235455    
+   rcr4d           rcrd            1.202127E-03     9.078149E-03
+   rcr4w           rcrw            7.663058E-02     0.960330    
+   rcr5d           rcrd            2.590813E-04     2.916362E-03
+   rcr5w           rcrw            1.106922E-03     2.126901E-02
+   rcr6d           rcrd            1.083504E-04     9.491377E-04
+   rcr6w           rcrw            5.938414E-04     8.862532E-03
+   rcr7d           rcrd            5.341319E-05     1.143862E-06
+   rcr7w           rcrw            1.051299E-03     3.835657E-05
+   rcgd            rcgd            4.849224E-02     6.776483E-03
+   rcgw            rcgw            0.126497         1.471032E-03
+   tl              tl               4.99367          18.8711    
+   xw              xw               2.10000         2.144781E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.193885E-14
+   tlr             tlr             6.820000E-02     4.383758E-15
+   tls             tls             0.222000         3.325594E-15
+   beta            beta            0.600000          10.8652    
+
+
+ OPTIMISATION ITERATION NO.  9 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.272640         0.306714    
+   ddsw            ddsw            0.249810          5.27544    
+   ddgd            ddgd            0.408889         6.593658E-03
+   ddgw            ddgw            2.667441E-02     1.477016E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.923764E-14
+   rcs2w           rcsw            2.090348E-02     1.544822E-04
+   rcs3d           rcsd            1.294391E-02     2.342308E-03
+   rcs3w           rcsw            8.916663E-03     1.387934E-03
+   rcs4d           rcsd            1.904945E-03     1.453670E-03
+   rcs4w           rcsw            1.368797E-03     2.669909E-03
+   rcs5d           rcsd            9.331455E-02     0.275273    
+   rcs5w           rcsw            6.607551E-04     3.288419E-03
+   rcs6d           rcsd            6.982109E-02     0.224416    
+   rcs6w           rcsw            0.900532          4.45548    
+   rcs7d           rcsd            1.351963E-02     8.575137E-05
+   rcs7w           rcsw            2.904214E-04     3.119791E-06
+   rcr1d           rcrd            1.866180E-02     7.172616E-03
+   rcr1w           rcrw            7.351589E-02     4.772495E-02
+   rcr2d           rcrd            1.672026E-03     7.845492E-03
+   rcr2w           rcrw            0.203311          1.60062    
+   rcr3d           rcrd            9.424200E-02     0.536579    
+   rcr3w           rcrw            2.459050E-02     0.244327    
+   rcr4d           rcrd            1.177249E-03     8.890279E-03
+   rcr4w           rcrw            0.766306          9.60330    
+   rcr5d           rcrd            2.580558E-04     2.904819E-03
+   rcr5w           rcrw            1.182085E-03     2.271326E-02
+   rcr6d           rcrd            1.083090E-04     9.487750E-04
+   rcr6w           rcrw            6.111969E-04     9.121551E-03
+   rcr7d           rcrd            5.341316E-05     1.143861E-06
+   rcr7w           rcrw            1.051430E-03     3.836136E-05
+   rcgd            rcgd            4.782199E-02     6.593658E-03
+   rcgw            rcgw            0.126725         1.477016E-03
+   tl              tl               5.00000          12.3515    
+   xw              xw               2.10000         3.369604E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.987803E-14
+   tlr             tlr             6.820000E-02     7.199661E-15
+   tls             tls             0.222000         5.314150E-15
+   beta            beta            0.600000          19.1824    
+
+
+ OPTIMISATION ITERATION NO. 10 ----->
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.207540         0.372397    
+   ddsw            ddsw            0.291800          5.66778    
+   ddgd            ddgd            0.405774         6.347302E-03
+   ddgw            ddgw            2.670445E-02     1.448372E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.910986E-14
+   rcs2w           rcsw            2.090414E-02     1.792916E-03
+   rcs3d           rcsd            1.316563E-02     2.238012E-03
+   rcs3w           rcsw            8.881070E-03     2.386792E-03
+   rcs4d           rcsd            1.931656E-03     1.183079E-03
+   rcs4w           rcsw            1.349569E-03     2.891528E-03
+   rcs5d           rcsd            0.163647         0.460859    
+   rcs5w           rcsw            6.549831E-04     3.443159E-03
+   rcs6d           rcsd            1.777515E-02     5.009404E-02
+   rcs6w           rcsw            0.927489          5.04211    
+   rcs7d           rcsd            1.351118E-02     7.424917E-05
+   rcs7w           rcsw            2.904216E-04     3.514462E-06
+   rcr1d           rcrd            1.879860E-02     7.225192E-03
+   rcr1w           rcrw            6.828270E-02     4.432767E-02
+   rcr2d           rcrd            1.680511E-03     7.885303E-03
+   rcr2w           rcrw            2.033105E-02     0.159633    
+   rcr3d           rcrd            8.401391E-02     0.473340    
+   rcr3w           rcrw            1.825542E-02     0.180808    
+   rcr4d           rcrd            1.169194E-03     8.782296E-03
+   rcr4w           rcrw            0.741631          9.18019    
+   rcr5d           rcrd            2.578532E-04     2.840387E-03
+   rcr5w           rcrw            1.192686E-03     2.269660E-02
+   rcr6d           rcrd            1.083245E-04     9.308505E-04
+   rcr6w           rcrw            6.140107E-04     8.909787E-03
+   rcr7d           rcrd            5.341317E-05     1.122090E-06
+   rcr7w           rcrw            1.051450E-03     3.729978E-05
+   rcgd            rcgd            4.745759E-02     6.347302E-03
+   rcgw            rcgw            0.126867         1.448372E-03
+   tl              tl               4.70582          16.6412    
+   xw              xw               2.10000         3.183019E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.845330E-14
+   tlr             tlr             6.820000E-02     6.547444E-15
+   tls             tls             0.222000         4.870184E-15
+   beta            beta            0.600000          17.4914    
+
+
+
+                        COMPLETION OF OPTIMISATION PROCESS
+
+ Composite sensitivities for observation group "q" ----->
+
+ Number of observations with non-zero weight =  6385
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.328130         0.825815    
+   ddsw            ddsw            0.257240          5.33914    
+   ddgd            ddgd            0.411949         9.714297E-03
+   ddgw            ddgw            2.586498E-02     2.106636E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         2.023827E-14
+   rcs2w           rcsw            2.086752E-02     2.607657E-03
+   rcs3d           rcsd            1.183620E-02     2.520036E-03
+   rcs3w           rcsw            9.551680E-03     2.416355E-03
+   rcs4d           rcsd            1.776937E-03     1.389396E-03
+   rcs4w           rcsw            1.882721E-03     5.815178E-03
+   rcs5d           rcsd            1.927843E-02     0.689484    
+   rcs5w           rcsw            7.896341E-04     6.087650E-03
+   rcs6d           rcsd            0.117912         0.453611    
+   rcs6w           rcsw            0.874235          7.83909    
+   rcs7d           rcsd            1.352327E-02     9.172586E-05
+   rcs7w           rcsw            2.904164E-04     5.007596E-06
+   rcr1d           rcrd            1.792917E-02     1.061754E-02
+   rcr1w           rcrw            8.601881E-02     8.599657E-02
+   rcr2d           rcrd            1.620828E-03     1.170188E-02
+   rcr2w           rcrw            0.485314          9.49310    
+   rcr3d           rcrd            0.106233          1.23076    
+   rcr3w           rcrw            1.374146E-02     0.211421    
+   rcr4d           rcrd            1.204891E-03     1.392523E-02
+   rcr4w           rcrw            7.663057E-03     0.148011    
+   rcr5d           rcrd            2.592534E-04     4.423171E-03
+   rcr5w           rcrw            7.254153E-04     2.132296E-02
+   rcr6d           rcrd            1.083657E-04     1.452756E-03
+   rcr6w           rcrw            4.746600E-04     1.077479E-02
+   rcr7d           rcrd            5.341319E-05     1.752199E-06
+   rcr7w           rcrw            1.050026E-03     5.824166E-05
+   rcgd            rcgd            4.817987E-02     9.714297E-03
+   rcgw            rcgw            0.122879         2.106636E-03
+   tl              tl               5.00000          9.28663    
+   xw              xw               2.10000         3.524998E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         2.050935E-14
+   tlr             tlr             6.820000E-02     7.340195E-15
+   tls             tls             0.222000         5.376028E-15
+   beta            beta            0.600000          21.4320    
+
+
+
+ Composite sensitivities for observation group "swe" ----->
+
+ Number of observations with non-zero weight =  3402
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.328130         1.340816E-14
+   ddsw            ddsw            0.257240          12.4697    
+   ddgd            ddgd            0.411949         2.162937E-14
+   ddgw            ddgw            2.586498E-02     1.933390E-14
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         2.078732E-14
+   rcs2w           rcsw            2.086752E-02     1.750896E-14
+   rcs3d           rcsd            1.183620E-02     2.023718E-14
+   rcs3w           rcsw            9.551680E-03     1.761051E-14
+   rcs4d           rcsd            1.776937E-03     2.071793E-14
+   rcs4w           rcsw            1.882721E-03      0.00000    
+   rcs5d           rcsd            1.927843E-02      0.00000    
+   rcs5w           rcsw            7.896341E-04      0.00000    
+   rcs6d           rcsd            0.117912         6.827718E-13
+   rcs6w           rcsw            0.874235         3.654292E-13
+   rcs7d           rcsd            1.352327E-02     2.194118E-14
+   rcs7w           rcsw            2.904164E-04      0.00000    
+   rcr1d           rcrd            1.792917E-02      0.00000    
+   rcr1w           rcrw            8.601881E-02     1.962635E-14
+   rcr2d           rcrd            1.620828E-03      0.00000    
+   rcr2w           rcrw            0.485314          0.00000    
+   rcr3d           rcrd            0.106233         1.830421E-14
+   rcr3w           rcrw            1.374146E-02     1.925780E-14
+   rcr4d           rcrd            1.204891E-03      0.00000    
+   rcr4w           rcrw            7.663057E-03     7.230250E-13
+   rcr5d           rcrd            2.592534E-04     1.797879E-14
+   rcr5w           rcrw            7.254153E-04      0.00000    
+   rcr6d           rcrd            1.083657E-04     2.044641E-14
+   rcr6w           rcrw            4.746600E-04     7.337018E-13
+   rcr7d           rcrd            5.341319E-05     2.058019E-14
+   rcr7w           rcrw            1.050026E-03     1.769760E-14
+   rcgd            rcgd            4.817987E-02     1.796201E-14
+   rcgw            rcgw            0.122879          0.00000    
+   tl              tl               5.00000          47.0740    
+   xw              xw               2.10000         3.619661E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         2.008896E-14
+   tlr             tlr             6.820000E-02     7.289096E-15
+   tls             tls             0.222000         4.942004E-15
+   beta            beta            0.600000         5.726032E-14
+
+
+
+ Composite sensitivities for all observations/prior info ----->
+
+ Number of observations with non-zero weight =  9787
+ Parameter name    Group          Current value    Sensitivity
+   ddsd            ddsd            0.328130         0.538758    
+   ddsw            ddsw            0.257240          5.56066    
+   ddgd            ddgd            0.411949         6.337569E-03
+   ddgw            ddgw            2.586498E-02     1.374361E-03
+   rcs1d           rcsd            0.900073          0.00000    
+   rcs1w           rcsw            0.910122          0.00000    
+   rcs2d           rcsd            0.131824         1.505126E-14
+   rcs2w           rcsw            2.086752E-02     1.701225E-03
+   rcs3d           rcsd            1.183620E-02     1.644062E-03
+   rcs3w           rcsw            9.551680E-03     1.576420E-03
+   rcs4d           rcsd            1.776937E-03     9.064368E-04
+   rcs4w           rcsw            1.882721E-03     3.793799E-03
+   rcs5d           rcsd            1.927843E-02     0.449817    
+   rcs5w           rcsw            7.896341E-04     3.971558E-03
+   rcs6d           rcsd            0.117912         0.295934    
+   rcs6w           rcsw            0.874235          5.11419    
+   rcs7d           rcsd            1.352327E-02     5.984159E-05
+   rcs7w           rcsw            2.904164E-04     3.266936E-06
+   rcr1d           rcrd            1.792917E-02     6.926842E-03
+   rcr1w           rcrw            8.601881E-02     5.610382E-02
+   rcr2d           rcrd            1.620828E-03     7.634260E-03
+   rcr2w           rcrw            0.485314          6.19326    
+   rcr3d           rcrd            0.106233         0.802945    
+   rcr3w           rcrw            1.374146E-02     0.137931    
+   rcr4d           rcrd            1.204891E-03     9.084768E-03
+   rcr4w           rcrw            7.663057E-03     9.656189E-02
+   rcr5d           rcrd            2.592534E-04     2.885659E-03
+   rcr5w           rcrw            7.254153E-04     1.391102E-02
+   rcr6d           rcrd            1.083657E-04     9.477721E-04
+   rcr6w           rcrw            4.746600E-04     7.029431E-03
+   rcr7d           rcrd            5.341319E-05     1.143128E-06
+   rcr7w           rcrw            1.050026E-03     3.799663E-05
+   rcgd            rcgd            4.817987E-02     6.337569E-03
+   rcgw            rcgw            0.122879         1.374361E-03
+   tl              tl               5.00000          17.4487    
+   xw              xw               2.10000         2.621390E-13
+   yw              yw              0.176857          0.00000    
+   x               x                1.44944          0.00000    
+   y               y               0.131586         1.509280E-14
+   tlr             tlr             6.820000E-02     5.417704E-15
+   tls             tls             0.222000         3.905406E-15
+   beta            beta            0.600000          13.9822    
