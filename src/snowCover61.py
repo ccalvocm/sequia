@@ -115,7 +115,7 @@ class polyEE(dsetEE):
     def partitionDates(self):
         datei=self.idate
         datef=self.fdate
-        months=round((datef-datei).days/32)+1
+        months=round((datef-datei).days/62)+1
         return list(pd.date_range(start=datei,end=datef,periods=months))
 
     def ImagesToDataFrame(self,images,band):
@@ -288,8 +288,7 @@ def main(name='Hurtado_San_Agustin'):
         return dfOut
 
     def getDatesDatasets(name='Hurtado_San_Agustin'):
-        # lastDate=getLastDate(name)
-        lastDate=pd.to_datetime('2000-01-01')
+        lastDate=getLastDate(name)
         print(lastDate)
 
         mindate,dsets=getMinDate()
