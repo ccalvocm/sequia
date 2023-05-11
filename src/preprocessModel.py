@@ -684,7 +684,7 @@ def main():
 'Pama_Valle_Hermoso': ['Río Pama en Valle Hermoso','04533002-8']}
     
     # seleccionar la subcuenca
-    cuenca=list(dictCuenca.keys())[9]
+    cuenca=list(dictCuenca.keys())[0]
 
     # processGlaciers
     pathBands=os.path.join(root,cuenca,'bands.shp')

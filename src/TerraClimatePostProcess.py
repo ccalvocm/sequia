@@ -113,9 +113,21 @@ def dfUnion():
     for folder in folders:
         files=os.listdir(folder)
         csvs=[x for x in files if ('Qmon' in x) & ('20212022' in x)]
+        df=pd.read_csv(os.path.join(folder,csvs[0]),index_col=0,parse_dates=True)
         print(csvs)
         colName=subBasin=folder.split('\\')[-1]+' (m3/s)'
-        
+        dfAll[colName]=''
+        dfAll[colName]=df.values
+
+    subBasinsLimari=['CogotiEntradaEmbalseCogoti','CombarbalaEnRamadillas',
+                     'El_Ingenio','GrandeLasRamadas','HurtadoSanAgustin',
+                     'La_Higuera','LosMollesOjosDeAgua','MostazalEnCuestecita',
+                     'PamaValleHermoso','Ponio','TascaderoDesembocadura']
+    subBasinsLimari=[x+' (m3/s)' for x in subBasinsLimari]
+    dfLimari=dfAll[subBasinsLimari]
+    dfChoapa=dfAll[[x for x in dfAll.columns if x not in subBasinsLimari]]
+    dfLimari.to_csv(os.path.join(root,'EntradasLimari.csv'))
+    dfChoapa.to_csv(os.path.join(root,'EntradasChoapa.csv'))
 
 if __name__ == '__main__':
     main()

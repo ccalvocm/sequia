@@ -37,8 +37,15 @@ def main():
     pth=os.path.join('.','sequia','src')
     os.chdir(pth)
 
-    name='Illapel_Las_Burras'
-    run_pySRM(name)
+    names=['Hurtado_San_Agustin','Illapel_Las_Burras','Mostazal_Cuestecita',
+'Tascadero_Desembocadura','Chalinga_Palmilla','Choapa_Cuncumen',
+'Cogoti_Embalse_Cogoti','Combarbala_Ramadillas','Grande_Las_Ramadas']
+
+    for name in names:
+        try:
+            run_pySRM(name)
+        except Exception as e:
+            print('Error '+str(e)+' en '+name)
 
 if __name__=='__main__':
     main()
