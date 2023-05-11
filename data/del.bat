@@ -1,1 +1,0 @@
-for /l %%A in (1,1,24) do @RD /S /Q "Combarbala_Ramadillas_%%A"

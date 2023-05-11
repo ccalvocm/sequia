@@ -40,7 +40,7 @@ def main():
     names=['Hurtado_San_Agustin','Illapel_Las_Burras','Mostazal_Cuestecita',
 'Tascadero_Desembocadura','Chalinga_Palmilla','Choapa_Cuncumen',
 'Cogoti_Embalse_Cogoti','Combarbala_Ramadillas','Grande_Las_Ramadas']
- 
+    names=['Chalinga_Palmilla']
     for name in names:
         try:
             run_pySRM(name)

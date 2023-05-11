@@ -115,7 +115,7 @@ class polyEE(dsetEE):
     def partitionDates(self):
         datei=self.idate
         datef=self.fdate
-        months=round((datef-datei).days/62)+1
+        months=round(((datef - datei)/np.timedelta64(1, 'M')))+1
         return list(pd.date_range(start=datei,end=datef,periods=months))
 
     def ImagesToDataFrame(self,images,band):
@@ -297,6 +297,8 @@ def main(name='Hurtado_San_Agustin'):
 
         mindate,dsets=getMinDate()
 
+        # crear df de nieve
+        dfTerra=pd.DataFrame()
         if mindate>lastDate:
             gdfCuenca=loadGdf(name,'bands')
             for data in list(dsets.keys()):
@@ -310,7 +312,7 @@ def main(name='Hurtado_San_Agustin'):
                         df=polygon.fillColumns(df)
                         df.to_csv(pathOut)
 
-                    elif 'temperature' in band:
+                    if 'temperature' in band:
                         pathOut=os.path.join('..',name,'Temperatura',
                         'TemperaturaActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
@@ -319,14 +321,14 @@ def main(name='Hurtado_San_Agustin'):
                         df=polygon.fillColumns(df)
                         df.to_csv(pathOut)
 
-                    elif data.find('MOD09GA')>0:
+                    if data.find('MOD09GA')>0:
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate)
                         df=polygon.dl()
                         dfTerra=df[:]
                         continue
                         
-                    elif data.find('MYD09GA')>0:
+                    if data.find('MYD09GA')>0:
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate)
                         dfAqua=polygon.dl()
@@ -336,13 +338,6 @@ def main(name='Hurtado_San_Agustin'):
                         dfOut=postProcess(polygon,dfOut)
                         dfOut.to_csv(os.path.join('..',name,'Nieve',
                                                 'snowCoverActualizada.csv'))
-                    else:
-                        pathOut=os.path.join('..',name,data.replace('/',
-                        '_')+'_'+band+'.csv')
-                        polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
-                    fdate=mindate)
-                        df=polygon.dl().iloc[:-1,:]
-                        df.to_csv(pathOut)
             
             # ahora bajar cobertura de glaciares
             gdfCuenca=loadGdf(name,'glacierBands')
