@@ -450,18 +450,6 @@ def DEVELOP_SRM(root, Basin, plots=False):
         locs, labels = plt.xticks()  # Get the current locations and labels.
         plt.xticks(Days[::frequency], Days_xticks[::frequency], rotation=rot)  # Set text labels and properties.
         
-        plt.figure()
-        bf=pd.read_csv(os.path.join(root,'bf.csv'),index_col=0,
-                       parse_dates=True)
-        idx=pd.date_range('2000-01-01','2023-02-01',freq='MS')
-        bf=bf.reindex(idx).resample('D').interpolate('time').loc[dates].values
-        plt.plot(bf)
-        plt.plot(baseflow_)
-        plt.plot(Qtot)
-        plt.plot(Qactual)
-        plt.legend(['Flujo base','Caudal simulado','Caudal real'])
-        plt.ylabel('Caudal (m^3/s)')
-        
         # SWE sim
         swe_sim = np.sum(snowAcc*A, axis = 1) / Atot
         swe_sim = pd.DataFrame(swe_sim,index=dates,
