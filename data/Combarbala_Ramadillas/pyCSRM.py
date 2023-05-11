@@ -96,7 +96,6 @@
 import pandas as pd
 import numpy as np
 # import matplotlib.pyplot as plt
-from hydroeval import evaluator, nse
 import datetime
 import os
 # --------------------------------------------------------------------------
@@ -105,31 +104,7 @@ import os
 #                           funciones
 #==========================================================================
 
-def NSE(nse, sim_flow, obs_flow, axis=1):
-        
-    # Parameters
-    # ----------
-    # nse : TYPE
-    #     DESCRIPTION.
-    # sim_flow : TYPE
-    #     DESCRIPTION.
-    # obs_flow : TYPE
-    #     DESCRIPTION.
-    # axis : TYPE, optional
-    #     DESCRIPTION. The default is 1.
-    
-    # Returns
-    # -------
-    # my_nse : TYPE
-    #     DESCRIPTION.
-    
-    
-    serie_sim = sim_flow.ravel()
-    serie_obs = obs_flow.ravel()
-    my_nse = evaluator(nse, serie_sim, serie_obs, axis=1)
-    return my_nse
-
-def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
+def DEVELOP_SRM(root, Basin, plots=False):
     #%%
     
     # Parameters
@@ -165,21 +140,20 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
     # -------------------------------------------------------------------------
 
     #leer curva hipsometrica de topografia
-    os.chdir(root)
     import loopCython
     import loopQtotalCython
     import baseflow_eckhardt
 
-    ruta_hipso = root+r'/Hypso.csv'
-    hipso = pd.read_csv(ruta_hipso, index_col = 0)
+    ruta_hipso=os.path.join(root,'bands_mean_area.csv')
+    hipso=pd.read_csv(ruta_hipso, index_col = 0)
     
     # leer areas glaciares
-    ruta_glaciar = root+r'/HypsoGlacier.csv'
+    ruta_glaciar=os.path.join(root,'HypsoGlacier.csv')
     hipso_glaciar = pd.read_csv(ruta_glaciar)
     hipso_glaciar = hipso_glaciar.values
     
     # leer time lags y DDs factor
-    ruta_timelags_DDs = root+r'/timeLagDDsb.csv'
+    ruta_timelags_DDs=os.path.join(root,'timeLagDDsb.csv')
     time_lags_DDs = pd.read_csv(ruta_timelags_DDs)
     # guardar time lags
     tls = time_lags_DDs.values.astype(int)[0,1]
@@ -187,19 +161,16 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
     DDs_fd = time_lags_DDs.values[0,2]
     DDs_fw = time_lags_DDs.values[0,3]
     beta = time_lags_DDs.values[0,4]
+    alpha = time_lags_DDs.values[0,5]
+    Tcrit = time_lags_DDs.values[0,6]
     
     # leer master del periodo anterior
-    master = pd.read_csv(root+r'/Master.csv', index_col = 0, parse_dates = True)
+    master = pd.read_csv(os.path.join(root,'Master.csv'),index_col=0,
+                          parse_dates = True)
     
-    # última fecha con datos 
-    lastDate = pd.to_datetime('2021-03-31')
-        
     # último dia de la simulacion anterior
     FirstDay = 0
-        
-    # seleccionar hasta la última fecha de validación
-    master = master.loc[pd.date_range('2000-01-01', lastDate, freq = '1d')]
-                                                                     
+                                                                 
     # años de la simulacíon
     years = str(master.index[0].year)+'-'+str(master.index[-1].year)
         
@@ -217,7 +188,8 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
     
     Tlapse =    master['Tlapse']  #Tasa de ajuste de temperatura (degC)
     Tlapse = Tlapse.values
-    Pbands =     master[[x for x in master.columns if 'Pp_z' in x]]/1000          # Precip bands(m/day)
+    Pbands =     master[[x for x in master.columns if 'Pp_z' in x]]
+              # Precip bands(m/day)
     Pbands = Pbands.values
     Tbands =     master[[x for x in master.columns if 'T_z' in x]]+Tlapse[0];            # T bands(degC)
     Tbands = Tbands.values
@@ -230,14 +202,16 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
     master.loc[idx_d,'DegDaySnow'] = DDs_fd*master.loc[idx_d,'DegDaySnow'].values
     master.loc[idx_w,'DegDaySnow'] = DDs_fw*master.loc[idx_w,'DegDaySnow'].values
     
-    DegDaySnow = master['DegDaySnow']/100           # Factor grado-d�a para nieve(m/degday)
+    DegDaySnow = master['DegDaySnow']/100.           # Factor grado-d�a para nieve(m/degday)
     DegDaySnow = DegDaySnow.values
-    DegDayGlacier =     master['DegDayGlacier']/100           # Factor grado-d�a para glaciares(m/degday)
+    DegDayGlacier =     master['DegDayGlacier']/100.           # Factor grado-d�a para glaciares(m/degday)
     DegDayGlacier = DegDayGlacier.values
     
-    RCsnow =    master[[x for x in master.columns if 'RC_S' in x]]           # Snowmelt runoff coeff includes dry and wet years
+    RCsnow =    master[[x for x in master.columns if 'RC_S' in x]]
+               # Snowmelt runoff coeff includes dry and wet years
     RCsnow = RCsnow.values
-    RCp =      master[[x for x in master.columns if 'RC_P' in x]]           #  Rain runoff coeff includes dry and wet years
+    RCp =      master[[x for x in master.columns if 'RC_P' in x]] 
+              #  Rain runoff coeff includes dry and wet years
     RCp = RCp.values
     RCg=       master['RC_g']           #  Coeficiente de escorrent�a para glaciares en a�os secos y h�medos
     RCg = RCg.values
@@ -321,13 +295,16 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
     # this code considers Snowmelt and precipitation to have separate timelags        
     tol = 1
     i = 1
-    while (tol >= .002) & (i < 2e2):
+    while (tol >= .01) & (i < 1e1):
         
         # calcular el caudal total simulado
-        loopQtotalCython.loopQtotal(FirstDay, Days, nZones, apPluv, k, X, Qtot, Y, baseflow_, tls, tlr, Qsnow, Qnewsnow, Qglacial, Qrain)
+        loopQtotalCython.loopQtotal(FirstDay, Days, nZones, apPluv, k, X, Qtot,
+                                     Y, baseflow_, tls, tlr, Qsnow, Qnewsnow, 
+                                     Qglacial, Qrain)
         
         # calcular el nuevo flujo base a partir del caudal total
-        BaseFlow_iter, tol = baseflow_eckhardt.baseflow(Qtot, alpha, beta, baseflow_)
+        BaseFlow_iter, tol = baseflow_eckhardt.baseflow(Qtot, alpha, beta, 
+                                                        baseflow_)
         
         # calcular la tolerancia
         baseflow_ = BaseFlow_iter[:,0]
@@ -357,12 +334,10 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
     ####################################
     ##        Estadigrafos            ##
     ####################################
-    n_se=NSE(nse,Qsim,Qobs)
     r2=np.corrcoef(Qsim,Qobs)[0,1]**2.
     print('==============================================')
     print('',Basin,years,'C')
     print('  Coeficiente R2 = ',r2)
-    print('  N-SE = ',n_se)
     print('==============================================')
     
     ####################################
@@ -374,12 +349,10 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
     ####################################
     ##        Estadigrafos            ##
     ####################################
-    n_se=NSE(nse,Qsim,Qobs)
     r2=np.corrcoef(Qsim,Qobs)[0,1]**2.
     print('==============================================')
     print('',Basin,years,'V')
     print('  Coeficiente R2 = ',r2)
-    print('  N-SE = ',n_se)
     print('==============================================')
     
     # fechas para plots
@@ -397,13 +370,15 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
         
         #plot settings 
         plot_ini = '2000-01-01'
-        frequency = 270
+        frequency = 540
         
         plt.close('all') 
         
         # fechas
-        Days_xticks = [ x for x in pd.date_range(plot_ini,pd.to_datetime(plot_ini)+datetime.timedelta(days=len(Days)-1), freq = '1d').date]  
-        rot = 15
+        Days_xticks = [ x for x in pd.date_range(plot_ini,
+                pd.to_datetime(plot_ini)+datetime.timedelta(days=len(Days)-1), 
+                freq = '1d').date]  
+        rot = 8
         last_year = Days_xticks[-1].year 
         first_year = Days_xticks[0].year 
         
@@ -417,7 +392,7 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
         ax = fig.add_subplot(3,1,1)
         plt.plot(Days,Qactual,'k-', linewidth = 2)
         plt.plot(Days,Qtot,'r-', linewidth = 2)
-        plt.title('Caudal real vs simulado: ' +str(first_year)+'-'+str(last_year))
+        plt.title('Caudal real vs simulado: '+str(first_year)+'-'+str(last_year))
         # plt.xlabel('Days')
         # plt.ylabel('Caudal ($m^3/s$)')
         plt.legend(['Q Real','Q Simulado'])
@@ -442,7 +417,8 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
         ax1.set_ylabel('Temperatura (°C)')
         ax2.set_ylabel('Precipitación (mm/día)')
         ax1.legend(['Temperatura'], loc = 'upper right')
-        ax2.legend(['Precipitación'], loc = 'upper right', bbox_to_anchor=(1, 0.875))
+        ax2.legend(['Precipitación'],loc='upper right',
+                   bbox_to_anchor=(1,0.875))
             
         ax1.axis([Days[0],Days[-1],ylim_min, ylim_max])
         
@@ -475,6 +451,11 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
         plt.xticks(Days[::frequency], Days_xticks[::frequency], rotation=rot)  # Set text labels and properties.
         
         plt.figure()
+        bf=pd.read_csv(os.path.join(root,'bf.csv'),index_col=0,
+                       parse_dates=True)
+        idx=pd.date_range('2000-01-01','2023-02-01',freq='MS')
+        bf=bf.reindex(idx).resample('D').interpolate('time').loc[dates].values
+        plt.plot(bf)
         plt.plot(baseflow_)
         plt.plot(Qtot)
         plt.plot(Qactual)
@@ -483,20 +464,21 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
         
         # SWE sim
         swe_sim = np.sum(snowAcc*A, axis = 1) / Atot
-        swe_sim = pd.DataFrame(2*swe_sim, index = dates, columns = ['SWE simulado']) # SWE en m
+        swe_sim = pd.DataFrame(swe_sim,index=dates,
+                               columns=['SWE simulado']) # SWE en m
 
         # SWe observado
-        swe_obs = pd.read_csv(r'C:\Users\ccalvo\OneDrive - ciren.cl\Ficha_16_Coquimbo\02_SIG\02_Aguas sup\04_Regional\cuencas_cabecera\Rio Combarbala En Ramadillas\SWE_bands_ERA5h.csv', index_col = 0, parse_dates = True)
-        swe_obs_day = swe_obs.resample('D').mean()
-        swe_obs_day.iloc[:,-1] = swe_obs_day.iloc[:,-2]
-        swe_obs_day = swe_obs_day.loc[dates]
-        swe_obs_day = np.sum(swe_obs_day.values*A, axis = 1) / Atot
-        swe_obs_day = pd.DataFrame(swe_obs_day, index = dates, columns = ['SWE observado']) # SWE en m
+        swe_obs = pd.read_csv(os.path.join(root,'SWE_bands_ERA5.csv'),
+                              index_col = 0, parse_dates = True)
+        swe_obs = swe_obs.loc[dates]
+        swe_obs = np.sum(swe_obs.values*A, axis = 1) / Atot
+        swe_obs = pd.DataFrame(swe_obs, index = dates,
+                                columns = ['SWE observado']) # SWE en m
         
         # plots
         fig, ax = plt.subplots(1)
         swe_sim.plot(ax = ax)   
-        swe_obs_day.plot(ax = ax)        
+        swe_obs.plot(ax = ax)        
         plt.ylabel('Equivalente en agua de nieve (m)')
         plt.grid()
        
@@ -508,13 +490,13 @@ def DEVELOP_SRM(root, Basin, alpha, Tcrit, plots):
     # guardar el SWE y caudales
     SWE_out = pd.DataFrame(snowAcc, index = dates) # SWE en m
     Q_out = pd.DataFrame(Qtot*1000, index = dates) # en l/s
-    SWE_out.to_csv(os.path.join('.','SWEsim_'+Basin+'.csv'), header = None) 
-    Q_out.to_csv(os.path.join('.','Qsim_'+Basin+'.csv'), header = None) 
+    SWE_out.to_csv(os.path.join(root,'SWEsim.csv'), header = None) 
+    Q_out.to_csv(os.path.join(root,'Qsim.csv'), header = None) 
 
     return None
     
 if __name__ == '__main__':
     root = '.'
-    Basin = 'Combarbala_Ramadillas'
-    DEVELOP_SRM(root, Basin, alpha = 0.959, Tcrit = 1, plots = True)
+    Basin = 'Basin'
+    DEVELOP_SRM(root, Basin, False)
     

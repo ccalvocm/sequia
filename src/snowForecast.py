@@ -188,7 +188,7 @@ def snow_forecast(root):
         print("Wrong file or file path")
      
     # cargar la curva hipsométrica
-    df_hypso = pd.read_csv(os.path.join(root,'Hypso.csv'), index_col = 0)
+    df_hypso = pd.read_csv(os.path.join(root,'bands_mean_area.csv'), index_col = 0)
     
     # leer última fecha de las imágenes modis
     last_date = pd.read_csv(os.path.join(root,'LastDateVal.csv'),
