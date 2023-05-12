@@ -2,6 +2,6 @@
  
 ## Development branch. To do:
 
-### Autocomplete pp, tt, snow and glacier columns
+### Autocomplete pp, t, snow and glacier columns
 
 ### Try GEE download
