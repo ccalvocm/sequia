@@ -263,9 +263,11 @@ class polyEE(dsetEE):
 def main(name):
 
     def getLastDate(name):
-        pathMaster=os.path.join('..',name,'Master.csv')
-        pathPp=os.path.join('..',name,'Precipitacion','precipitacion_actual.csv')
-        pathT=os.path.join('..',name,'Temperatura','temperatura_actual.csv')
+        pathMaster=os.path.join('..','data',name,'Master.csv')
+        pathPp=os.path.join('..','data',name,'Precipitacion',
+                            'precipitacion_actual.csv')
+        pathT=os.path.join('..','data',name,'Temperatura',
+                           'temperatura_actual.csv')
         master=pd.read_csv(pathMaster,index_col=0,parse_dates=True)
         pp=pd.read_csv(pathPp,index_col=0,parse_dates=True)
         t=pd.read_csv(pathT,index_col=0,parse_dates=True)
@@ -317,7 +319,7 @@ def main(name):
             for data in list(dsets.keys()):
                 for band in dsets[data]:
                     if 'precipitation' in band:
-                        pathOut=os.path.join('..',name,'Precipitacion',
+                        pathOut=os.path.join('..','data',name,'Precipitacion',
                         'PrecipitacionActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
@@ -326,7 +328,7 @@ def main(name):
                         df.to_csv(pathOut)
 
                     if 'temperature' in band:
-                        pathOut=os.path.join('..',name,'Temperatura',
+                        pathOut=os.path.join('..','data',name,'Temperatura',
                         'TemperaturaActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
@@ -349,7 +351,7 @@ def main(name):
                         dfOut=dfTerra.combine_first(dfAqua)
                         # postprocesar
                         dfOut=postProcess(polygon,dfOut)
-                        dfOut.to_csv(os.path.join('..',name,'Nieve',
+                        dfOut.to_csv(os.path.join('..','data',name,'Nieve',
                                                 'snowCoverActualizada.csv'))
             
             # ahora bajar cobertura de glaciares
@@ -366,7 +368,7 @@ def main(name):
                     dfOut=dfTerra.combine_first(dfAqua)
                     # postprocesar
                     dfOut=postProcess(polygon,dfOut,fillValue=1.)
-                    dfOut.to_csv(os.path.join('..',name,'Nieve',
+                    dfOut.to_csv(os.path.join('..','data',name,'Nieve',
                     'glacierCoverActualizada.csv' ))
             print('actualizacion de datasets finalizada')                    
         return None
