@@ -53,7 +53,7 @@ def dfsToDf(root_sb):
         except:
             break
     
-    return dfAll
+    return dfAll.dropna(axis=0)
 
 def main():
     pth=os.path.join('.','sequia','src')

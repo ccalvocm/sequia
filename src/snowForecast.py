@@ -65,7 +65,8 @@ def matchSnow(master_, last_date, df_h, cols):
     master_ = master_.loc[master_.index <= last_date]
     
     # calcular el área cubierta de nieve de la cuenca
-    wSCAhi = pd.DataFrame(np.sum(master_[cols].mul(df_h['area'].values), axis = 1) / df_h['area'].sum())
+    wSCAhi = pd.DataFrame(np.sum(master_[cols].mul(df_h['area'].values),
+                                 axis = 1) / df_h['area'].sum())
     
     first_date = pd.to_datetime(str(forecast_year)+'-04-01')        
     last_CDC = wSCAhi.loc[(wSCAhi.index >= first_date ) & (wSCAhi.index <= last_date)]
@@ -188,20 +189,21 @@ def snow_forecast(root):
         print("Wrong file or file path")
      
     # cargar la curva hipsométrica
-    df_hypso = pd.read_csv(os.path.join(root,'bands_mean_area.csv'), index_col = 0)
+    df_hypso = pd.read_csv(os.path.join(root,'bands_mean_area.csv'),
+                           index_col = 0)
     
     # leer última fecha de las imágenes modis
-    last_date = pd.read_csv(os.path.join(root,'LastDateVal.csv'),
-                            index_col = 0, parse_dates = True).index[-1]
+    last_date = pd.read_csv(os.path.join(root,'LastDateVal.csv'),index_col=0,
+                             parse_dates = True).index[-1]
         
     # asignar las fechas
     master = master.loc[master.index <= last_date]
 
     last_snow = master[[x for x in master.columns if ('Zone' in x) & ('.' not in x)]]
     last_snow.dropna(inplace = True)
-          
-    idx=pd.date_range(last_date+datetime.timedelta(days = 1), 
-            last_date+np.timedelta64(3, 'M'), freq = '1d')      
+
+    iDate=last_date+datetime.timedelta(days = 1)   
+    idx=pd.date_range(iDate, iDate+np.timedelta64(5, 'M'), freq = '1d')      
     
     # extender el archivo master hasta el pronóstico
     complemento = pd.DataFrame([], index = idx, columns = master.columns)
