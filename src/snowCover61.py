@@ -260,7 +260,7 @@ class polyEE(dsetEE):
         mask=img.updateMask(maskNDSI).unmask(0)
         return mask
 
-def main(name='Hurtado_San_Agustin'):
+def main(name):
 
     def getLastDate(name):
         pathMaster=os.path.join('..',name,'Master.csv')
@@ -304,7 +304,7 @@ def main(name='Hurtado_San_Agustin'):
         dfOut=dfOut.applymap(lambda x: max(x,0))
         return dfOut
 
-    def getDatesDatasets(name='Hurtado_San_Agustin'):
+    def getDatesDatasets(name):
         lastDate=getLastDate(name)
         print(lastDate)
 
