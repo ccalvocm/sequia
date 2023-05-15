@@ -203,7 +203,7 @@ def snow_forecast(root):
     last_snow.dropna(inplace = True)
 
     iDate=last_date+datetime.timedelta(days = 1)   
-    idx=pd.date_range(iDate, iDate+np.timedelta64(5, 'M'), freq = '1d')      
+    idx=pd.date_range(iDate, iDate+np.timedelta64(4, 'M'), freq = '1d')      
     
     # extender el archivo master hasta el pronóstico
     complemento = pd.DataFrame([], index = idx, columns = master.columns)
