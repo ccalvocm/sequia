@@ -42,7 +42,12 @@ class dataset(object):
         dfActual=pd.read_csv(os.path.join('..','data',self.path,'Precipitacion',
                                     'precipitacion_actual.csv'),
                                     index_col=0,parse_dates=True)
-        firstD=df2023.index[0]
+        try:
+            firstD=df2023.index[0]
+        except:
+            df2023=dfActual.copy()
+            firstD=dfActual.index[0]
+
         lastD=max(df2023.index[-1],dfActual.index[-1])
         df=pd.DataFrame(index=pd.date_range(dfActual.index[0],lastD,freq='D'),
     	columns=dfActual.columns)
@@ -68,11 +73,17 @@ class dataset(object):
         df2023=pd.read_csv(os.path.join('..','data',self.path,'Temperatura',
                                     'TemperaturaActualizada.csv'),
                                     index_col=0,parse_dates=True)
-        df2023=self.resampleT(df2023)
         dfActual=pd.read_csv(os.path.join('..','data',self.path,'Temperatura',
                                     'temperatura_actual.csv'),
                                     index_col=0,parse_dates=True)
-        firstD=df2023.index[0]
+        
+        try:
+            firstD=df2023.index[0]
+            df2023=self.resampleT(df2023)
+        except:
+            df2023=dfActual.copy()
+            firstD=dfActual.index[0]
+        
         lastD=max(df2023.index[-1],dfActual.index[-1])
         df=pd.DataFrame(index=pd.date_range(dfActual.index[0],lastD,freq='D'),
     	columns=dfActual.columns)
@@ -101,6 +112,12 @@ class dataset(object):
         dfActual=pd.read_csv(os.path.join('..','data',self.path,'Nieve',
                                     'snowCover.csv'),
                                     index_col=0,parse_dates=True)
+        
+        try:
+            firstD=df2023.index[0]
+        except:
+            df2023=dfActual.copy()
+            firstD=dfActual.index[0]
 
         df=self.completeDf(df2023,dfActual)
         df=self.autocompleteCol(df)

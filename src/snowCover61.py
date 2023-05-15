@@ -158,37 +158,47 @@ class polyEE(dsetEE):
         dset=ee.ImageCollection(self.product)
         # set scale
         self.scale=dset.select(self.band).first().projection().nominalScale().getInfo()
+               
         for ind,date in enumerate(listPeriods[:-1]):
-            lista=[]
-            listaCount=[]
-            for index in self.gdf.index:
-                # preprocesar los FeatureCollection
-                gdfTemp=self.geoSeries2GeoDataFrame(self.gdf.loc[index])
-                gdfTemp=self.num2str(gdfTemp).set_crs(epsg='4326')
-                self.ee_fc=self.gdf2FeatureCollection(gdfTemp)
-                
-                if '061' in self.product:
-                    # minimo de imagenes
-                    resCount=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
-                    resDatesC=resCount.filterDate(ee.Date(date),
-                    ee.Date(listPeriods[ind+1])).map(self.countImage)
-                    dfCount=self.ImagesToDataFrame(resDatesC,self.band)
-                    listaCount.append(dfCount)
 
-                    # NDSI to snow cover
-                    res=dset.filterBounds(self.ee_fc.geometry())
-                    resDates=res.filterDate(ee.Date(date),
-ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI')\
-    .map(self.rasterExtracion2)
-                    df=self.ImagesToDataFrame(resDates,'NDSI')
-                    lista.append(df)
+            dl=False
+            while ~dl:
+            
+                try:
+                    lista=[]
+                    listaCount=[]
+                    for index in self.gdf.index:
+                        # preprocesar los FeatureCollection
+                        gdfTemp=self.geoSeries2GeoDataFrame(self.gdf.loc[index])
+                        gdfTemp=self.num2str(gdfTemp).set_crs(epsg='4326')
+                        self.ee_fc=self.gdf2FeatureCollection(gdfTemp)
+                        
+                        if '061' in self.product:
+                            # minimo de imagenes
+                            resCount=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
+                            resDatesC=resCount.filterDate(ee.Date(date),
+                            ee.Date(listPeriods[ind+1])).map(self.countImage)
+                            dfCount=self.ImagesToDataFrame(resDatesC,self.band)
+                            listaCount.append(dfCount)
 
-                else:
-                    res=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
-                    resDates=res.filterDate(ee.Date(date),
-                    ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
-                    df=self.ImagesToDataFrame(resDates,self.band)
-                    lista.append(df)
+                            # NDSI to snow cover
+                            res=dset.filterBounds(self.ee_fc.geometry())
+                            resDates=res.filterDate(ee.Date(date),
+        ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI')\
+            .map(self.rasterExtracion2)
+                            df=self.ImagesToDataFrame(resDates,'NDSI')
+                            lista.append(df)
+
+                        else:
+                            res=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
+                            resDates=res.filterDate(ee.Date(date),
+                            ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
+                            df=self.ImagesToDataFrame(resDates,self.band)
+                            lista.append(df)
+                    dl = True
+                    break
+                except:
+                    dl = False
 
             lista2=self.fixColumns(lista)
             lista3=self.fixColumns(listaCount)
@@ -206,6 +216,9 @@ ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI'
 
         # completar las columnas que no extrajo GEE
         dfRet=self.autocompleteCol(dfRet)
+
+        # completar las filas que no descargó GEE
+        dfRet=self.fillColumns(dfRet)
 
         return dfRet
     
@@ -247,12 +260,14 @@ ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI'
         mask=img.updateMask(maskNDSI).unmask(0)
         return mask
 
-def main(name='Hurtado_San_Agustin'):
+def main(name):
 
     def getLastDate(name):
-        pathMaster=os.path.join('..',name,'Master.csv')
-        pathPp=os.path.join('..',name,'Precipitacion','precipitacion_actual.csv')
-        pathT=os.path.join('..',name,'Temperatura','temperatura_actual.csv')
+        pathMaster=os.path.join('..','data',name,'Master.csv')
+        pathPp=os.path.join('..','data',name,'Precipitacion',
+                            'precipitacion_actual.csv')
+        pathT=os.path.join('..','data',name,'Temperatura',
+                           'temperatura_actual.csv')
         master=pd.read_csv(pathMaster,index_col=0,parse_dates=True)
         pp=pd.read_csv(pathPp,index_col=0,parse_dates=True)
         t=pd.read_csv(pathT,index_col=0,parse_dates=True)
@@ -291,7 +306,7 @@ def main(name='Hurtado_San_Agustin'):
         dfOut=dfOut.applymap(lambda x: max(x,0))
         return dfOut
 
-    def getDatesDatasets(name='Hurtado_San_Agustin'):
+    def getDatesDatasets(name):
         lastDate=getLastDate(name)
         print(lastDate)
 
@@ -304,7 +319,7 @@ def main(name='Hurtado_San_Agustin'):
             for data in list(dsets.keys()):
                 for band in dsets[data]:
                     if 'precipitation' in band:
-                        pathOut=os.path.join('..',name,'Precipitacion',
+                        pathOut=os.path.join('..','data',name,'Precipitacion',
                         'PrecipitacionActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
@@ -313,7 +328,7 @@ def main(name='Hurtado_San_Agustin'):
                         df.to_csv(pathOut)
 
                     if 'temperature' in band:
-                        pathOut=os.path.join('..',name,'Temperatura',
+                        pathOut=os.path.join('..','data',name,'Temperatura',
                         'TemperaturaActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
@@ -336,7 +351,7 @@ def main(name='Hurtado_San_Agustin'):
                         dfOut=dfTerra.combine_first(dfAqua)
                         # postprocesar
                         dfOut=postProcess(polygon,dfOut)
-                        dfOut.to_csv(os.path.join('..',name,'Nieve',
+                        dfOut.to_csv(os.path.join('..','data',name,'Nieve',
                                                 'snowCoverActualizada.csv'))
             
             # ahora bajar cobertura de glaciares
@@ -353,7 +368,7 @@ def main(name='Hurtado_San_Agustin'):
                     dfOut=dfTerra.combine_first(dfAqua)
                     # postprocesar
                     dfOut=postProcess(polygon,dfOut,fillValue=1.)
-                    dfOut.to_csv(os.path.join('..',name,'Nieve',
+                    dfOut.to_csv(os.path.join('..','data',name,'Nieve',
                     'glacierCoverActualizada.csv' ))
             print('actualizacion de datasets finalizada')                    
         return None

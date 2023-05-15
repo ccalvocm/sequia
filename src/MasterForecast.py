@@ -11,7 +11,7 @@ def run_pySRM(name, tipo = 'P'):
     folder = os.path.abspath(path)
 
     # bajar la pp, t y nieve
-    snowCover61.main(folder)
+    snowCover61.main(name)
 
     # agregar la pp, t y nieve al master
     # hacer el pronóstico de pp y t
@@ -33,6 +33,28 @@ def run_pySRM(name, tipo = 'P'):
     df=pd.read_csv(os.path.join('..','data',name,'Qsim.csv'))
     print(df.tail())
 
+def dfsToDf(root_sb):
+    folders=os.listdir(root_sb)
+    
+    # get sub directories of root_sb
+    folders=[f for f in folders if os.path.isdir(os.path.join(root_sb,f))]
+
+    import pandas as pd
+    dfAll=pd.DataFrame()
+
+    for sb in folders:
+        path=os.path.join(root_sb,sb)
+        folder = os.path.abspath(path)
+        df=pd.read_csv(os.path.join(folder,'Qsim.csv'),index_col=0,
+                       parse_dates=True)
+        df.columns=[sb]
+        try:
+            dfAll=pd.concat([dfAll,df],axis=1)
+        except:
+            break
+    
+    return dfAll
+
 def main():
     pth=os.path.join('.','sequia','src')
     os.chdir(pth)
@@ -41,11 +63,16 @@ def main():
 'Tascadero_Desembocadura','Chalinga_Palmilla','Choapa_Cuncumen',
 'Cogoti_Embalse_Cogoti','Combarbala_Ramadillas','Grande_Las_Ramadas']
 
+    # forecast actualizado
     for name in names:
         try:
             run_pySRM(name)
         except Exception as e:
             print('Error '+str(e)+' en '+name)
+
+    # compilar todo en una sola tabla
+    # dfOut=dfsToDf(os.path.join('..','data'))
+    # dfOut.to_csv(os.path.join('..','data','StreamflowAll.csv'))
 
 if __name__=='__main__':
     main()
