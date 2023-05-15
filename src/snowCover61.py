@@ -158,37 +158,47 @@ class polyEE(dsetEE):
         dset=ee.ImageCollection(self.product)
         # set scale
         self.scale=dset.select(self.band).first().projection().nominalScale().getInfo()
+               
         for ind,date in enumerate(listPeriods[:-1]):
-            lista=[]
-            listaCount=[]
-            for index in self.gdf.index:
-                # preprocesar los FeatureCollection
-                gdfTemp=self.geoSeries2GeoDataFrame(self.gdf.loc[index])
-                gdfTemp=self.num2str(gdfTemp).set_crs(epsg='4326')
-                self.ee_fc=self.gdf2FeatureCollection(gdfTemp)
-                
-                if '061' in self.product:
-                    # minimo de imagenes
-                    resCount=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
-                    resDatesC=resCount.filterDate(ee.Date(date),
-                    ee.Date(listPeriods[ind+1])).map(self.countImage)
-                    dfCount=self.ImagesToDataFrame(resDatesC,self.band)
-                    listaCount.append(dfCount)
 
-                    # NDSI to snow cover
-                    res=dset.filterBounds(self.ee_fc.geometry())
-                    resDates=res.filterDate(ee.Date(date),
-ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI')\
-    .map(self.rasterExtracion2)
-                    df=self.ImagesToDataFrame(resDates,'NDSI')
-                    lista.append(df)
+            dl=False
+            while ~dl:
+            
+                try:
+                    lista=[]
+                    listaCount=[]
+                    for index in self.gdf.index:
+                        # preprocesar los FeatureCollection
+                        gdfTemp=self.geoSeries2GeoDataFrame(self.gdf.loc[index])
+                        gdfTemp=self.num2str(gdfTemp).set_crs(epsg='4326')
+                        self.ee_fc=self.gdf2FeatureCollection(gdfTemp)
+                        
+                        if '061' in self.product:
+                            # minimo de imagenes
+                            resCount=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
+                            resDatesC=resCount.filterDate(ee.Date(date),
+                            ee.Date(listPeriods[ind+1])).map(self.countImage)
+                            dfCount=self.ImagesToDataFrame(resDatesC,self.band)
+                            listaCount.append(dfCount)
 
-                else:
-                    res=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
-                    resDates=res.filterDate(ee.Date(date),
-                    ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
-                    df=self.ImagesToDataFrame(resDates,self.band)
-                    lista.append(df)
+                            # NDSI to snow cover
+                            res=dset.filterBounds(self.ee_fc.geometry())
+                            resDates=res.filterDate(ee.Date(date),
+        ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI')\
+            .map(self.rasterExtracion2)
+                            df=self.ImagesToDataFrame(resDates,'NDSI')
+                            lista.append(df)
+
+                        else:
+                            res=dset.filterBounds(self.ee_fc.geometry()).select(self.band)
+                            resDates=res.filterDate(ee.Date(date),
+                            ee.Date(listPeriods[ind+1])).map(self.rasterExtracion2)
+                            df=self.ImagesToDataFrame(resDates,self.band)
+                            lista.append(df)
+                    dl = True
+                    break
+                except:
+                    dl = False
 
             lista2=self.fixColumns(lista)
             lista3=self.fixColumns(listaCount)
@@ -206,6 +216,9 @@ ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI'
 
         # completar las columnas que no extrajo GEE
         dfRet=self.autocompleteCol(dfRet)
+
+        # completar las filas que no descargó GEE
+        dfRet=self.fillColumns(dfRet)
 
         return dfRet
     
