@@ -488,10 +488,10 @@ def DEVELOP_SRM(root, Basin, plots=False):
     #==========================================================================
     
     # guardar el SWE y caudales
-    SWE_out = pd.DataFrame(snowAcc, index = dates) # SWE en m
-    Q_out = pd.DataFrame(Qtot*1000, index = dates) # en l/s
-    SWE_out.to_csv(os.path.join(root,'SWEsim.csv'), header = None) 
-    Q_out.to_csv(os.path.join(root,'Qsim.csv'), header = None) 
+    SWE_out = pd.DataFrame(snowAcc,index=dates,columns=['MEA (m)']) # SWE en m
+    Q_out = pd.DataFrame(Qtot, index=dates,columns=['Caudal (m3/s)']) # en m3/s
+    SWE_out.to_csv(os.path.join(root,'SWEsim.csv')) 
+    Q_out.to_csv(os.path.join(root,'Qsim.csv')) 
 
     return None
     
