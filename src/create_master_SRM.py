@@ -143,7 +143,6 @@ def matchPp(pp_, lday, df_h):
     else:
         return 2019
 
-
 def completarMaster(master, lday, df_h):
 
     # extraer la precipitacion
@@ -157,7 +156,8 @@ def completarMaster(master, lday, df_h):
 
     # completar los parametros del predictivo junto a los dias de años bisiestos
     idx_missing = pd.date_range(
-        last_par.index[-1]+datetime.timedelta(days=1), master.index[-1], freq='1d')
+        last_par.index[-1]+datetime.timedelta(days=1), master.index[-1],
+         freq='1d')
     yrs_missing = list(dict.fromkeys(idx_missing.year))
 
     # iterar sobre los años hidrologicos
@@ -176,6 +176,7 @@ def completarMaster(master, lday, df_h):
         else:
             idx_date = idx_missing[(idx_missing <= last_day_yr) & (
                 idx_missing >= pd.to_datetime(str(yr-1)+'-04-01'))]
+            
         for date in idx_date:
             yr_delta = date.year-idx_date.year[0]
 

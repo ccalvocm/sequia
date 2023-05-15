@@ -199,14 +199,9 @@ def snow_forecast(root):
 
     last_snow = master[[x for x in master.columns if ('Zone' in x) & ('.' not in x)]]
     last_snow.dropna(inplace = True)
-    
-    if last_date.strftime('%m-%d') == '03-31':   
-        print('El período predictivo de la temporada de riego debe ser mayor o igual a 1 dia')
-        return None        
-    if last_date.strftime('%m-%d') > '03-31':    
-        idx = pd.date_range(last_date+datetime.timedelta(days = 1), pd.to_datetime(str(last_date.year+1)+'-03-31'), freq = '1d')        
-    else: 
-        idx = pd.date_range(last_date+datetime.timedelta(days = 1), pd.to_datetime(str(last_date.year)+'-03-31'), freq = '1d')
+          
+    idx=pd.date_range(last_date+datetime.timedelta(days = 1), 
+            last_date+np.timedelta64(3, 'M'), freq = '1d')      
     
     # extender el archivo master hasta el pronóstico
     complemento = pd.DataFrame([], index = idx, columns = master.columns)
@@ -219,12 +214,15 @@ def snow_forecast(root):
     GCA = master[cols_GCA]     # Glacier Covered Area (%)
 
     # año que mejor se ajusta a la nieve acumulada
-    best_year_s = matchSnow(master.loc[master.index.year >= last_date.year-years_train], last_date, df_hypso, cols_SCA)      
+    best_year_s = matchSnow(master.loc[master.index.year >= last_date.year-years_train], 
+                            last_date, df_hypso, cols_SCA)      
   
     for ind, col in enumerate(SCA.columns):
         
         # coberturas de nieve para el periodo de entrenamiento
-        idx_s = pd.date_range(last_date-relativedelta(years=(last_date.year - best_year_s)), last_date,freq = '1d')
+        idx_s=pd.date_range(last_date-relativedelta(years=(last_date.year-best_year_s)), 
+                            last_date,freq = '1d')
+        
         if (SCA.loc[idx_s,col] > 0).any():
             
             # realizar el pronóstico
@@ -234,11 +232,13 @@ def snow_forecast(root):
             pronostico_nieve[pronostico_nieve > 1] = 1
             
             # guardar el pronóstico
-            idx2 = pd.date_range(pd.to_datetime(pd.to_datetime(last_date)+datetime.timedelta(days = 1)), master.index[-1], freq = '1d')
+            idx2 = pd.date_range(pd.to_datetime(pd.to_datetime(last_date)+datetime.timedelta(days = 1)),
+                                 master.index[-1], freq = '1d')
             master.loc[idx2,col] = pronostico_nieve.iloc[:len(idx2)].values
         
         # coberturas de glaciares
-        idx_g = pd.date_range(pd.to_datetime(last_date)-relativedelta(years=(last_date.year - best_year_s)),pd.to_datetime(last_date),freq = '1d')
+        idx_g = pd.date_range(pd.to_datetime(last_date)-relativedelta(years=(last_date.year - best_year_s)),
+                              pd.to_datetime(last_date),freq = '1d')
         if (GCA.loc[idx_g,col+'.1'] > 0).any():
             
             # realizar el pronóstico
