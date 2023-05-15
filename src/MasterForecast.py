@@ -1,6 +1,6 @@
 import os
 
-def run_pySRM(name, tipo = 'P'):
+def run_pySRM(name,subcuenca, tipo = 'P'):
     import pyCSRM
     import snowCover61
     import addClimate
@@ -26,7 +26,7 @@ def run_pySRM(name, tipo = 'P'):
 
     print('Iniciando simulacion')
     # correr el modelo
-    pyCSRM.DEVELOP_SRM(os.path.join('..','data',name),name)
+    pyCSRM.DEVELOP_SRM(os.path.join('..','data',name),subcuenca)
 
     print('Simulacion finalizada exitosamente')
     import pandas as pd
@@ -62,17 +62,27 @@ def main():
     names=['Hurtado_San_Agustin','Illapel_Las_Burras','Mostazal_Cuestecita',
 'Tascadero_Desembocadura','Chalinga_Palmilla','Choapa_Cuncumen',
 'Cogoti_Embalse_Cogoti','Combarbala_Ramadillas','Grande_Las_Ramadas']
+    
+    dictNames={ 'Hurtado_San_Agustin':'Rio_Hurtado_en_San_Agustin',
+                'Illapel_Las_Burras': 'Rio_Illapel_en_Las_Burras',
+                'Mostazal_Cuestecita': 'Rio_Mostazal_en_Cuestecita',
+                'Tascadero_Desembocadura': 'Rio_Tascadero_en_Desembocadura',
+                'Chalinga_Palmilla':'Rio_Chalinga_en_la_Palmilla',
+                'Choapa_Cuncumen': 'Rio_Choapa_en_Cuncumen',
+                'Cogoti_Embalse_Cogoti':'Rio_Cogoti_Entrada_Embalse_Cogoti',
+                'Combarbala_Ramadillas':'Rio_Cobmarbala_en_Ramadillas',
+                'Grande_Las_Ramadas':'Rio_Grande_en_Las_Ramadas'}
 
     # forecast actualizado
     for name in names:
         try:
-            run_pySRM(name)
+            run_pySRM(name,dictNames[name])
         except Exception as e:
             print('Error '+str(e)+' en '+name)
 
     # compilar todo en una sola tabla
-    # dfOut=dfsToDf(os.path.join('..','data'))
-    # dfOut.to_csv(os.path.join('..','data','StreamflowAll.csv'))
+    dfOut=dfsToDf(os.path.join('..','data'))
+    dfOut.to_csv(os.path.join('..','data','StreamflowAll.csv'))
 
 if __name__=='__main__':
     main()
