@@ -17,6 +17,12 @@ def matchGlacier(df1,df2):
     dfRet.loc[df2.index,df2.columns]=df2.values
     return dfRet
 
+def matchIndex(df1,df2):
+    minDate=min(df1.index[-1],df2.index[-1])
+    df1Out=df1.loc[df1.index<=minDate]
+    df2Out=df2.loc[df2.index<=minDate]
+    return df1Out,df2Out
+
 def readSnow(ruta_n):
     # cargar las coberturas nivales
     global last_day
@@ -28,11 +34,15 @@ def readSnow(ruta_n):
     # cargar sobre coberturas glaciales
     df_g=pd.read_csv(os.path.join(ruta_n,'glacierCover.csv'),index_col=0,
                      parse_dates=True)
-    dfG=matchGlacier(df_n,df_g)
+    
+    # uniformar los dfs
+    dfN,dfG=matchIndex(df_n,df_g)
 
-    df_n.dropna(inplace=True)
+    dfG=matchGlacier(dfN,dfG)
 
-    return df_n, dfG.loc[df_n.index]
+    dfN.dropna(inplace=True)
+
+    return dfN, dfG.loc[dfN.index]
 
 
 def summerDays(last_day, master):
