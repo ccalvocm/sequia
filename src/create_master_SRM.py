@@ -11,6 +11,19 @@ import datetime
 import snowForecast
 import numpy as np
 
+def resampleCols(df)
+    dfFill=df.copy()
+    dfFill[dfFill.columns]=dfFill[dfFill.columns].fillna(dfFill[dfFill.columns].rolling(30,
+                                        center=False,min_periods=1).mean())  
+
+    return dfFill
+
+def sanitizeDf(df):
+    index=pd.date_range(df.index[0],df.index[-1],freq='D')
+    dfOut=pd.DataFrame(index=index,columns=df.columns)
+    dfOut.loc[df.index]=df.values
+    return dfOut
+
 def matchGlacier(df1,df2):
     dfRet=pd.DataFrame(columns=df1.columns,index=df1.index)
     dfRet.loc[dfRet.index,dfRet.columns]=1
@@ -284,8 +297,12 @@ def SRM_master(folder):
     # completar los parametros que faltan del periodo de validacion
     master_val = completarMaster(master_val, last_day, df_hypso)
 
+    # sanitizar el master por eventuales datos incompletos
+    master_val_san=resampleCols(master_val)
+    master_val_san=sanitizeDf(master_val_san)
+
     # guardar el master del periodo de validacion
-    master_val.to_csv(os.path.join(folder,  r'Master.csv'))
+    master_val_san.to_csv(os.path.join(folder,  r'Master.csv'))
     pd.DataFrame(df_n.index).to_csv(os.path.join(
         folder, r'LastDateVal.csv'), index=None)
 
@@ -325,5 +342,10 @@ def SRM_master(folder):
     day_forecast = min(day_hydrologic_yr, day_data, day_6_mon)
     master_pred = master_pred.loc[master_pred.index <= day_forecast]
 
+    # sanitizar el master por eventuales datos incompletos
+        # sanitizar el master por eventuales datos incompletos
+    master_pred_san=resampleCols(master_pred)
+    master_pred_san=sanitizeDf(master_pred_san)
+
     # guardar el archivo master predictivo
-    master_pred.to_csv(os.path.join(folder, r'Master.csv'))
+    master_pred_san.to_csv(os.path.join(folder, r'Master.csv'))
