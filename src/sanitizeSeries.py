@@ -38,7 +38,7 @@ def changeDatesDfs(df1,df2,df3,df4,df5):
     date4=date4-2*dt
     date5=date5-6*dt
 
-    date1=pd.to_datetime('2023-02-26')
+    date1=pd.to_datetime('2023-03-29')
     date2=date1
     date3=date1
     date4=date1
@@ -55,7 +55,7 @@ def saveDf(m,pp,t,snow,glacier,root):
     return None
 
 def main():
-    root=r'G:\sequia\data'
+    root=r'D:\GitHub\sequia\data'
 
     subBasins=os.listdir(root)
     for sb in subBasins:
