@@ -53,7 +53,7 @@ def dfsToDf(root_sb):
         except:
             break
     
-    return dfAll
+    return dfAll.dropna(axis=0)
 
 def main():
     pth=os.path.join('.','sequia','src')
@@ -63,7 +63,7 @@ def main():
 'Tascadero_Desembocadura','Chalinga_Palmilla','Choapa_Cuncumen',
 'Cogoti_Embalse_Cogoti','Combarbala_Ramadillas','Grande_Las_Ramadas']
     
-    dictNames={ 'Hurtado_San_Agustin':'Rio_Hurtado_en_San_Agustin',
+    dictNames= {'Hurtado_San_Agustin':'Rio_Hurtado_en_San_Agustin',
                 'Illapel_Las_Burras': 'Rio_Illapel_en_Las_Burras',
                 'Mostazal_Cuestecita': 'Rio_Mostazal_en_Cuestecita',
                 'Tascadero_Desembocadura': 'Rio_Tascadero_en_Desembocadura',

@@ -38,6 +38,12 @@ def changeDatesDfs(df1,df2,df3,df4,df5):
     date4=date4-2*dt
     date5=date5-6*dt
 
+    date1=pd.to_datetime('2023-03-29')
+    date2=date1
+    date3=date1
+    date4=date1
+    date5=date1
+
     return df1.loc[df1.index<=date1],df2.loc[df2.index<=date2],df3.loc[df3.index<=date3],df4.loc[df4.index<=date4],df5.loc[df5.index<=date5]
 
 def saveDf(m,pp,t,snow,glacier,root):
@@ -49,19 +55,26 @@ def saveDf(m,pp,t,snow,glacier,root):
     return None
 
 def main():
-    root=r'G:\sequia\data\Chalinga_Palmilla'
+    root=r'D:\GitHub\sequia\data'
 
-    master=loadMaster(root)
-    pp=loadPp(root)
-    t=loadT(root)
-    snow=loadSnow(root)
-    glacier=loadGlacier(root)
+    subBasins=os.listdir(root)
+    for sb in subBasins:
+        if os.path.isdir(os.path.join(root,sb)):
+            print(sb)
 
-    # alterar fechas
-    masterA,ppA,tA,snowA,glacierA=changeDatesDfs(master,pp,t,snow,glacier)
+            path=os.path.join(root,sb)
+            master=loadMaster(path)
+            pp=loadPp(path)
+            t=loadT(path)
+            snow=loadSnow(path)
+            glacier=loadGlacier(path)
 
-    # guardar fechas alteradas
-    saveDf(masterA,ppA,tA,snowA,glacierA,root)
+            # alterar fechas
+            masterA,ppA,tA,snowA,glacierA=changeDatesDfs(master,pp,t,snow,
+                                                         glacier)
+
+            # guardar fechas alteradas
+            saveDf(masterA,ppA,tA,snowA,glacierA,path)
 
 def otros():
     lastDate=master.index[-1]
