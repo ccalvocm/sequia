@@ -70,7 +70,7 @@ def main():
                 'Chalinga_Palmilla':'Rio_Chalinga_en_la_Palmilla',
                 'Choapa_Cuncumen': 'Rio_Choapa_en_Cuncumen',
                 'Cogoti_Embalse_Cogoti':'Rio_Cogoti_Entrada_Embalse_Cogoti',
-                'Combarbala_Ramadillas':'Rio_Cobmarbala_en_Ramadillas',
+                'Combarbala_Ramadillas':'Rio_Combarbala_en_Ramadillas',
                 'Grande_Las_Ramadas':'Rio_Grande_en_Las_Ramadas'}
 
     # forecast actualizado

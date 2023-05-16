@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import random
 
 def loadMaster(root):
     return pd.read_csv(os.path.join(root,'Master.csv'),index_col=0,
@@ -32,17 +33,17 @@ def changeDatesDfs(df1,df2,df3,df4,df5):
     date4=df4.index[-1]
     date5=df5.index[-1]
 
-    date1=date1-3*dt
-    date2=date2-4*dt
-    date3=date3-5*dt
-    date4=date4-2*dt
-    date5=date5-6*dt
+    date1=date1-random.randint(1,33)*dt
+    date2=date2-random.randint(1,33)*dt
+    date3=date3-random.randint(1,33)*dt
+    date4=date4-random.randint(1,33)*dt
+    date5=date5-random.randint(1,33)*dt
 
-    date1=pd.to_datetime('2023-03-29')
-    date2=date1
-    date3=date1
-    date4=date1
-    date5=date1
+    # date1=pd.to_datetime('2023-03-29')
+    # date2=date1
+    # date3=date1
+    # date4=date1
+    # date5=date1
 
     return df1.loc[df1.index<=date1],df2.loc[df2.index<=date2],df3.loc[df3.index<=date3],df4.loc[df4.index<=date4],df5.loc[df5.index<=date5]
 
@@ -55,7 +56,7 @@ def saveDf(m,pp,t,snow,glacier,root):
     return None
 
 def main():
-    root=r'D:\GitHub\sequia\data'
+    root=r'G:\sequia\data'
 
     subBasins=os.listdir(root)
     for sb in subBasins:
