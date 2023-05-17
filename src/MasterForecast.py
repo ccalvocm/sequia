@@ -81,8 +81,11 @@ def main():
             print('Error '+str(e)+' en '+name)
 
     # compilar todo en una sola tabla
-    dfOut=dfsToDf(os.path.join('..','data'))
-    dfOut.to_csv(os.path.join('..','data','StreamflowAll.csv'))
+    try:
+        dfOut=dfsToDf(os.path.join('..','data'))
+        dfOut.to_csv(os.path.join('..','data','StreamflowAll.csv'))
+    except:
+        print('archivo no encontrado')
 
 if __name__=='__main__':
     main()

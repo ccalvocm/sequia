@@ -11,11 +11,13 @@ import datetime
 import snowForecast
 import numpy as np
 
-def resampleCols(df)
+def resampleCols(df):
     dfFill=df.copy()
-    dfFill[dfFill.columns]=dfFill[dfFill.columns].fillna(dfFill[dfFill.columns].rolling(30,
+    try:
+        dfFill[dfFill.columns]=dfFill[dfFill.columns].fillna(dfFill[dfFill.columns].rolling(3,
                                         center=False,min_periods=1).mean())  
-
+    except:
+        dfFill=dfFill
     return dfFill
 
 def sanitizeDf(df):
@@ -76,7 +78,6 @@ def summerDays(last_day, master):
 
     return master
 
-
 def readPp(ruta_pp, master, last_day):
     # procesar precipitaciones
     df_pp = pd.read_csv(ruta_pp, index_col=0, parse_dates=True)
@@ -85,7 +86,6 @@ def readPp(ruta_pp, master, last_day):
     master.loc[df_pp.index, cols_pp] = df_pp.values
 
     return master
-
 
 def readT(ruta_t, master, last_day):
 
@@ -96,7 +96,6 @@ def readT(ruta_t, master, last_day):
     master.loc[df_t.index, cols_t] = df_t.values
 
     return master
-
 
 def matchPp(pp_, lday, df_h):
     """
@@ -168,9 +167,8 @@ def completarMaster(master, lday, df_h):
     last_par.dropna(inplace=True)
 
     # completar los parametros del predictivo junto a los dias de años bisiestos
-    idx_missing = pd.date_range(
-        last_par.index[-1]+datetime.timedelta(days=1), master.index[-1],
-         freq='1d')
+    idx_missing = pd.date_range(last_par.index[-1]+datetime.timedelta(days=1), 
+                                master.index[-1],freq='1d')
     yrs_missing = list(dict.fromkeys(idx_missing.year))
 
     # iterar sobre los años hidrologicos
@@ -193,8 +191,8 @@ def completarMaster(master, lday, df_h):
         for date in idx_date:
             yr_delta = date.year-idx_date.year[0]
 
-            master.loc[date, par] = master.loc[pd.to_datetime(
-                str(yr_param+yr_delta)+'-'+str(date.month)+'-'+str(date.day)), par].values
+            master.loc[date, par] = master.loc[pd.to_datetime(str(yr_param+yr_delta)+'-'+str(date.month)+'-'+str(date.day)),
+                                               par].values
 
         # identificar los días bisiestos a completar
         feb_bisiesto = [f for f in idx_date if (f.month == 2) & (f.day == 29)]
@@ -237,7 +235,8 @@ def SRM_master(folder):
     ruta_n = os.path.join(folder, 'Nieve')
     ruta_pp = os.path.join(folder, 'Precipitacion',
                            r'precipitacion_actual_forecast.csv')
-    ruta_t = os.path.join(folder, 'Temperatura', r'temperatura_actual_forecast.csv')
+    ruta_t = os.path.join(folder,'Temperatura',
+                          r'temperatura_actual_forecast.csv')
 
     # leer archivo master predictivo
     if os.path.isfile(os.path.join(folder, r'Master.csv')):
@@ -256,8 +255,8 @@ def SRM_master(folder):
     df_n, df_g = readSnow(ruta_n)
 
     # extender el archivo master de validacion
-    idx = pd.date_range(
-    master_val.index[-1]+datetime.timedelta(days=1),df_n.index[-1],freq='1d')
+    idx = pd.date_range(master_val.index[-1]+datetime.timedelta(days=1),
+    df_n.index[-1],freq='1d')
     complemento = pd.DataFrame([], index=idx, columns=master_val.columns)
     master_val = master_val.append(complemento)
 
@@ -281,7 +280,7 @@ def SRM_master(folder):
     df_pp_preforecast = df_pp.loc[(
         df_pp.index.year >= 2000) & (df_pp.index <= last_day)]
     cols_pp = [x for x in master_val.columns if 'Pp_' in x]
-    master_val.loc[df_pp_preforecast.index, cols_pp] = df_pp_preforecast.values
+    master_val.loc[df_pp_preforecast.index, cols_pp]=df_pp_preforecast.values
 
     # # leer temperaturas del usuario
     df_t = pd.read_csv(ruta_t, index_col=0, parse_dates=True)
@@ -291,8 +290,8 @@ def SRM_master(folder):
     master_val.loc[df_t_preforecast.index, cols_t] = df_t_preforecast.values
 
     # leer curva hipsométrica de la cuenca
-    df_hypso = pd.read_csv(os.path.join(
-        folder, r'bands_mean_area.csv'), index_col=0)
+    df_hypso = pd.read_csv(os.path.join(folder,
+                                        r'bands_mean_area.csv'), index_col=0)
 
     # completar los parametros que faltan del periodo de validacion
     master_val = completarMaster(master_val, last_day, df_hypso)
@@ -302,9 +301,9 @@ def SRM_master(folder):
     master_val_san=sanitizeDf(master_val_san)
 
     # guardar el master del periodo de validacion
-    master_val_san.to_csv(os.path.join(folder,  r'Master.csv'))
-    pd.DataFrame(df_n.index).to_csv(os.path.join(
-        folder, r'LastDateVal.csv'), index=None)
+    master_val_san.to_csv(os.path.join(folder,r'Master.csv'))
+    pd.DataFrame(df_n.index).to_csv(os.path.join(folder,r'LastDateVal.csv'),
+                                    index=None)
 
  # ============================================================================
  #                          archivo master predictivo
@@ -336,7 +335,7 @@ def SRM_master(folder):
     day_data = master_pred.index[-1]
     
     # último dia en 6 meses
-    day_6_mon = datetime.date.today()+pd.DateOffset(months=6)-pd.DateOffset(days=6)
+    day_6_mon=datetime.date.today()+pd.DateOffset(months=6)-pd.DateOffset(days=6)
     
     # minimo de año hidrológico, fechas con datos y 6 meses desde hoy
     day_forecast = min(day_hydrologic_yr, day_data, day_6_mon)
