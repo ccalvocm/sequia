@@ -107,17 +107,20 @@ def parseDates():
             
 def dfUnion():
     root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Modelos\insumosWEAP'
+    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Modelos\insumosWEAP\LimariCL'
     folders=[ f.path for f in os.scandir(root) if f.is_dir() ]
     idx=pd.date_range('2000-01-01','2022-03-01',freq='MS')
     dfAll=pd.DataFrame(index=idx)
     for folder in folders:
         files=os.listdir(folder)
         csvs=[x for x in files if ('Qmon' in x) & ('20212022' in x)]
+        csvs=[x for x in files if 'Qmon' in x]
         df=pd.read_csv(os.path.join(folder,csvs[0]),index_col=0,parse_dates=True)
         print(csvs)
         colName=subBasin=folder.split('\\')[-1]+' (m3/s)'
         dfAll[colName]=''
-        dfAll[colName]=df.values
+        dfAll[colName]=df.loc[dfAll.index].values
+    dfAll.to_csv(os.path.join(root,'EntradasLimariCL.csv'))
 
     subBasinsLimari=['CogotiEntradaEmbalseCogoti','CombarbalaEnRamadillas',
                      'El_Ingenio','GrandeLasRamadas','HurtadoSanAgustin',

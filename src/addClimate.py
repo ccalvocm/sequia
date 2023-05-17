@@ -28,6 +28,19 @@ class dataset(object):
                 else:
                     dfOut[col]=df[colsNotna[colsNotna<col].max()]
         return dfOut
+    
+    def resampleCols(self,df)
+        dfFill=df.copy()
+        dfFill[dfFill.columns]=dfFill[dfFill.columns].fillna(dfFill[dfFill.columns].rolling(30,
+                                            center=False,min_periods=1).mean())  
+
+        return dfFill
+
+    def sanitizeDf(self,df):
+        index=pd.date_range(df.index[0],df.index[-1],freq='D')
+        dfOut=pd.DataFrame(index=index,columns=df.columns)
+        dfOut.loc[df.index]=df.values
+        return dfOut
 
     def postProcessPp(self,path_df):
         df=pd.read_csv(path_df,index_col=0,parse_dates=True)
@@ -56,7 +69,8 @@ class dataset(object):
         df=self.autocompleteCol(df)
         path_dataset=os.path.join('..','data',self.path,'Precipitacion',
                                     'precipitacion_actual.csv')
-        df.to_csv(path_dataset)
+        df=self.sanitizeDf(df)
+        self.resampleCols(df).to_csv(path_dataset)
         forecast_arima.forecast_dataframe_file(path_dataset)
 
         # post procesar las precipitaciones pronosticadas
@@ -92,7 +106,8 @@ class dataset(object):
         df=self.autocompleteCol(df)
         path_dataset=os.path.join('..','data',self.path,'Temperatura',
                                     'temperatura_actual.csv')
-        df.to_csv(path_dataset)
+        df=self.sanitizeDf(df)
+        self.resampleCols(df).to_csv(path_dataset)
         forecast_arima.forecast_dataframe_file(path_dataset)
         return None
     
@@ -121,9 +136,9 @@ class dataset(object):
 
         df=self.completeDf(df2023,dfActual)
         df=self.autocompleteCol(df)
-        path_dataset=os.path.join('..','data',self.path,'Nieve',
-                                    'snowCover.csv')
-        df.to_csv(path_dataset)
+        path_dataset=os.path.join('..','data',self.path,'Nieve','snowCover.csv')
+        df=self.sanitizeDf(df)
+        self.resampleCols(df).to_csv(path_dataset)
 
         df2023=pd.read_csv(os.path.join('..','data',self.path,'Nieve',
                                     'glacierCoverActualizada.csv'),
@@ -136,9 +151,10 @@ class dataset(object):
         df=self.autocompleteCol(df)
         path_dataset=os.path.join('..','data',self.path,'Nieve',
                                     'glacierCover.csv')
-        df.to_csv(path_dataset)
+        df=self.sanitizeDf(df)
+        self.resampleCols(df).to_csv(path_dataset)
         return None
-
+    
 def main():
     name='Hurtado_San_Agustin'
     dataSet=dataset(name)
