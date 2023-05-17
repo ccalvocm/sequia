@@ -29,11 +29,13 @@ class dataset(object):
                     dfOut[col]=df[colsNotna[colsNotna<col].max()]
         return dfOut
     
-    def resampleCols(self,df)
+    def resampleCols(self,df):
         dfFill=df.copy()
-        dfFill[dfFill.columns]=dfFill[dfFill.columns].fillna(dfFill[dfFill.columns].rolling(30,
+        try:
+            dfFill[dfFill.columns]=dfFill[dfFill.columns].fillna(dfFill[dfFill.columns].rolling(3,
                                             center=False,min_periods=1).mean())  
-
+        except:
+            dfFill=dfFill
         return dfFill
 
     def sanitizeDf(self,df):
@@ -45,6 +47,18 @@ class dataset(object):
     def postProcessPp(self,path_df):
         df=pd.read_csv(path_df,index_col=0,parse_dates=True)
         df=df.applymap(lambda x: x if x>=0 else 0)
+
+        # rellenar con el promedio de los 3 días anteriores
+        df=self.resampleCols(df)
+        df=self.sanitizeDf(df)
+        df.to_csv(path_df)
+        return None
+    
+    def postProcessT(self,path_df):
+        df=pd.read_csv(path_df,index_col=0,parse_dates=True)
+        # rellenar con el promedio de los 3 días anteriores
+        df=self.resampleCols(df)
+        df=self.sanitizeDf(df)
         df.to_csv(path_df)
         return None
 
@@ -109,6 +123,10 @@ class dataset(object):
         df=self.sanitizeDf(df)
         self.resampleCols(df).to_csv(path_dataset)
         forecast_arima.forecast_dataframe_file(path_dataset)
+
+        # post procesar las precipitaciones pronosticadas
+        self.postProcessT(path_dataset.replace('.csv',
+        '_forecast.csv'))
         return None
     
     def completeDf(self,df2023,dfActual):
