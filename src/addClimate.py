@@ -59,8 +59,7 @@ class dataset(object):
         # rellenar con el promedio de los 3 días anteriores
         df=self.resampleCols(df)
         df=self.sanitizeDf(df)
-        df.to_csv(path_df)
-        return None
+        return df
 
     def fillPp(self):
         df2023=pd.read_csv(os.path.join('..','data',self.path,'Precipitacion',
@@ -86,10 +85,6 @@ class dataset(object):
         df=self.sanitizeDf(df)
         self.resampleCols(df).to_csv(path_dataset)
         forecast_arima.forecast_dataframe_file(path_dataset)
-
-        # post procesar las precipitaciones pronosticadas
-        self.postProcessPp(path_dataset.replace('.csv',
-        '_forecast.csv'))
         return None
     
     def resampleT(self,df):
@@ -123,10 +118,6 @@ class dataset(object):
         df=self.sanitizeDf(df)
         self.resampleCols(df).to_csv(path_dataset)
         forecast_arima.forecast_dataframe_file(path_dataset)
-
-        # post procesar las precipitaciones pronosticadas
-        self.postProcessT(path_dataset.replace('.csv',
-        '_forecast.csv'))
         return None
     
     def completeDf(self,df2023,dfActual):
