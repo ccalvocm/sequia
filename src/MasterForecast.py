@@ -55,6 +55,52 @@ def dfsToDf(root_sb):
     
     return dfAll.dropna(axis=0)
 
+def commitChanges():
+    import csv
+    import psycopg2
+    import datetime
+    import os
+
+    # Conexión a postgresql
+    conn = psycopg2.connect(database="geonode", user="geonode", password="geonode", host="192.10.10.139", port="5432")
+
+    # Crea un cursor para la conexión
+    cur = conn.cursor()
+
+    #Elimina los datos existentes
+    cur.execute("TRUNCATE TABLE sequia_bi.datos")
+
+    # Lee el archivo CSV e inserta los datos en la base de datos
+    filePath=os.path.join('..','data','StreamflowAll.csv')
+
+    with open(filePath, 'r') as file:
+    
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            date = row[0]
+            Chalinga_Palmilla = row[1]
+            Choapa_Cuncumen = row[2]
+            Cogoti_Embalse_Cogoti = row[3]
+            Combarbala_Ramadillas = row[4]
+            Grande_Las_Ramadas = row[5]
+            Hurtado_San_Agustin = row[6]
+            Illapel_Las_Burras = row[7]
+            Mostazal_Cuestecita = row[8]
+            Tascadero_Desembocadura = row[9]
+            date_actual = datetime.date.today()
+
+            # Genero insert a la tabla
+            sql = "INSERT INTO sequia_bi.datos_v2(date, chalinga_palmilla, choapa_cuncumen, cogoti_embalse_cogoti, combarbala_ramadillas, grande_las_ramadas, hurtado_san_agustin, illapel_las_burras, mostazal_cuestecita, tascadero_desembocadura, date_insert) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            values = (date, Chalinga_Palmilla, Choapa_Cuncumen, Cogoti_Embalse_Cogoti, Combarbala_Ramadillas, Grande_Las_Ramadas, Hurtado_San_Agustin, Illapel_Las_Burras, Mostazal_Cuestecita, Tascadero_Desembocadura, date_actual)
+
+            # Ejecuta la consulta SQL
+            cur.execute(sql, values)
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
 def main():
     pth=os.path.join('.','sequia','src')
     os.chdir(pth)
@@ -86,6 +132,14 @@ def main():
         dfOut.to_csv(os.path.join('..','data','StreamflowAll.csv'))
     except:
         print('archivo no encontrado')
+        
+    # realizar commit a la BBDD de geonode
+    try:
+        commitChanges()
+        print('Commit realizado exitosamente')
+    except:
+        print('Commit no realizado')
 
 if __name__=='__main__':
     main()
+
