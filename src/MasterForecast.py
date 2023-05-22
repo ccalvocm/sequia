@@ -68,7 +68,7 @@ def commitChanges():
     cur = conn.cursor()
 
     #Elimina los datos existentes
-    cur.execute("TRUNCATE TABLE sequia_bi.datos")
+    cur.execute("TRUNCATE TABLE sequia_bi.datos_v2")
 
     # Lee el archivo CSV e inserta los datos en la base de datos
     filePath=os.path.join('..','data','StreamflowAll.csv')
@@ -92,7 +92,10 @@ def commitChanges():
 
             # Genero insert a la tabla
             sql = "INSERT INTO sequia_bi.datos_v2(date, chalinga_palmilla, choapa_cuncumen, cogoti_embalse_cogoti, combarbala_ramadillas, grande_las_ramadas, hurtado_san_agustin, illapel_las_burras, mostazal_cuestecita, tascadero_desembocadura, date_insert) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            values = (date, Chalinga_Palmilla, Choapa_Cuncumen, Cogoti_Embalse_Cogoti, Combarbala_Ramadillas, Grande_Las_Ramadas, Hurtado_San_Agustin, Illapel_Las_Burras, Mostazal_Cuestecita, Tascadero_Desembocadura, date_actual)
+            values = (date, Chalinga_Palmilla, Choapa_Cuncumen, 
+                      Cogoti_Embalse_Cogoti, Combarbala_Ramadillas, 
+                      Grande_Las_Ramadas,Hurtado_San_Agustin,Illapel_Las_Burras,
+                        Mostazal_Cuestecita,Tascadero_Desembocadura,date_actual)
 
             # Ejecuta la consulta SQL
             cur.execute(sql, values)
