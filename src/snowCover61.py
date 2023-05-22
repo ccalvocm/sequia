@@ -6,9 +6,9 @@ import geopandas as gpd
 import json
 import numpy as np
 
-service_account = 'srmearthenginelogin@srmlogin.iam.gserviceaccount.com'
+service_account = 'earthengine@earthengine-387514.iam.gserviceaccount.com'
 folder_json = os.path.join('.','auth',
-                           'srmlogin-175106b08655.json')
+                           'earthengine-387514-f5362350ea3a.json')
 credentials = ee.ServiceAccountCredentials(service_account, folder_json)
 ee.Initialize(credentials)
 
