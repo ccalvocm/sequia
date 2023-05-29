@@ -62,13 +62,15 @@ def commitChanges():
     import os
 
     # Conexión a postgresql
-    conn = psycopg2.connect(database="geonode", user="geonode", password="geonode", host="192.10.10.139", port="5432")
+    conn = psycopg2.connect(database="geonode", user="geonode",
+                             password="geonode", host="192.10.10.140",
+                               port="5432")
 
     # Crea un cursor para la conexión
     cur = conn.cursor()
 
     #Elimina los datos existentes
-    cur.execute("TRUNCATE TABLE sequia_bi.datos_v2")
+    cur.execute("TRUNCATE TABLE sequia_bi.datos")
 
     # Lee el archivo CSV e inserta los datos en la base de datos
     filePath=os.path.join('..','data','StreamflowAll.csv')
@@ -91,7 +93,7 @@ def commitChanges():
             date_actual = datetime.date.today()
 
             # Genero insert a la tabla
-            sql = "INSERT INTO sequia_bi.datos_v2(date, chalinga_palmilla, choapa_cuncumen, cogoti_embalse_cogoti, combarbala_ramadillas, grande_las_ramadas, hurtado_san_agustin, illapel_las_burras, mostazal_cuestecita, tascadero_desembocadura, date_insert) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO sequia_bi.datos(date, chalinga_palmilla, choapa_cuncumen, cogoti_embalse_cogoti, combarbala_ramadillas, grande_las_ramadas, hurtado_san_agustin, illapel_las_burras, mostazal_cuestecita, tascadero_desembocadura, date_insert) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             values = (date, Chalinga_Palmilla, Choapa_Cuncumen, 
                       Cogoti_Embalse_Cogoti, Combarbala_Ramadillas, 
                       Grande_Las_Ramadas,Hurtado_San_Agustin,Illapel_Las_Burras,
