@@ -46,7 +46,7 @@ class polyEE(dsetEE):
     
     def fixMultipoly(self,geo):
         if 'MultiPolygon' in geo.geometry.iloc[0].geom_type:
-            geo2=geo.explode()
+            geo2=geo.buffer(0).explode()
             geo3=gpd.GeoDataFrame([],geometry=geo2.geometry,crs='4326')
             geo3['area']=''
             geo3['area']=geo3.to_crs(epsg='32719').apply(lambda x: x['geometry'].area,

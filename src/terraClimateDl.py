@@ -23,6 +23,14 @@ def gdfToFolder(gdf,root):
         geoS.to_file(os.path.join(folder,'basin4callypso.shp'))
         terraClimate.main(folder)
 
+def intersectEffective(gdf):
+    pathEffective=r'G:\Downloads\Temporada_sup_efec_regada\sr_2020_2021.shp'
+    effective=gpd.read_file(pathEffective)
+    effectiveDissolved=effective.dissolve()
+    gdf2=gdf.copy()
+    gdf2.set_crs(crs='epsg:32719',inplace=True,allow_override=True)
+    return gpd.overlay(gdf2,effectiveDissolved,how='difference')
+
 def download():
     lista=['Ponio','La_Higuera','Los_Molles','Pama_Valle_Hermoso','El_Ingenio']
     lista=['Estero_Canela','Estero_Camisas','Rio_Cuncumen','Rio_Tencadan']
@@ -30,11 +38,5 @@ def download():
 
     root=r'G:\sequia\data'
     gdf=loadGdf()
-    gdfToFolder(gdf,root)
-
-    # for subcuenca in lista:
-    #     path=os.path.join('..','data',subcuenca)
-    #     folder = os.path.abspath(path)
-    #     terraClimate.main(folder)
-
-# def 
+    difference=intersectEffective(gdf)
+    gdfToFolder(difference,root)
