@@ -38,6 +38,7 @@ def dfsToDf(root_sb):
     
     # get sub directories of root_sb
     folders=[f for f in folders if os.path.isdir(os.path.join(root_sb,f))]
+    folders=sorted(folders)
 
     import pandas as pd
     dfAll=pd.DataFrame()
