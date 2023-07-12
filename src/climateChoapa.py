@@ -85,11 +85,11 @@ def dl():
         data = nested_list.getInfo()
         df = pd.DataFrame(data, columns=column_df)
         df['date']=pd.to_datetime(df['date'],format="%Y%m%d")
-        df=df.pivot_table(index=df['date'],columns=df['WEAP_CATCH'],
+        dfLista=df.pivot_table(index=df['date'],columns=df['WEAP_CATCH'],
                           values='pr')
-        lista.append(df)
+        lista.append(dfLista)
 
-        dfDate=pd.concat(lista2, axis=1, ignore_index=False)
+        dfDate=pd.concat(lista, axis=1, ignore_index=False)
         dfRet.loc[dfDate.index,:]=dfDate.values
 
             
