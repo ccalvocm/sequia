@@ -90,8 +90,8 @@ def dl():
                           values='pr')
         lista.append(dfLista)
 
-        dfDate=pd.concat(lista, axis=0, ignore_index=False)
-        dfRet.loc[dfDate.index,:]=dfDate.values
+    dfDate=pd.concat(lista, axis=0, ignore_index=False)
+    dfRet.loc[dfDate.index,:]=dfDate.values
 
     return dfRet
 
