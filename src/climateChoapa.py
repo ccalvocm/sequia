@@ -92,4 +92,7 @@ def dl():
         dfDate=pd.concat(lista, axis=1, ignore_index=False)
         dfRet.loc[dfDate.index,:]=dfDate.values
 
+    return dfRet
+
+df=dl()
             
