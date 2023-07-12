@@ -68,8 +68,9 @@ def dl():
     dfRet=pd.DataFrame(index=idx,columns=list(plot_df['WEAP_CATCH']))
     dset=ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE')
 
+    lista=[]
+
     for ind,date in enumerate(listPeriods[:-1]):
-        lista=[]
 
         res=dset.filterBounds(ee_fc).select(band).map(addDate)
         results=res.filterDate(ee.Date(date),
@@ -89,7 +90,7 @@ def dl():
                           values='pr')
         lista.append(dfLista)
 
-        dfDate=pd.concat(lista, axis=1, ignore_index=False)
+        dfDate=pd.concat(lista, axis=0, ignore_index=False)
         dfRet.loc[dfDate.index,:]=dfDate.values
 
     return dfRet
