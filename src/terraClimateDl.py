@@ -4,7 +4,7 @@ import geopandas as gpd
 import pandas as pd
 
 def loadGdf():
-    path=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\SIG\Subcuencas\SubcuencasLaterales.shp'
+    path=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Modelos\insumosWEAP\rioPonio.shp'
     subcuencasCL=gpd.read_file(path)
     return subcuencasCL
 
@@ -27,14 +27,15 @@ def download():
     lista=['Ponio','La_Higuera','Los_Molles','Pama_Valle_Hermoso','El_Ingenio']
     lista=['Estero_Canela','Estero_Camisas','Rio_Cuncumen','Rio_Tencadan']
     lista=['CL08','CL12','CL13','CL14','CL15','CL23','CL24']
+    lista=['AN-05']
 
     root=r'G:\sequia\data'
     gdf=loadGdf()
     gdfToFolder(gdf,root)
 
-    # for subcuenca in lista:
-    #     path=os.path.join('..','data',subcuenca)
-    #     folder = os.path.abspath(path)
-    #     terraClimate.main(folder)
+    for subcuenca in lista:
+        path=os.path.join('..','data',subcuenca)
+        folder = os.path.abspath(path)
+        terraClimate.main(folder)
 
 # def 

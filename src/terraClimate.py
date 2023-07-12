@@ -205,7 +205,7 @@ ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI'
             dfRet=self.filterCount(dfRet,dfRetC.astype(float))
 
         # completar las columnas que no extrajo GEE
-        dfRet=self.autocompleteCol(dfRet)
+        # dfRet=self.autocompleteCol(dfRet)
 
         return dfRet
     
@@ -287,7 +287,7 @@ def main(name='Hurtado_San_Agustin'):
 
     def getDatesDatasets(name='Hurtado_San_Agustin'):
         # lastDate=getLastDate(name)
-        lastDate=pd.to_datetime('2000-01-01')
+        lastDate=pd.to_datetime('1971-01-01')
         print(lastDate)
 
         mindate,dsets=getMinDate()

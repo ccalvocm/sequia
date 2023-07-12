@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.ensemble import IsolationForest
 import numpy as np
 
-def filterML(df,cont=.01):
+def filterML(df,cont=1e-20):
 
     #% remover outliers con ML
     print(cont)
@@ -26,6 +26,7 @@ def filterML(df,cont=.01):
 
 def loadBasin(root,sb):
     basin=gpd.read_file(os.path.join(root,sb,'basin4callypso.shp'))
+    basin.set_crs(epsg='4326',inplace=True,allow_override=True)
     basin.to_crs(epsg='32719',inplace=True)
     return basin.area.values[0]
 
@@ -55,6 +56,7 @@ def main():
               'CL052','CL051','CL050','CL04','CL03','CL02']+['Rio_Tencadan',
             'Estero_Camisas','Estero_Canela','Rio_Cuncumen','Rio_Tencadan']
     subBasin=['CL05','AN10']
+    subBasin=['AN-05']
     dataset='IDAHO_EPSCOR_TERRACLIMATE_ro.csv'
     for sb in subBasin:
         # leer Q en m3/mes
