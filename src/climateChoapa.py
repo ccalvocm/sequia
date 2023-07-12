@@ -27,6 +27,12 @@ def rasterExtraction(image):
     )
     return feature
 
+def partitionDates():
+    datei=pd.to_datetime('1989-01-01')
+    datef=pd.to_datetime('2021-04-01')
+    months=round((datef-datei)/np.timedelta64(1, 'M'))+1
+    return list(pd.date_range(start=datei,end=datef,periods=months))
+    
 Sentinel_data = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE') \
     .filterDate("1989-01-01","2021-04-31") \
     .map(addDate)
@@ -34,8 +40,10 @@ Sentinel_data = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE') \
 path_df=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\SIG\ZR_ANID_20230707_CHOAPA_CATCHMENT.shp'
 plot_df = gpd.read_file(path_df)
 
-plot_df['longitud']=plot_df.geometry.x
-plot_df['latitude']=plot_df.geometry.x
+plot_df['longitude']=plot_df.geometry.x
+plot_df['latitude']=plot_df.geometry.y
+
+del plot_df['geometry']
 
 features=[]
 for index, row in plot_df.iterrows():
@@ -54,18 +62,26 @@ for index, row in plot_df.iterrows():
 ee_fc = ee.FeatureCollection(features) 
 ee_fc.getInfo()
 
-results = Sentinel_data.filterBounds(ee_fc).select('pr').map(addDate).map(rasterExtraction).flatten()
+scale=4638.3
+band='pr'
 
-# extract the properties column from feature collection
-# column order may not be as our sample data order
-columns = list(sample_result['properties'].keys())
-print(columns)
+def dl():
+    listPeriods=partitionDates()
 
-# Order data column as per sample data
-# You can modify this for better optimization
-column_df = list(plot_df.columns)
-column_df.extend([]'pr', 'date'])
-print(column_df)
+    idx=pd.date_range(listPeriods[0],listPeriods[-1])
+    dfRet=pd.DataFrame(index=idx,columns=list(plot_df['WEAP_CATCH']))
+    dset=ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE')
 
-nested_list = results.reduceColumns(ee.Reducer.toList(len(column_df)), column_df).values().get(0)
-data = nested_list.getInfo()
+    for ind,date in enumerate(listPeriods[:-1]):
+        lista=[]
+
+        res=dset.filterBounds(ee_fc).select(band)
+        resDates=res.filterDate(ee.Date(date),
+        ee.Date(listPeriods[ind+1])).map(rasterExtraction).flatten()
+        df=ImagesToDataFrame(resDates,band)
+        lista.append(df)
+
+        dfDate=pd.concat(lista2, axis=1, ignore_index=False)
+        dfRet.loc[dfDate.index,:]=dfDate.values
+
+            
