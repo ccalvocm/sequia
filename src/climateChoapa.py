@@ -25,7 +25,7 @@ def rasterExtraction(image):
         collection = ee_fc, # feature collection here
         scale = 4638.3 # Cell size of raster
     )
-    return feature
+    return image.set('date', image.date().format()).set(feature)
 
 def partitionDates():
     datei=pd.to_datetime('1989-01-01')
@@ -73,7 +73,7 @@ def dl():
 
         res=dset.filterBounds(ee_fc).select(band).map(addDate)
         results=res.filterDate(ee.Date(date),
-        ee.Date(listPeriods[ind+1])).map(rasterExtraction).flatten()
+        ee.Date(listPeriods[ind+1])).map(rasterExtraction)
     
         # Order data column as per sample data
         # You can modify this for better optimization
