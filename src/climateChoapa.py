@@ -30,12 +30,8 @@ def rasterExtraction(image):
 def partitionDates():
     datei=pd.to_datetime('1989-01-01')
     datef=pd.to_datetime('2021-04-01')
-    months=round((datef-datei)/np.timedelta64(1, 'M'))+1
+    months=round((datef-datei)/np.timedelta64(5, 'M'))+1
     return list(pd.date_range(start=datei,end=datef,periods=months))
-    
-Sentinel_data = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE') \
-    .filterDate("1989-01-01","2021-04-31") \
-    .map(addDate)
 
 path_df=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\SIG\ZR_ANID_20230707_CHOAPA_CATCHMENT.shp'
 plot_df = gpd.read_file(path_df)
@@ -75,10 +71,19 @@ def dl():
     for ind,date in enumerate(listPeriods[:-1]):
         lista=[]
 
-        res=dset.filterBounds(ee_fc).select(band)
-        resDates=res.filterDate(ee.Date(date),
+        res=dset.filterBounds(ee_fc).select(band).map(addDate)
+        results=res.filterDate(ee.Date(date),
         ee.Date(listPeriods[ind+1])).map(rasterExtraction).flatten()
-        df=ImagesToDataFrame(resDates,band)
+    
+        # Order data column as per sample data
+        # You can modify this for better optimization
+        column_df = list(plot_df.columns)
+        column_df.extend(['pr','date'])
+
+        nested_list = results.reduceColumns(ee.Reducer.toList(len(column_df)),
+                                             column_df).values().get(0)
+        data = nested_list.getInfo()
+        df = pd.DataFrame(data, columns=column_df)
         lista.append(df)
 
         dfDate=pd.concat(lista2, axis=1, ignore_index=False)
