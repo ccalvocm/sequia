@@ -25,7 +25,7 @@ def rasterExtraction(image):
         collection = ee_fc, # feature collection here
         scale = 4638.3 # Cell size of raster
     )
-    return image.set('date', image.date().format()).set(feature)
+    return feature
 
 def partitionDates():
     datei=pd.to_datetime('1989-01-01')
@@ -73,7 +73,7 @@ def dl():
 
         res=dset.filterBounds(ee_fc).select(band).map(addDate)
         results=res.filterDate(ee.Date(date),
-        ee.Date(listPeriods[ind+1])).map(rasterExtraction)
+        ee.Date(listPeriods[ind+1])).map(rasterExtraction).flatten()
     
         # Order data column as per sample data
         # You can modify this for better optimization
@@ -84,6 +84,9 @@ def dl():
                                              column_df).values().get(0)
         data = nested_list.getInfo()
         df = pd.DataFrame(data, columns=column_df)
+        df['date']=pd.to_datetime(df['date'],format="%Y%m%d")
+        df=df.pivot_table(index=df['date'],columns=df['WEAP_CATCH'],
+                          values='pr')
         lista.append(df)
 
         dfDate=pd.concat(lista2, axis=1, ignore_index=False)
