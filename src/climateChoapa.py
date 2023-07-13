@@ -33,7 +33,9 @@ def partitionDates():
     months=round((datef-datei)/np.timedelta64(5, 'M'))+1
     return list(pd.date_range(start=datei,end=datef,periods=months))
 
-path_df=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\SIG\ZR_ANID_20230707_CHOAPA_CATCHMENT.shp'
+path_df=r'E:\CIREN\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\SIG\ZR_ANID_20230707_CHOAPA_CATCHMENT.shp'
+path_df=r'E:\CIREN\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\SIG\ElBato_ANID.shp'
+
 plot_df = gpd.read_file(path_df)
 
 plot_df['longitude']=plot_df.geometry.x
@@ -59,14 +61,17 @@ ee_fc = ee.FeatureCollection(features)
 ee_fc.getInfo()
 
 scale=4638.3
+dataset='IDAHO_EPSCOR/TERRACLIMATE'
+dataset='ECMWF/ERA5_LAND/MONTHLY_AGGR'
 band='pr'
+band='evaporation_from_open_water_surfaces_excluding_oceans_sum'
 
 def dl():
     listPeriods=partitionDates()
 
     idx=pd.date_range(listPeriods[0],listPeriods[-1])
     dfRet=pd.DataFrame(index=idx,columns=list(plot_df['WEAP_CATCH']))
-    dset=ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE')
+    dset=ee.ImageCollection(dataset)
 
     lista=[]
 
@@ -79,7 +84,7 @@ def dl():
         # Order data column as per sample data
         # You can modify this for better optimization
         column_df = list(plot_df.columns)
-        column_df.extend(['pr','date'])
+        column_df.extend([band,'date'])
 
         nested_list = results.reduceColumns(ee.Reducer.toList(len(column_df)),
                                              column_df).values().get(0)
@@ -87,7 +92,7 @@ def dl():
         df = pd.DataFrame(data, columns=column_df)
         df['date']=pd.to_datetime(df['date'],format="%Y%m%d")
         dfLista=df.pivot_table(index=df['date'],columns=df['WEAP_CATCH'],
-                          values='pr')
+                          values=band)
         lista.append(dfLista)
 
     dfDate=pd.concat(lista, axis=0, ignore_index=False)
