@@ -198,7 +198,7 @@ def main():
     def balanceHurtado(datei,datef):
 
         import matplotlib.pyplot as plt
-        root=r'E:\CIREN\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Hurtado'
+        root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Hurtado'
         # entradas
         hfF=pd.DataFrame(headflows(root)).astype(float)
 
@@ -249,6 +249,8 @@ def main():
             df=df.loc[(df.index>=datei) & (df.index<=datef)]
             
             #plot balance Alternativa X
+            df=df.apply(lambda x: x*df.index.daysinmonth.values)
+            df=df.multiply(86400/1e6)
             df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
                     'Feb','Mar']
             return df
@@ -256,7 +258,7 @@ def main():
         return plots(datei,datef)
         
     def balanceLimari(datei,datef):
-        root=r'E:\CIREN\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Limari'
+        root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Limari'
         # entradas
         q=rio(root)
         hfF=pd.DataFrame(headflows(root)).astype(float)
@@ -308,6 +310,8 @@ def main():
             df=df.loc[(df.index>=datei) & (df.index<=datef)]
             
             #plot balance Alternativa X
+            df=df.apply(lambda x: x*df.index.daysinmonth.values)
+            df=df.multiply(86400/1e6)
             df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
                     'Feb','Mar']
             return df
@@ -347,7 +351,7 @@ def main():
             label = 'Total', linewidth = 3, markersize = 4,
             legend=False,marker='o',linestyle='-')
     fs=16
-    axes.set_ylabel('Volumen (Hm3/mes)',fontsize=fs)
+    axes.set_ylabel('Volumen ($Hm^3$/mes)',fontsize=fs)
     axes.set_xlabel('Mes año hidrológico',fontsize=fs)
     axes.set_title('Balance hídrico Limarí',fontsize=fs)
     axes.legend(['Balance']+list(balance.columns),loc='best', ncol=2,
