@@ -234,7 +234,9 @@ def suma(lista):
         dfRet=dfRet+dfTemp
 
     return dfRet
-    
+
+def dfTocol(df):
+    return df.sum(axis=1)   
 #%%
 def main():
 
@@ -269,11 +271,9 @@ def main():
     # GWin=GWin[GWin.columns[GWin.columns.str.contains('|'.join(['to','Overflow']))]]
     # GWout=GWout[GWout.columns[GWout.columns.str.contains('Below')]]
 
-    overflow=pd.DataFrame(GWin['Overflow'])*0
-    GWin=GWin[GWin.columns[:-1]]
-
-    # GWin=GWin[GWin.columns[GWin.columns.str.contains('Storage')]]
-    # GWout=GWout[GWout.columns[GWout.columns.str.contains('Storage')]]
+    overflow=pd.DataFrame(GWin['Overflow'])
+    GWin=GWin[GWin.columns[GWin.columns.str.contains('Storage')]]
+    GWout=GWout[GWout.columns[GWout.columns.str.contains('Storage')]]
     # GWin=GWin[[x for x in GWin.columns if 'Outflow' in x]]
     # GWout=GWout[[x for x in GWout.columns if 'Inflow' in x]]
     # GWout=GWout[[x for x in GWout.columns if 'Decrease' in x]]
@@ -294,11 +294,6 @@ def main():
     remanentesRiego=suma([GWout,suma([riego.multiply(-1)])])
     salidas=suma([AP,qDesemb,GWout,riego,overflow])
     balance=pd.DataFrame(entradas-salidas,index=hfF.index)
-    plt.close('all')
-    fig,ax=plt.subplots(1)
-
-    def dfTocol(df):
-        return df.sum(axis=1)
 
     pd.DataFrame(suma([overflow]).values,index=index(),columns=['overflow']).plot(ax=ax)
     pd.DataFrame(suma([hfF]).values,index=index(),columns=['hfF']).plot(ax=ax)
@@ -314,62 +309,57 @@ def main():
     stats=balance.loc[(balance.index>='2015-04-01') & (balance.index<='2016-03-01')]
     print(    stats.describe())
 
-    #%%
-    def plots():
-        df=pd.DataFrame(index=index())
-        df['sr']=dfTocol(sr)
-        df['embalses']=dfTocol(embalses)
-        df['GWin']=dfTocol(GWin)
-        df['headflows']=dfTocol(hfF)
-        df['retornoRio']=dfTocol(retornoRio)
-        df['AP']=dfTocol(AP.multiply(-1))
-        df['qDesemb']=dfTocol(qDesemb.multiply(-1))
-        df['GWout']=dfTocol(GWout.multiply(-1))
-        df['riego']=dfTocol(riego.multiply(-1))
 
-        # df=df.apply(lambda x: x*df.index.daysinmonth.values)
-        # df=df.multiply(86400/1e6)
+    df=pd.DataFrame(index=index())
+    df['sr']=dfTocol(sr)
+    df['embalses']=dfTocol(embalses).multiply(-1)
+    df['GWin']=dfTocol(GWin)
+    df['headflows']=dfTocol(hfF)
+    df['retornoRio']=dfTocol(retornoRio)
+    df['AP']=dfTocol(AP.multiply(-1))
+    df['qDesemb']=dfTocol(qDesemb.multiply(-1))
+    df['GWout']=dfTocol(GWout.multiply(-1))
+    df['riego']=dfTocol(riego.multiply(-1))
+    df['overflow']=dfTocol(overflow.multiply(-1))
 
-        # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-        df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
-        
-        #plot balance Alternativa X
-        df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
-                'Feb','Mar']
-        fig, axes = plt.subplots(figsize = (17,11))
-        sumas=pd.DataFrame(df.sum(axis=1))
-        df.index=sumas.index
-        df.plot(stacked=True, kind = 'bar', grid=True, ax = axes)
+    # df=df.apply(lambda x: x*df.index.daysinmonth.values)
+    # df=df.multiply(86400/1e6)
 
-        sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
-                label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
-        df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
-                label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
-        pos = axes.get_position()
-        # axes.set_position([pos.x0, pos.y0 * 4.5, pos.width * 1.0, pos.height * 0.5])
-        # axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
-        
-        # axes.set_ylim([-8,8])
-        axes.set_xlabel('Mes año hidrológico')
-        axes.set_ylabel('Volumen ($Hm^3/mes$)')
+    # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+    df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
+    
+    #plot balance Alternativa X
+    df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
+            'Feb','Mar']
+    
+    plt.close('all')
+    fig, axes = plt.subplots(figsize = (17,11))
+    sumas=pd.DataFrame(df.sum(axis=1))
+    df.index=sumas.index
+    df.plot(stacked=True, kind = 'bar', grid=True, ax = axes)
 
-        # get y-axis limits of the plot
-        low, high = axes.get_ylim()
-        # find the new limits
-        bound = max(abs(low), abs(high))
-        # set new limits
-        axes.set_ylim(-bound, bound)
-        # df.plot(stacked=True, kind = 'bar', grid=True, ax = axes[1], title = 'Desagregada')
-        
-        # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o')
-        # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o',
-        #         subplots=True, layout = (2,2))
-        # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
-        # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
-        # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
-        plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
+    sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
+            label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
+    df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
+            label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
+    pos = axes.get_position()
+    # axes.set_position([pos.x0, pos.y0 * 4.5, pos.width * 1.0, pos.height * 0.5])
+    # axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
+    
+    # axes.set_ylim([-8,8])
+    axes.set_xlabel('Mes año hidrológico')
+    axes.set_ylabel('Volumen ($Hm^3/mes$)')
+    
+    # df.plot(stacked=True, kind = 'bar', grid=True, ax = axes[1], title = 'Desagregada')
+    
+    # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o')
+    # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o',
+    #         subplots=True, layout = (2,2))
+    # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
+    # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
+    # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
+    plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
 
-    plots()
 #%%
 if __name__=='__main__':
     main()
