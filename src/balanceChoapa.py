@@ -323,8 +323,8 @@ def main():
     
     datei='2020-04-01'
     datef='2021-03-01'
-    datei='2015-04-01'
-    datef='2016-03-01'
+    # datei='2015-04-01'
+    # datef='2016-03-01'
     dfChoapa=balanceChoapa(datei,datef).astype(float)
     dfIllapel=balanceIllapel(datei,datef)
     dfChalinga=balanceChalinga(datei,datef)
