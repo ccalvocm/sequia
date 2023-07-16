@@ -234,7 +234,9 @@ def suma(lista):
         dfRet=dfRet+dfTemp
 
     return dfRet
-    
+
+def dfTocol(df):
+    return df.sum(axis=1)
 #%%
 def main():
 
@@ -268,11 +270,6 @@ def main():
     colsRIL=[x for x in retornoRio.columns if 'to Rio Hurtado' in x]
     retornoRio=retornoRio[colsRIL]
 
-    # sr=pd.read_csv(os.path.join(root,'sr.csv'),index_col=0,encoding='ISO-8859-1')
-    # sr.index=index()
-    # retornoRio=retornoRio[[x for x in retornoRio.columns if 'to SHAC' not in x]]
-
-    # riego=riego[[x for x in riego.columns if x not in AP.columns]]
     qDesemb=pd.read_csv(os.path.join(root,'hurtado.csv'),index_col=0)
     qDesemb.index=index()
 
@@ -280,54 +277,12 @@ def main():
     GWin=GWin[[x for x in GWin.columns if 'HUR' in x]]
     GWout=GWout[[x for x in GWout.columns if 'HUR' in x]]
 
-    # overflow=pd.DataFrame(GWin['Overflow'])
-    # GWin=GWin[GWin.columns[GWin.columns.str.contains('|'.join(['to','Overflow']))]]
-    # GWout=GWout[GWout.columns[GWout.columns.str.contains('Below')]]
-
-    # overflow=pd.DataFrame(GWin['Overflow'])*0
-    # GWin=GWin[GWin.columns[:-1]]
-
-    # GWin=GWin[GWin.columns[GWin.columns.str.contains('Storage')]]
-    # GWout=GWout[GWout.columns[GWout.columns.str.contains('Storage')]]
-    # GWin=GWin[[x for x in GWin.columns if 'Outflow' in x]]
-    # GWout=GWout[[x for x in GWout.columns if 'Inflow' in x]]
-    # GWout=GWout[[x for x in GWout.columns if 'Decrease' in x]]
-
-    # dfGW=pd.read_csv(r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Choapa\inout.csv',index_col=0) 
-    # dfGW.index=index()
-    # GWout=-dfGW[dfGW.columns[dfGW.columns.str.contains('Outflow to AC')]]
-    # GWin=dfGW[dfGW.columns[dfGW.columns.str.contains('Surface Water Inflow')]].astype(float)
-
-    # rf=pd.read_csv(r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Choapa\rf.csv',index_col=0)
-    # rf.index=index()
-    # rf=pd.DataFrame(rf[rf.columns[0]])*0
-    # inEmbalse=0*hfF
-    # outEmbalse=0*hfF
-    # retornoRio=0*hfF
     entradas=suma([GWin,hfF,retornoRio])
     remanentesRiego=suma([GWout,suma([riego.multiply(-1)])])
     salidas=suma([AP,qDesemb,GWout,riego])
     balance=pd.DataFrame(entradas-salidas,index=hfF.index)
-    plt.close('all')
-    fig,ax=plt.subplots(1)
 
-    def dfTocol(df):
-        return df.sum(axis=1)
-
-    pd.DataFrame(suma([hfF]).values,index=index(),columns=['hfF']).plot(ax=ax)
-    pd.DataFrame(suma([retornoRio]).values,index=index(),columns=['retornoRio']).plot(ax=ax)
-    pd.DataFrame(suma([riego.multiply(-1)]).values,index=index(),columns=['riego']).plot(ax=ax)
-    pd.DataFrame(suma([GWin.multiply(1)]).values,index=index(),columns=['GWin']).plot(ax=ax)
-    pd.DataFrame(suma([GWout.multiply(-1)]).values,index=index(),columns=['GWout']).plot(ax=ax)
-    pd.DataFrame(suma([qDesemb.multiply(-1)]).values,index=index(),columns=['qDesemb']).plot(ax=ax)
-    pd.DataFrame(suma([balance]).values,index=index(),columns=['balance']).plot(ax=ax)
-    # pd.DataFrame(suma([remanentesRiego.multiply(-1)]).values,index=index(),columns=['remanentesRiego']).plot(ax=ax)
-    # ax.set_xlim([pd.to_datetime('2015-01-01'),index()[-1]])
-    stats=balance.loc[(balance.index>='2015-04-01') & (balance.index<='2016-03-01')]
-    print(    stats.describe())
-
-    #%%
-    def plots(ineficienciaRiego=1.1288985823336968):
+    def plots(ineficienciaRiego=1.042e+00):
         df=pd.DataFrame(index=index())
         df['GWin']=dfTocol(GWin)
         df['headflows']=dfTocol(hfF)
@@ -339,8 +294,8 @@ def main():
         # df=df.apply(lambda x: x*df.index.daysinmonth.values)
         # df=df.multiply(86400/1e6)
 
-        # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-        df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
+        df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+        # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
         
         #plot balance Alternativa X
         df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
@@ -377,7 +332,7 @@ def main():
         # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
         # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
         # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
-        res=df.sum(axis=1).sum()
+        res=abs(df.sum(axis=1)).sum()
         print(res)
         plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
         return res
