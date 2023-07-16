@@ -354,7 +354,7 @@ def main():
             label = 'Total', linewidth = 3, markersize = 4,
             legend=False,marker='o',linestyle='-')
     fs=16
-    axes.set_ylabel('Volumen (Hm3/mes)',fontsize=fs)
+    axes.set_ylabel('Volumen ($Hm^3$/mes)',fontsize=fs)
     axes.set_xlabel('Mes año hidrológico',fontsize=fs)
     axes.set_title('Balance hídrico Choapa-Illapel-Chalinga',fontsize=fs)
     axes.legend(['Balance']+list(balance.columns),loc='best', ncol=2,

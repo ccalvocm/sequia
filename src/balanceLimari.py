@@ -321,8 +321,8 @@ def main():
     #%%    
     datei='2020-04-01'
     datef='2021-03-01'
-    datei='2015-04-01'
-    datef='2016-03-01'
+    # datei='2015-04-01'
+    # datef='2016-03-01'
     dfHurtado=balanceHurtado(datei,datef).astype(float)
     dfLimari=balanceLimari(datei,datef)
 
@@ -359,7 +359,7 @@ def main():
     balance.sum(axis=1)
 
     if datei=='2020-04-01':
-        axes.set_ylim([-30,30])
+        axes.set_ylim([-120,120])
         plt.savefig('balance_Limari_Hurtado_2020.png',dpi=300,
                     bbox_inches='tight')
     else:
