@@ -315,8 +315,7 @@ def main():
     print(    stats.describe())
 
     #%%
-    def plots():
-        ineficienciaRiego=1.1288985823336968
+    def plots(ineficienciaRiego=1.1288985823336968):
         df=pd.DataFrame(index=index())
         df['sr']=dfTocol(sr)
         df['embalses']=dfTocol(embalses)
@@ -336,6 +335,7 @@ def main():
         #plot balance Alternativa X
         df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
                 'Feb','Mar']
+        plt.close('all')
         fig, axes = plt.subplots(figsize = (17,11))
         sumas=pd.DataFrame(df.sum(axis=1))
         df.index=sumas.index
@@ -367,10 +367,20 @@ def main():
         # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
         # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
         # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
-        print(df.sum(axis=1).sum())
         plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
 
-    plots()
+        return df.sum(axis=1).sum()
+
+    plots(1.01603526)
+
+    import numpy as np
+    import scipy.optimize as opt
+
+    r = opt.root(plots, x0=1.1288985823336968, method='hybr')
+    print(r)
+    # array([1.97522498 3.47287981 5.1943792  2.10120135 4.09593969])
+
+    print(r.x)
 #%%
 if __name__=='__main__':
     main()
