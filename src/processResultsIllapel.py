@@ -1,7 +1,8 @@
+#%%
+
 import pandas as pd
 import os
 
-#%%
 def index():
     return pd.date_range('1989-04-01','2021-03-01',freq='MS')
 
@@ -248,9 +249,8 @@ def main():
     tl=TL(root)
     riego=riegoTL(tl)
     retornoRio=returnRiver(root)
-    AP=tl[tl.columns[tl.columns.str.contains('to AP')]]*0
-    MIN=tl[tl.columns[tl.columns.str.contains('to MIN')]]*0
-    IND=tl[tl.columns[tl.columns.str.contains('to IND')]]*0
+    AP=tl[tl.columns[tl.columns.str.contains('to Agua Potable')]]
+
     qDesemb=pd.DataFrame(q.iloc[:,-1])
 
     GWin,GWout=GW(root)
@@ -298,7 +298,7 @@ def main():
     df=pd.DataFrame(index=index())
     df['headflows']=dfTocol(hfF)
     df['inEmbalse']=dfTocol(inEmbalse)
-    df['GWin']=dfTocol(GWin)
+    df['GWin']=dfTocol(GWin)+dfTocol(AP.multiply(1))
     df['rf']=dfTocol(rf)
     df['retornoRio']=dfTocol(retornoRio)
 
@@ -309,11 +309,12 @@ def main():
 
     df['GWout']=dfTocol(GWout.multiply(-1))
     df['riego']=dfTocol(riego.multiply(-1))
+    df['AP']=dfTocol(AP.multiply(-1))
     # df=df.apply(lambda x: x*df.index.daysinmonth.values)
     # df=df.multiply(86400/1e6)
 
-    df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-    # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
+    # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+    df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
     
     #plot balance Alternativa X
     df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
@@ -329,8 +330,9 @@ def main():
             label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
     pos = axes.get_position()
     # axes.set_position([pos.x0, pos.y0 * 4.5, pos.width * 1.0, pos.height * 0.5])
-    axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
+    # axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
     
+    # axes.set_ylim([-8,8])
     axes.set_xlabel('Mes año hidrológico')
     axes.set_ylabel('Volumen ($Hm^3/mes$)')
     

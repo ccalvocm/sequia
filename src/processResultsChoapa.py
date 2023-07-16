@@ -1,7 +1,9 @@
+#%%
+
 import pandas as pd
 import os
 
-#%%
+
 def index():
     return pd.date_range('1989-04-01','2021-03-01',freq='MS')
 
@@ -15,7 +17,6 @@ def headflows(root):
 def rioChoapa(root):
     path=os.path.join(root,'choapa.csv')
     df=pd.read_csv(path,index_col=0)
-    df=pd.DataFrame(df.loc[df.index[:-1]])
 
     df.index=index()
     return df
@@ -245,15 +246,15 @@ def main():
     riego=riegoTL(tl)
     retornoRio=returnRiver(root)
     retornoAquifero=returnAq(root)
-    AP=tl[tl.columns[tl.columns.str.contains('to AP')]]*0
-    MIN=tl[tl.columns[tl.columns.str.contains('to MIN')]]*0
-    IND=tl[tl.columns[tl.columns.str.contains('to IND')]]*0
+    AP=tl[tl.columns[tl.columns.str.contains('to AP')]]
+    MIN=tl[tl.columns[tl.columns.str.contains('to MIN')]]
+    IND=tl[tl.columns[tl.columns.str.contains('to IND')]]
     qDesemb=pd.DataFrame(q.iloc[:,-1])
 
     GWin,GWout=GW(root)
     overflow=pd.DataFrame(GWin['Overflow'])
-    GWout=GWout[GWout.columns[GWout.columns.str.contains(' from Below')]]
-    GWout=GWout[GWout.columns[GWout.columns.str.contains('Inflow from ')]]
+    GWin=GWin[GWin.columns[GWin.columns.str.contains(' to_ ')]]
+    GWout=GWout[GWout.columns[GWout.columns.str.contains('Below')]]
     GWin=GWin[GWin.columns[GWin.columns.str.contains('Outflow to REST_MPL')]]
     # GWin=GWin[[x for x in GWin.columns if 'Outflow' in x]]
     # GWout=GWout[[x for x in GWout.columns if 'Inflow' in x]]
@@ -293,8 +294,8 @@ def main():
     df=pd.DataFrame(index=index())
     df['headflows']=dfTocol(hfF)
     df['inEmbalse']=dfTocol(inEmbalse)
-    # df['retornoRio']=dfTocol(retornoRio)
-    df['GWin']=dfTocol(GWin)
+    # df['retornoRio']=-dfTocol(retornoRio)
+    df['GWin']=dfTocol(GWin)+dfTocol(AP.multiply(1))+dfTocol(MIN.multiply(1))+dfTocol(IND.multiply(1))
     df['rf']=dfTocol(rf)
 
     df['qDesemb']=dfTocol(qDesemb.multiply(-1))
@@ -304,6 +305,10 @@ def main():
 
     df['GWout']=dfTocol(GWout.multiply(-1))+dfTocol(riego.multiply(1))
     df['riego']=dfTocol(riego.multiply(-1))
+    df['IND']=dfTocol(IND.multiply(-1))
+    df['MIN']=dfTocol(MIN.multiply(-1))
+    df['AP']=dfTocol(AP.multiply(-1))
+
     # df=df.apply(lambda x: x*df.index.daysinmonth.values)
     # df=df.multiply(86400/1e6)
 
@@ -320,11 +325,11 @@ def main():
 
     sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
             label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
-    df['GWout'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
+    df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
             label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
     pos = axes.get_position()
     # axes.set_position([pos.x0, pos.y0 * 4.5, pos.width * 1.0, pos.height * 0.5])
-    axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
+    # axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
     
     axes.set_xlabel('Mes año hidrológico')
     axes.set_ylabel('Volumen ($Hm^3/mes$)')
