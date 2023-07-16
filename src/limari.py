@@ -269,7 +269,7 @@ def main():
     # GWin=GWin[GWin.columns[GWin.columns.str.contains('|'.join(['to','Overflow']))]]
     # GWout=GWout[GWout.columns[GWout.columns.str.contains('Below')]]
 
-    overflow=pd.DataFrame(GWin['Overflow'])*0
+    overflow=pd.DataFrame(GWin['Overflow'])
     GWin=GWin[GWin.columns[:-1]]
 
     # GWin=GWin[GWin.columns[GWin.columns.str.contains('Storage')]]
@@ -326,12 +326,13 @@ def main():
         df['qDesemb']=dfTocol(qDesemb.multiply(-1))
         df['GWout']=dfTocol(GWout.multiply(-1))
         df['riego']=dfTocol(riego.multiply(-1))
+        df['overflow']=dfTocol(overflow.multiply(1))
 
         # df=df.apply(lambda x: x*df.index.daysinmonth.values)
         # df=df.multiply(86400/1e6)
-
-        # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-        df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
+# 
+        df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+        # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
         
         #plot balance Alternativa X
         df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
