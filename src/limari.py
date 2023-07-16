@@ -329,8 +329,8 @@ def main():
         # df=df.apply(lambda x: x*df.index.daysinmonth.values)
         # df=df.multiply(86400/1e6)
 
-        df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-        # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
+        # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+        df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
         
         #plot balance Alternativa X
         df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
@@ -369,9 +369,9 @@ def main():
         # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
         plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
 
-        return df.sum(axis=1).sum()
+        return df.sum(axis=1)
 
-    plots(1.01603526)
+    plots()
 
     import numpy as np
     import scipy.optimize as opt

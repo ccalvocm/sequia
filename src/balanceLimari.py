@@ -11,6 +11,19 @@ def rio(root):
     df.index=index()
     return df
 
+def GWLimari(root):
+    path=os.path.join(root,'GW.csv')
+    df=pd.read_csv(path,index_col=0)
+    df=df.apply(lambda x: pd.to_numeric(x, errors='coerce'))
+    df.index=index()
+    df=df[[x for x in df.columns if x not in ['Sum']]]
+
+    entradas=df[df.columns[(df < 0).any()]]
+    salidas=df[df.columns[(df > 0).any()]]
+    # salidas['Overflow']=entradas['Overflow']
+    # del entradas['Overflow']
+    return entradas,salidas
+
 def GW(root):
     path=os.path.join(root,'GW.csv')
     df=pd.read_csv(path,index_col=0)
@@ -233,44 +246,21 @@ def main():
             df['qDesemb']=dfTocol(qDesemb.multiply(-1))
             df['GWout']=dfTocol(GWout.multiply(-1))
             df['riego']=ineficienciaRiego*dfTocol(riego.multiply(-1))
-
             df=df.loc[(df.index>=datei) & (df.index<=datef)]
             
             #plot balance Alternativa X
             df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
                     'Feb','Mar']
-            plt.close('all')
-            fig, axes = plt.subplots(figsize = (17,11))
-            sumas=pd.DataFrame(df.sum(axis=1))
-            df.index=sumas.index
-            df.plot(stacked=True, kind = 'bar', grid=True, ax = axes)
-
-            sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
-                    label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
-            df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
-                    label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
-            pos = axes.get_position()
-
-            axes.set_xlabel('Mes año hidrológico')
-            axes.set_ylabel('Volumen ($Hm^3/mes$)')
-
-            # get y-axis limits of the plot
-            low, high = axes.get_ylim()
-            # find the new limits
-            bound = max(abs(low), abs(high))
-            # set new limits
-            axes.set_ylim(-bound, bound)
-
-            res=df.sum(axis=1).sum()
-            print(res)
-            plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
             return df
-
+    
+        return plots(datei,datef)
+        
     def balanceLimari(datei,datef):
         root=r'E:\CIREN\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Limari'
         # entradas
         q=rio(root)
         hfF=pd.DataFrame(headflows(root)).astype(float)
+        # hfF=hfF[[x for x in hfF.columns if 'Rio Hurtado  0 \ Headflow' not in x]]
 
         tl=TL(root)
         riego=tl
@@ -288,7 +278,7 @@ def main():
         riego=riego[riego.columns[4:]]
         qDesemb=pd.DataFrame(q.iloc[:,-1])
 
-        GWin,GWout=GW(root)
+        GWin,GWout=GWLimari(root)
 
         overflow=pd.DataFrame(GWin['Overflow'])*0
         GWin=GWin[GWin.columns[:-1]]
@@ -302,10 +292,8 @@ def main():
         remanentesRiego=suma([GWout,suma([riego.multiply(-1)])])
         salidas=suma([AP,qDesemb,GWout,riego,overflow])
         balance=pd.DataFrame(entradas-salidas,index=hfF.index)
-        plt.close('all')
-        fig,ax=plt.subplots(1)
 
-        def plots(ineficienciaRiego=1.116e+00):
+        def plots(datei,datef,ineficienciaRiego=1.12889858):
             df=pd.DataFrame(index=index())
             df['sr']=dfTocol(sr)
             df['embalses']=dfTocol(embalses)
@@ -317,52 +305,32 @@ def main():
             df['GWout']=dfTocol(GWout.multiply(-1))
             df['riego']=ineficienciaRiego*dfTocol(riego.multiply(-1))
 
-            df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+            df=df.loc[(df.index>=datei) & (df.index<=datef)]
             
             #plot balance Alternativa X
             df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
                     'Feb','Mar']
-            plt.close('all')
-            fig, axes = plt.subplots(figsize = (17,11))
-            sumas=pd.DataFrame(df.sum(axis=1))
-            df.index=sumas.index
-            df.plot(stacked=True, kind = 'bar', grid=True, ax = axes)
-
-            sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
-                    label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
-            df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
-                    label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
-            pos = axes.get_position()
-
-            axes.set_xlabel('Mes año hidrológico')
-            axes.set_ylabel('Volumen ($Hm^3/mes$)')
-
-            # get y-axis limits of the plot
-            low, high = axes.get_ylim()
-            # find the new limits
-            bound = max(abs(low), abs(high))
-            # set new limits
-
-            plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
-            return abs(df.sum(axis=1)).sum()
-
+            return df
+            
+        return plots(datei,datef)
+        
+    #%%    
     datei='2020-04-01'
     datef='2021-03-01'
-    datei='2015-04-01'
-    datef='2016-03-01'
+    # datei='2015-04-01'
+    # datef='2016-03-01'
     dfHurtado=balanceHurtado(datei,datef).astype(float)
     dfLimari=balanceLimari(datei,datef)
-    balanceHurtado.sum(axis=1)+balanceLimari.sum(axis=1)
 
     balance = pd.concat([dfHurtado, dfLimari],axis=1)
 
     balance=balance.groupby(lambda x:x, axis=1).sum()
 
     balance.columns=['Uso agua potable','Entrada agua subterránea',
-                     'Salida agua subterránea','Uso Industrial',
-                     'Uso Minería','Agua superficial','Entregas embalses',
-                     'Retención embalses','Río Choapa en desembocadura',
-                     'Retornos de agua','Riego']
+                     'Salida agua subterránea','Entregas embalses',
+                     'Agua superficial',
+                     'Río Limarí en desembocadura',
+                     'Retornos de agua','Riego','sr']
 
     plt.close('all')
     fig, axes = plt.subplots(figsize = (17,11))
@@ -378,7 +346,7 @@ def main():
     fs=16
     axes.set_ylabel('Volumen (Hm3/mes)',fontsize=fs)
     axes.set_xlabel('Mes año hidrológico',fontsize=fs)
-    axes.set_title('Balance hídrico Choapa-Illapel-Chalinga',fontsize=fs)
+    axes.set_title('Balance hídrico Limarí',fontsize=fs)
     axes.legend(['Balance']+list(balance.columns),loc='best', ncol=2,
                 fontsize=12)
     balance.sum(axis=1)
