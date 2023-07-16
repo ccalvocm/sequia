@@ -252,7 +252,7 @@ def main():
     retornoRio.index=index()
     sr=pd.read_csv(os.path.join(root,'sr.csv'),index_col=0,encoding='ISO-8859-1')
     sr.index=index()
-    retornoRio=retornoRio[[x for x in retornoRio.columns if 'to SHAC' not in x]]
+    # retornoRio=retornoRio[[x for x in retornoRio.columns if 'to SHAC' not in x]]
 
     embalses=pd.read_csv(os.path.join(root,'EMBALSES.csv'),index_col=0)
     embalses.index=index()
@@ -270,8 +270,8 @@ def main():
     # GWout=GWout[GWout.columns[GWout.columns.str.contains('Below')]]
 
     overflow=pd.DataFrame(GWin['Overflow'])
-    GWin=GWin[GWin.columns[GWin.columns.str.contains('Storage')]]
-    GWQout=GWout[GWout.columns[GWout.columns.str.contains('Storage')]]
+    # GWin=GWin[GWin.columns[GWin.columns.str.contains('Storage')]]
+    # GWout=GWout[GWout.columns[GWout.columns.str.contains('Storage')]]
     # GWin=GWin[[x for x in GWin.columns if 'Outflow' in x]]
     # GWout=GWout[[x for x in GWout.columns if 'Inflow' in x]]
     # GWout=GWout[[x for x in GWout.columns if 'Decrease' in x]]
@@ -309,7 +309,7 @@ def main():
     pd.DataFrame(suma([balance]).values,index=index(),columns=['balance']).plot(ax=ax)
     # pd.DataFrame(suma([remanentesRiego.multiply(-1)]).values,index=index(),columns=['remanentesRiego']).plot(ax=ax)
     # ax.set_xlim([pd.to_datetime('2015-01-01'),index()[-1]])
-    stats=balance.loc[(balance.index>='2020-04-01') & (balance.index<='2021-03-01')]
+    stats=balance.loc[(balance.index>='2015-04-01') & (balance.index<='2016-03-01')]
     print(    stats.describe())
 
     #%%
