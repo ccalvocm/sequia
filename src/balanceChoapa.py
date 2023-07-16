@@ -3,8 +3,6 @@
 import pandas as pd
 import os
 
-
-
 def index():
     return pd.date_range('1989-04-01','2021-03-01',freq='MS')
 
@@ -343,12 +341,13 @@ def main():
                      'Retornos de agua','Riego']
 
     plt.close('all')
-
+    import seaborn as sns   
+    palette = sns.color_palette('dark')
     fig, axes = plt.subplots(figsize = (17,11))
     sumas=pd.DataFrame(balance.sum(axis=1))
     balance.index=sumas.index
     balance.plot(stacked=True, kind = 'bar', grid=True, ax = axes,
-                 legend=False,rot=0,colormap="viridis",
+                 legend=False,rot=0,colormap='Set3_r',
                  edgecolor='k', width=1, linestyle="--")
 
     sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
