@@ -317,8 +317,8 @@ def main():
     #%%    
     datei='2020-04-01'
     datef='2021-03-01'
-    # datei='2015-04-01'
-    # datef='2016-03-01'
+    datei='2015-04-01'
+    datef='2016-03-01'
     dfHurtado=balanceHurtado(datei,datef).astype(float)
     dfLimari=balanceLimari(datei,datef)
 
@@ -331,6 +331,9 @@ def main():
                      'Agua superficial',
                      'Río Limarí en desembocadura',
                      'Retornos de agua','Riego','sr']
+    
+    balance['Agua superficial']=balance['Agua superficial']+balance['sr']
+    del balance['sr']
 
     plt.close('all')
     fig, axes = plt.subplots(figsize = (17,11))
