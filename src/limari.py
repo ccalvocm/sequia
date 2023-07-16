@@ -260,7 +260,7 @@ def main():
     embalses=embalses[embalses.columns[embalses.columns.str.contains('Storage')]]
 
     AP=tl[tl.columns[tl.columns.str.contains('|'.join(['SSR','Sanitaria']))]]
-    riego=riego[[x for x in riego.columns if x not in AP.columns]]
+    # riego=riego[[x for x in riego.columns if x not in AP.columns]]
     riego=riego[riego.columns[4:]]
     qDesemb=pd.DataFrame(q.iloc[:,-1])
 
@@ -269,13 +269,13 @@ def main():
     # GWin=GWin[GWin.columns[GWin.columns.str.contains('|'.join(['to','Overflow']))]]
     # GWout=GWout[GWout.columns[GWout.columns.str.contains('Below')]]
 
-    overflow=pd.DataFrame(GWin['Overflow'])
+    overflow=pd.DataFrame(GWin['Overflow'])*0
     GWin=GWin[GWin.columns[:-1]]
 
     # GWin=GWin[GWin.columns[GWin.columns.str.contains('Storage')]]
     # GWout=GWout[GWout.columns[GWout.columns.str.contains('Storage')]]
-    # GWin=GWin[[x for x in GWin.columns if 'Outflow' in x]]
-    # GWout=GWout[[x for x in GWout.columns if 'Inflow' in x]]
+    GWin=GWin[[x for x in GWin.columns if 'Outflow' in x]]
+    GWout=GWout[[x for x in GWout.columns if 'Inflow' in x]]
     # GWout=GWout[[x for x in GWout.columns if 'Decrease' in x]]
 
     # dfGW=pd.read_csv(r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Choapa\inout.csv',index_col=0) 
@@ -316,6 +316,7 @@ def main():
 
     #%%
     def plots():
+        ineficienciaRiego=1.1288985823336968
         df=pd.DataFrame(index=index())
         df['sr']=dfTocol(sr)
         df['embalses']=dfTocol(embalses)
@@ -325,12 +326,10 @@ def main():
         df['AP']=dfTocol(AP.multiply(-1))
         df['qDesemb']=dfTocol(qDesemb.multiply(-1))
         df['GWout']=dfTocol(GWout.multiply(-1))
-        df['riego']=dfTocol(riego.multiply(-1))
-        df['overflow']=dfTocol(overflow.multiply(1))
-
+        df['riego']=ineficienciaRiego*dfTocol(riego.multiply(-1))
         # df=df.apply(lambda x: x*df.index.daysinmonth.values)
         # df=df.multiply(86400/1e6)
-# 
+
         df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
         # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
         
@@ -368,6 +367,7 @@ def main():
         # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
         # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
         # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
+        print(df.sum(axis=1).sum())
         plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
 
     plots()
