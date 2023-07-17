@@ -237,7 +237,7 @@ def main():
         salidas=suma([AP,qDesemb,GWout,riego])
         balance=pd.DataFrame(entradas-salidas,index=hfF.index)
 
-        def plots(datei,datef,ineficienciaRiego=1.042e+00):
+        def dfRet(datei,datef,ineficienciaRiego):
             df=pd.DataFrame(index=index())
             df['GWin']=dfTocol(GWin)
             df['headflows']=dfTocol(hfF)
@@ -255,7 +255,23 @@ def main():
                     'Feb','Mar']
             return df
     
-        return plots(datei,datef)
+        def residual(ineficienciaRiego):
+            df=dfRet(datei,datef,ineficienciaRiego)
+            res=abs(df.sum(axis=1)).sum()
+            print(res)
+            return res
+
+        import numpy as np
+        import scipy.optimize as opt
+
+        r = opt.root(residual, x0=1.1288985823336968, 
+                     method='hybr')
+
+        print(r)
+
+        print(r.x)
+
+        return dfRet(datei,datef,r.x)
         
     def balanceLimari(datei,datef):
         root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Limari'
@@ -295,7 +311,7 @@ def main():
         salidas=suma([AP,qDesemb,GWout,riego,overflow])
         balance=pd.DataFrame(entradas-salidas,index=hfF.index)
 
-        def plots(datei,datef,ineficienciaRiego=1.12889858):
+        def dfRetLimari(datei,datef,ineficienciaRiego):
             df=pd.DataFrame(index=index())
             df['sr']=dfTocol(sr)
             df['embalses']=dfTocol(embalses)
@@ -315,8 +331,23 @@ def main():
             df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
                     'Feb','Mar']
             return df
-            
-        return plots(datei,datef)
+
+        def residualLimari(ineficienciaRiego):
+            df=dfRet(datei,datef,ineficienciaRiego)
+            res=abs(df.sum(axis=1)).sum()
+            print(res)
+            return res
+
+        import numpy as np
+        import scipy.optimize as opt
+
+        r = opt.root(residualLimari, x0=1.1288985823336968, 
+                     method='hybr')
+        print(r)
+
+        print(r.x)
+
+        return dfRet(datei,datef,r.x)
         
     #%%    
     datei='2020-04-01'
@@ -338,6 +369,9 @@ def main():
     
     balance['Agua superficial']=balance['Agua superficial']+balance['sr']
     del balance['sr']
+
+    balance['Salida agua subterránea']=balance['Salida agua subterránea']+balance['Entrada agua subterránea']
+    balance['Entrada agua subterránea']=0*balance['Entrada agua subterránea']
 
     plt.close('all')
     fig, axes = plt.subplots(figsize = (17,11))
