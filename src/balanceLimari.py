@@ -311,7 +311,7 @@ def main():
         salidas=suma([AP,qDesemb,GWout,riego,overflow])
         balance=pd.DataFrame(entradas-salidas,index=hfF.index)
 
-        def dfRetLimari(datei,datef,ineficienciaRiego):
+        def dfRet(datei,datef,ineficienciaRiego):
             df=pd.DataFrame(index=index())
             df['sr']=dfTocol(sr)
             df['embalses']=dfTocol(embalses)
@@ -378,7 +378,7 @@ def main():
     sumas=pd.DataFrame(balance.sum(axis=1))
     balance.index=sumas.index
     balance.plot(stacked=True, kind = 'bar', grid=True, ax = axes,
-                 legend=False,rot=0,colormap='Set3_r',
+                 legend=False,rot=0,colormap='Set3',
                  edgecolor='k', width=1, linestyle="--")
 
     sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
@@ -393,7 +393,7 @@ def main():
     balance.sum(axis=1)
 
     if datei=='2020-04-01':
-        # axes.set_ylim([-120,120])
+        axes.set_ylim([-90,90])
         plt.savefig('balance_Limari_Hurtado_2020.png',dpi=300,
                     bbox_inches='tight')
     else:

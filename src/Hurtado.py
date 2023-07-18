@@ -242,7 +242,7 @@ def main():
 
     #%%
     import matplotlib.pyplot as plt
-    root=r'E:\CIREN\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Hurtado'
+    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Hurtado'
     # entradas
     # inEmbalse,outEmbalse=elbato(root)
     hfF=pd.DataFrame(headflows(root)).astype(float)
