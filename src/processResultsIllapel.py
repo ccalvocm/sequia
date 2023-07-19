@@ -233,118 +233,126 @@ def suma(lista):
 def main():
 
     #%%
-    import matplotlib.pyplot as plt
-    # root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Choapa'
-    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Illapel'
-    # entradas
-    # q=rioChoapa(root)
-    q=rioIllapel(root)
-    # inEmbalse,outEmbalse=corrales(root)
-    # inEmbalse=pd.DataFrame(inEmbalse[inEmbalse.columns[:-2]])
-    inEmbalse,outEmbalse=elbato(root)
-    hf=headflows(root)
-    # hfF=filterHFChoapa(hf)
-    hfF=filterHFIllapel(hf)
+    def residual(ineficienciariego=1):
+        import matplotlib.pyplot as plt
+        # root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Choapa'
+        root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Illapel'
+        # entradas
+        # q=rioChoapa(root)
+        q=rioIllapel(root)
+        # inEmbalse,outEmbalse=corrales(root)
+        # inEmbalse=pd.DataFrame(inEmbalse[inEmbalse.columns[:-2]])
+        inEmbalse,outEmbalse=elbato(root)
+        hf=headflows(root)
+        # hfF=filterHFChoapa(hf)
+        hfF=filterHFIllapel(hf)
 
-    tl=TL(root)
-    riego=riegoTL(tl)
-    retornoRio=returnRiver(root)
-    AP=tl[tl.columns[tl.columns.str.contains('to Agua Potable')]]
+        tl=TL(root)
+        riego=riegoTL(tl)
+        retornoRio=returnRiver(root)
+        AP=tl[tl.columns[tl.columns.str.contains('to Agua Potable')]]
 
-    qDesemb=pd.DataFrame(q.iloc[:,-1])
+        qDesemb=pd.DataFrame(q.iloc[:,-1])
 
-    GWin,GWout=GW(root)
-    # overflow=pd.DataFrame(GWin['Overflow'])
-    GWin=GWin[GWin.columns[GWin.columns.str.contains(' to ')]]
-    GWout=GWout[GWout.columns[GWout.columns.str.contains('Inflow from ')]]
-    # GWin=GWin[GWin.columns[GWin.columns.str.contains('Outflow to REST_MPL')]]
+        GWin,GWout=GW(root)
+        # overflow=pd.DataFrame(GWin['Overflow'])
+        GWin=GWin[GWin.columns[GWin.columns.str.contains(' to ')]]
+        GWout=GWout[GWout.columns[GWout.columns.str.contains('Inflow from ')]]
+        # GWin=GWin[GWin.columns[GWin.columns.str.contains('Outflow to REST_MPL')]]
 
-    
-    # GWin=GWin[[x for x in GWin.columns if 'Outflow' in x]]
-    # GWout=GWout[[x for x in GWout.columns if 'Inflow' in x]]
-    # GWout=GWout[[x for x in GWout.columns if 'Decrease' in x]]
+        
+        # GWin=GWin[[x for x in GWin.columns if 'Outflow' in x]]
+        # GWout=GWout[[x for x in GWout.columns if 'Inflow' in x]]
+        # GWout=GWout[[x for x in GWout.columns if 'Decrease' in x]]
 
-    # dfGW=pd.read_csv(r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Choapa\inout.csv',index_col=0) 
-    # dfGW.index=index()
-    # GWout=-dfGW[dfGW.columns[dfGW.columns.str.contains('Outflow to AC')]]
-    # GWin=dfGW[dfGW.columns[dfGW.columns.str.contains('Surface Water Inflow')]].astype(float)
+        # dfGW=pd.read_csv(r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Choapa\inout.csv',index_col=0) 
+        # dfGW.index=index()
+        # GWout=-dfGW[dfGW.columns[dfGW.columns.str.contains('Outflow to AC')]]
+        # GWin=dfGW[dfGW.columns[dfGW.columns.str.contains('Surface Water Inflow')]].astype(float)
 
-    rf=pd.read_csv(r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Choapa\rf.csv',index_col=0)
-    rf.index=index()
-    rf=pd.DataFrame(rf[rf.columns[0]])*0
-    GWout.index=index()
-    entradas=suma([hfF,inEmbalse,GWin,rf,retornoRio])
-    remanentesRiego=suma([GWout,suma([riego.multiply(-1)])])
-    salidas=suma([AP,MIN,IND,qDesemb,outEmbalse,GWout,riego])
-    balance=pd.DataFrame(entradas-salidas,index=hfF.index)
-    plt.close('all')
-    fig,ax=plt.subplots(1)
+        rf=pd.read_csv(r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Choapa\rf.csv',index_col=0)
+        rf.index=index()
+        rf=pd.DataFrame(rf[rf.columns[0]])*0
+        GWout.index=index()
+        entradas=suma([hfF,inEmbalse,GWin,rf,retornoRio])
+        remanentesRiego=suma([GWout,suma([riego.multiply(-1)])])
+        salidas=suma([AP,MIN,IND,qDesemb,outEmbalse,GWout,riego])
+        balance=pd.DataFrame(entradas-salidas,index=hfF.index)
+        plt.close('all')
+        fig,ax=plt.subplots(1)
 
-    def dfTocol(df):
-        return df.sum(axis=1)
+        def dfTocol(df):
+            return df.sum(axis=1)
 
-    pd.DataFrame(suma([hfF]).values,index=index(),columns=['hfF']).plot(ax=ax)
-    pd.DataFrame(suma([inEmbalse]).values,index=index(),columns=['inEmbalse']).plot(ax=ax)
-    pd.DataFrame(suma([retornoRio]).values,index=index(),columns=['retornoRio']).plot(ax=ax)
-    pd.DataFrame(suma([riego.multiply(-1)]).values,index=index(),columns=['riego']).plot(ax=ax)
-    pd.DataFrame(suma([GWout.multiply(-1)]).values,index=index(),columns=['GWout']).plot(ax=ax)
-    pd.DataFrame(suma([qDesemb.multiply(-1)]).values,index=index(),columns=['qDesemb']).plot(ax=ax)
-    pd.DataFrame(suma([outEmbalse.multiply(-1)]).values,index=index(),columns=['outEmbalse']).plot(ax=ax)
-    pd.DataFrame(suma([balance]).values,index=index(),columns=['balance']).plot(ax=ax)
-    # pd.DataFrame(suma([remanentesRiego.multiply(-1)]).values,index=index(),columns=['remanentesRiego']).plot(ax=ax)
-    # ax.set_xlim([pd.to_datetime('2015-01-01'),index()[-1]])
-    print(    balance.describe())
+        pd.DataFrame(suma([hfF]).values,index=index(),columns=['hfF']).plot(ax=ax)
+        pd.DataFrame(suma([inEmbalse]).values,index=index(),columns=['inEmbalse']).plot(ax=ax)
+        pd.DataFrame(suma([retornoRio]).values,index=index(),columns=['retornoRio']).plot(ax=ax)
+        pd.DataFrame(suma([riego.multiply(-1)]).values,index=index(),columns=['riego']).plot(ax=ax)
+        pd.DataFrame(suma([GWout.multiply(-1)]).values,index=index(),columns=['GWout']).plot(ax=ax)
+        pd.DataFrame(suma([qDesemb.multiply(-1)]).values,index=index(),columns=['qDesemb']).plot(ax=ax)
+        pd.DataFrame(suma([outEmbalse.multiply(-1)]).values,index=index(),columns=['outEmbalse']).plot(ax=ax)
+        pd.DataFrame(suma([balance]).values,index=index(),columns=['balance']).plot(ax=ax)
+        # pd.DataFrame(suma([remanentesRiego.multiply(-1)]).values,index=index(),columns=['remanentesRiego']).plot(ax=ax)
+        # ax.set_xlim([pd.to_datetime('2015-01-01'),index()[-1]])
+        print(    balance.describe())
 
-    df=pd.DataFrame(index=index())
-    df['headflows']=dfTocol(hfF)
-    df['inEmbalse']=dfTocol(inEmbalse)
-    df['GWin']=dfTocol(GWin)+dfTocol(AP.multiply(1))
-    df['rf']=dfTocol(rf)
-    df['retornoRio']=dfTocol(retornoRio)
+        df=pd.DataFrame(index=index())
+        df['headflows']=dfTocol(hfF)
+        df['inEmbalse']=dfTocol(inEmbalse)
+        df['GWin']=dfTocol(GWin)+dfTocol(AP.multiply(1))
+        df['rf']=dfTocol(rf)
 
-    df['qDesemb']=dfTocol(qDesemb.multiply(-1))
-    df['outEmbalse']=dfTocol(outEmbalse.multiply(-1))
-    # df['balance']=dfTocol(balance)
-    # df['GWout']=dfTocol(GWout.multiply(-1))
+        df['qDesemb']=dfTocol(qDesemb.multiply(-1))
+        df['outEmbalse']=dfTocol(outEmbalse.multiply(-1))
+        # df['balance']=dfTocol(balance)
+        # df['GWout']=dfTocol(GWout.multiply(-1))
 
-    df['GWout']=dfTocol(GWout.multiply(-1))
-    df['riego']=dfTocol(riego.multiply(-1))
-    df['AP']=dfTocol(AP.multiply(-1))
-    # df=df.apply(lambda x: x*df.index.daysinmonth.values)
-    # df=df.multiply(86400/1e6)
+        df['GWout']=dfTocol(GWout.multiply(-1))
+        df['riego']=dfTocol(riego.multiply(-1))
+        df['AP']=dfTocol(AP.multiply(-1))
+        df=df.apply(lambda x: x*df.index.daysinmonth.values)
+        df=df.multiply(86400/1e6)
 
-    # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-    df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
-    
-    #plot balance Alternativa X
-    df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
-              'Feb','Mar']
-    fig, axes = plt.subplots(figsize = (17,11))
-    sumas=pd.DataFrame(df.sum(axis=1))
-    df.index=sumas.index
-    df.plot(stacked=True, kind = 'bar', grid=True, ax = axes)
+        df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+        # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
 
-    sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
-            label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
-    df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
-            label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
-    pos = axes.get_position()
-    # axes.set_position([pos.x0, pos.y0 * 4.5, pos.width * 1.0, pos.height * 0.5])
-    # axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
-    
-    # axes.set_ylim([-8,8])
-    axes.set_xlabel('Mes año hidrológico')
-    axes.set_ylabel('Volumen ($Hm^3/mes$)')
-    
-    # df.plot(stacked=True, kind = 'bar', grid=True, ax = axes[1], title = 'Desagregada')
-    
-    # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o')
-    # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o',
-    #         subplots=True, layout = (2,2))
-    # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
-    # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
-    # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
-    plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
+        df.columns=['Agua superficial','Entregas embalse','Entrada agua subterránea',
+'Retornos de agua','Río Illapel en Choapa','Retención de embalse',
+'Salidas agua subterránea','Riego','Agua potable']
+        df.columns=df.apply(lambda x: x.name + ' (Hm3/mes)')
+        df['Balance']=df.sum(axis=1)
+
+        #%%
+        
+        #plot balance Alternativa X
+        df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
+                'Feb','Mar']
+        fig, axes = plt.subplots(figsize = (17,11))
+        sumas=pd.DataFrame(df.sum(axis=1))
+        df.index=sumas.index
+        df.plot(stacked=True, kind = 'bar', grid=True, ax = axes)
+
+        sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
+                label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
+        df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
+                label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
+        pos = axes.get_position()
+        # axes.set_position([pos.x0, pos.y0 * 4.5, pos.width * 1.0, pos.height * 0.5])
+        # axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
+        
+        # axes.set_ylim([-8,8])
+        axes.set_xlabel('Mes año hidrológico')
+        axes.set_ylabel('Volumen ($Hm^3/mes$)')
+        
+        # df.plot(stacked=True, kind = 'bar', grid=True, ax = axes[1], title = 'Desagregada')
+        
+        # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o')
+        # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o',
+        #         subplots=True, layout = (2,2))
+        # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
+        # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
+        # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
+        plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
 
 #%%
 if __name__=='__main__':

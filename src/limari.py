@@ -240,7 +240,7 @@ def main():
 
     #%%
     import matplotlib.pyplot as plt
-    root=r'E:\CIREN\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Limari'
+    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Limari'
     # entradas
     q=rio(root)
     # inEmbalse,outEmbalse=elbato(root)
@@ -315,7 +315,7 @@ def main():
     print(    stats.describe())
 
     #%%
-    def plots(ineficienciaRiego=1.1288985823336968):
+    def plots(ineficienciaRiego=1.23911947):
         df=pd.DataFrame(index=index())
         df['sr']=dfTocol(sr)
         df['embalses']=dfTocol(embalses)
@@ -326,12 +326,13 @@ def main():
         df['qDesemb']=dfTocol(qDesemb.multiply(-1))
         df['GWout']=dfTocol(GWout.multiply(-1))
         df['riego']=ineficienciaRiego*dfTocol(riego.multiply(-1))
-        # df=df.apply(lambda x: x*df.index.daysinmonth.values)
-        # df=df.multiply(86400/1e6)
+        df=df.apply(lambda x: x*df.index.daysinmonth.values)
+        df=df.multiply(86400/1e6)
 
-        # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-        df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
+        df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+        # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
         
+        df['Balance']=df.sum(axis=1)
         #plot balance Alternativa X
         df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
                 'Feb','Mar']
@@ -367,9 +368,10 @@ def main():
         # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
         # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
         # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
+        res=abs(df.sum(axis=1)).sum()
         plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
 
-        return df.sum(axis=1)
+        return res
 
     plots()
 

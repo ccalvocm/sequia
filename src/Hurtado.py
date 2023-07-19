@@ -282,7 +282,7 @@ def main():
     salidas=suma([AP,qDesemb,GWout,riego])
     balance=pd.DataFrame(entradas-salidas,index=hfF.index)
 
-    def plots(ineficienciaRiego=1.042e+00):
+    def plots(ineficienciaRiego=1.04161893):
         df=pd.DataFrame(index=index())
         df['GWin']=dfTocol(GWin)
         df['headflows']=dfTocol(hfF)
@@ -291,13 +291,18 @@ def main():
         df['qDesemb']=dfTocol(qDesemb.multiply(-1))
         df['GWout']=dfTocol(GWout.multiply(-1))
         df['riego']=ineficienciaRiego*dfTocol(riego.multiply(-1))
-        # df=df.apply(lambda x: x*df.index.daysinmonth.values)
-        # df=df.multiply(86400/1e6)
+        df=df.apply(lambda x: x*df.index.daysinmonth.values)
+        df=df.multiply(86400/1e6)
 
-        df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-        # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
+        # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+        df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
         
         #plot balance Alternativa X
+        df.columns=['Entrada agua subterránea','Agua superficial',
+                    'Retornos de agua','Uso agua potable',
+                    'Afluentes Embalse Recoleta','Salida agua subterránea',
+                    'Riego']
+        df['Balance']=df.sum(axis=1)
         df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
                 'Feb','Mar']
         plt.close('all')
@@ -308,7 +313,7 @@ def main():
 
         sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
                 label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
-        df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
+        df['Riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
                 label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
         pos = axes.get_position()
         # axes.set_position([pos.x0, pos.y0 * 4.5, pos.width * 1.0, pos.height * 0.5])
