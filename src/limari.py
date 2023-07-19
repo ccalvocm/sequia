@@ -329,8 +329,8 @@ def main():
         # df=df.apply(lambda x: x*df.index.daysinmonth.values)
         # df=df.multiply(86400/1e6)
 
-        # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-        df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
+        df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+        # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
         
         #plot balance Alternativa X
         df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
@@ -353,6 +353,8 @@ def main():
         axes.set_xlabel('Mes año hidrológico')
         axes.set_ylabel('Volumen ($Hm^3/mes$)')
 
+        
+
         # get y-axis limits of the plot
         low, high = axes.get_ylim()
         # find the new limits
@@ -368,8 +370,9 @@ def main():
         # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
         # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
         plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
+        res=abs(df.sum(axis=1)).sum()
 
-        return df.sum(axis=1)
+        return res
 
     plots()
 
