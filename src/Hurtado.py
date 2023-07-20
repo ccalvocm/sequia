@@ -242,7 +242,7 @@ def main():
 
     #%%
     import matplotlib.pyplot as plt
-    root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Hurtado'
+    root=r'E:\CIREN\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados\Hurtado'
     # entradas
     # inEmbalse,outEmbalse=elbato(root)
     hfF=pd.DataFrame(headflows(root)).astype(float)
@@ -256,11 +256,16 @@ def main():
     cols=[x for x in tl.columns if '_hur' in x.lower()]
     tl=pd.DataFrame(tl[cols])
 
-    colsRiego=[x for x in tl.columns if 'RIEG' in x or 'R_' in x or 'ET_HUR' in x]
-    riego=tl
+    # colsRiego=[x for x in tl.columns if ('RIEG' in x) or ('R_' in x) or ('ET_HUR' in x)]
+    colsRiego=[x for x in tl.columns if any(map(x.__contains__, ['RIEG','R_','ET_HUR']))]
+    colsRiego=[x for x in colsRiego if 'AP_' not in x]
+    riego=tl[colsRiego]
 
     colsAP=[x for x in tl.columns if 'AP_' in x]
     AP=tl[colsAP]
+
+    IND=tl[[x for x in tl.columns if 'IND_' in x]]
+    PEC=tl[[x for x in tl.columns if 'PEC_' in x]]
 
     GWin,GWout=GW(root)
 
@@ -282,7 +287,13 @@ def main():
     salidas=suma([AP,qDesemb,GWout,riego])
     balance=pd.DataFrame(entradas-salidas,index=hfF.index)
 
-    def plots(ineficienciaRiego=1.04161893):
+    deficit=pd.read_csv(os.path.join(root,'unmetD.csv'),index_col=0)
+    deficit.index=index()
+    deficit=deficit[[x for x in deficit.columns if any(map(x.__contains__, ['RIEG',
+                                                                            'R_Hurt','ET_HUR']))]]
+    #%%
+# 1.06102358
+    def plots(ineficienciaRiego=1.0408024):
         df=pd.DataFrame(index=index())
         df['GWin']=dfTocol(GWin)
         df['headflows']=dfTocol(hfF)
@@ -291,6 +302,8 @@ def main():
         df['qDesemb']=dfTocol(qDesemb.multiply(-1))
         df['GWout']=dfTocol(GWout.multiply(-1))
         df['riego']=ineficienciaRiego*dfTocol(riego.multiply(-1))
+        df['IND']=-dfTocol(IND)
+        df['PEC']=-dfTocol(PEC)
         df=df.apply(lambda x: x*df.index.daysinmonth.values)
         df=df.multiply(86400/1e6)
 
@@ -301,13 +314,15 @@ def main():
         df.columns=['Entrada agua subterránea','Agua superficial',
                     'Retornos de agua','Uso agua potable',
                     'Afluentes Embalse Recoleta','Salida agua subterránea',
-                    'Riego']
-        df['Balance']=df.sum(axis=1)
+                    'Riego','Uso Industrial','Uso Pecuario']
+        res=abs(df.sum(axis=1)).sum()
         df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
                 'Feb','Mar']
         plt.close('all')
         fig, axes = plt.subplots(figsize = (17,11))
         sumas=pd.DataFrame(df.sum(axis=1))
+        df['Balance']=df.sum(axis=1)
+        df['Demanda insatisfecha']=dfTocol(deficit)
         df.index=sumas.index
         df.plot(stacked=True, kind = 'bar', grid=True, ax = axes)
 
@@ -337,7 +352,6 @@ def main():
         # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
         # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
         # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
-        res=abs(df.sum(axis=1)).sum()
         print(res)
         plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
         return res
