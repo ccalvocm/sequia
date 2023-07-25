@@ -171,9 +171,10 @@ def main():
         tl=TL(root)
         riego=riegoTL(tl)
         # retornoRio=returnRiver(root)
-        AP=tl[tl.columns[tl.columns.str.contains('to AP')]]*0
-        MIN=tl[tl.columns[tl.columns.str.contains('to MIN')]]*0
-        IND=tl[tl.columns[tl.columns.str.contains('to IND')]]*0
+        AP=tl[tl.columns[tl.columns.str.contains('to AP')]]
+        MIN=tl[tl.columns[tl.columns.str.contains('to MIN')]]
+        IND=tl[tl.columns[tl.columns.str.contains('to IND')]]
+        PEC=tl[tl.columns[tl.columns.str.contains('to PEC')]]
         qDesemb=pd.DataFrame(q.iloc[:,-1])
 
         GWin,GWout=GWChalinga(root)
@@ -197,6 +198,7 @@ def main():
 
             df['GWout']=dfTocol(GWout.multiply(-1))+dfTocol(riego.multiply(1))
             df['riego']=ineficiencia*dfTocol(riego.multiply(-1))
+            df['PEC']=dfTocol(PEC.multiply(-1))
             df=df.apply(lambda x: x*df.index.daysinmonth.values)
             df=df.multiply(86400/1e6)
 
@@ -238,6 +240,7 @@ def main():
         AP=tl[tl.columns[tl.columns.str.contains('to AP')]]
         MIN=tl[tl.columns[tl.columns.str.contains('to MIN')]]
         IND=tl[tl.columns[tl.columns.str.contains('to IND')]]
+        PEC=tl[tl.columns[tl.columns.str.contains('to PEC')]]
         qDesemb=pd.DataFrame(q.iloc[:,-1])
 
         GWin,GWout=GWChoapa(root)
@@ -270,6 +273,7 @@ def main():
             df['IND']=dfTocol(IND.multiply(-1))
             df['MIN']=dfTocol(MIN.multiply(-1))
             df['AP']=dfTocol(AP.multiply(-1))
+            df['PEC']=dfTocol(PEC.multiply(-1))
 
             df=df.apply(lambda x: x*df.index.daysinmonth.values)
             df=df.multiply(86400/1e6)
@@ -310,9 +314,9 @@ def main():
 
         tl=TL(root)
         riego=riegoTL(tl)
-        AP=tl[tl.columns[tl.columns.str.contains('to AP')]]*0
-        MIN=tl[tl.columns[tl.columns.str.contains('to MIN')]]*0
-        IND=tl[tl.columns[tl.columns.str.contains('to IND')]]*0
+        AP=tl[tl.columns[tl.columns.str.contains('to AP')]]
+        MIN=tl[tl.columns[tl.columns.str.contains('to MIN')]]
+        IND=tl[tl.columns[tl.columns.str.contains('to IND')]]
         qDesemb=pd.DataFrame(q.iloc[:,-1])
 
         GWin,GWout=GWChoapa(root)

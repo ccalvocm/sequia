@@ -584,7 +584,10 @@ def main():
         balance=balance.groupby(lambda x:x, axis=1).sum()
 
         balance.columns=['Uso agua potable','Entrada agua subterránea',
-                        'Salida agua subterránea','Entregas embalses',
+                        'Salida agua subterránea','Uso industrial',
+                        'Uso minería',
+                        'Uso pecuario',
+                        'Entregas embalses',
                         'Agua superficial',
                         'Río Limarí en desembocadura',
                         'Retornos de agua','Riego','sr']
@@ -595,13 +598,33 @@ def main():
         balance['Salida agua subterránea']=balance['Salida agua subterránea']+balance['Entrada agua subterránea']
         balance['Entrada agua subterránea']=0*balance['Entrada agua subterránea']
 
+        cols=['Uso agua potable', 'Entrada agua subterránea',
+    'Salida agua subterránea','Entregas embalses',
+    'Agua superficial','Río Limarí en desembocadura',
+    'Retornos de agua', 'Riego','Uso industrial',
+                     'Uso minería','Uso pecuario']
+        balance=balance[cols]
         plt.close('all')
+        from matplotlib.pyplot import cm
+        import numpy as np
+        color = [np.array([0.55294118, 0.82745098, 0.78039216, 1.        ]),
+        np.array([1.        , 1.        , 0.70196078, 1.        ]),
+        np.array([0.98431373, 0.50196078, 0.44705882, 1.        ]),
+        np.array([0.99215686, 0.70588235, 0.38431373, 1.        ]),
+        np.array([0.70196078, 0.87058824, 0.41176471, 1.        ]),
+        np.array([0.85098039, 0.85098039, 0.85098039, 1.        ]),
+        np.array([0.8       , 0.92156863, 0.77254902, 1.        ]),
+        np.array([1.        , 0.92941176, 0.43529412, 1.        ])]
+        color2 = list(cm.tab20(np.linspace(0, 1, len(balance.columns)+2)))
+        colores=color+[color2[0]]+[color2[5]]+[color2[4]]
+        test_keys = list(balance.columns)
+        colors = {test_keys[i]: colores[i] for i in range(len(colores))}
         fig, axes = plt.subplots(figsize = (17,11))
-        sumas=pd.DataFrame(balance.sum(axis=1))
+        sumas=pd.DataFrame(balance.sum(axis=1))*0.5
         balance.index=sumas.index
         balance.plot(stacked=True, kind = 'bar', grid=True, ax = axes,
-                    legend=False,rot=0,colormap='Set3',
-                    edgecolor='k', width=1, linestyle="--")
+                 legend=False,rot=0,color=colors,
+                 edgecolor='k', width=1, linestyle="--")
 
         sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
                 label = 'Total', linewidth = 3, markersize = 4,
