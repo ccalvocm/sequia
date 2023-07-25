@@ -260,6 +260,9 @@ def main():
     embalses=embalses[embalses.columns[embalses.columns.str.contains('Storage')]]
 
     AP=tl[tl.columns[tl.columns.str.contains('|'.join(['SSR','Sanitaria']))]]
+    IND=tl[tl.columns[tl.columns.str.contains('|'.join(['IND']))]]
+    MIN=tl[tl.columns[tl.columns.str.contains('|'.join(['MIN']))]]
+    PEC=tl[tl.columns[tl.columns.str.contains('|'.join(['PEC']))]]
     # riego=riego[[x for x in riego.columns if x not in AP.columns]]
     riego=riego[riego.columns[4:]]
     qDesemb=pd.DataFrame(q.iloc[:,-1])
@@ -294,6 +297,9 @@ def main():
     remanentesRiego=suma([GWout,suma([riego.multiply(-1)])])
     salidas=suma([AP,qDesemb,GWout,riego,overflow])
     balance=pd.DataFrame(entradas-salidas,index=hfF.index)
+    riegoreq=pd.read_csv(os.path.join(root,'unmetD.csv'),
+                   index_col=0)
+    riegoreq.index=index()
     plt.close('all')
     fig,ax=plt.subplots(1)
 
@@ -315,7 +321,7 @@ def main():
     print(    stats.describe())
 
     #%%
-    def plots(ineficienciaRiego=1.23911947):
+    def plots(ineficienciaRiego=1.11401025):
         df=pd.DataFrame(index=index())
         df['sr']=dfTocol(sr)
         df['embalses']=dfTocol(embalses)
@@ -326,55 +332,34 @@ def main():
         df['qDesemb']=dfTocol(qDesemb.multiply(-1))
         df['GWout']=dfTocol(GWout.multiply(-1))
         df['riego']=ineficienciaRiego*dfTocol(riego.multiply(-1))
+        df['IND']=dfTocol(IND.multiply(-1))
+        df['MIN']=dfTocol(MIN.multiply(-1))
+        df['PEC']=dfTocol(PEC.multiply(-1))
         df=df.apply(lambda x: x*df.index.daysinmonth.values)
         df=df.multiply(86400/1e6)
 
         df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
         # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
-        
+
+        df['GWout']=df['GWout']+df['GWin']
+        del df['GWin']
+        df.columns=['sr','Retención embalses',
+                    'Agua superficial',
+                    'Retornos de agua',
+                    'Uso agua potable',
+                    'Río Limarí en desembocadura',
+                    'Salida agua subterránea',
+                        'Riego','Uso industrial',
+                        'Uso minería',
+                        'Uso pecuario']
+        df['Agua superficial']=df['Agua superficial']+df['sr']
+        del df['sr']
+        df.columns=df.apply(lambda x: x.name+' (Hm3/mes)')
         df['Balance']=df.sum(axis=1)
-        #plot balance Alternativa X
-        df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
-                'Feb','Mar']
-        plt.close('all')
-        fig, axes = plt.subplots(figsize = (17,11))
-        sumas=pd.DataFrame(df.sum(axis=1))
-        df.index=sumas.index
-        df.plot(stacked=True, kind = 'bar', grid=True, ax = axes)
-
-        sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
-                label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
-        df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
-                label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
-        pos = axes.get_position()
-        # axes.set_position([pos.x0, pos.y0 * 4.5, pos.width * 1.0, pos.height * 0.5])
-        # axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
-        
-        # axes.set_ylim([-8,8])
-        axes.set_xlabel('Mes año hidrológico')
-        axes.set_ylabel('Volumen ($Hm^3/mes$)')
-
-        # get y-axis limits of the plot
-        low, high = axes.get_ylim()
-        # find the new limits
-        bound = max(abs(low), abs(high))
-        # set new limits
-        axes.set_ylim(-bound, bound)
-        # df.plot(stacked=True, kind = 'bar', grid=True, ax = axes[1], title = 'Desagregada')
-        
-        # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o')
-        # df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o',
-        #         subplots=True, layout = (2,2))
-        # nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
-        # axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
-        # axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
+        df['Demanda insatisfecha']=dfTocol(riegoreq.loc[df.index])    
         res=abs(df.sum(axis=1)).sum()
-        plt.suptitle('Balance Oferta-Demanda\n' + 'Choapa')
-
         return res
-
-    plots()
-
+    
     import numpy as np
     import scipy.optimize as opt
 
@@ -383,6 +368,46 @@ def main():
     # array([1.97522498 3.47287981 5.1943792  2.10120135 4.09593969])
 
     print(r.x)
+
+#%%
+
+        #plot balance Alternativa X
+df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
+        'Feb','Mar']
+plt.close('all')
+fig, axes = plt.subplots(figsize = (17,11))
+sumas=pd.DataFrame(df.sum(axis=1))
+df.index=sumas.index
+df.plot(stacked=True, kind = 'bar', grid=True, ax = axes)
+
+sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
+        label = 'Total', marker = 'o', linewidth = 4, markersize = 10)
+df['riego'].plot(ax=axes, kind = 'line', grid=True, color = 'r',
+        label = 'riego', marker = 'o', linewidth = 4, markersize = 10)
+pos = axes.get_position()
+# axes.set_position([pos.x0, pos.y0 * 4.5, pos.width * 1.0, pos.height * 0.5])
+# axes.legend(loc='center right', bbox_to_anchor=(1.0, -0.65), ncol=2)
+
+# axes.set_ylim([-8,8])
+axes.set_xlabel('Mes año hidrológico')
+axes.set_ylabel('Volumen ($Hm^3/mes$)')
+
+# get y-axis limits of the plot
+low, high = axes.get_ylim()
+# find the new limits
+bound = max(abs(low), abs(high))
+# set new limits
+axes.set_ylim(-bound, bound)
+# df.plot(stacked=True, kind = 'bar', grid=True, ax = axes[1], title = 'Desagregada')
+
+# df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o')
+# df.plot(stacked=False, kind = 'line', grid=True, ax = axes[1], title = 'Desagregada', marker = 'o',
+#         subplots=True, layout = (2,2))
+# nam = os.path.join(folder, cuenca.replace(' ','_') + 'v3.jpg')
+# axes[0].set_ylabel('Volumen ($Hm^3/mes$)')
+# axes[1].set_ylabel('Volumen ($Hm^3/mes$)')
+#%%
+
 #%%
 if __name__=='__main__':
     main()

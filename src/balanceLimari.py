@@ -354,6 +354,8 @@ def main():
     datef='2021-03-01'
     # datei='2015-04-01'
     # datef='2016-03-01'
+
+    # agrupa las demandas de los dos SHACs
     dfHurtado=balanceHurtado(datei,datef).astype(float)
     dfLimari=balanceLimari(datei,datef)
 
