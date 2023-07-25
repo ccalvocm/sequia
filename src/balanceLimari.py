@@ -278,7 +278,6 @@ def main():
         # entradas
         q=rio(root)
         hfF=pd.DataFrame(headflows(root)).astype(float)
-        # hfF=hfF[[x for x in hfF.columns if 'Rio Hurtado  0 \ Headflow' not in x]]
 
         tl=TL(root)
         riego=tl
@@ -292,7 +291,12 @@ def main():
         embalses=embalses.fillna(0)
         embalses=embalses[embalses.columns[embalses.columns.str.contains('Storage')]]
 
-        AP=tl[tl.columns[tl.columns.str.contains('|'.join(['SSR','Sanitaria']))]]
+        # demanda otros usos
+        IND=tl[tl.columns[tl.columns.str.contains('|'.join(['IND']))]]
+        MIN=tl[tl.columns[tl.columns.str.contains('|'.join(['MIN']))]]
+        PEC=tl[tl.columns[tl.columns.str.contains('|'.join(['PEC']))]]
+        AP=tl[tl.columns[tl.columns.str.contains('|'.join(['SSR',
+                                                           'Sanitaria']))]]
         riego=riego[riego.columns[4:]]
         qDesemb=pd.DataFrame(q.iloc[:,-1])
 
@@ -303,7 +307,6 @@ def main():
 
         GWin=GWin[[x for x in GWin.columns if 'Outflow' in x]]
         GWout=GWout[[x for x in GWout.columns if 'Inflow' in x]]
-
         GWout.index=index()
 
         entradas=suma([sr,embalses,GWin,hfF,retornoRio])
@@ -322,7 +325,11 @@ def main():
             df['qDesemb']=dfTocol(qDesemb.multiply(-1))
             df['GWout']=dfTocol(GWout.multiply(-1))
             df['riego']=ineficienciaRiego*dfTocol(riego.multiply(-1))
-
+            df['IND']=dfTocol(IND.multiply(-1))
+            df['MIN']=dfTocol(MIN.multiply(-1))
+            df['PEC']=dfTocol(PEC.multiply(-1))
+            df['GWout']=df['GWout']+df['GWin']
+            del df['GWin']
             df=df.loc[(df.index>=datei) & (df.index<=datef)]
             
             #plot balance Alternativa X
@@ -348,59 +355,272 @@ def main():
         print(r.x)
 
         return dfRet(datei,datef,r.x)
+
+    def balanceRapel(datei,datef):
+        root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados'
+        root=os.path.join(root,'Rapel')
+        # entradas
+        hfF=pd.DataFrame(headflows(root)).astype(float)
+        hfF.index=index()
+
+        def filterDf(df,lista):
+            dfRet=df[[x for x in df.columns if any(map(x.__contains__,lista))]]
+            return pd.DataFrame(dfRet)
         
-    #%%    
-    datei='2020-04-01'
-    datef='2021-03-01'
-    # datei='2015-04-01'
-    # datef='2016-03-01'
+        # headflows Rapel
+        heads=['AN_04','CL_05','CL_06','Rio Palomo','Rio Rapel','CL_07','CL_08',
+            'Rio Los Molles']
+        hfF=filterDf(hfF,heads)
+        tl=TL(root)
 
-    # agrupa las demandas de los dos SHACs
-    dfHurtado=balanceHurtado(datei,datef).astype(float)
-    dfLimari=balanceLimari(datei,datef)
+        cols=[x for x in tl.columns if ('rap' in x.lower()) & ('Withdrawal' in x) | ('RIEG_14_19_RR' in x)]
+        riego=filterDf(tl,cols)
 
-    balance = pd.concat([dfHurtado, dfLimari],axis=1)
+        # agua potable
+        AP=tl[[x for x in tl.columns if 'AP_AC_RAP_01' in x]]
 
-    balance=balance.groupby(lambda x:x, axis=1).sum()
+        GWin,GWout=GW(root)
+        GWin=filterDf(GWin,['AC_RAP_01'])
+        GWout=filterDf(GWout,['AC_RAP_01'])
 
-    balance.columns=['Uso agua potable','Entrada agua subterránea',
-                     'Salida agua subterránea','Entregas embalses',
-                     'Agua superficial',
-                     'Río Limarí en desembocadura',
-                     'Retornos de agua','Riego','sr']
+        retornoRio=pd.read_csv(os.path.join(root,'ril.csv'),index_col=0)
+        retornoRio.index=index()
+
+        colsRIL=[x for x in retornoRio.columns if 'rap' in str.lower(x)]
+        retornoRio=retornoRio[colsRIL]
+
+        qDesemb=pd.read_csv(os.path.join(root,'Rapel.csv'),index_col=0)
+        qDesemb.index=index()
+        qDesemb=pd.DataFrame(qDesemb.iloc[:,-1])
+
+        # caudal de entrada del Limari PROMMRA
+        qAfluPROM=pd.read_csv(os.path.join(root,'RapelEnJunta.csv'),index_col=0)
+        qAfluPROM.index=index()
+        qAfluPROM=pd.DataFrame(qAfluPROM.iloc[:,-1])
+
+        deficit=pd.read_csv(os.path.join(root,'unmetD.csv'),index_col=0)
+        deficit.index=index()
+        deficit=deficit[[x for x in deficit.columns if any(map(x.__contains__,
+                                                        ['rap']))]]
+        def fixRapel(df):
+            diff=df['qAfluPROM']-df['qDesemb']
+            idx=diff[diff<0].index
+            df.loc[idx,'GWin']=df.loc[idx,'GWin'].values-diff.loc[idx].values
+            idx=diff[diff>0].index
+            df.loc[idx,'GWout']=df.loc[idx,'GWout'].values-diff.loc[idx].values
+            df['qDesemb']=df['qAfluPROM'].values
+            del df['qAfluPROM']
+            return df
+
+        df=pd.DataFrame(index=index())
+        df['headflows']=dfTocol(hfF)
+        df['retornoRio']=dfTocol(retornoRio)
+        df['qDesemb']=-dfTocol(qDesemb)
+        df['qAfluPROM']=-dfTocol(qAfluPROM)
+        df['GWin']=-dfTocol(GWin)
+        df['GWout']=-dfTocol(GWout)
+        df['riego']=-dfTocol(riego)
+        df['AP']=-dfTocol(AP)
+        df=fixRapel(df)
+        df=df.apply(lambda x: x*df.index.daysinmonth.values)
+        df=df.multiply(86400/1e6)
+        df=df.loc[(df.index>=datei) & (df.index<=datef)]
+        df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
+                'Feb','Mar']
+        
+        return df        
     
-    balance['Agua superficial']=balance['Agua superficial']+balance['sr']
-    del balance['sr']
+    def balanceMostazal(datei,datef):
+        root=r'G:\OneDrive - ciren.cl\2022_ANID_sequia\Proyecto\3_Objetivo3\Resultados'
+        root=os.path.join(root,'Mostazal')
+        # entradas
+        hfF=pd.DataFrame(headflows(root)).astype(float)
+        hfF.index=index()
 
-    balance['Salida agua subterránea']=balance['Salida agua subterránea']+balance['Entrada agua subterránea']
-    balance['Entrada agua subterránea']=0*balance['Entrada agua subterránea']
+        def filterDf(df,lista):
+            dfRet=df[[x for x in df.columns if any(map(x.__contains__,lista))]]
+            return pd.DataFrame(dfRet)
+        
+        # headflows Rapel
+        heads=['AN_03','CL_03']
+        hfF=filterDf(hfF,heads)
+        tl=TL(root)
 
-    plt.close('all')
-    fig, axes = plt.subplots(figsize = (17,11))
-    sumas=pd.DataFrame(balance.sum(axis=1))
-    balance.index=sumas.index
-    balance.plot(stacked=True, kind = 'bar', grid=True, ax = axes,
-                 legend=False,rot=0,colormap='Set3',
-                 edgecolor='k', width=1, linestyle="--")
+        cols=[x for x in tl.columns if ('r_most' in x.lower()) & ('Withdrawal' in x)]
+        riego=filterDf(tl,cols)
 
-    sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
-            label = 'Total', linewidth = 3, markersize = 4,
-            legend=False,marker='o',linestyle='-')
-    fs=16
-    axes.set_ylabel('Volumen ($Hm^3$/mes)',fontsize=fs)
-    axes.set_xlabel('Mes año hidrológico',fontsize=fs)
-    axes.set_title('Balance hídrico Limarí',fontsize=fs)
-    axes.legend(['Balance']+list(balance.columns),loc='best', ncol=2,
-                fontsize=12)
-    balance.sum(axis=1)
+        # agua potable
+        AP=tl[[x for x in tl.columns if 'AP_MOS01' in x]]
 
-    if datei=='2020-04-01':
-        axes.set_ylim([-90,90])
-        plt.savefig('balance_Limari_Hurtado_2020.png',dpi=300,
-                    bbox_inches='tight')
-    else:
-        plt.savefig('balance_Limari_Hurtado_2015.png',dpi=300,
-                    bbox_inches='tight')
+        GWin,GWout=GW(root)
+        GWin=filterDf(GWin,['AC_MOS_01'])
+        GWout=filterDf(GWout,['AC_MOS_01'])
+
+        retornoRio=pd.read_csv(os.path.join(root,'ril.csv'),index_col=0)
+        retornoRio.index=index()
+
+        colsRIL=[x for x in retornoRio.columns if 'most' in str.lower(x)]
+        retornoRio=retornoRio[colsRIL]
+
+        qDesemb=pd.read_csv(os.path.join(root,'Mostazal.csv'),index_col=0)
+        qDesemb.index=index()
+        qDesemb=pd.DataFrame(qDesemb.iloc[:,-1])
+
+        # caudal de entrada del Limari PROMMRA
+        qAfluPROM=pd.read_csv(os.path.join(root,'mostazalDesembocadura.csv'),
+                              index_col=0)
+        qAfluPROM.index=index()
+        qAfluPROM=pd.DataFrame(qAfluPROM.iloc[:,-1])
+
+        def fixMostazal(df):
+            diff=df['qAfluPROM']-df['qDesemb']
+            idx=diff[diff<0].index
+            df.loc[idx,'GWin']=df.loc[idx,'GWin'].values-diff.loc[idx].values
+            idx=diff[diff>0].index
+            df.loc[idx,'GWout']=df.loc[idx,'GWout'].values-diff.loc[idx].values
+            df['qDesemb']=df['qAfluPROM'].values
+            del df['qAfluPROM']
+            return df
+
+        df=pd.DataFrame(index=index())
+        df['headflows']=dfTocol(hfF)
+        df['retornoRio']=dfTocol(retornoRio)
+        df['qDesemb']=-dfTocol(qDesemb)
+        df['qAfluPROM']=-dfTocol(qAfluPROM)
+        df['GWin']=-dfTocol(GWin)
+        df['GWout']=-dfTocol(GWout)
+        df['riego']=-dfTocol(riego)
+        df['AP']=-dfTocol(AP)
+        df=fixMostazal(df)
+        df=df.apply(lambda x: x*df.index.daysinmonth.values)
+        df=df.multiply(86400/1e6)
+        df=df.loc[(df.index>=datei) & (df.index<=datef)]
+        df.index=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene',
+                'Feb','Mar']
+        return df
+    #%%    
+    def balanceSHACLimari(datei,datef):
+        # datei='2015-04-01'
+        # datef='2016-03-01'
+
+        # agrupa las demandas de los dos SHACs
+        dfLimari=balanceLimari(datei,datef)
+        dfRapel=balanceRapel(datei,datef)
+        dfMostazal=balanceMostazal(datei,datef)
+
+        dfLimari['headflows']=dfLimari['headflows'].values+dfRapel['qDesemb'].values+dfMostazal['qDesemb'].values
+        del dfRapel['qDesemb']
+        del dfMostazal['qDesemb']  
+        balance = pd.concat([dfRapel,dfMostazal,dfLimari],axis=1)
+
+        balance=balance.groupby(lambda x:x, axis=1).sum()
+
+        balance.columns=['Uso agua potable','Entrada agua subterránea',
+                        'Salida agua subterránea','Uso industrial',
+                        'Uso minería','Uso pecuario','Entregas embalses',
+                        'Agua superficial',
+                        'Río Limarí en desembocadura',
+                        'Retornos de agua','Riego','sr']
+        
+        balance['Agua superficial']=balance['Agua superficial']+balance['sr']
+        del balance['sr']
+
+        balance['Salida agua subterránea']=balance['Salida agua subterránea']+balance['Entrada agua subterránea']
+        balance['Entrada agua subterránea']=0*balance['Entrada agua subterránea']
+
+        plt.close('all')
+        fig, axes = plt.subplots(figsize = (17,11))
+        sumas=pd.DataFrame(balance.sum(axis=1))
+        balance.index=sumas.index
+        balance.plot(stacked=True, kind = 'bar', grid=True, ax = axes,
+                    legend=False,rot=0,colormap='Set3',
+                    edgecolor='k', width=1, linestyle="--")
+
+        sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
+                label = 'Total', linewidth = 3, markersize = 4,
+                legend=False,marker='o',linestyle='-')
+        fs=16
+        axes.set_ylabel('Volumen ($Hm^3$/mes)',fontsize=fs)
+        axes.set_xlabel('Mes año hidrológico',fontsize=fs)
+        axes.set_title('Balance hídrico Limarí',fontsize=fs)
+        axes.legend(['Balance']+list(balance.columns),loc='best', ncol=2,
+                    fontsize=12)
+        unmetD2020=[0.0662459,0.0564198,0.0525379,0.1368770,0.1220770,0.2171360,
+                    0.2261390,0.6010160,1.0263600,0.9745250,0.7091160,0.2906740]
+        unmetD2015=[0.85410600,0.45570300,0.24526200,0.22282140,0.06601740,
+0.08971860,0.00029400,0.00564240,0.11683680,0.64045800,0.69492000,0.34250340,]
+        
+        balance['Balance']=balance.sum(axis=1)
+        if '2020' in datei:
+            balance['Demanda insatisfecha']=unmetD2020
+        else:
+            balance['Demanda insatisfecha']=unmetD2015
+        
+        balance.columns=[x+' (Hm3/mes)' for x in balance.columns]
+        return balance
+
+    # balanceSHACLimari2015=balanceSHACLimari('2015-04-01','2016-03-01')
+    # balanceSHACLimari2020=balanceSHACLimari('2020-04-01','2021-03-01')
+
+    def cuencaLimari():
+        datei='2020-04-01'
+        datef='2021-03-01'
+        # datei='2015-04-01'
+        # datef='2016-03-01'
+
+        # agrupa las demandas de los dos SHACs
+        dfHurtado=balanceHurtado(datei,datef).astype(float)
+        dfLimari=balanceLimari(datei,datef)
+        dfRapel=balanceRapel(datei,datef)
+        dfMostazal=balanceMostazal(datei,datef)
+        
+        dfLimari['headflows']=dfLimari['headflows'].values+dfRapel['qDesemb'].values+dfMostazal['qDesemb'].values+dfHurtado['qDesemb'].values
+        del dfRapel['qDesemb']
+        del dfMostazal['qDesemb'] 
+        del dfHurtado['qDesemb']
+
+        balance = pd.concat([dfHurtado, dfLimari],axis=1)
+
+        balance=balance.groupby(lambda x:x, axis=1).sum()
+
+        balance.columns=['Uso agua potable','Entrada agua subterránea',
+                        'Salida agua subterránea','Entregas embalses',
+                        'Agua superficial',
+                        'Río Limarí en desembocadura',
+                        'Retornos de agua','Riego','sr']
+        
+        balance['Agua superficial']=balance['Agua superficial']+balance['sr']
+        del balance['sr']
+
+        balance['Salida agua subterránea']=balance['Salida agua subterránea']+balance['Entrada agua subterránea']
+        balance['Entrada agua subterránea']=0*balance['Entrada agua subterránea']
+
+        plt.close('all')
+        fig, axes = plt.subplots(figsize = (17,11))
+        sumas=pd.DataFrame(balance.sum(axis=1))
+        balance.index=sumas.index
+        balance.plot(stacked=True, kind = 'bar', grid=True, ax = axes,
+                    legend=False,rot=0,colormap='Set3',
+                    edgecolor='k', width=1, linestyle="--")
+
+        sumas.plot(ax=axes, kind = 'line', grid=True, color = 'black',
+                label = 'Total', linewidth = 3, markersize = 4,
+                legend=False,marker='o',linestyle='-')
+        fs=16
+        axes.set_ylabel('Volumen ($Hm^3$/mes)',fontsize=fs)
+        axes.set_xlabel('Mes año hidrológico',fontsize=fs)
+        axes.set_title('Balance hídrico Limarí',fontsize=fs)
+        axes.legend(['Balance']+list(balance.columns),loc='best', ncol=2,
+                    fontsize=12)
+        balance.sum(axis=1)
+
+        if datei=='2020-04-01':
+            axes.set_ylim([-90,90])
+            plt.savefig('balance_Limari_Hurtado_2020.png',dpi=300,
+                        bbox_inches='tight')
+        else:
+            plt.savefig('balance_Limari_Hurtado_2015.png',dpi=300,
+                        bbox_inches='tight')
             
 
 #%%

@@ -287,7 +287,6 @@ def main():
     deficit=deficit[[x for x in deficit.columns if any(map(x.__contains__,
                                                     ['most']))]]
     
-    #%%
     def fixMostazal(df):
         diff=df['qAfluPROM']-df['qDesemb']
         idx=diff[diff<0].index
@@ -298,7 +297,6 @@ def main():
         del df['qAfluPROM']
         return df
 
-# 1.06102358
     def plots(ineficienciaRiego=1.08):
         df=pd.DataFrame(index=index())
         df['headflows']=dfTocol(hfF)

@@ -338,8 +338,8 @@ def main():
         df=df.apply(lambda x: x*df.index.daysinmonth.values)
         df=df.multiply(86400/1e6)
 
-        df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
-        # df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
+        # df=df.loc[(df.index>='2015-04-01') & (df.index<='2016-03-01')]
+        df=df.loc[(df.index>='2020-04-01') & (df.index<='2021-03-01')]
 
         df['GWout']=df['GWout']+df['GWin']
         del df['GWin']
