@@ -391,8 +391,9 @@ def main():
     balance=balance.groupby(lambda x:x, axis=1).sum()
 
     balance.columns=['Uso agua potable','Entrada agua subterránea',
-                     'Salida agua subterránea','Uso Industrial',
-                     'Uso Minería','Agua superficial','Entregas embalses',
+                     'Salida agua subterránea','Uso industrial',
+                     'Uso minería','Uso pecuario',
+                     'Agua superficial','Entregas embalses',
                      'Retención embalses','Río Choapa en desembocadura',
                      'Retornos de agua','Riego']
 
@@ -403,8 +404,8 @@ def main():
     cols=['Uso agua potable', 'Entrada agua subterránea',
     'Salida agua subterránea','Entregas embalses',
     'Agua superficial','Río Choapa en desembocadura',
-    'Retornos de agua', 'Riego','Retención embalses','Uso Industrial',
-                     'Uso Minería']
+    'Retornos de agua', 'Riego','Retención embalses','Uso industrial',
+                     'Uso minería','Uso pecuario']
     balance=balance[cols]
     import matplotlib
     import numpy as np
@@ -418,10 +419,10 @@ def main():
  np.array([0.8       , 0.92156863, 0.77254902, 1.        ]),
  np.array([1.        , 0.92941176, 0.43529412, 1.        ])]
     color2 = list(cm.tab20(np.linspace(0, 1, len(balance.columns)+2)))
-    colores=color+[color2[0]]+[color2[5]]+[color2[4]]
+    colores=color+[color2[0]]+[color2[5]]+[color2[4]]+[color2[6]]
     test_keys = list(balance.columns)
     colors = {test_keys[i]: colores[i] for i in range(len(colores))}
-    sumas=pd.DataFrame(balance.sum(axis=1))
+    sumas=pd.DataFrame(balance.sum(axis=1))*0.5
     balance.index=sumas.index
     balance.plot(stacked=True, kind = 'bar', grid=True, ax = axes,
                  legend=False,rot=0,color=colors,
