@@ -565,8 +565,8 @@ def main():
     def cuencaLimari():
         datei='2020-04-01'
         datef='2021-03-01'
-        # datei='2015-04-01'
-        # datef='2016-03-01'
+        datei='2015-04-01'
+        datef='2016-03-01'
 
         # agrupa las demandas de los dos SHACs
         dfHurtado=balanceHurtado(datei,datef).astype(float)
@@ -644,6 +644,7 @@ def main():
         else:
             plt.savefig('balance_Limari_Hurtado_2015.png',dpi=300,
                         bbox_inches='tight')
+            
             
 
 #%%
