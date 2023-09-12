@@ -28,6 +28,7 @@ def download():
     lista=['Estero_Canela','Estero_Camisas','Rio_Cuncumen','Rio_Tencadan']
     lista=['CL08','CL12','CL13','CL14','CL15','CL23','CL24']
     lista=['AN-05']
+    lista=['EP']
 
     root=r'G:\sequia\data'
     gdf=loadGdf()
