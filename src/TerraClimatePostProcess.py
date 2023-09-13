@@ -58,6 +58,9 @@ def main():
     subBasin=['CL05','AN10']
     subBasin=['AN-05']
     subBasin=['EP']
+    subBasin=['estPalPal','estGallipavo','estEspinal','estPitipiti',
+    'estColton','estMeco','estChacay','estSanVicente',
+    'estTemuco','estElQuemado','rioPalPal','rioRelbun']
     dataset='IDAHO_EPSCOR_TERRACLIMATE_ro.csv'
     for sb in subBasin:
         # leer Q en m3/mes
