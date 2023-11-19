@@ -1,5 +1,5 @@
 import os
-import terraClimate
+import PET_ERA5
 import geopandas as gpd
 import pandas as pd
 
@@ -51,34 +51,27 @@ def changeIndex(df):
     return dfRet
     
 def day2mon(lista):
-    root=r'D:\GitHub\sequia\data'
+    root=r'G:\sequia\data'
     for sb in lista:
         path=os.path.join(root,sb)
         folder = os.path.abspath(path)
         pp=pd.read_csv(os.path.join(folder,'Precipitacion',
         'PrecipitacionActualizada.csv'),index_col=0,parse_dates=True)
-        etr=pd.read_csv(os.path.join(folder,'IDAHO_EPSCOR_TERRACLIMATE_pet.csv'),
-                        index_col=0,parse_dates=True)*0.1
-        # t=pd.read_csv(os.path.join(folder,'Temperatura',
-        # 'TemperaturaActualizada.csv'),index_col=0,parse_dates=True)
+        t=pd.read_csv(os.path.join(folder,'Temperatura',
+        'TemperaturaActualizada.csv'),index_col=0,parse_dates=True)
         ppmon=pp.resample('MS').sum()*1000
         ppmon=ppmon.astype(float)
-        # tmon=t.resample('MS').mean()-273.15
-        # tmon=tmon.astype(float)
-        etrmon=etr.resample('MS').sum()
-        etrmon=etrmon.astype(float)
-        
+        tmon=t.resample('MS').mean()-273.15
+        tmon=tmon.astype(float)
+
         # change df index to dd-mm-yyyy format
 
         ppmon=changeIndex(ppmon)
-        # tmon=changeIndex(tmon)
-        etrmon=changeIndex(etrmon)
+        tmon=changeIndex(tmon)
         ppmon.to_csv(os.path.join(folder,'Precipitacion',
         'ppMon'+sb+'.csv'),index=None)
-        # tmon.to_csv(os.path.join(folder,'Temperatura',
-        # 'tMon'+sb+'.csv'),index=None)
-        etrmon.to_csv(os.path.join(folder,
-        'etrMon'+sb+'.csv'),index=None)
+        tmon.to_csv(os.path.join(folder,'Temperatura',
+        'tMon'+sb+'.csv'),index=None)
     return None
 
 def download():
@@ -96,7 +89,7 @@ def download():
 'ChacayB','ChacayC','SanVicenteA','SanVicenteB','SanVicenteC',
 'PalPalA','PalPalB','PalPalC','PalPalD']
 
-    root=r'D:\GitHub\sequia\data'
+    root=r'G:\sequia\data'
     # gdf=loadGdf()
     # gdfToFolder(gdf,root)
 
@@ -104,7 +97,7 @@ def download():
         gdf=gdfUTM24326(subcuenca)
         path=os.path.join('..','data',subcuenca)
         folder = os.path.abspath(path)
-        terraClimate.main(subcuenca)
+        PET_ERA5.main(subcuenca)
 
     day2mon(lista)
 # def 

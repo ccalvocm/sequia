@@ -115,7 +115,7 @@ class polyEE(dsetEE):
     def partitionDates(self):
         datei=self.idate
         datef=self.fdate
-        months=round((datef-datei).days/700)+1
+        months=round((datef-datei).days/6)+1
         return list(pd.date_range(start=datei,end=datef,periods=months))
 
     def ImagesToDataFrame(self,images,band):
@@ -247,7 +247,7 @@ ee.Date(listPeriods[ind+1])).map(self.calcNDSI).map(self.calcSnow).select('NDSI'
         mask=img.updateMask(maskNDSI).unmask(0)
         return mask
 
-def main(name='Hurtado_San_Agustin'):
+def main(name):
 
     def getLastDate(name):
         path=os.path.join('..',name,'Master.csv')
@@ -267,7 +267,8 @@ def main(name='Hurtado_San_Agustin'):
         return mindate,dsets
 
     def loadGdf(name,shpStr):
-        gdfRet=gpd.read_file(os.path.join('..','data',name,shpStr+'.shp'))
+        gdfRet=gpd.read_file(os.path.join('..','data',name,
+                                          shpStr+'.shp'))
         gdfRet.set_index(gdfRet.columns[0],drop=False,inplace=True)
         return gdfRet
 
@@ -285,9 +286,9 @@ def main(name='Hurtado_San_Agustin'):
         dfOut=dfOut.applymap(lambda x: max(x,0))
         return dfOut
 
-    def getDatesDatasets(name='Hurtado_San_Agustin'):
+    def getDatesDatasets(name=name):
         # lastDate=getLastDate(name)
-        lastDate=pd.to_datetime('1971-01-01')
+        lastDate=pd.to_datetime('1989-01-01')
         print(lastDate)
 
         mindate,dsets=getMinDate()
@@ -296,15 +297,28 @@ def main(name='Hurtado_San_Agustin'):
             gdfCuenca=loadGdf(name,'basin4callypso')
             for data in list(dsets.keys()):
                 for band in dsets[data]:
-                    if 'precipitation' in band:
-                        pathOut=os.path.join('..',name,'Precipitacion',
-                        'PrecipitacionActualizada.csv')
-                        polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
-                    fdate=mindate+pd.DateOffset(1))
+                    if 'pet' in band:
+                        pathOut=os.path.join('..','data',name,
+                                             'evaporation',
+                        'evaporationActualizada.csv')
+                        try: 
+                            os.mkdir(os.path.join('..','data',name,
+                                                  'evaporation'))
+                        except:
+                            c='directorio ya creado'
+                        polygon=polyEE(name,gdfCuenca,data,band,
+                                       idate=lastDate,
+                    fdate=mindate)
                         df=polygon.dl().iloc[:-1,:]
                     elif 'temperature' in band:
-                        pathOut=os.path.join('..',name,'Temperatura',
+                        pathOut=os.path.join('..','data',name,
+                                             'Temperatura',
                         'TemperaturaActualizada.csv')
+                        try:
+                            os.mkdir(os.path.join('..','data',name,
+                                                  'Temperatura'))
+                        except:
+                            c='directorio ya creado'
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
                         df=polygon.dl().iloc[:-1,:]
@@ -324,11 +338,17 @@ def main(name='Hurtado_San_Agustin'):
                         dfOut=dfTerra.combine_first(dfAqua)
                         # postprocesar
                         dfOut=postProcess(polygon,dfOut)
-                        dfOut.to_csv(os.path.join('..',name,'Nieve',
+                        dfOut.to_csv(os.path.join('..','data',name,'Nieve',
                                                     'snowCoverActualizada.csv'))
                     else:
-                        pathOut=os.path.join('..','data',name,data.replace('/',
+                        pathOut=os.path.join('..','data',
+                            name,data.replace('/',
                         '_')+'_'+band+'.csv')
+                        try:
+                            os.mkdir(os.path.join('..','data',
+                            name,data.replace('/','_')))
+                        except:
+                            c='directorio ya creado'
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate)
                         df=polygon.dl().iloc[:-1,:]
