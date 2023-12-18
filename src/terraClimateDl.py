@@ -81,6 +81,20 @@ def day2mon(lista):
         'etrMon'+sb+'.csv'),index=None)
     return None
 
+def day2monPp(lista):
+    root=r'G:\sequia\data'
+    for sb in lista:
+        path=os.path.join(root,sb)
+        folder = os.path.abspath(path)
+        pp=pd.read_csv(os.path.join(folder,'Precipitacion',
+        'PrecipitacionActualizada.csv'),index_col=0,parse_dates=True)
+        ppmon=pp.resample('MS').sum()
+        ppmon=ppmon.astype(float)
+        ppmon=changeIndex(ppmon)
+        ppmon.to_csv(os.path.join(folder,'Precipitacion',
+        'ppMon'+sb+'.csv'),index=None)
+    return None
+
 def download():
     lista=['Ponio','La_Higuera','Los_Molles','Pama_Valle_Hermoso','El_Ingenio']
     lista=['Estero_Canela','Estero_Camisas','Rio_Cuncumen','Rio_Tencadan']
@@ -95,6 +109,7 @@ def download():
     lista=['LarquiA','LarquiB','LarquiC','LarquiD','ChacayA',
 'ChacayB','ChacayC','SanVicenteA','SanVicenteB','SanVicenteC',
 'PalPalA','PalPalB','PalPalC','PalPalD']
+    lista=['RPEC','RCHLN']
 
     root=r'D:\GitHub\sequia\data'
     # gdf=loadGdf()
@@ -106,5 +121,5 @@ def download():
         folder = os.path.abspath(path)
         terraClimate.main(subcuenca)
 
-    day2mon(lista)
+    day2monPp(lista)
 # def 

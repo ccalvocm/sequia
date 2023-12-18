@@ -256,7 +256,7 @@ def main(name='Hurtado_San_Agustin'):
         return lastDate
 
     def getMinDate():
-        dsets={'IDAHO_EPSCOR/TERRACLIMATE':['pet']
+        dsets={'IDAHO_EPSCOR/TERRACLIMATE':['pr']
         }
         mindate=pd.to_datetime(datetime.date.today())
 
@@ -296,14 +296,14 @@ def main(name='Hurtado_San_Agustin'):
             gdfCuenca=loadGdf(name,'basin4callypso')
             for data in list(dsets.keys()):
                 for band in dsets[data]:
-                    if 'precipitation' in band:
-                        pathOut=os.path.join('..',name,'Precipitacion',
+                    if 'pr' in band:
+                        pathOut=os.path.join('..','data',name,'Precipitacion',
                         'PrecipitacionActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
                         df=polygon.dl().iloc[:-1,:]
                     elif 'temperature' in band:
-                        pathOut=os.path.join('..',name,'Temperatura',
+                        pathOut=os.path.join('..','data',name,'Temperatura',
                         'TemperaturaActualizada.csv')
                         polygon=polyEE(name,gdfCuenca,data,band,idate=lastDate,
                     fdate=mindate+pd.DateOffset(1))
